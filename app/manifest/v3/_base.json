@@ -70,7 +70,8 @@
     "activeTab",
     "webRequest",
     "*://*.eth/",
-    "notifications"
+    "notifications",
+    "alarms"
   ],
   "short_name": "__MSG_appName__"
 }

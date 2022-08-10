@@ -429,6 +429,9 @@
   "basic": {
     "message": "Basic"
   },
+  "beCareful": {
+    "message": "Be careful"
+  },
   "betaMetamaskDescription": {
     "message": "Trusted by millions, MetaMask is a secure wallet making the world of web3 accessible to all."
   },
@@ -831,6 +834,9 @@
   "customSpendLimit": {
     "message": "Custom spend limit"
   },
+  "customSpendingCup": {
+    "message": "Custom spending cup"
+  },
   "customToken": {
     "message": "Custom token"
   },
@@ -1203,6 +1209,9 @@
   },
   "ensUnknownError": {
     "message": "ENS lookup failed."
+  },
+  "enterANumber": {
+    "message": "Enter a number"
   },
   "enterMaxSpendLimit": {
     "message": "Enter max spend limit"
@@ -1646,6 +1655,16 @@
   },
   "initialTransactionConfirmed": {
     "message": "Your initial transaction was confirmed by the network. Click OK to go back."
+  },
+  "inputLogicEmptyState": {
+    "message": "Only enter a number that you're comfortable with the contract spending now or in the future. You can always increase the spending cap later."
+  },
+  "inputLogicEqualOrSmallerNumber": {
+    "message": "This allows the contract to spend $1 $2 from your current balance.",
+    "description": "$1 is the current token balance in the account, $2 is the name of the current token"
+  },
+  "inputLogicHigherNumber": {
+    "message": "This allows the contract to spend all your token balance until it reaches the cap or you revoke the spending cap. If this is not intended, consider setting a lower spending cap."
   },
   "insufficientBalance": {
     "message": "Insufficient balance."
@@ -3220,6 +3239,9 @@
   "spendLimitTooLarge": {
     "message": "Spend limit too large"
   },
+  "spendingCupInvalid": {
+    "message": "Spending cup invalid; must be a positive number"
+  },
   "srpInputNumberOfWords": {
     "message": "I have a $1-word phrase",
     "description": "This is the text for each option in the dropdown where a user selects how many words their secret recovery phrase has during import. The $1 is the number of words (either 12, 15, 18, 21, or 24)."
@@ -4097,6 +4119,9 @@
   "useCollectibleDetectionDescription": {
     "message": "Displaying NFTs media & data may expose your IP address to centralized servers. Third-party APIs (like OpenSea) are used to detect NFTs in your wallet. This exposes your account address with those services. Leave this disabled if you don’t want the app to pull data from those those services."
   },
+  "useDefault": {
+    "message": "Use default"
+  },
   "usePhishingDetection": {
     "message": "Use phishing detection"
   },
@@ -4188,6 +4213,10 @@
   },
   "warning": {
     "message": "Warning"
+  },
+  "warningTooltipText": {
+    "message": "$1 The contract could spend your entire token balance without further notice or consent. Protect yourself by customizing a lower spending cap.",
+    "description": "$1 is a fa-exclamation-circle icon with text 'Be careful' in 'warning' colour"
   },
   "weak": {
     "message": "Weak"

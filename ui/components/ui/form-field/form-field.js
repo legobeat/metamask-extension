@@ -38,7 +38,7 @@ export default function FormField({
   warning,
   passwordStrength,
   passwordStrengthText,
-  customSpendingCupText,
+  customSpendingCapText,
   maxButton,
 }) {
   return (
@@ -79,18 +79,20 @@ export default function FormField({
                   interactive
                   position="top"
                   html={
-                    <Box
+                    <Typography
+                      variant={TYPOGRAPHY.H7}
                       margin={3}
+                      color={COLORS.TEXT_ALTERNATIVE}
                       className="form-field__heading-title__tooltip"
                     >
                       {tooltipContentText}
-                    </Box>
+                    </Typography>
                   }
                 >
                   {tooltipIcon ? (
                     <i className="fa fa-exclamation-triangle form-field__heading-title__tooltip__warning-icon" />
                   ) : (
-                    <i className="fa fa-question-circle form-field__heading-title__tooltip__question-icon" />
+                    <i className="fa fa-question-circle" />
                   )}
                 </Tooltip>
               </Box>
@@ -100,8 +102,8 @@ export default function FormField({
             <Box
               className="form-field__heading-detail"
               textAlign={TEXT_ALIGN.END}
-              marginBottom={customSpendingCupText || tooltipContentText ? 2 : 3}
-              marginRight={customSpendingCupText || tooltipContentText ? 0 : 2}
+              marginBottom={customSpendingCapText || tooltipContentText ? 2 : 3}
+              marginRight={customSpendingCapText || tooltipContentText ? 0 : 2}
             >
               {titleDetail}
             </Box>
@@ -173,13 +175,13 @@ export default function FormField({
             {passwordStrengthText}
           </Typography>
         )}
-        {customSpendingCupText && (
+        {customSpendingCapText && (
           <Typography
             color={COLORS.TEXT_DEFAULT}
             variant={TYPOGRAPHY.H7}
             className="form-field__custom-spending-cup-text"
           >
-            {customSpendingCupText}
+            {customSpendingCapText}
           </Typography>
         )}
       </label>
@@ -263,12 +265,12 @@ FormField.propTypes = {
   /**
    * Custom spending cup description
    */
-  customSpendingCupText: PropTypes.oneOfType([
+  customSpendingCapText: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object,
   ]),
   /**
-   * Max button inside input in CustomSpendingCup component
+   * Max button inside input in CustomSpendingCap component
    */
   maxButton: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /**

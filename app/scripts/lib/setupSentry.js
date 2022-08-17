@@ -114,6 +114,22 @@ export default function setupSentry({ release, getState }) {
       }
       return rewriteReport(report);
     },
+    beforeBreadcrumb(breadcrumb) {
+      if (getState) {
+        const appState = getState();
+        if (
+          !appState?.store?.metamask?.participateInMetaMetrics ||
+          !appState?.store?.metamask?.completedOnboarding ||
+          breadcrumb?.message?.includes('input#import-srp__srp-word') ||
+          breadcrumb?.message?.includes('password')
+        ) {
+          return null;
+        }
+      } else {
+        return null;
+      }
+      return breadcrumb;
+    },
   });
 
   function rewriteReport(report) {

@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const IconBlockExplorer = ({ className, size }) => (
+const IconBlockExplorer = ({ className }) => (
   <svg
     className={className}
-    width={size}
-    height={size}
+    width="16"
+    height="16"
     viewBox="0 0 16 16"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
+    <path d="M8.69449 7.30553L14.3889 1.61108L8.69449 7.30553Z" fill="white" />
+    <path d="M14.9446 4.389V1.05566H11.6113" fill="white" />
+    <path d="M7.3056 1.05566H5.91671C2.44449 1.05566 1.0556 2.44455 1.0556 5.91678V10.0834C1.0556 13.5557 2.44449 14.9446 5.91671 14.9446H10.0834C13.5556 14.9446 14.9445 13.5557 14.9445 10.0834V8.69455" />
     <path
-      d="M8.66666 7.33312L14.1333 1.86646M14.6668 4.53325V1.33325H11.4668M7.33333 1.33325H5.99999C2.66666 1.33325 1.33333 2.66659 1.33333 5.99992V9.99992C1.33333 13.3333 2.66666 14.6666 5.99999 14.6666H9.99999C13.3333 14.6666 14.6667 13.3333 14.6667 9.99992V8.66658"
+      d="M8.69449 7.30553L14.3889 1.61108M14.9446 4.389V1.05566H11.6113M7.3056 1.05566H5.91671C2.44449 1.05566 1.0556 2.44455 1.0556 5.91678V10.0834C1.0556 13.5557 2.44449 14.9446 5.91671 14.9446H10.0834C13.5556 14.9446 14.9445 13.5557 14.9445 10.0834V8.69455"
       stroke="#BBC0C5"
       strokeWidth="1.5"
       strokeLinecap="round"
@@ -29,10 +32,6 @@ IconBlockExplorer.propTypes = {
    * Additional className
    */
   className: PropTypes.string,
-  /**
-   * The size of the Icon
-   */
-  size: PropTypes.number.isRequired,
 };
 
 export default IconBlockExplorer;

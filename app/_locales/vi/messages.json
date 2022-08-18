@@ -44,6 +44,60 @@
   "QRHardwareWalletSteps2Description": {
     "message": "AirGap Vault & Ngrave (Sắp Ra Mắt)"
   },
+  "SIWEAddressInvalid": {
+    "message": "Địa chỉ trong yêu cầu đăng nhập không trùng khớp với địa chỉ của tài khoản bạn đang sử dụng để đăng nhập."
+  },
+  "SIWEDomainInvalid": {
+    "message": "Trang web bạn đang cố gắng đăng nhập vào ($1) không trùng khớp với tên miền trong yêu cầu đăng nhập. Hãy thực hiện cẩn thận.",
+    "description": "$1 represents the website domain"
+  },
+  "SIWEDomainWarningBody": {
+    "message": "Trang web ($1) đang yêu cầu bạn đăng nhập vào một tên miền không đúng. Đây có thể là một cuộc tấn công lừa đảo.",
+    "description": "$1 represents the website domain"
+  },
+  "SIWELabelChainID": {
+    "message": "Mã chuỗi:"
+  },
+  "SIWELabelExpirationTime": {
+    "message": "Hết hạn vào:"
+  },
+  "SIWELabelIssuedAt": {
+    "message": "Phát hành vào:"
+  },
+  "SIWELabelMessage": {
+    "message": "Thông báo:"
+  },
+  "SIWELabelNonce": {
+    "message": "Số chỉ dùng một lần:"
+  },
+  "SIWELabelNotBefore": {
+    "message": "Không trước:"
+  },
+  "SIWELabelRequestID": {
+    "message": "Mã yêu cầu:"
+  },
+  "SIWELabelResources": {
+    "message": "Tài nguyên: $1",
+    "description": "$1 represents the number of resources"
+  },
+  "SIWELabelURI": {
+    "message": "URI:"
+  },
+  "SIWELabelVersion": {
+    "message": "Phiên bản:"
+  },
+  "SIWESiteRequestSubtitle": {
+    "message": "Trang web này đang yêu cầu đăng nhập bằng"
+  },
+  "SIWESiteRequestTitle": {
+    "message": "Yêu cầu đăng nhập"
+  },
+  "SIWEWarningSubtitle": {
+    "message": "Để xác nhận rằng bạn hiểu, hãy đánh dấu:"
+  },
+  "SIWEWarningTitle": {
+    "message": "Bạn có chắc không?"
+  },
   "about": {
     "message": "Giới thiệu"
   },
@@ -120,6 +174,9 @@
   },
   "addAlias": {
     "message": "Thêm biệt danh"
+  },
+  "addBlockExplorer": {
+    "message": "Thêm một trình khám phá khối"
   },
   "addContact": {
     "message": "Thêm địa chỉ liên hệ"
@@ -277,6 +334,9 @@
   "approveAndInstall": {
     "message": "Chấp nhận và cài đặt"
   },
+  "approveAndUpdate": {
+    "message": "Phê duyệt và cập nhật"
+  },
   "approveButtonText": {
     "message": "Phê duyệt"
   },
@@ -292,6 +352,10 @@
   },
   "approvedAsset": {
     "message": "Tài sản được chấp nhận"
+  },
+  "approvedOn": {
+    "message": "Đã duyệt vào $1",
+    "description": "$1 is the approval date for a permission"
   },
   "areYouSure": {
     "message": "Bạn có chắc chắn không?"
@@ -335,6 +399,9 @@
   "backToAll": {
     "message": "Quay lại toàn bộ danh sách"
   },
+  "backup": {
+    "message": "Sao lưu"
+  },
   "backupApprovalInfo": {
     "message": "Đây là mã bí mật bắt buộc phải dùng để khôi phục ví trong trường hợp bạn bị mất thiết bị, quên mật khẩu, phải cài đặt lại MetaMask hoặc muốn truy cập ví của mình trên một thiết bị khác."
   },
@@ -343,6 +410,12 @@
   },
   "backupNow": {
     "message": "Sao lưu ngay"
+  },
+  "backupUserData": {
+    "message": "Sao lưu dữ liệu của bạn"
+  },
+  "backupUserDataDescription": {
+    "message": "Bạn có thể sao lưu cài đặt người dùng có chứa các tùy chọn và địa chỉ tài khoản vào một tập tin JSON."
   },
   "balance": {
     "message": "Số dư"
@@ -522,6 +595,9 @@
   },
   "confirm": {
     "message": "Xác nhận"
+  },
+  "confirmPageDialogSetApprovalForAll": {
+    "message": "Bằng cách nhấn chấp nhận, bạn đang cấp quyền truy cập vào tất cả các NFT mà bạn hiện sở hữu trên hợp đồng này và bất kỳ NFT nào trên hợp đồng này mà bạn có thể nhận được trong tương lai cho đến khi bạn thu hồi sự chấp nhận này. Bên mà bạn cấp phép sẽ có thể chuyển các NFT từ ví của bạn mà không cần thông báo thêm. Hãy thực hiện cẩn thận."
   },
   "confirmPassword": {
     "message": "Xác nhận mật khẩu"
@@ -763,6 +839,9 @@
   },
   "customTokenWarningInTokenDetectionNetwork": {
     "message": "Đảm bảo bạn tin tưởng trước khi nhập token theo cách thủ công. Tìm hiểu về $1."
+  },
+  "customTokenWarningInTokenDetectionNetworkWithTDOFF": {
+    "message": "Đảm bảo bạn tin tưởng token trước khi nhập token đó. Tìm hiểu cách phòng tránh $1. Bạn cũng có thể bật tính năng phát hiện token $2."
   },
   "customerSupport": {
     "message": "hỗ trợ khách hàng"
@@ -1526,6 +1605,12 @@
   "importNFTs": {
     "message": "Nhập NFT"
   },
+  "importSelectedTokens": {
+    "message": "Nhập các token đã chọn?"
+  },
+  "importSelectedTokensDescription": {
+    "message": "Chỉ những token đã chọn mới xuất hiện trong ví của bạn. Sau đó, bạn luôn có thể nhập các token đã ẩn thông qua tìm kiếm."
+  },
   "importTokenQuestion": {
     "message": "Bạn muốn nhập token?"
   },
@@ -1551,6 +1636,9 @@
   "imported": {
     "message": "Đã nhập",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "inYourSettings": {
+    "message": "trong phần Cài đặt"
   },
   "infuraBlockedNotification": {
     "message": "MetaMask không thể kết nối với máy chủ chuỗi khối. Hãy xem xét các lý do tiềm ẩn $1.",
@@ -2463,6 +2551,12 @@
   "permissionRequestCapitalized": {
     "message": "Yêu cầu cấp quyền"
   },
+  "permissionRequested": {
+    "message": "Đã yêu cầu ngay"
+  },
+  "permissionRevoked": {
+    "message": "Đã thu hồi trong bản cập nhật này"
+  },
   "permission_accessNetwork": {
     "message": "Truy cập Internet.",
     "description": "The description of the `endowment:network-access` permission."
@@ -2694,6 +2788,18 @@
   },
   "restore": {
     "message": "Khôi phục"
+  },
+  "restoreFailed": {
+    "message": "Không thể khôi phục dữ liệu của bạn từ tập tin được cung cấp"
+  },
+  "restoreSuccessful": {
+    "message": "Dữ liệu của bạn đã được khôi phục thành công"
+  },
+  "restoreUserData": {
+    "message": "Khôi phục dữ liệu người dùng"
+  },
+  "restoreUserDataDescription": {
+    "message": "Bạn có thể khôi phục cài đặt người dùng chứa các tùy chọn và địa chỉ tài khoản từ tập tin JSON đã sao lưu trước đó."
   },
   "restoreWalletPreferences": {
     "message": "Đã tìm thấy bản sao lưu dữ liệu của bạn từ $1. Bạn có muốn khôi phục các tùy chọn ưu tiên trong ví của mình không?",
@@ -3000,6 +3106,9 @@
   "signed": {
     "message": "Đã ký"
   },
+  "signin": {
+    "message": "Đăng nhập"
+  },
   "simulationErrorMessageV2": {
     "message": "Chúng tôi không thể ước tính gas. Có thể đã xảy ra lỗi trong hợp đồng và giao dịch này có thể thất bại."
   },
@@ -3036,8 +3145,22 @@
   "snapInstallWarningCheck": {
     "message": "Để xác nhận rằng bạn hiểu, hãy đánh dấu vào tất cả."
   },
+  "snapInstallWarningCheckPlural": {
+    "message": "Để xác nhận rằng bạn hiểu, hãy đánh dấu vào tất cả các ô."
+  },
+  "snapInstallWarningKeyAccess": {
+    "message": "Bạn đang cấp quyền truy cập khóa $2 cho Snap \"$1\". Hành động này không thể hủy bỏ và sẽ cấp quyền kiểm soát tài khoản và tài sản $2 của bạn cho \"$1\". Đảm bảo bạn tin tưởng \"$1\" trước khi tiếp tục.",
+    "description": "The first parameter is the name of the snap and the second one is the protocol"
+  },
   "snapRequestsPermission": {
     "message": "Snap này đang yêu cầu các quyền sau:"
+  },
+  "snapUpdate": {
+    "message": "Cập nhật Snap"
+  },
+  "snapUpdateExplanation": {
+    "message": "$1 cần một phiên bản Snap mới hơn.",
+    "description": "$1 is the dapp that is requesting an update to the snap."
   },
   "snaps": {
     "message": "Snap"
@@ -3736,11 +3859,17 @@
   "tokenDetectionAlertMessage": {
     "message": "Tính năng phát hiện token hiện có sẵn trên $1. $2"
   },
+  "tokenDetectionDescription": {
+    "message": "API token của ConsenSys sẽ tổng hợp danh sách token từ các danh sách token khác nhau của bên thứ ba. Khi bật, các token sẽ tự động được phát hiện và có thể tìm kiếm được trên mạng chính thức của Ethereum, Binance, Polygon và Avalanche. Khi tắt, bạn vẫn có thể tìm kiếm các token trên mạng chính thức của Ethereum bằng cách sử dụng danh sách token cũ của MetaMask."
+  },
   "tokenId": {
     "message": "ID Token"
   },
   "tokenList": {
     "message": "Danh sách token:"
+  },
+  "tokenScamSecurityRisk": {
+    "message": "rủi ro về bảo mật và lừa đảo token"
   },
   "tokenSymbol": {
     "message": "Ký hiệu token"
@@ -3938,6 +4067,10 @@
   "unrecognizedChain": {
     "message": "Không nhận ra mạng tùy chỉnh này. Bạn nên $1 trước khi tiếp tục",
     "description": "$1 is a clickable link with text defined by the 'unrecognizedChanLinkText' key. The link will open to instructions for users to validate custom network details."
+  },
+  "unrecognizedProtocol": {
+    "message": "$1 (Giao thức chưa được công nhận)",
+    "description": "Shown when the protocol is unknown by the extension. $1 is the protocol code."
   },
   "unsendableAsset": {
     "message": "Hiện không hỗ trợ gửi token sưu tập (ERC-721)",

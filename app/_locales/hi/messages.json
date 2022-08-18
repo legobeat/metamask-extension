@@ -44,6 +44,60 @@
   "QRHardwareWalletSteps2Description": {
     "message": "एयरगैप वॉल्ट और Ngrave (जल्द आ रहा है)"
   },
+  "SIWEAddressInvalid": {
+    "message": "साइन-इन अनुरोध का पता उस अकाउंट के पते से मेल नहीं खाता जिसका उपयोग आप साइन इन करने के लिए कर रहे हैं।"
+  },
+  "SIWEDomainInvalid": {
+    "message": "जिस वेबसाइट में ($1) आप साइन इन करने की कोशिश कर रहे हैं वह साइन-इन अनुरोध के डोमेन से मेल नहीं खाती। सावधानी के साथ आगे बढ़ें।",
+    "description": "$1 represents the website domain"
+  },
+  "SIWEDomainWarningBody": {
+    "message": "वेबसाइट ($1) आपसे गलत डोमेन में साइन इन करने के लिए कह रही है। यह एक फिशिंग अटैक हो सकता है।",
+    "description": "$1 represents the website domain"
+  },
+  "SIWELabelChainID": {
+    "message": "चेन ID:"
+  },
+  "SIWELabelExpirationTime": {
+    "message": "पर समय-सीमा समाप्त होगा:"
+  },
+  "SIWELabelIssuedAt": {
+    "message": "जारी किया गया:"
+  },
+  "SIWELabelMessage": {
+    "message": "संदेश:"
+  },
+  "SIWELabelNonce": {
+    "message": "अस्थाई रूप से:"
+  },
+  "SIWELabelNotBefore": {
+    "message": "इससे पहले नहीं:"
+  },
+  "SIWELabelRequestID": {
+    "message": "अनुरोध ID:"
+  },
+  "SIWELabelResources": {
+    "message": "संसाधन: $1",
+    "description": "$1 represents the number of resources"
+  },
+  "SIWELabelURI": {
+    "message": "URI:"
+  },
+  "SIWELabelVersion": {
+    "message": "संस्करण:"
+  },
+  "SIWESiteRequestSubtitle": {
+    "message": "ये साइट इसके साथ साइन इन करने के लिए अनुरोध कर रही है"
+  },
+  "SIWESiteRequestTitle": {
+    "message": "साइन-इन अनुरोध"
+  },
+  "SIWEWarningSubtitle": {
+    "message": "ये पुष्टि करने के लिए कि आप समझते हैं, चेक करें:"
+  },
+  "SIWEWarningTitle": {
+    "message": "क्या आप सुनिश्चित हैं?"
+  },
   "about": {
     "message": "इसके बारे में"
   },
@@ -120,6 +174,9 @@
   },
   "addAlias": {
     "message": "उपनाम जोड़ें"
+  },
+  "addBlockExplorer": {
+    "message": "ब्लॉक एक्सप्लोरर जोड़ें"
   },
   "addContact": {
     "message": "संपर्क जोड़ें"
@@ -277,6 +334,9 @@
   "approveAndInstall": {
     "message": "स्वीकृति दें और इंस्टॉल करें"
   },
+  "approveAndUpdate": {
+    "message": "स्वीकृत करें और अपडेट करें"
+  },
   "approveButtonText": {
     "message": "अनुमोदित करें"
   },
@@ -292,6 +352,10 @@
   },
   "approvedAsset": {
     "message": "स्वीकृत एसेट"
+  },
+  "approvedOn": {
+    "message": "$1 पर स्वीकृत किया गया",
+    "description": "$1 is the approval date for a permission"
   },
   "areYouSure": {
     "message": "क्या आप सुनिश्चित हैं?"
@@ -335,6 +399,9 @@
   "backToAll": {
     "message": "सभी पर वापस"
   },
+  "backup": {
+    "message": "बैकअप"
+  },
   "backupApprovalInfo": {
     "message": "यदि आप अपना डिवाइस खो देते हैं, अपना पासवर्ड भूल जाते हैं, MetaMask को फिर से स्थापित करना हो या दूसरे डिवाइस पर अपने वॉलेट तक पहुंचना चाहते हों, तो आपके वॉलेट को पुनर्प्राप्त करने के लिए यह गुप्त कोड आवश्यक है।"
   },
@@ -343,6 +410,12 @@
   },
   "backupNow": {
     "message": "अभी बैकअप लें"
+  },
+  "backupUserData": {
+    "message": "अपने डेटा का बैकअप लें"
+  },
+  "backupUserDataDescription": {
+    "message": "आप एक JSON फ़ाइल में वरीयताएँ और अकाउंट एड्रेस वाली उपयोगकर्ता सेटिंग्स का बैकअप ले सकते हैं।"
   },
   "balance": {
     "message": "शेषराशि"
@@ -522,6 +595,9 @@
   },
   "confirm": {
     "message": "पुष्टि करें"
+  },
+  "confirmPageDialogSetApprovalForAll": {
+    "message": "अप्रूव पर क्लिक करके, आप इस अनुबंध पर सभी एनएफटी, जिस पर वर्तमान में आप स्वामित्व रखते हैं, और इस अनुबंध पर किसी भी एनएफटी, जिसे आप भविष्य में प्राप्त कर सकते हैं, का तब तक एक्सेस प्रदान कर रहे हैं जब तक कि आप इस स्वीकृति को रद्द नहीं कर देते। जिस पक्ष को आप स्वीकृति प्रदान कर रहे हैं, वह बिना किसी और सूचना के आपके एनएफटी को आपके वॉलेट से स्थानांतरित कर सकेगा। सावधानी के साथ आगे बढ़ें।"
   },
   "confirmPassword": {
     "message": "पासवर्ड की पुष्टि करें"
@@ -763,6 +839,9 @@
   },
   "customTokenWarningInTokenDetectionNetwork": {
     "message": "टोकन को मैन्युअल रूप से इंपोर्ट करने से पहले, सुनिश्चित करें कि आपका उसपर भरोसा हो। $1 के बारे में जानें"
+  },
+  "customTokenWarningInTokenDetectionNetworkWithTDOFF": {
+    "message": "सुनिश्चित करें कि आप किसी टोकन को आयात करने से पहले उस पर भरोसा करते हैं। $1 को टालने का तरीका जानें। आप टोकन डिटेक्शन $2 भी सक्षम कर सकते हैं।"
   },
   "customerSupport": {
     "message": "ग्राहक सहायता सेवा"
@@ -1526,6 +1605,12 @@
   "importNFTs": {
     "message": "NFT आयात करें"
   },
+  "importSelectedTokens": {
+    "message": "चयनित टोकन इंपोर्ट करें?"
+  },
+  "importSelectedTokensDescription": {
+    "message": "आपके द्वारा चुने गए टोकन केवल आपके वॉलेट में दिखाई देंगे। आप बाद में कभी भी छिपे हुए टोकन को खोज कर उन्हें इंपोर्ट कर सकते हैं।"
+  },
   "importTokenQuestion": {
     "message": "टोकन आयात करें?"
   },
@@ -1551,6 +1636,9 @@
   "imported": {
     "message": "आयातित",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "inYourSettings": {
+    "message": "आपके सेटिंग्स में"
   },
   "infuraBlockedNotification": {
     "message": "MetaMask ब्लॉकचेन होस्ट से कनेक्ट करने में असमर्थ है। संभावित कारणों की समीक्षा करें $1।",
@@ -2463,6 +2551,12 @@
   "permissionRequestCapitalized": {
     "message": "अनुमति हेतु अनुरोध"
   },
+  "permissionRequested": {
+    "message": "अब अनुरोध किया गया"
+  },
+  "permissionRevoked": {
+    "message": "इस अपडेट में निरस्त किया गया"
+  },
   "permission_accessNetwork": {
     "message": "इंटरनेट एक्सेस करें।",
     "description": "The description of the `endowment:network-access` permission."
@@ -2694,6 +2788,18 @@
   },
   "restore": {
     "message": "पुनर्स्थापित करें"
+  },
+  "restoreFailed": {
+    "message": "प्रदान की गई फ़ाइल से आपके डेटा को रीस्टोर नहीं किया जा सकता"
+  },
+  "restoreSuccessful": {
+    "message": "आपके डेटा को सफलतापूर्वक रीस्टोर किया गया है"
+  },
+  "restoreUserData": {
+    "message": "यूज़र डेटा रीस्टोर करें"
+  },
+  "restoreUserDataDescription": {
+    "message": "वरीयताएँ और अकाउंट एड्रेस से युक्त यूजर सेटिंग्स को आप पहले से बैकअप की गई JSON फ़ाइल से रीस्टोर सकते हैं।"
   },
   "restoreWalletPreferences": {
     "message": "$1 से आपके डेटा का बैकअप मिला है। क्या आप अपनी वॉलेट वरीयताओं को पुनर्स्थापित करना चाहते हैं?",
@@ -3000,6 +3106,9 @@
   "signed": {
     "message": "हस्ताक्षर किया गया"
   },
+  "signin": {
+    "message": "साइन-इन करें"
+  },
   "simulationErrorMessageV2": {
     "message": "हम गैस का अनुमान नहीं लगा पाए। अनुबंध में कोई त्रुटि हो सकती है और यह लेन-देन विफल हो सकता है।"
   },
@@ -3036,8 +3145,22 @@
   "snapInstallWarningCheck": {
     "message": "ये पुष्टि करने के लिए कि आप समझते हैं, सभी पर सही का निशान लगाएं।"
   },
+  "snapInstallWarningCheckPlural": {
+    "message": "ये पुष्टि करने के लिए कि आप समझते हैं, सभी बॉक्स चेक करें:"
+  },
+  "snapInstallWarningKeyAccess": {
+    "message": "आप स्नैप \"$1\" के लिए $2 कुंजी पहुंच प्रदान कर रहे हैं। यह अपरिवर्तनीय है और आपके $2 खातों और संपत्तियों पर \"$1\" नियंत्रण प्रदान करता है। आगे बढ़ने से पहले सुनिश्चित करें कि आप \"$1\" पर भरोसा करते हैं।",
+    "description": "The first parameter is the name of the snap and the second one is the protocol"
+  },
   "snapRequestsPermission": {
     "message": "ये स्नैप निम्नलिखित अनुमतियों हेतु अनुरोध कर रहा है:"
+  },
+  "snapUpdate": {
+    "message": "स्नैप अपडेट करें"
+  },
+  "snapUpdateExplanation": {
+    "message": "$1 को आपके स्नैप के नए वर्शन की ज़रूरत है।",
+    "description": "$1 is the dapp that is requesting an update to the snap."
   },
   "snaps": {
     "message": "स्नैप्स"
@@ -3736,11 +3859,17 @@
   "tokenDetectionAlertMessage": {
     "message": "फिलहाल टोकन डिटेक्शन $1 पर उपलब्ध है। $2"
   },
+  "tokenDetectionDescription": {
+    "message": "ConsenSys का टोकन एपीआई विभिन्न थर्ड पार्टी टोकन सूचियों से टोकन की एक सूची एकत्र करता है। उसे ऑन करने पर, एथेरियम मेननेट, बिनेंस, पॉलीगॉन और एवलांच पर टोकन का स्वचालित रूप से पता लगाया जाएगा और उन्हें खोजा जा सकेगा। ऑफ़ करने पर, आप फिर भी MetaMask की लेगसी टोकन सूची का उपयोग करके एथेरियम मेननेट पर टोकन की खोज करने में सक्षम होंगे।"
+  },
   "tokenId": {
     "message": "टोकन आइडी"
   },
   "tokenList": {
     "message": "टोकन सूचियां:"
+  },
+  "tokenScamSecurityRisk": {
+    "message": "टोकन घोटाले और सुरक्षा जोखिम"
   },
   "tokenSymbol": {
     "message": "टोकन का प्रतीक"
@@ -3938,6 +4067,10 @@
   "unrecognizedChain": {
     "message": "यह कस्टम नेटवर्क पहचाना नहीं गया है। हम अनुशंसा करते हैं कि आप आगे बढ़ने से पहले $1",
     "description": "$1 is a clickable link with text defined by the 'unrecognizedChanLinkText' key. The link will open to instructions for users to validate custom network details."
+  },
+  "unrecognizedProtocol": {
+    "message": "$1 (अपरिचित प्रोटोकॉल)",
+    "description": "Shown when the protocol is unknown by the extension. $1 is the protocol code."
   },
   "unsendableAsset": {
     "message": "वर्तमान में संग्रहणीय (ERC-721) टोकन भेजना समर्थित नहीं है",

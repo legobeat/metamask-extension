@@ -44,6 +44,60 @@
   "QRHardwareWalletSteps2Description": {
     "message": "AirGap Vault & Ngrave (Çok Yakında)"
   },
+  "SIWEAddressInvalid": {
+    "message": "Giriş talebindeki adres, giriş yapmak için kullandığınız hesapla uyumlu değil."
+  },
+  "SIWEDomainInvalid": {
+    "message": "Giriş yapmaya çalıştığınız web sitesi ($1) giriş talebindeki alan ile uyumlu değil. Dikkati olarak ilerleyin.",
+    "description": "$1 represents the website domain"
+  },
+  "SIWEDomainWarningBody": {
+    "message": "Web sitesi ($1) yanlış alana giriş yapmanızı istiyor. Bu bir dolandırıcılık saldırısı olabilir.",
+    "description": "$1 represents the website domain"
+  },
+  "SIWELabelChainID": {
+    "message": "Zincir Kimliği:"
+  },
+  "SIWELabelExpirationTime": {
+    "message": "Son kullanma tarihi:"
+  },
+  "SIWELabelIssuedAt": {
+    "message": "Düzenlenme tarihi:"
+  },
+  "SIWELabelMessage": {
+    "message": "Mesaj:"
+  },
+  "SIWELabelNonce": {
+    "message": "Geçici anahtar:"
+  },
+  "SIWELabelNotBefore": {
+    "message": "En Erken:"
+  },
+  "SIWELabelRequestID": {
+    "message": "Talep Kimliği:"
+  },
+  "SIWELabelResources": {
+    "message": "Kaynaklar: $1",
+    "description": "$1 represents the number of resources"
+  },
+  "SIWELabelURI": {
+    "message": "URI:"
+  },
+  "SIWELabelVersion": {
+    "message": "Sürüm:"
+  },
+  "SIWESiteRequestSubtitle": {
+    "message": "Bu site şununla giriş yapmak istiyor:"
+  },
+  "SIWESiteRequestTitle": {
+    "message": "Giriş talebi"
+  },
+  "SIWEWarningSubtitle": {
+    "message": "Anladığınızı doğrulamak için şunu işaretleyin:"
+  },
+  "SIWEWarningTitle": {
+    "message": "Emin misiniz?"
+  },
   "about": {
     "message": "Hakkında"
   },
@@ -120,6 +174,9 @@
   },
   "addAlias": {
     "message": "Diğer adı ekle"
+  },
+  "addBlockExplorer": {
+    "message": "Bir blok gezgini ekle"
   },
   "addContact": {
     "message": "Kişi ekle"
@@ -277,6 +334,9 @@
   "approveAndInstall": {
     "message": "Onayla ve Yükle"
   },
+  "approveAndUpdate": {
+    "message": "Onayla ve güncelle"
+  },
   "approveButtonText": {
     "message": "Onayla"
   },
@@ -292,6 +352,10 @@
   },
   "approvedAsset": {
     "message": "Onaylanan varlık"
+  },
+  "approvedOn": {
+    "message": "$1 üzerinde onaylandı",
+    "description": "$1 is the approval date for a permission"
   },
   "areYouSure": {
     "message": "Emin misin?"
@@ -335,6 +399,9 @@
   "backToAll": {
     "message": "Tümüne Geri Git"
   },
+  "backup": {
+    "message": "Yedekle"
+  },
   "backupApprovalInfo": {
     "message": "Bu gizli kod, cihazınızı kaybetmeniz, parolanızı unutmanız, MetaMask'ı yeniden kurmanızın gerektiği ya da cüzdanınıza başka bir cihazdan oturum açmak istemeniz durumunda cüzdanınıza erişim sağlamak için gereklidir."
   },
@@ -343,6 +410,12 @@
   },
   "backupNow": {
     "message": "Şimdi yedekle"
+  },
+  "backupUserData": {
+    "message": "Verilerini yedekle"
+  },
+  "backupUserDataDescription": {
+    "message": "Tercihleri ve hesap adreslerini içeren kullanıcı ayarlarını JSON dosyasına yedekleyebilirsiniz."
   },
   "balance": {
     "message": "Bakiye"
@@ -522,6 +595,9 @@
   },
   "confirm": {
     "message": "Onayla"
+  },
+  "confirmPageDialogSetApprovalForAll": {
+    "message": "Onayla düğmesine tıklayarak bu sözleşmede şu anda sahip olduğunuz tüm NFT'lere ve gelecekte bu onayı geri çekene kadar edinebileceğin tüm NFT'lere erişim verirsiniz. Onay verdiğiniz taraf başka bir uyarı olmaksızın cüzdanınızdan NFT'lerini aktarabilecektir. Dikkatle ilerleyin."
   },
   "confirmPassword": {
     "message": "Şifreyi onayla"
@@ -763,6 +839,9 @@
   },
   "customTokenWarningInTokenDetectionNetwork": {
     "message": "Bir token'ı manuel olarak içe aktarmadan önce, ona güvendiğinden emin ol. $1 hakkında bilgi edin."
+  },
+  "customTokenWarningInTokenDetectionNetworkWithTDOFF": {
+    "message": "Bir tokeni içe aktarmadan önce ona güvendiğinizden emin olun. $1 kaçınmayı öğrenin. Ayrıca token algılamayı $2 etkinleştirebilirsiniz."
   },
   "customerSupport": {
     "message": "müşteri hizmetleri"
@@ -1526,6 +1605,12 @@
   "importNFTs": {
     "message": "NFS'leri İçe Aktar"
   },
+  "importSelectedTokens": {
+    "message": "Seçilen tokenleri içe aktar?"
+  },
+  "importSelectedTokensDescription": {
+    "message": "Sadece seçtiğiniz tokenler cüzdanınızda gösterilecek. Dilediğiniz zaman onları arayarak gizli tokenleri içe aktarabilirsiniz."
+  },
   "importTokenQuestion": {
     "message": "Tokeni içe aktar?"
   },
@@ -1551,6 +1636,9 @@
   "imported": {
     "message": "İçe Aktarıldı",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "inYourSettings": {
+    "message": "Ayarlar kısmında"
   },
   "infuraBlockedNotification": {
     "message": "MetaMask blokzincir ana bilgisayarına bağlanamıyor. $1 olası nedenleri inceleyin.",
@@ -2463,6 +2551,12 @@
   "permissionRequestCapitalized": {
     "message": "İzin Talebi"
   },
+  "permissionRequested": {
+    "message": "Şimdi talep edildi"
+  },
+  "permissionRevoked": {
+    "message": "Bu güncellemede iptal edildi"
+  },
   "permission_accessNetwork": {
     "message": "İnternete erişim sağla.",
     "description": "The description of the `endowment:network-access` permission."
@@ -2694,6 +2788,18 @@
   },
   "restore": {
     "message": "Geri Yükle"
+  },
+  "restoreFailed": {
+    "message": "Sunulan dosyadan verileriniz geri yüklenemiyor"
+  },
+  "restoreSuccessful": {
+    "message": "Verileriniz başarılı bir şekilde geri yüklendi"
+  },
+  "restoreUserData": {
+    "message": "Kullanıcı verilerini geri yükle"
+  },
+  "restoreUserDataDescription": {
+    "message": "Tercihleri ve hesap adreslerini içeren kullanıcı ayarlarını  daha önce yedeklenmiş bir JSON dosyasından geri yükleyebilirsiniz."
   },
   "restoreWalletPreferences": {
     "message": "Verilerinizin $1 tarihinden bir yedeği bulundu. Cüzdan tercihlerinizi geri yüklemek ister misiniz?",
@@ -3000,6 +3106,9 @@
   "signed": {
     "message": "İmzalandı"
   },
+  "signin": {
+    "message": "Giriş"
+  },
   "simulationErrorMessageV2": {
     "message": "Gaz tahmini yapamadık. Sözleşmede bir hata olabilir ve bu işlem başarısız olabilir."
   },
@@ -3036,8 +3145,22 @@
   "snapInstallWarningCheck": {
     "message": "Anladığını doğrulamak için hepsini kontrol et."
   },
+  "snapInstallWarningCheckPlural": {
+    "message": "Anladığınızı kontrol etmek için tüm kutuları işaretleyin."
+  },
+  "snapInstallWarningKeyAccess": {
+    "message": "\"$1\" için $2 anahtar erişimi veriyorsunuz. Bu iptal edilemez ve $2 hesaplarınıza ve varlıklarınıza \"$1\" kontrolü verir. İlerlemeden önce \"$1\" alanına güvendiğinizden emin olun.",
+    "description": "The first parameter is the name of the snap and the second one is the protocol"
+  },
   "snapRequestsPermission": {
     "message": "Bu ek, aşağıdaki izinleri istiyor:"
+  },
+  "snapUpdate": {
+    "message": "Snap'i Güncelle"
+  },
+  "snapUpdateExplanation": {
+    "message": "$1 için daha yeni bir snap sürümü gerekli.",
+    "description": "$1 is the dapp that is requesting an update to the snap."
   },
   "snaps": {
     "message": "Snap'ler"
@@ -3736,11 +3859,17 @@
   "tokenDetectionAlertMessage": {
     "message": "Token algılama şu anda $1 üzerinden kullanılabilir. $2"
   },
+  "tokenDetectionDescription": {
+    "message": "ConsenSys token API, çeşitli üçüncü taraf token listelerinden token listesi toplar. Açıldığında, tokenler Ethereum ana ağı, Binance, Polygon ve Avalanche üzerinde otomatik olarak algılanır ve aratılabilir. Kapatıldığında, yine de MetaMask'in eski token listesini kullanarak Ethereum ana ağında tokenleri aratabilirsiniz."
+  },
   "tokenId": {
     "message": "Token Kimliği"
   },
   "tokenList": {
     "message": "Token listeleri:"
+  },
+  "tokenScamSecurityRisk": {
+    "message": "token dolandırıcılıkları ve güvenlik riskleri"
   },
   "tokenSymbol": {
     "message": "Token Sembolü"
@@ -3938,6 +4067,10 @@
   "unrecognizedChain": {
     "message": "Bu özel ağ tanınmadı. Devam etmeden önce $1 öneririz",
     "description": "$1 is a clickable link with text defined by the 'unrecognizedChanLinkText' key. The link will open to instructions for users to validate custom network details."
+  },
+  "unrecognizedProtocol": {
+    "message": "$1 (Tanınmayan protokol)",
+    "description": "Shown when the protocol is unknown by the extension. $1 is the protocol code."
   },
   "unsendableAsset": {
     "message": "Toplanabilir (ERC-721) tokenlerin gönderilmesi şu anda desteklenmiyor",

@@ -44,6 +44,60 @@
   "QRHardwareWalletSteps2Description": {
     "message": "AirGap Vault & Ngrave (Segera Hadir)"
   },
+  "SIWEAddressInvalid": {
+    "message": "Alamat pada permintaan masuk tidak sesuai dengan alamat akun yang Anda gunakan untuk masuk."
+  },
+  "SIWEDomainInvalid": {
+    "message": "Situs web yang Anda coba masuki ($1) tidak sesuai dengan domain pada permintaan masuk. Lanjutkan dengan hati-hati.",
+    "description": "$1 represents the website domain"
+  },
+  "SIWEDomainWarningBody": {
+    "message": "Situs web ($1) meminta Anda untuk masuk ke domain yang salah. Kemungkinan ini merupakan serangan pengelabuan.",
+    "description": "$1 represents the website domain"
+  },
+  "SIWELabelChainID": {
+    "message": "ID Rantai:"
+  },
+  "SIWELabelExpirationTime": {
+    "message": "Berakhir Pada:"
+  },
+  "SIWELabelIssuedAt": {
+    "message": "Diterbitkan Pada:"
+  },
+  "SIWELabelMessage": {
+    "message": "Pesan:"
+  },
+  "SIWELabelNonce": {
+    "message": "Nonce:"
+  },
+  "SIWELabelNotBefore": {
+    "message": "Tidak Sebelum:"
+  },
+  "SIWELabelRequestID": {
+    "message": "ID Permintaan:"
+  },
+  "SIWELabelResources": {
+    "message": "Sumber daya: $1",
+    "description": "$1 represents the number of resources"
+  },
+  "SIWELabelURI": {
+    "message": "URI:"
+  },
+  "SIWELabelVersion": {
+    "message": "Versi:"
+  },
+  "SIWESiteRequestSubtitle": {
+    "message": "Situs ini meminta untuk masuk dengan"
+  },
+  "SIWESiteRequestTitle": {
+    "message": "Permintaan masuk"
+  },
+  "SIWEWarningSubtitle": {
+    "message": "Untuk mengonfirmasikan bahwa Anda memahaminya, centang:"
+  },
+  "SIWEWarningTitle": {
+    "message": "Anda yakin?"
+  },
   "about": {
     "message": "Tentang"
   },
@@ -120,6 +174,9 @@
   },
   "addAlias": {
     "message": "Tambahkan alias"
+  },
+  "addBlockExplorer": {
+    "message": "Tambahkan block penjelajah"
   },
   "addContact": {
     "message": "Tambah kontak"
@@ -277,6 +334,9 @@
   "approveAndInstall": {
     "message": "Setujui & Instal"
   },
+  "approveAndUpdate": {
+    "message": "Setujui dan perbarui"
+  },
   "approveButtonText": {
     "message": "Setujui"
   },
@@ -292,6 +352,10 @@
   },
   "approvedAsset": {
     "message": "Aset yang disetujui"
+  },
+  "approvedOn": {
+    "message": "Disetujui pada $1",
+    "description": "$1 is the approval date for a permission"
   },
   "areYouSure": {
     "message": "Anda yakin?"
@@ -335,6 +399,9 @@
   "backToAll": {
     "message": "Kembali ke Semua"
   },
+  "backup": {
+    "message": "Pencadangan"
+  },
   "backupApprovalInfo": {
     "message": "Kode rahasia ini diperlukan untuk memulihkan dompet seandainya perangkat Anda hilang, lupa kata sandi, harus memasang kembali MetaMask, atau ingin mengakses dompet Anda di perangkat lain."
   },
@@ -343,6 +410,12 @@
   },
   "backupNow": {
     "message": "Cadangkan sekarang"
+  },
+  "backupUserData": {
+    "message": "Cadangkan data Anda"
+  },
+  "backupUserDataDescription": {
+    "message": "Anda dapat mencadangkan pengaturan pengguna yang berisi preferensi dan alamat akun ke dalam berkas JSON."
   },
   "balance": {
     "message": "Saldo"
@@ -522,6 +595,9 @@
   },
   "confirm": {
     "message": "Konfirmasikan"
+  },
+  "confirmPageDialogSetApprovalForAll": {
+    "message": "Dengan mengeklik setuju, Anda memberikan akses ke semua NFT yang saat ini Anda miliki dalam kontrak ini dan setiap NFT dalam kontrak ini yang mungkin Anda peroleh di masa mendatang hingga Anda mencabut persetujuan ini. Pihak yang mendapat persetujuan dari Anda akan dapat mentransfer NFT dari dompet Anda tanpa pemberitahuan lebih lanjut. Lanjutkan dengan hati hati."
   },
   "confirmPassword": {
     "message": "Konfirmasikan kata sandi"
@@ -763,6 +839,9 @@
   },
   "customTokenWarningInTokenDetectionNetwork": {
     "message": "Sebelum mengimpor token secara manual, pastikan keamanannya. Pelajari seputar $1."
+  },
+  "customTokenWarningInTokenDetectionNetworkWithTDOFF": {
+    "message": "Pastikan keamanan token sebelum mengimpornya. Pelajari cara menghindari $1. Anda juga dapat mengaktifkan deteksi token $2."
   },
   "customerSupport": {
     "message": "dukungan pelanggan"
@@ -1526,6 +1605,12 @@
   "importNFTs": {
     "message": "Impor NFT"
   },
+  "importSelectedTokens": {
+    "message": "Impor token yang dipilih?"
+  },
+  "importSelectedTokensDescription": {
+    "message": "Hanya token yang dipilih yang akan muncul di dompet Anda. Anda selalu dapat mengimpor token tersembunyi nanti dengan mencarinya."
+  },
   "importTokenQuestion": {
     "message": "Impor token?"
   },
@@ -1551,6 +1636,9 @@
   "imported": {
     "message": "Diimpor",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "inYourSettings": {
+    "message": "di Pengaturan Anda"
   },
   "infuraBlockedNotification": {
     "message": "MetaMask tidak dapat terhubung ke host blockchain. Tinjau alasan yang mungkin $1.",
@@ -2463,6 +2551,12 @@
   "permissionRequestCapitalized": {
     "message": "Permintaan Izin"
   },
+  "permissionRequested": {
+    "message": "Diminta sekarang"
+  },
+  "permissionRevoked": {
+    "message": "Dicabut dalam pembaruan ini"
+  },
   "permission_accessNetwork": {
     "message": "Akses Internet.",
     "description": "The description of the `endowment:network-access` permission."
@@ -2694,6 +2788,18 @@
   },
   "restore": {
     "message": "Pulihkan"
+  },
+  "restoreFailed": {
+    "message": "Tidak dapat memulihkan data Anda dari berkas yang disediakan"
+  },
+  "restoreSuccessful": {
+    "message": "Data Anda telah berhasil dipulihkan"
+  },
+  "restoreUserData": {
+    "message": "Pulihkan data pengguna"
+  },
+  "restoreUserDataDescription": {
+    "message": "Anda dapat memulihkan pengaturan pengguna yang berisi preferensi dan alamat akun dari berkas JSON yang dicadangkan sebelumnya."
   },
   "restoreWalletPreferences": {
     "message": "Cadangan data Anda dari $1 telah ditemukan. Pulihkan preferensi dompet Anda?",
@@ -3000,6 +3106,9 @@
   "signed": {
     "message": "Ditandatangani"
   },
+  "signin": {
+    "message": "Masuk"
+  },
   "simulationErrorMessageV2": {
     "message": "Kami tidak dapat memperkirakan gas. Tampaknya ada kesalahan dalam kontrak dan transaksi ini berpotensi gagal."
   },
@@ -3036,8 +3145,22 @@
   "snapInstallWarningCheck": {
     "message": "Untuk mengonfirmasikan Anda sudah paham, centang semua."
   },
+  "snapInstallWarningCheckPlural": {
+    "message": "Untuk mengonfirmasikan bahwa Anda memahaminya, centang semua kotak."
+  },
+  "snapInstallWarningKeyAccess": {
+    "message": "Anda memberikan $2 akses kunci ke snap \"$1\". Tindakan ini tidak dapat dibatalkan dan memberikan kendali \"$1\" atas akun dan aset $2 Anda. Sebelum melanjutkan, pastikan \"$1\" aman.",
+    "description": "The first parameter is the name of the snap and the second one is the protocol"
+  },
   "snapRequestsPermission": {
     "message": "Snap ini meminta izin berikut:"
+  },
+  "snapUpdate": {
+    "message": "Perbarui Snap"
+  },
+  "snapUpdateExplanation": {
+    "message": "$1 memerlukan versi snap yang lebih baru.",
+    "description": "$1 is the dapp that is requesting an update to the snap."
   },
   "snaps": {
     "message": "Snap"
@@ -3736,11 +3859,17 @@
   "tokenDetectionAlertMessage": {
     "message": "Saat ini deteksi token tersedia di $1. $2"
   },
+  "tokenDetectionDescription": {
+    "message": "API token ConsenSys mengumpulkan daftar token dari berbagai daftar token pihak ketiga. Saat diaktifkan, token akan secara otomatis terdeteksi, dan dapat dicari, di mainnet Ethereum, Binance, Polygon, dan Avalanche. Saat dinonaktifkan, Anda masih dapat mencari token di mainnet Ethereum menggunakan daftar token lama MetaMask."
+  },
   "tokenId": {
     "message": "ID token"
   },
   "tokenList": {
     "message": "Daftar token:"
+  },
+  "tokenScamSecurityRisk": {
+    "message": "penipuan token dan risiko keamanan"
   },
   "tokenSymbol": {
     "message": "Simbol Token"
@@ -3938,6 +4067,10 @@
   "unrecognizedChain": {
     "message": "Jaringan kustom ini tidak dikenali. Kami menyarankan agar Anda $1 sebelum melanjutkan",
     "description": "$1 is a clickable link with text defined by the 'unrecognizedChanLinkText' key. The link will open to instructions for users to validate custom network details."
+  },
+  "unrecognizedProtocol": {
+    "message": "$1 (Protokol tak dikenal)",
+    "description": "Shown when the protocol is unknown by the extension. $1 is the protocol code."
   },
   "unsendableAsset": {
     "message": "Tidak mendukung pengiriman token koleksi (ERC-721) untuk saat ini",

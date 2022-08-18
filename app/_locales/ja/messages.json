@@ -44,6 +44,60 @@
   "QRHardwareWalletSteps2Description": {
     "message": "AirGap Vault・Ngrave (近日追加予定)"
   },
+  "SIWEAddressInvalid": {
+    "message": "サインインリクエストのアドレスが、サインインに使用しているアカウントのアドレスと一致していません。"
+  },
+  "SIWEDomainInvalid": {
+    "message": "サインインしようとしている Web サイト ($1) が、サインインリクエストのドメインと一致していません。慎重に進めてください。",
+    "description": "$1 represents the website domain"
+  },
+  "SIWEDomainWarningBody": {
+    "message": "Web サイト ($1) が正しくないドメインへのサインインを要求しています。フィッシング攻撃の可能性があります。",
+    "description": "$1 represents the website domain"
+  },
+  "SIWELabelChainID": {
+    "message": "チェーン ID:"
+  },
+  "SIWELabelExpirationTime": {
+    "message": "有効期限:"
+  },
+  "SIWELabelIssuedAt": {
+    "message": "発行日時:"
+  },
+  "SIWELabelMessage": {
+    "message": "メッセージ:"
+  },
+  "SIWELabelNonce": {
+    "message": "ナンス:"
+  },
+  "SIWELabelNotBefore": {
+    "message": "この日時以降:"
+  },
+  "SIWELabelRequestID": {
+    "message": "リクエスト ID:"
+  },
+  "SIWELabelResources": {
+    "message": "リソース: $1",
+    "description": "$1 represents the number of resources"
+  },
+  "SIWELabelURI": {
+    "message": "URI:"
+  },
+  "SIWELabelVersion": {
+    "message": "バージョン:"
+  },
+  "SIWESiteRequestSubtitle": {
+    "message": "このサイトは次の方法でのサインインを要求しています:"
+  },
+  "SIWESiteRequestTitle": {
+    "message": "サインインリクエスト"
+  },
+  "SIWEWarningSubtitle": {
+    "message": "理解したことを確認するために、次の項目にチェックを入れてください:"
+  },
+  "SIWEWarningTitle": {
+    "message": "よろしいですか？"
+  },
   "about": {
     "message": "バージョン情報"
   },
@@ -120,6 +174,9 @@
   },
   "addAlias": {
     "message": "別名を追加"
+  },
+  "addBlockExplorer": {
+    "message": "ブロックエクスプローラーを追加"
   },
   "addContact": {
     "message": "連絡先を追加"
@@ -277,6 +334,9 @@
   "approveAndInstall": {
     "message": "承認してインストール"
   },
+  "approveAndUpdate": {
+    "message": "承認して更新"
+  },
   "approveButtonText": {
     "message": "承認"
   },
@@ -292,6 +352,10 @@
   },
   "approvedAsset": {
     "message": "承認済みのアセット"
+  },
+  "approvedOn": {
+    "message": "$1 に承認",
+    "description": "$1 is the approval date for a permission"
   },
   "areYouSure": {
     "message": "よろしいですか？"
@@ -335,6 +399,9 @@
   "backToAll": {
     "message": "一覧に戻る"
   },
+  "backup": {
+    "message": "バックアップ"
+  },
   "backupApprovalInfo": {
     "message": "このシークレット コードは、デバイスをなくしたとき、パスワードを忘れたとき、MetaMaskの再インストールが必要なとき、または別のデバイスでウォレットにアクセスするときに必要です。"
   },
@@ -343,6 +410,12 @@
   },
   "backupNow": {
     "message": "今すぐバックアップ"
+  },
+  "backupUserData": {
+    "message": "データをバックアップ"
+  },
+  "backupUserDataDescription": {
+    "message": "設定とアカウントアドレスを含むユーザー設定を、JSON ファイルにバックアップできます。"
   },
   "balance": {
     "message": "残高"
@@ -522,6 +595,9 @@
   },
   "confirm": {
     "message": "確認"
+  },
+  "confirmPageDialogSetApprovalForAll": {
+    "message": "承認をクリックすることで、現在このコントラクトで所有するすべての NFT と、この承認を撤回するまでこのコントラクトで今後取得する NFT へのアクセスが許可されます。承認する相手は、今後通知なしでお客様のウォレットから NFT を転送できるようになります。この操作は慎重に進めてください。"
   },
   "confirmPassword": {
     "message": "パスワードの確認"
@@ -763,6 +839,9 @@
   },
   "customTokenWarningInTokenDetectionNetwork": {
     "message": "手動でトークンをインポートする前に、信頼できることを確認してください。$1 の詳細をご覧ください。"
+  },
+  "customTokenWarningInTokenDetectionNetworkWithTDOFF": {
+    "message": "インポートする前にトークンが信頼できることを確認してください。$1を避ける方法の詳細をご覧ください。また、$2トークンの検出を有効にすることもできます。"
   },
   "customerSupport": {
     "message": "カスタマーサポート"
@@ -1526,6 +1605,12 @@
   "importNFTs": {
     "message": "NFTをインポート"
   },
+  "importSelectedTokens": {
+    "message": "選択したトークンをインポートしますか？"
+  },
+  "importSelectedTokensDescription": {
+    "message": "選択したトークンだけがウォレットに表示されます。非表示のトークンは後でいつでも検索してインポートできます。"
+  },
   "importTokenQuestion": {
     "message": "トークンをインポートしますか?"
   },
@@ -1551,6 +1636,9 @@
   "imported": {
     "message": "インポート済み",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "inYourSettings": {
+    "message": "設定で"
   },
   "infuraBlockedNotification": {
     "message": "MetaMaskがブロックチェーンのホストに接続できません。考えられる理由$1を確認してください。",
@@ -2463,6 +2551,12 @@
   "permissionRequestCapitalized": {
     "message": "パーミッションのリクエスト"
   },
+  "permissionRequested": {
+    "message": "現在リクエスト中"
+  },
+  "permissionRevoked": {
+    "message": "この更新で取り消し"
+  },
   "permission_accessNetwork": {
     "message": "インターネットにアクセスします。",
     "description": "The description of the `endowment:network-access` permission."
@@ -2694,6 +2788,18 @@
   },
   "restore": {
     "message": "復元"
+  },
+  "restoreFailed": {
+    "message": "提供されたファイルからデータを復元できません"
+  },
+  "restoreSuccessful": {
+    "message": "データが復元されました"
+  },
+  "restoreUserData": {
+    "message": "ユーザーデータの復元"
+  },
+  "restoreUserDataDescription": {
+    "message": "以前バックアップされた JSON ファイルから、設定とアカウントアドレスを含むユーザー設定を復元できます。"
   },
   "restoreWalletPreferences": {
     "message": "$1のデータのバックアップが見つかりました。ウォレットの基本設定を復元しますか?",
@@ -3000,6 +3106,9 @@
   "signed": {
     "message": "署名が完了しました"
   },
+  "signin": {
+    "message": "サインイン"
+  },
   "simulationErrorMessageV2": {
     "message": "ガス代を見積もれませんでした。コントラクトにエラーがある可能性があり、このトランザクションは失敗するかもしれません。"
   },
@@ -3036,8 +3145,22 @@
   "snapInstallWarningCheck": {
     "message": "理解したことを確認するために、すべての項目にチェックを入れてください。"
   },
+  "snapInstallWarningCheckPlural": {
+    "message": "理解したことを確認するために、すべての項目にチェックを入れてください。"
+  },
+  "snapInstallWarningKeyAccess": {
+    "message": "スナップ「$1」に $2 へのキーアクセスを許可しようとしています。この操作は取り消し不能であり、$2 アカウントとアセットのコントロールを「$1」に許可することになります。続行する前に、必ず「$1」が信頼できることを確認してください。",
+    "description": "The first parameter is the name of the snap and the second one is the protocol"
+  },
   "snapRequestsPermission": {
     "message": "このスナップが次のパーミッションをリクエストしています:"
+  },
+  "snapUpdate": {
+    "message": "スナップを更新"
+  },
+  "snapUpdateExplanation": {
+    "message": "$1 に新しいバージョンのスナップが必要です。",
+    "description": "$1 is the dapp that is requesting an update to the snap."
   },
   "snaps": {
     "message": "スナップ"
@@ -3736,11 +3859,17 @@
   "tokenDetectionAlertMessage": {
     "message": "トークン検出は現在 $1 で利用可能です。$2"
   },
+  "tokenDetectionDescription": {
+    "message": "ConsenSys のトークン API は、さまざまなサードパーティトークンリストからトークンを集約し、リスト化します。有効にすると、トークンが自動的に検出され、Ethereum Mainnet、Binance、Polygon、Avalanche で検索可能になります。無効にすると、MetaMask のレガシートークンリストを使って引き続き Ethereum Mainnet でトークンを検索できます。"
+  },
   "tokenId": {
     "message": "トークン ID"
   },
   "tokenList": {
     "message": "トークンリスト:"
+  },
+  "tokenScamSecurityRisk": {
+    "message": "トークン関連の詐欺やセキュリティのリスク"
   },
   "tokenSymbol": {
     "message": "トークンシンボル"
@@ -3938,6 +4067,10 @@
   "unrecognizedChain": {
     "message": "このカスタムネットワークは認識されません。続行する前に$1をお勧めします",
     "description": "$1 is a clickable link with text defined by the 'unrecognizedChanLinkText' key. The link will open to instructions for users to validate custom network details."
+  },
+  "unrecognizedProtocol": {
+    "message": "$1 (不明なプロトコル)",
+    "description": "Shown when the protocol is unknown by the extension. $1 is the protocol code."
   },
   "unsendableAsset": {
     "message": "コレクティブル (ERC-721) トークンの送信は現在サポートされていません",

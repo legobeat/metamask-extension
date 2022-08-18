@@ -44,6 +44,60 @@
   "QRHardwareWalletSteps2Description": {
     "message": "에어갭 금고  및 엔그레이브(Ngrave), (출시 예정)"
   },
+  "SIWEAddressInvalid": {
+    "message": "로그인 요청 주소가 현재 로그인 계정의 주소와 일치하지 않습니다."
+  },
+  "SIWEDomainInvalid": {
+    "message": "($1) 로그인을 시도하는 웹사이트가 로그인 요청 도메인과 일치하지 않습니다. 주의하여 진행하세요.",
+    "description": "$1 represents the website domain"
+  },
+  "SIWEDomainWarningBody": {
+    "message": "($1) 웹사이트가 잘못된 도메인에 로그인하도록 요청하고 있습니다. 이는 피싱 공격일 수도 있습니다.",
+    "description": "$1 represents the website domain"
+  },
+  "SIWELabelChainID": {
+    "message": "체인 ID:"
+  },
+  "SIWELabelExpirationTime": {
+    "message": "만료일:"
+  },
+  "SIWELabelIssuedAt": {
+    "message": "발행처:"
+  },
+  "SIWELabelMessage": {
+    "message": "메시지:"
+  },
+  "SIWELabelNonce": {
+    "message": "논스:"
+  },
+  "SIWELabelNotBefore": {
+    "message": "다음 이후:"
+  },
+  "SIWELabelRequestID": {
+    "message": "요청 ID:"
+  },
+  "SIWELabelResources": {
+    "message": "리소스: $1",
+    "description": "$1 represents the number of resources"
+  },
+  "SIWELabelURI": {
+    "message": "URI:"
+  },
+  "SIWELabelVersion": {
+    "message": "버전:"
+  },
+  "SIWESiteRequestSubtitle": {
+    "message": "이 사이트가 다음에 로그인하도록 요청하고 있습니다:"
+  },
+  "SIWESiteRequestTitle": {
+    "message": "로그인 요청"
+  },
+  "SIWEWarningSubtitle": {
+    "message": "이해하셨으면 다음을 체크하세요:"
+  },
+  "SIWEWarningTitle": {
+    "message": "확실한가요?"
+  },
   "about": {
     "message": "정보"
   },
@@ -120,6 +174,9 @@
   },
   "addAlias": {
     "message": "별칭 추가"
+  },
+  "addBlockExplorer": {
+    "message": "블록 익스플로러 추가"
   },
   "addContact": {
     "message": "연락처 추가"
@@ -231,7 +288,7 @@
     "message": "경고"
   },
   "allOfYour": {
-    "message": "내 $1 모두",
+    "message": "내 모든 $1",
     "description": "$1 is the symbol or name of the token that the user is approving spending"
   },
   "allowExternalExtensionTo": {
@@ -271,11 +328,14 @@
     "message": "지출 한도 승인"
   },
   "approveAllTokensTitle": {
-    "message": "내 모든 $1에 액세스할 수 있는 권한을 부여할까요?",
+    "message": "내 모든 $1에 액세스할 수 있는 권한을 부여하시겠습니까?",
     "description": "$1 is the symbol of the token for which the user is granting approval"
   },
   "approveAndInstall": {
     "message": "승인 및 설치"
+  },
+  "approveAndUpdate": {
+    "message": "승인 및 업데이트"
   },
   "approveButtonText": {
     "message": "승인"
@@ -292,6 +352,10 @@
   },
   "approvedAsset": {
     "message": "승인된 자산"
+  },
+  "approvedOn": {
+    "message": "$1에 승인",
+    "description": "$1 is the approval date for a permission"
   },
   "areYouSure": {
     "message": "확실한가요?"
@@ -335,6 +399,9 @@
   "backToAll": {
     "message": "전체 목록으로 돌아가기"
   },
+  "backup": {
+    "message": "백업"
+  },
   "backupApprovalInfo": {
     "message": "이 비밀 코드는 장치를 분실하여 지갑을 복구해야 하거나, 비밀번호를 잊은 경우, MetaMask를 다시 설치해야 하거나, 다른 장치에서 지갑에 액세스해야 할 때 필요합니다."
   },
@@ -343,6 +410,12 @@
   },
   "backupNow": {
     "message": "지금 백업"
+  },
+  "backupUserData": {
+    "message": "데이터를 백업하세요"
+  },
+  "backupUserDataDescription": {
+    "message": "기본 설정과 계정 주소가 포함된 사용자 설정을 JSON 파일로 백업할 수 있습니다."
   },
   "balance": {
     "message": "잔액"
@@ -522,6 +595,9 @@
   },
   "confirm": {
     "message": "확인"
+  },
+  "confirmPageDialogSetApprovalForAll": {
+    "message": "승인을 클릭하면 이 계약에서 현재 소유하고 있는 모든 NFT와 앞으로 취득할 수 있는 NFT에 액세스할 수 있는 권한은 이 승인을 취소할 때까지 부여하는 것입니다. 회원님이 승인하는 당사자는 회원님께 별도로 통지하지 않고도 지갑에서 NFT를 전송할 수 있습니다. 주의하여 진행하세요."
   },
   "confirmPassword": {
     "message": "비밀번호 확인"
@@ -763,6 +839,9 @@
   },
   "customTokenWarningInTokenDetectionNetwork": {
     "message": "토큰을 직접 가져오기 전에 해당 토큰을 신뢰할 수 있는지 반드시 확인하세요. $1에 대해 알아보세요."
+  },
+  "customTokenWarningInTokenDetectionNetworkWithTDOFF": {
+    "message": "불러오기 전에 토큰의 신뢰성을 확인하세요. $1 상황을 피하는 방법을 알아보세요. 또한 $2 토큰 감지 기능을 활성화할 수 있습니다."
   },
   "customerSupport": {
     "message": "고객 지원"
@@ -1290,7 +1369,7 @@
     "message": "기능: 승인"
   },
   "functionSetApprovalForAll": {
-    "message": "기능: 모두승인설정"
+    "message": "함수: SetApprovalForAll"
   },
   "functionType": {
     "message": "기능 유형"
@@ -1526,6 +1605,12 @@
   "importNFTs": {
     "message": "NFT 가져오기"
   },
+  "importSelectedTokens": {
+    "message": "선택한 토큰을 불러올까요?"
+  },
+  "importSelectedTokensDescription": {
+    "message": "선택한 토큰만 지갑에 표시됩니다. 숨긴 토큰은 토큰 검색을 통해 나중에 언제든지 불러올 수 있습니다."
+  },
   "importTokenQuestion": {
     "message": "토큰을 가져올까요?"
   },
@@ -1551,6 +1636,9 @@
   "imported": {
     "message": "가져옴",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "inYourSettings": {
+    "message": "설정에서"
   },
   "infuraBlockedNotification": {
     "message": "MetaMask이 블록체인 호스트에 연결할 수 없습니다. $1 오류 가능성을 검토하세요.",
@@ -1633,7 +1721,7 @@
     "message": "잘못된 비밀 복구 구문"
   },
   "invalidSeedPhraseCaseSensitive": {
-    "message": "입력 오류! 비밀 복구 구문은 대소문자를 구분해야 합니다."
+    "message": "입력 오류: 비밀 복구 구문은 대소문자를 구분해야 합니다."
   },
   "ipfsGateway": {
     "message": "IPFS 게이트웨이"
@@ -1911,17 +1999,17 @@
     "description": "Serves as link text for the 'mismatchedChain' key. This text will be embedded inside the translation for that key."
   },
   "mismatchedChainRecommendation": {
-    "message": "계속 진행하기 전에 $1 확인을 권합니다.",
+    "message": "계속 진행하기 전에 $1(을)를 확인하시기 바랍니다.",
     "description": "$1 is a clickable link with text defined by the 'mismatchedChainLinkText' key. The link will open to instructions for users to validate custom network details."
   },
   "mismatchedNetworkName": {
-    "message": "기록에 따르면 네트워크 이름이 이 체인 ID와 일치하지 않는 것 같습니다."
+    "message": "기록에 따르면 네트워크 이름이 이 체인 ID와 일치하지 않습니다."
   },
   "mismatchedNetworkSymbol": {
-    "message": "제출하신 환율 기호가 이 체인 ID의 환율과 일치하지 않습니다."
+    "message": "제출한 화폐 기호가 이 체인 ID의 화폐 기호와 일치하지 않습니다."
   },
   "mismatchedRpcUrl": {
-    "message": "기록에 따르면 제출하신 RPC URL 값이 이 체인 ID에 대해 알려진 공급업체와 일치하지 않습니다."
+    "message": "기록에 따르면 제출한 RPC URL 값이 이 체인 ID의 알려진 공급업체와 일치하지 않습니다."
   },
   "missingNFT": {
     "message": "NFT가 보이지 않나요?"
@@ -2463,6 +2551,12 @@
   "permissionRequestCapitalized": {
     "message": "권한 요청"
   },
+  "permissionRequested": {
+    "message": "지금 요청됨"
+  },
+  "permissionRevoked": {
+    "message": "이 업데이트에서 취소됨"
+  },
   "permission_accessNetwork": {
     "message": "인터넷에 액세스합니다.",
     "description": "The description of the `endowment:network-access` permission."
@@ -2695,6 +2789,18 @@
   "restore": {
     "message": "복구"
   },
+  "restoreFailed": {
+    "message": "제공된 파일에서 데이터를 복원할 수 없습니다."
+  },
+  "restoreSuccessful": {
+    "message": "데이터가 성공적으로 복원되었습니다."
+  },
+  "restoreUserData": {
+    "message": "사용자 데이터 복원"
+  },
+  "restoreUserDataDescription": {
+    "message": "이전에 백업한 JSON 파일에서 기본 설정과 계정 주소가 포함된 사용자 설정을 복원할 수 있습니다."
+  },
   "restoreWalletPreferences": {
     "message": "$1의 데이터 백업이 발견되었습니다. 지갑 환경설정을 복원할까요?",
     "description": "$1 is the date at which the data was backed up"
@@ -2721,11 +2827,11 @@
     "message": "시드 구문 보기"
   },
   "revokeAllTokensTitle": {
-    "message": "내 모든 $1에 액세스할 수 있는 권한을 취소할까요?",
+    "message": "내 모든 $1에 액세스할 수 있는 권한을 철회합니까?",
     "description": "$1 is the symbol of the token for which the user is revoking approval"
   },
   "revokeApproveForAllDescription": {
-    "message": "권한을 취소하면 다음 $1의 $2 권한은 더 이상 유효하지 않습니다",
+    "message": "권한을 철회하면 다음 $1(이)가 더 이상 $2에 액세스할 수 없습니다.",
     "description": "$1 is either key 'account' or 'contract', and $2 is either a string or link of a given token symbol or name"
   },
   "rinkeby": {
@@ -2905,7 +3011,7 @@
     "description": "$1 represents the native currency symbol for the current network (e.g. ETH or BNB)"
   },
   "sendingToTokenContractWarning": {
-    "message": "경고: 토큰 주소를 전송하면 토큰이 손실될 수 있습니다. $1",
+    "message": "경고: 자금 손실이 발생할 수 있는 토큰 계약으로 전송하게 됩니다. $1",
     "description": "$1 is a clickable link with text defined by the 'learnMoreUpperCase' key. The link will open to a support article regarding the known contract address warning"
   },
   "setAdvancedPrivacySettings": {
@@ -3000,6 +3106,9 @@
   "signed": {
     "message": "서명완료"
   },
+  "signin": {
+    "message": "로그인"
+  },
   "simulationErrorMessageV2": {
     "message": "가스 요금을 추정할 수 없었습니다. 계약에 오류가 있을 수 있으며 이 거래가 실패할 수 있습니다."
   },
@@ -3036,8 +3145,22 @@
   "snapInstallWarningCheck": {
     "message": "이해하셨으면 모두 체크해 주세요."
   },
+  "snapInstallWarningCheckPlural": {
+    "message": "이해하셨으면 모든 란에 체크하세요."
+  },
+  "snapInstallWarningKeyAccess": {
+    "message": "'$1' 스냅 이용에 필요한 $2 키 액세스 권한을 부여하고 있습니다. 이 작업은 사용자의 $2 계정과 자산에 '$1' 제어 권한을 부여하며 취소가 불가능합니다. '$1의 신뢰성을 확인한 후에 진행하세요.",
+    "description": "The first parameter is the name of the snap and the second one is the protocol"
+  },
   "snapRequestsPermission": {
     "message": "이 스냅이 다음 권한을 요청하고 있습니다."
+  },
+  "snapUpdate": {
+    "message": "스냅 업데이트"
+  },
+  "snapUpdateExplanation": {
+    "message": "$1에는 스냅의 새 버전이 필요합니다",
+    "description": "$1 is the dapp that is requesting an update to the snap."
   },
   "snaps": {
     "message": "스냅"
@@ -3736,11 +3859,17 @@
   "tokenDetectionAlertMessage": {
     "message": "토큰 감지 기능은 현재 $1. $2에서 사용할 수 있습니다."
   },
+  "tokenDetectionDescription": {
+    "message": "ConsenSys의 토큰 API는 다양한 타사의 토큰 목록을 활용하여 토큰 목록을 집계합니다. 이 기능이 켜져 있으면 Ethereum 메인넷, Binance, Polygon 및 Avalanche에서 토큰이 자동으로 감지되며 검색도 가능합니다. 이 기능을 끄더라도 MetaMask의 레거시 토큰 목록을 사용하여 Ethereum 메인넷에서 토큰을 계속해서 검색할 수 있습니다."
+  },
   "tokenId": {
     "message": "토큰 ID"
   },
   "tokenList": {
     "message": "토큰 목록:"
+  },
+  "tokenScamSecurityRisk": {
+    "message": "토큰 사기 및 보안 위험"
   },
   "tokenSymbol": {
     "message": "토큰 기호"
@@ -3918,7 +4047,7 @@
     "message": "죄송합니다! 문제가 생겼습니다...."
   },
   "unknownCollection": {
-    "message": "제목 미지정 콜렉션"
+    "message": "제목 미지정 컬렉션"
   },
   "unknownNetwork": {
     "message": "알 수 없는 비공개 네트워크"
@@ -3938,6 +4067,10 @@
   "unrecognizedChain": {
     "message": "이 맞춤형 네트워크는 인식되지 않습니다. 진행하기 전에 $1을(를) 권장합니다.",
     "description": "$1 is a clickable link with text defined by the 'unrecognizedChanLinkText' key. The link will open to instructions for users to validate custom network details."
+  },
+  "unrecognizedProtocol": {
+    "message": "$1 (인식할 수 없는 프로트콜)",
+    "description": "Shown when the protocol is unknown by the extension. $1 is the protocol code."
   },
   "unsendableAsset": {
     "message": "수집 가능한(ERC-721) 토큰 전송은 현재 지원되지 않습니다.",
@@ -4116,7 +4249,7 @@
     "message": "예, 시도하겠습니다."
   },
   "youHaveAddedAll": {
-    "message": "모든 인기 네트워크를 추가했습니다. $1에서 더 많은 네트워크를 확인하거나 $2 할 수 있습니다.",
+    "message": "모든 인기 네트워크를 추가했습니다. $1에서 더 많은 네트워크를 확인하거나 $2을(를) 할 수 있습니다.",
     "description": "$1 is a link with the text 'here' and $2 is a button with the text 'add more networks manually'"
   },
   "youNeedToAllowCameraAccess": {

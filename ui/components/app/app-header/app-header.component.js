@@ -12,7 +12,7 @@ import NetworkDisplay from '../network-display';
 
 ///: BEGIN:ONLY_INCLUDE_IN(beta)
 import BetaHeader from '../beta-header';
-///: END:ONLY_INCLUDE_IN(beta)
+///: END:ONLY_INCLUDE_IN
 
 export default class AppHeader extends PureComponent {
   static propTypes = {
@@ -125,7 +125,7 @@ export default class AppHeader extends PureComponent {
       onClick,
       ///: BEGIN:ONLY_INCLUDE_IN(beta)
       showBetaHeader,
-      ///: END:ONLY_INCLUDE_IN(beta)
+      ///: END:ONLY_INCLUDE_IN
       ///: BEGIN:ONLY_INCLUDE_IN(flask)
       desktopEnabled,
       ///: END:ONLY_INCLUDE_IN
@@ -136,7 +136,7 @@ export default class AppHeader extends PureComponent {
         {
           ///: BEGIN:ONLY_INCLUDE_IN(beta)
           showBetaHeader ? <BetaHeader /> : null
-          ///: END:ONLY_INCLUDE_IN(beta)
+          ///: END:ONLY_INCLUDE_IN
         }
 
         <div className="app-header">

@@ -560,7 +560,7 @@ function createFactoredBuild({
     const reloadOnChange = isDevBuild(buildTarget);
     const minify = !isDevBuild(buildTarget);
 
-    const envVars = await getEnvironmentVariables({
+    const envVars = getEnvironmentVariables({
       buildTarget,
       buildType,
       version,
@@ -791,7 +791,7 @@ function createNormalBundle({
     const minify = Boolean(devMode) === false;
 
     const envVars = {
-      ...(await getEnvironmentVariables({
+      ...(getEnvironmentVariables({
         buildTarget,
         buildType,
         version,
@@ -1091,16 +1091,16 @@ async function createBundle(buildConfiguration, { reloadOnChange }) {
  * @param {string} options.version - The current version of the extension.
  * @returns {object} A map of environment variables to inject.
  */
-async function getEnvironmentVariables({ buildTarget, buildType, version }) {
+function getEnvironmentVariables({ buildTarget, buildType, version }) {
   const environment = getEnvironment({ buildTarget });
   const config =
     environment === ENVIRONMENT.PRODUCTION
-      ? await getProductionConfig(buildType)
-      : await getConfig();
+      ? getProductionConfig(buildType)
+      : getConfig();
 
   const devMode = isDevBuild(buildTarget);
   const testing = isTestBuild(buildTarget);
-  const iconNames = await generateIconNames();
+  const iconNames = generateIconNames();
   return {
     ICON_NAMES: iconNames,
     MULTICHAIN: config.MULTICHAIN === '1',

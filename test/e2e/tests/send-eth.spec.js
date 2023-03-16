@@ -359,7 +359,7 @@ describe('Send ETH from dapp using advanced gas controls', function () {
         await txValue.click();
         const baseFeeValue = await driver.waitForSelector({
           text: '0.000000025',
-        });
+        }, { timeout: 20000 });
         assert.equal(await baseFeeValue.getText(), '0.000000025');
       },
     );

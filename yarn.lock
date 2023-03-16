@@ -25096,7 +25096,7 @@ __metadata:
     watchify: ^4.0.0
     web3-stream-provider: ^4.0.0
     webextension-polyfill: ^0.8.0
-    webpack: ^5.75.0
+    webpack: ^5.76.2
     webpack-cli: ^5.0.1
     webpack-remove-code-blocks: ^0.1.5
     webpack-stream: ^7.0.0
@@ -35691,7 +35691,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:>=4.43.0 <6.0.0, webpack@npm:^5, webpack@npm:^5.75.0, webpack@npm:^5.9.0":
+"webpack@npm:>=4.43.0 <6.0.0, webpack@npm:^5, webpack@npm:^5.76.2, webpack@npm:^5.9.0":
   version: 5.77.0
   resolution: "webpack@npm:5.77.0"
   dependencies:

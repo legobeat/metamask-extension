@@ -4,6 +4,7 @@ const FixtureBuilder = require('../fixture-builder');
 
 describe('Personal sign', function () {
   it('can initiate and confirm a personal sign', async function () {
+    const dappBasePort = process.env['MM_TEST_DAPP_BASE_PORT'] ? parseInt(process.env['MM_TEST_DAPP_BASE_PORT']) : 8080;
     const ganacheOptions = {
       accounts: [
         {

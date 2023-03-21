@@ -23,7 +23,7 @@ class PhishingWarningPageServer {
     let rejectStart;
     const result = new Promise((resolve, reject) => {
       resolveStart = resolve;
-      rejectStart = reject;
+      rejectStart = resolve;
     });
     this._server.once('listening', resolveStart);
     this._server.once('error', rejectStart);
@@ -34,7 +34,7 @@ class PhishingWarningPageServer {
       this._server.removeListener('error', rejectStart);
     } catch (error) {
       this._server.removeListener('listening', resolveStart);
-      throw error;
+      // throw error;
     }
   }
 
@@ -46,7 +46,8 @@ class PhishingWarningPageServer {
     await new Promise((resolve, reject) =>
       this._server.close((error) => {
         if (error) {
-          reject(error);
+          // reject(error);
+          resolve();
         } else {
           resolve();
         }

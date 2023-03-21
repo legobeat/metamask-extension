@@ -9,6 +9,7 @@ const HOTLIST_URL =
   'https://static.metafi.codefi.network/api/v1/lists/hotlist.json';
 const STALELIST_URL =
   'https://static.metafi.codefi.network/api/v1/lists/stalelist.json';
+const RPC_URL = `http://localhost:${process.env['MM_TEST_RPC_PORT']||8545}`;
 
 const emptyHotlist = [];
 const emptyStalelist = {
@@ -26,7 +27,7 @@ async function setupMocking(server, testSpecificMock) {
       const { host } = req.headers;
       if (blacklistedHosts.includes(host)) {
         return {
-          url: 'http://localhost:8545',
+          url: RPC_URL,
         };
       }
       return {};

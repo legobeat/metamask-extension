@@ -8,6 +8,7 @@ describe('Custom network', function () {
   const networkNAME = 'Arbitrum One';
   const currencySYMBOL = 'ETH';
   const blockExplorerURL = 'https://explorer.arbitrum.io';
+  const dappBasePort = process.env['MM_TEST_DAPP_BASE_PORT'] ? parseInt(process.env['MM_TEST_DAPP_BASE_PORT']) : 8080;
   const ganacheOptions = {
     accounts: [
       {
@@ -22,6 +23,7 @@ describe('Custom network', function () {
     await withFixtures(
       {
         dapp: true,
+        dappBasePort,
         fixtures: new FixtureBuilder()
           .withPermissionControllerConnectedToTestDapp()
           .build(),
@@ -44,7 +46,7 @@ describe('Custom network', function () {
               decimals: 18
             },
             rpcUrls: ["https://customnetwork.com/api/customRPC"],
-            blockExplorerUrls: [ "http://localhost:8080/api/customRPC" ]
+            blockExplorerUrls: [ "http://localhost:${dappBasePort}/api/customRPC" ]
           }]
           window.ethereum.request({
             method: 'wallet_addEthereumChain',
@@ -122,7 +124,7 @@ describe('Custom network', function () {
               decimals: 18
             },
             rpcUrls: ["https://customnetwork.com/api/customRPC"],
-            blockExplorerUrls: [ "http://localhost:8080/api/customRPC" ]
+            blockExplorerUrls: [ "http://localhost:${dappBasePort}/api/customRPC" ]
           }]
           window.ethereum.request({
             method: 'wallet_addEthereumChain',
@@ -187,7 +189,7 @@ describe('Custom network', function () {
               decimals: 18
             },
             rpcUrls: ["https://doesntexist.abc/customRPC"],
-            blockExplorerUrls: [ "http://localhost:8080/api/customRPC" ]
+            blockExplorerUrls: [ "http://localhost:${dappBasePort}/api/customRPC" ]
           }]
           window.ethereum.request({
             method: 'wallet_addEthereumChain',

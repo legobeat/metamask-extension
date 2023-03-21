@@ -4,8 +4,8 @@ const { isObject, mapValues } = require('lodash');
 const CURRENT_STATE_KEY = '__CURRENT__';
 const DEFAULT_STATE_KEY = '__DEFAULT__';
 
-const FIXTURE_SERVER_HOST = 'localhost';
-const FIXTURE_SERVER_PORT = 12345;
+const FIXTURE_SERVER_HOST = process.env['MM_FIXTURE_SERVER_HOST'] || 'localhost';
+const FIXTURE_SERVER_PORT = process.env['MM_FIXTURE_SERVER_PORT'] || 12345;
 
 const fixtureSubstitutionPrefix = '__FIXTURE_SUBSTITUTION__';
 const CONTRACT_KEY = 'CONTRACT';

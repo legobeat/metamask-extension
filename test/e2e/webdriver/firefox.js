@@ -5,6 +5,8 @@ const { Builder, By, until } = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
 const proxy = require('selenium-webdriver/proxy');
 
+const proxyPort = process.env.MM_TEST_PORT || 8000;
+
 /**
  * The prefix for temporary Firefox profiles. All Firefox profiles used for e2e tests
  * will be created as random directories inside this.
@@ -18,7 +20,7 @@ const TEMP_PROFILE_PATH_PREFIX = path.join(os.tmpdir(), 'MetaMask-Fx-Profile');
  *
  * @type {string}
  */
-const HTTPS_PROXY_HOST = '127.0.0.1:8000';
+const HTTPS_PROXY_HOST = process.env.https_proxy || process.env.HTTPS_PROXY || process.env.http_proxy || process.env.HTTPS_PROXY || `127.0.0.1:${proxyPort}`;
 
 /**
  * A wrapper around a {@code WebDriver} instance exposing Firefox-specific functionality

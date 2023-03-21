@@ -16,7 +16,6 @@ const tinyDelayMs = 200;
 const regularDelayMs = tinyDelayMs * 2;
 const largeDelayMs = regularDelayMs * 2;
 const veryLargeDelayMs = largeDelayMs * 2;
-const dappBasePort = 8080;
 
 const createDownloadFolder = async (downloadsFolder) => {
   await fs.rm(downloadsFolder, { recursive: true, force: true });
@@ -32,6 +31,7 @@ async function withFixtures(options, testSuite) {
     ganacheOptions,
     smartContract,
     driverOptions,
+    dappBasePort = process.env['MM_TEST_DAPP_BASE_PORT'] ? parseInt(process.env['MM_TEST_DAPP_BASE_PORT']) : 8080,
     dappOptions,
     title,
     failOnConsoleError = true,
@@ -105,7 +105,7 @@ async function withFixtures(options, testSuite) {
       }
     }
     const mockedEndpoint = await setupMocking(mockServer, testSpecificMock);
-    await mockServer.start(8000);
+    await mockServer.start(process.env['MM_TEST_PORT'] || 8000);
 
     driver = (await buildWebDriver(driverOptions)).driver;
     webDriver = driver.driver;

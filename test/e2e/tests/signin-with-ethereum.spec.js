@@ -8,6 +8,7 @@ const {
 const FixtureBuilder = require('../fixture-builder');
 
 describe('Sign in with ethereum', function () {
+  const dappBasePort = process.env['MM_TEST_DAPP_BASE_PORT'] ? parseInt(process.env['MM_TEST_DAPP_BASE_PORT']) : 8080;
   const ganacheOptions = {
     accounts: [
       {
@@ -74,7 +75,7 @@ describe('Sign in with ethereum', function () {
           '.signature-request-siwe-message__sub-text',
         );
         assert.equal(await message.getText(), expectedSigninMessage);
-        assert.equal(await url.getText(), 'https://127.0.0.1:8080');
+        assert.equal(await url.getText(), `https://127.0.0.1:${dappBasePort}`);
         assert.equal(await version.getText(), '1');
         assert.equal(await chainId.getText(), '1');
 

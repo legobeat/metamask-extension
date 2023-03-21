@@ -4,6 +4,7 @@ const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
 const FixtureBuilder = require('../fixture-builder');
 
 describe('MetaMask', function () {
+  const dappBasePort = process.env['MM_TEST_DAPP_BASE_PORT'] ? parseInt(process.env['MM_TEST_DAPP_BASE_PORT']) : 8080;
   const ganacheOptions = {
     accounts: [
       {

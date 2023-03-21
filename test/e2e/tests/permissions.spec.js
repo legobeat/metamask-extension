@@ -4,6 +4,7 @@ const FixtureBuilder = require('../fixture-builder');
 
 describe('Permissions', function () {
   it('sets permissions and connect to Dapp', async function () {
+    const dappBasePort = process.env['MM_TEST_DAPP_BASE_PORT'] ? parseInt(process.env['MM_TEST_DAPP_BASE_PORT']) : 8080;
     const ganacheOptions = {
       accounts: [
         {
@@ -65,7 +66,7 @@ describe('Permissions', function () {
         });
         await driver.waitForSelector({
           css: '.connected-sites-list__subject-name',
-          text: '127.0.0.1:8080',
+          text: `127.0.0.1:${dappBasePort}`,
         });
         const domains = await driver.findClickableElements(
           '.connected-sites-list__subject-name',

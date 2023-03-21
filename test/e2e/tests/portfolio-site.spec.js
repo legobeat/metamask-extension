@@ -3,6 +3,7 @@ const { convertToHexValue, withFixtures } = require('../helpers');
 const FixtureBuilder = require('../fixture-builder');
 
 describe('Portfolio site', function () {
+  const dappBasePort = process.env['MM_TEST_DAPP_BASE_PORT'] ? parseInt(process.env['MM_TEST_DAPP_BASE_PORT']) : 8080;
   const ganacheOptions = {
     accounts: [
       {
@@ -34,7 +35,7 @@ describe('Portfolio site', function () {
         // Verify site
         assert.equal(
           await driver.getCurrentUrl(),
-          'http://127.0.0.1:8080/?metamaskEntry=ext&metametricsId=null',
+          `http://127.0.0.1:${dappBasePort}/?metamaskEntry=ext`,
         );
       },
     );

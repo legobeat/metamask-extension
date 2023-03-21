@@ -5,7 +5,8 @@ const defaultOptions = {
   network_id: 1337,
   mnemonic:
     'phrase upgrade clock rough situate wedding elder clever doctor stamp excess tent',
-  port: 8545,
+
+  port: process.env['MM_TEST_RPC_PORT'] || 8545,
   vmErrorsOnRPCResponse: false,
   hardfork: 'muirGlacier',
   quiet: true,

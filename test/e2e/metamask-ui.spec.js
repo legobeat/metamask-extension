@@ -14,7 +14,7 @@ const { buildWebDriver } = require('./webdriver');
 const Ganache = require('./ganache');
 
 const ganacheServer = new Ganache();
-const dappPort = 8080;
+const dappBasePort = process.env['MM_TEST_DAPP_BASE_PORT'] ? parseInt(process.env['MM_TEST_DAPP_BASE_PORT']) : 8080;
 
 describe('MetaMask', function () {
   let driver;
@@ -40,7 +40,7 @@ describe('MetaMask', function () {
       'dist',
     );
     dappServer = createStaticServer(dappDirectory);
-    dappServer.listen(dappPort);
+    dappServer.listen(dappBasePort);
     await new Promise((resolve, reject) => {
       dappServer.on('listening', resolve);
       dappServer.on('error', reject);

@@ -12,7 +12,10 @@ import {
   getSubjectMetadata,
 } from '../../../selectors';
 import { getAccountByAddress } from '../../../helpers/utils/util';
-import { formatMessageParams } from '../../../../shared/modules/siwe';
+import {
+  formatMessageParams,
+  isValidSIWEOrigin,
+} from '../../../../shared/modules/siwe';
 import {
   SEVERITIES,
   TextVariant,
@@ -47,17 +50,7 @@ export default function SignatureRequestSIWE({
   const isMatchingAddress =
     from.toLowerCase() === parsedMessage.address.toLowerCase();
 
-  const checkSIWEDomain = () => {
-    let isSIWEDomainValid = false;
-
-    if (origin) {
-      const { host } = new URL(origin);
-      isSIWEDomainValid = parsedMessage.domain === host;
-    }
-    return isSIWEDomainValid;
-  };
-
-  const isSIWEDomainValid = checkSIWEDomain();
+  const isSIWEDomainValid = isValidSIWEOrigin(txData.msgParams);
 
   const [isShowingDomainWarning, setIsShowingDomainWarning] = useState(false);
   const [agreeToDomainWarning, setAgreeToDomainWarning] = useState(false);

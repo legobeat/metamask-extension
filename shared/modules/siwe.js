@@ -16,9 +16,33 @@ const msgHexToText = (hex) => {
 /**
  * A locally defined object used to provide data to identify a Sign-In With Ethereum (SIWE)(EIP-4361) message and provide the parsed message
  *
+ * @typedef {object} wrappedSIWEMessage
+ * @property {string} from - Subject account address
+ * @property {string} origin - The RFC 3986 originating authority of the signing request, including scheme
+ * @property {ParsedMessage} siwe - The data parsed from the message
+ */
+/**
+ *
+ * @param {wrappedSIWEMessage} req - Signature request
+ * @returns {boolean}
+ */
+export const isValidSIWEOrigin = (req) => {
+  const { origin, siwe } = req;
+  let isSIWEDomainValid = false;
+  if (origin) {
+    const { host } = new URL(origin);
+    // TODO: fix domain validation
+    isSIWEDomainValid = siwe.domain === host;
+  }
+  return isSIWEDomainValid;
+};
+
+/**
+ * A locally defined object used to provide data to identify a Sign-In With Ethereum (SIWE)(EIP-4361) message and provide the parsed message
+ *
  * @typedef localSIWEObject
- * @param {boolean} isSIWEMessage - Does the intercepted message conform to the SIWE specification?
- * @param {ParsedMessage} parsedMessage - The data parsed out of the message
+ * @property {boolean} isSIWEMessage - Does the intercepted message conform to the SIWE specification?
+ * @property {ParsedMessage} parsedMessage - The data parsed out of the message
  */
 
 /**

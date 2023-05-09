@@ -17893,8 +17893,8 @@ __metadata:
   linkType: hard
 
 "gridplus-sdk@npm:^2.5.1":
-  version: 2.5.1
-  resolution: "gridplus-sdk@npm:2.5.1"
+  version: 2.5.2
+  resolution: "gridplus-sdk@npm:2.5.2"
   dependencies:
     "@ethereumjs/common": 3.1.1
     "@ethereumjs/tx": 4.1.1
@@ -17915,7 +17915,7 @@ __metadata:
     rlp: ^3.0.0
     secp256k1: 4.0.2
     uuid: ^9.0.0
-  checksum: f5738cff0343c3af9ec51dbaa47b08f1b124880afa7e68de52375aa085c06c7d0cc1c016683d9aa681996c973aed24153c4902ea7f4b2040d6a95102e9e20ea7
+  checksum: edf700c5ffdf780667553c7c5066a543e1555e253b70dc71dcf33102f1c9a1e27dd57ad8a94370487d39c24d848ec5d313518111bb22ab3a101cb08a10c62682
   languageName: node
   linkType: hard
 

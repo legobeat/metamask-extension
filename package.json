@@ -487,7 +487,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-livereload": "4.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-rtlcss": "^1.4.0",
+    "gulp-rtlcss": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",

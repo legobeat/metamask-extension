@@ -3746,7 +3746,6 @@
     "gulp-rtlcss>rtlcss": {
       "builtin": {
         "fs.readFileSync": true,
-        "path.join": true,
         "path.normalize": true
       },
       "globals": {
@@ -3756,76 +3755,9 @@
         "process.env.USERPROFILE": true
       },
       "packages": {
-        "gulp-rtlcss>rtlcss>@choojs/findup": true,
-        "gulp-rtlcss>rtlcss>postcss": true,
-        "gulp-rtlcss>rtlcss>strip-json-comments": true
-      }
-    },
-    "gulp-rtlcss>rtlcss>@choojs/findup": {
-      "builtin": {
-        "events.EventEmitter": true,
-        "fs.access": true,
-        "fs.accessSync": true,
-        "fs.exists": true,
-        "fs.existsSync": true,
-        "path.join": true,
-        "util.inherits": true
-      },
-      "globals": {
-        "console.log": true
-      }
-    },
-    "gulp-rtlcss>rtlcss>chalk": {
-      "globals": {
-        "process.env.TERM": true,
-        "process.platform": true
-      },
-      "packages": {
-        "gulp-rtlcss>rtlcss>chalk>ansi-styles": true,
-        "gulp-rtlcss>rtlcss>chalk>escape-string-regexp": true,
-        "gulp-rtlcss>rtlcss>chalk>supports-color": true
-      }
-    },
-    "gulp-rtlcss>rtlcss>chalk>ansi-styles": {
-      "packages": {
-        "@metamask/jazzicon>color>color-convert": true
-      }
-    },
-    "gulp-rtlcss>rtlcss>chalk>supports-color": {
-      "builtin": {
-        "os.release": true
-      },
-      "globals": {
-        "process.env": true,
-        "process.platform": true,
-        "process.stderr": true,
-        "process.stdout": true,
-        "process.versions.node.split": true
-      },
-      "packages": {
-        "gulp-rtlcss>rtlcss>chalk>supports-color>has-flag": true
-      }
-    },
-    "gulp-rtlcss>rtlcss>chalk>supports-color>has-flag": {
-      "globals": {
-        "process.argv": true
-      }
-    },
-    "gulp-rtlcss>rtlcss>postcss": {
-      "builtin": {
-        "fs": true,
-        "path": true
-      },
-      "globals": {
-        "Buffer": true,
-        "atob": true,
-        "btoa": true,
-        "console": true
-      },
-      "packages": {
-        "gulp-rtlcss>rtlcss>chalk": true,
-        "gulp-rtlcss>rtlcss>chalk>supports-color": true,
-        "gulp-rtlcss>rtlcss>postcss>source-map": true
+        "gulp-autoprefixer>postcss": true,
+        "mocha>find-up": true,
+        "mocha>strip-json-comments": true
       }
     },
     "gulp-rtlcss>through2": {

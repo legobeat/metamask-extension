@@ -2126,6 +2126,34 @@
         "cross-spawn>shebang-command>shebang-regex": true
       }
     },
+    "css-loader>postcss": {
+      "builtin": {
+        "fs.existsSync": true,
+        "fs.readFileSync": true,
+        "path.dirname": true,
+        "path.isAbsolute": true,
+        "path.join": true,
+        "path.relative": true,
+        "path.resolve": true,
+        "path.sep": true,
+        "url.fileURLToPath": true,
+        "url.pathToFileURL": true
+      },
+      "globals": {
+        "Buffer": true,
+        "URL": true,
+        "atob": true,
+        "btoa": true,
+        "console": true,
+        "process.env.LANG": true,
+        "process.env.NODE_ENV": true
+      },
+      "packages": {
+        "css-loader>postcss>nanoid": true,
+        "css-loader>postcss>source-map-js": true,
+        "gulp-sass>picocolors": true
+      }
+    },
     "debounce-stream>duplexer": {
       "builtin": {
         "stream": true
@@ -3034,12 +3062,23 @@
         "eslint-plugin-prettier": true,
         "eslint-plugin-react": true,
         "eslint-plugin-react-hooks": true,
+        "eslint>@eslint/eslintrc>ajv": true,
         "eslint>@eslint/eslintrc>globals": true,
-        "eslint>ajv": true,
         "eslint>minimatch": true,
         "globby>ignore": true,
         "mocha>strip-json-comments": true,
         "nock>debug": true
+      }
+    },
+    "eslint>@eslint/eslintrc>ajv": {
+      "globals": {
+        "console": true
+      },
+      "packages": {
+        "@metamask/snaps-utils>fast-json-stable-stringify": true,
+        "eslint>ajv>json-schema-traverse": true,
+        "eslint>ajv>uri-js": true,
+        "eslint>fast-deep-equal": true
       }
     },
     "eslint>@humanwhocodes/config-array": {
@@ -3451,9 +3490,9 @@
         "setImmediate": true
       },
       "packages": {
+        "css-loader>postcss": true,
         "fancy-log": true,
         "gulp-autoprefixer>autoprefixer": true,
-        "gulp-autoprefixer>postcss": true,
         "gulp-zip>plugin-error": true,
         "through2": true,
         "vinyl-sourcemaps-apply": true
@@ -3466,8 +3505,8 @@
         "process.env.AUTOPREFIXER_GRID": true
       },
       "packages": {
+        "css-loader>postcss": true,
         "gulp-autoprefixer>autoprefixer>fraction.js": true,
-        "gulp-autoprefixer>postcss": true,
         "gulp-sass>picocolors": true,
         "stylelint>autoprefixer>normalize-range": true,
         "stylelint>postcss-value-parser": true,
@@ -3478,34 +3517,6 @@
     "gulp-autoprefixer>autoprefixer>fraction.js": {
       "globals": {
         "define": true
-      }
-    },
-    "gulp-autoprefixer>postcss": {
-      "builtin": {
-        "fs.existsSync": true,
-        "fs.readFileSync": true,
-        "path.dirname": true,
-        "path.isAbsolute": true,
-        "path.join": true,
-        "path.relative": true,
-        "path.resolve": true,
-        "path.sep": true,
-        "url.fileURLToPath": true,
-        "url.pathToFileURL": true
-      },
-      "globals": {
-        "Buffer": true,
-        "URL": true,
-        "atob": true,
-        "btoa": true,
-        "console": true,
-        "process.env.LANG": true,
-        "process.env.NODE_ENV": true
-      },
-      "packages": {
-        "addons-linter>postcss>source-map-js": true,
-        "gulp-autoprefixer>postcss>nanoid": true,
-        "gulp-sass>picocolors": true
       }
     },
     "gulp-livereload": {
@@ -3775,7 +3786,7 @@
         "process.env.USERPROFILE": true
       },
       "packages": {
-        "gulp-autoprefixer>postcss": true,
+        "css-loader>postcss": true,
         "mocha>find-up": true,
         "mocha>strip-json-comments": true
       }
@@ -6433,27 +6444,8 @@
     },
     "mocha>log-symbols": {
       "packages": {
-        "madge>ora>is-unicode-supported": true,
-        "mocha>log-symbols>chalk": true
-      }
-    },
-    "mocha>log-symbols>chalk": {
-      "packages": {
-        "chalk>ansi-styles": true,
-        "mocha>log-symbols>chalk>supports-color": true
-      }
-    },
-    "mocha>log-symbols>chalk>supports-color": {
-      "builtin": {
-        "os.release": true,
-        "tty.isatty": true
-      },
-      "globals": {
-        "process.env": true,
-        "process.platform": true
-      },
-      "packages": {
-        "sinon>supports-color>has-flag": true
+        "chalk": true,
+        "madge>ora>is-unicode-supported": true
       }
     },
     "mocha>minimatch>brace-expansion": {
@@ -7874,6 +7866,7 @@
         "process.stdout.isTTY": true
       },
       "packages": {
+        "chalk": true,
         "eslint>imurmurhash": true,
         "globby": true,
         "globby>ignore": true,
@@ -7886,7 +7879,6 @@
         "stylelint>@stylelint/postcss-markdown": true,
         "stylelint>autoprefixer": true,
         "stylelint>balanced-match": true,
-        "stylelint>chalk": true,
         "stylelint>cosmiconfig": true,
         "stylelint>execall": true,
         "stylelint>file-entry-cache": true,
@@ -8059,25 +8051,6 @@
       "packages": {
         "stylelint>autoprefixer>picocolors": true,
         "stylelint>autoprefixer>postcss>source-map": true
-      }
-    },
-    "stylelint>chalk": {
-      "packages": {
-        "chalk>ansi-styles": true,
-        "stylelint>chalk>supports-color": true
-      }
-    },
-    "stylelint>chalk>supports-color": {
-      "builtin": {
-        "os.release": true,
-        "tty.isatty": true
-      },
-      "globals": {
-        "process.env": true,
-        "process.platform": true
-      },
-      "packages": {
-        "sinon>supports-color>has-flag": true
       }
     },
     "stylelint>cosmiconfig": {
@@ -8543,10 +8516,15 @@
         "process.stdout.write": true
       },
       "packages": {
-        "eslint>ajv": true,
         "lodash": true,
+        "stylelint>table>ajv": true,
         "stylelint>table>slice-ansi": true,
         "stylelint>table>string-width": true
+      }
+    },
+    "stylelint>table>ajv": {
+      "packages": {
+        "eslint>fast-deep-equal": true
       }
     },
     "stylelint>table>slice-ansi": {

@@ -81,39 +81,39 @@ import Asset from '../asset';
 import ConfirmAddSuggestedTokenPage from '../confirm-add-suggested-token';
 import ConfirmImportTokenPage from '../confirm-import-token';
 import ConfirmTransaction from '../confirm-transaction';
+import ConfirmationPage from '../confirmation';
 import CreateAccountPage from '../create-account';
-import Home from '../home';
-import SendTransactionScreen from '../send';
-import Swaps from '../swaps';
-import Settings from '../settings';
-import Lock from '../lock';
-import PermissionsConnect from '../permissions-connect';
-import RestoreVaultPage from '../keychains/restore-vault';
-import RevealSeedConfirmation from '../keychains/reveal-seed';
-import ImportTokenPage from '../import-token';
-import TokenDetailsPage from '../token-details';
-import UnlockPage from '../unlock-page';
-import OnboardingAppHeader from '../onboarding-flow/onboarding-app-header/onboarding-app-header';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import Notifications from '../notifications';
 ///: END:ONLY_INCLUDE_IN
 ///: BEGIN:ONLY_INCLUDE_IN(desktop)
 import DesktopErrorPage from '../desktop-error';
 import DesktopPairingPage from '../desktop-pairing';
+import Home from '../home';
+import ImportTokenPage from '../import-token';
 ///: END:ONLY_INCLUDE_IN
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import ComplianceFeaturePage from '../institutional/compliance-feature-page';
-import InstitutionalEntityDonePage from '../institutional/institutional-entity-done-page';
-import ConfirmAddInstitutionalFeature from '../institutional/confirm-add-institutional-feature';
 import ConfirmAddCustodianToken from '../institutional/confirm-add-custodian-token';
+import ConfirmAddInstitutionalFeature from '../institutional/confirm-add-institutional-feature';
+import InstitutionalEntityDonePage from '../institutional/institutional-entity-done-page';
 import InteractiveReplacementTokenPage from '../institutional/interactive-replacement-token-page';
+import RestoreVaultPage from '../keychains/restore-vault';
+import RevealSeedConfirmation from '../keychains/reveal-seed';
+import Lock from '../lock';
+import Notifications from '../notifications';
+import OnboardingAppHeader from '../onboarding-flow/onboarding-app-header/onboarding-app-header';
 ///: END:ONLY_INCLUDE_IN
 
 ///: BEGIN:ONLY_INCLUDE_IN(desktop)
 ///: END:ONLY_INCLUDE_IN
 
-import ConfirmationPage from '../confirmation';
 import OnboardingFlow from '../onboarding-flow/onboarding-flow';
+import PermissionsConnect from '../permissions-connect';
+import SendTransactionScreen from '../send';
+import Settings from '../settings';
+import Swaps from '../swaps';
+import TokenDetailsPage from '../token-details';
+import UnlockPage from '../unlock-page';
 
 export default class Routes extends Component {
   static propTypes = {

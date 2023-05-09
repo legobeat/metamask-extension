@@ -131,6 +131,9 @@ module.exports = {
       rules: {
         // Turn these off, as it's recommended by typescript-eslint.
         // See: <https://typescript-eslint.io/docs/linting/troubleshooting#eslint-plugin-import>
+        'no-restricted-globals': 'off',
+        'id-denylist': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
         'import/named': 'off',
         'import/namespace': 'off',
         'import/default': 'off',

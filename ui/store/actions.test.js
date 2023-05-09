@@ -44,7 +44,9 @@ describe('Actions', () => {
 
   beforeEach(async () => {
     background = sinon.createStubInstance(MetaMaskController, {
-      getState: sinon.stub().callsFake((callback) => callback(null, baseMockState)),
+      getState: sinon
+        .stub()
+        .callsFake((callback) => callback(null, baseMockState)),
     });
 
     background.signMessage = sinon.stub();
@@ -60,8 +62,8 @@ describe('Actions', () => {
     it('calls submitPassword', async () => {
       const store = mockStore();
 
-      const submitPassword = background.submitPassword.callsFake((_, callback) =>
-        callback(),
+      const submitPassword = background.submitPassword.callsFake(
+        (_, callback) => callback(),
       );
 
       _setBackgroundConnection(background);
@@ -87,7 +89,9 @@ describe('Actions', () => {
     it('errors on submitPassword will fail', async () => {
       const store = mockStore();
 
-      background.submitPassword.callsFake((_, callback) => callback(new Error('error')));
+      background.submitPassword.callsFake((_, callback) =>
+        callback(new Error('error')),
+      );
 
       _setBackgroundConnection(background);
 
@@ -115,7 +119,9 @@ describe('Actions', () => {
       const store = mockStore();
 
       const createNewVaultAndRestore =
-        background.createNewVaultAndRestore.callsFake((_, __, callback) => callback());
+        background.createNewVaultAndRestore.callsFake((_, __, callback) =>
+          callback(),
+        );
 
       background.unMarkPasswordForgotten.callsFake((callback) => callback());
 
@@ -130,7 +136,9 @@ describe('Actions', () => {
     it('calls the expected actions', async () => {
       const store = mockStore();
 
-      background.createNewVaultAndRestore.callsFake((_, __, callback) => callback());
+      background.createNewVaultAndRestore.callsFake((_, __, callback) =>
+        callback(),
+      );
       background.unMarkPasswordForgotten.callsFake((callback) => callback());
 
       _setBackgroundConnection(background);
@@ -183,11 +191,11 @@ describe('Actions', () => {
     it('calls verifyPassword in background', async () => {
       const store = mockStore();
 
-      const verifyPassword = background.verifyPassword.callsFake((_, callback) =>
-        callback(),
+      const verifyPassword = background.verifyPassword.callsFake(
+        (_, callback) => callback(),
       );
-      const verifySeedPhrase = background.verifySeedPhrase.callsFake((callback) =>
-        callback(null, Array.from(Buffer.from('test').values())),
+      const verifySeedPhrase = background.verifySeedPhrase.callsFake(
+        (callback) => callback(null, Array.from(Buffer.from('test').values())),
       );
 
       _setBackgroundConnection(background);
@@ -248,7 +256,9 @@ describe('Actions', () => {
         }),
       );
 
-      const removeAccount = background.removeAccount.callsFake((_, callback) => callback());
+      const removeAccount = background.removeAccount.callsFake((_, callback) =>
+        callback(),
+      );
 
       _setBackgroundConnection(background);
 
@@ -303,7 +313,9 @@ describe('Actions', () => {
     it('resets account', async () => {
       const store = mockStore();
 
-      const resetAccount = background.resetAccount.callsFake((callback) => callback());
+      const resetAccount = background.resetAccount.callsFake((callback) =>
+        callback(),
+      );
 
       _setBackgroundConnection(background);
 
@@ -488,7 +500,9 @@ describe('Actions', () => {
     it('calls forgetDevice in background', async () => {
       const store = mockStore();
 
-      const forgetDevice = background.forgetDevice.callsFake((_, callback) => callback());
+      const forgetDevice = background.forgetDevice.callsFake((_, callback) =>
+        callback(),
+      );
 
       _setBackgroundConnection(background);
 
@@ -499,7 +513,9 @@ describe('Actions', () => {
     it('shows loading indicator and displays error', async () => {
       const store = mockStore();
 
-      background.forgetDevice.callsFake((_, callback) => callback(new Error('error')));
+      background.forgetDevice.callsFake((_, callback) =>
+        callback(new Error('error')),
+      );
 
       _setBackgroundConnection(background);
 
@@ -529,7 +545,9 @@ describe('Actions', () => {
         (_, __, ___, callback) => callback(),
       );
 
-      background.establishLedgerTransportPreference.callsFake((callback) => callback());
+      background.establishLedgerTransportPreference.callsFake((callback) =>
+        callback(),
+      );
 
       _setBackgroundConnection(background);
 
@@ -550,7 +568,9 @@ describe('Actions', () => {
         callback(new Error('error')),
       );
 
-      background.establishLedgerTransportPreference.callsFake((callback) => callback());
+      background.establishLedgerTransportPreference.callsFake((callback) =>
+        callback(),
+      );
 
       _setBackgroundConnection(background);
 
@@ -599,8 +619,8 @@ describe('Actions', () => {
     it('shows loading indicator and displays error', async () => {
       const store = mockStore();
 
-      background.unlockHardwareWalletAccount.callsFake((_, __, ___, ____, callback) =>
-        callback(new Error('error')),
+      background.unlockHardwareWalletAccount.callsFake(
+        (_, __, ___, ____, callback) => callback(new Error('error')),
       );
 
       _setBackgroundConnection(background);
@@ -626,7 +646,9 @@ describe('Actions', () => {
 
     it('calls setCurrentCurrency', async () => {
       const store = mockStore();
-      background.setCurrentCurrency = sinon.stub().callsFake((_, callback) => callback());
+      background.setCurrentCurrency = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
       _setBackgroundConnection(background);
 
       await store.dispatch(actions.setCurrentCurrency('jpy'));
@@ -678,7 +700,9 @@ describe('Actions', () => {
     it('errors when signMessage in background throws', async () => {
       const store = mockStore();
 
-      background.signMessage.callsFake((_, callback) => callback(new Error('error')));
+      background.signMessage.callsFake((_, callback) =>
+        callback(new Error('error')),
+      );
 
       _setBackgroundConnection(background);
 
@@ -790,8 +814,8 @@ describe('Actions', () => {
     it('calls signTypedMsg in background with no error', async () => {
       const store = mockStore();
 
-      const signTypedMsg = background.signTypedMessage.callsFake((_, callback) =>
-        callback(null, defaultState.metamask),
+      const signTypedMsg = background.signTypedMessage.callsFake(
+        (_, callback) => callback(null, defaultState.metamask),
       );
 
       _setBackgroundConnection(background);
@@ -803,7 +827,9 @@ describe('Actions', () => {
     it('returns expected actions with error', async () => {
       const store = mockStore();
 
-      background.signTypedMessage.callsFake((_, callback) => callback(new Error('error')));
+      background.signTypedMessage.callsFake((_, callback) =>
+        callback(new Error('error')),
+      );
 
       _setBackgroundConnection(background);
 
@@ -844,11 +870,15 @@ describe('Actions', () => {
     it('updates transaction', async () => {
       const store = mockStore();
 
-      const updateTransactionStub = sinon.stub().callsFake((_, callback) => callback());
+      const updateTransactionStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       background.getApi.returns({
         updateTransaction: updateTransactionStub,
-        getState: sinon.stub().callsFake((callback) => callback(null, baseMockState)),
+        getState: sinon
+          .stub()
+          .callsFake((callback) => callback(null, baseMockState)),
       });
 
       _setBackgroundConnection(background.getApi());
@@ -914,7 +944,9 @@ describe('Actions', () => {
     it('calls setLocked', async () => {
       const store = mockStore();
 
-      const backgroundSetLocked = background.setLocked.callsFake((callback) => callback());
+      const backgroundSetLocked = background.setLocked.callsFake((callback) =>
+        callback(),
+      );
 
       _setBackgroundConnection(background);
 
@@ -952,7 +984,9 @@ describe('Actions', () => {
     it('calls setSelectedAddress in background', async () => {
       const store = mockStore();
 
-      const setSelectedAddressSpy = sinon.stub().callsFake((_, callback) => callback());
+      const setSelectedAddressSpy = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       background.getApi.returns({
         setSelectedAddress: setSelectedAddressSpy,
@@ -1003,7 +1037,9 @@ describe('Actions', () => {
         metamask: { alertEnabledness: {}, selectedAddress: '0x123' },
       });
 
-      const setSelectedAddressSpy = sinon.stub().callsFake((_, callback) => callback());
+      const setSelectedAddressSpy = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       background.getApi.returns({
         setSelectedAddress: setSelectedAddressSpy,
@@ -1056,7 +1092,9 @@ describe('Actions', () => {
 
       background.getApi.returns({
         addToken: addTokenStub,
-        getState: sinon.stub().callsFake((callback) => callback(null, baseMockState)),
+        getState: sinon
+          .stub()
+          .callsFake((callback) => callback(null, baseMockState)),
       });
 
       _setBackgroundConnection(background.getApi());
@@ -1082,11 +1120,15 @@ describe('Actions', () => {
 
       const addTokenStub = sinon
         .stub()
-        .callsFake((_, __, ___, ____, callback) => callback(null, tokenDetails));
+        .callsFake((_, __, ___, ____, callback) =>
+          callback(null, tokenDetails),
+        );
 
       background.getApi.returns({
         addToken: addTokenStub,
-        getState: sinon.stub().callsFake((callback) => callback(null, baseMockState)),
+        getState: sinon
+          .stub()
+          .callsFake((callback) => callback(null, baseMockState)),
       });
 
       _setBackgroundConnection(background.getApi());
@@ -1120,11 +1162,15 @@ describe('Actions', () => {
     it('calls ignoreTokens in background', async () => {
       const store = mockStore();
 
-      const ignoreTokensStub = sinon.stub().callsFake((_, callback) => callback());
+      const ignoreTokensStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       background.getApi.returns({
         ignoreTokens: ignoreTokensStub,
-        getState: sinon.stub().callsFake((callback) => callback(null, baseMockState)),
+        getState: sinon
+          .stub()
+          .callsFake((callback) => callback(null, baseMockState)),
       });
 
       _setBackgroundConnection(background.getApi());
@@ -1139,8 +1185,12 @@ describe('Actions', () => {
       const store = mockStore();
 
       background.getApi.returns({
-        ignoreTokens: sinon.stub().callsFake((_, callback) => callback(new Error('error'))),
-        getState: sinon.stub().callsFake((callback) => callback(null, baseMockState)),
+        ignoreTokens: sinon
+          .stub()
+          .callsFake((_, callback) => callback(new Error('error'))),
+        getState: sinon
+          .stub()
+          .callsFake((callback) => callback(null, baseMockState)),
       });
 
       _setBackgroundConnection(background.getApi());
@@ -1171,7 +1221,9 @@ describe('Actions', () => {
     it('calls setProviderType', async () => {
       const store = mockStore();
 
-      const setProviderTypeStub = sinon.stub().callsFake((_, callback) => callback());
+      const setProviderTypeStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       background.getApi.returns({
         setProviderType: setProviderTypeStub,
@@ -1214,7 +1266,9 @@ describe('Actions', () => {
     it('calls setActiveNetwork in the background with the correct arguments', async () => {
       const store = mockStore();
 
-      const setCurrentNetworkStub = sinon.stub().callsFake((_, callback) => callback());
+      const setCurrentNetworkStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       background.getApi.returns({
         setActiveNetwork: setCurrentNetworkStub,
@@ -1426,7 +1480,9 @@ describe('Actions', () => {
     it('calls requestUserApproval in the background with the correct arguments', async () => {
       const store = mockStore();
 
-      const requestUserApprovalStub = sinon.stub().callsFake((_, callback) => callback());
+      const requestUserApprovalStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       background.getApi.returns({
         requestUserApproval: requestUserApprovalStub,
@@ -1557,7 +1613,9 @@ describe('Actions', () => {
 
       const testPrivKey = 'a-test-priv-key';
 
-      const verifyPasswordStub = sinon.stub().callsFake((_, callback) => callback());
+      const verifyPasswordStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       const exportAccountStub = sinon
         .stub()
@@ -1616,7 +1674,9 @@ describe('Actions', () => {
     it('returns action errors when second func callback errors', async () => {
       const store = mockStore();
 
-      const verifyPasswordStub = sinon.stub().callsFake((_, callback) => callback());
+      const verifyPasswordStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       const exportAccountStub = sinon
         .stub()
@@ -1654,7 +1714,9 @@ describe('Actions', () => {
     it('calls setAccountLabel', async () => {
       const store = mockStore();
 
-      const setAccountLabelStub = sinon.stub().callsFake((_, __, callback) => callback());
+      const setAccountLabelStub = sinon
+        .stub()
+        .callsFake((_, __, callback) => callback());
 
       background.getApi.returns({
         setAccountLabel: setAccountLabelStub,
@@ -1709,7 +1771,9 @@ describe('Actions', () => {
     it('calls setFeatureFlag in the background', async () => {
       const store = mockStore();
 
-      const setFeatureFlagStub = sinon.stub().callsFake((_, __, callback) => callback());
+      const setFeatureFlagStub = sinon
+        .stub()
+        .callsFake((_, __, callback) => callback());
 
       background.getApi.returns({
         setFeatureFlag: setFeatureFlagStub,
@@ -1753,7 +1817,9 @@ describe('Actions', () => {
 
     it('completes onboarding', async () => {
       const store = mockStore();
-      const completeOnboardingStub = sinon.stub().callsFake((callback) => callback());
+      const completeOnboardingStub = sinon
+        .stub()
+        .callsFake((callback) => callback());
 
       background.getApi.returns({
         completeOnboarding: completeOnboardingStub,
@@ -1797,7 +1863,9 @@ describe('Actions', () => {
 
     it('calls setUseBlockie in background', async () => {
       const store = mockStore();
-      const setUseBlockieStub = sinon.stub().callsFake((_, callback) => callback());
+      const setUseBlockieStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
       _setBackgroundConnection({ setUseBlockie: setUseBlockieStub });
 
       await store.dispatch(actions.setUseBlockie());
@@ -1830,7 +1898,9 @@ describe('Actions', () => {
 
     it('calls setUsePhishDetect in background', () => {
       const store = mockStore();
-      const setUsePhishDetectStub = sinon.stub().callsFake((_, callback) => callback());
+      const setUsePhishDetectStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
       _setBackgroundConnection({
         setUsePhishDetect: setUsePhishDetectStub,
       });
@@ -1914,7 +1984,9 @@ describe('Actions', () => {
 
     it('calls expected actions', async () => {
       const store = mockStore();
-      const setCurrentLocaleStub = sinon.stub().callsFake((_, callback) => callback());
+      const setCurrentLocaleStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
       _setBackgroundConnection({
         setCurrentLocale: setCurrentLocaleStub,
       });
@@ -2074,9 +2146,13 @@ describe('Actions', () => {
     it('creates COMPLETED_TX with the cancelled messages IDs', async () => {
       const store = mockStore();
 
-      const cancelTypedMessageStub = sinon.stub().callsFake((_, callback) => callback());
+      const cancelTypedMessageStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
-      const cancelPersonalMessageStub = sinon.stub().callsFake((_, callback) => callback());
+      const cancelPersonalMessageStub = sinon
+        .stub()
+        .callsFake((_, callback) => callback());
 
       background.getApi.returns({
         cancelTypedMessage: cancelTypedMessageStub,
@@ -2129,7 +2205,9 @@ describe('Actions', () => {
     describe('#setDesktopEnabled', () => {
       it('calls background setDesktopEnabled method', async () => {
         const store = mockStore();
-        const setDesktopEnabled = sinon.stub().callsFake((_, callback) => callback());
+        const setDesktopEnabled = sinon
+          .stub()
+          .callsFake((_, callback) => callback());
 
         background.getApi.returns({
           setDesktopEnabled,

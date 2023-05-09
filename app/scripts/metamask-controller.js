@@ -54,11 +54,11 @@ import EthQuery from 'eth-query';
 import { errorCodes as rpcErrorCodes, EthereumRpcError } from 'eth-rpc-errors';
 import EventEmitter from 'events';
 import { JsonRpcEngine } from 'json-rpc-engine';
-import pump from 'pump';
 import { createEngineStream } from 'json-rpc-middleware-stream';
 import { debounce } from 'lodash';
 import log from 'loglevel';
 import nanoid from 'nanoid';
+import pump from 'pump';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 ///: END:ONLY_INCLUDE_IN
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)

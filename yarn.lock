@@ -18569,12 +18569,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globalthis@npm:1.0.1, globalthis@npm:^1.0.0, globalthis@npm:^1.0.1":
+"globalthis@npm:1.0.1":
   version: 1.0.1
   resolution: "globalthis@npm:1.0.1"
   dependencies:
     define-properties: ^1.1.3
   checksum: d80d625355ebd1174144290766ce96a1465966370d35a05897e3fb96e031493b2c117fb92b55a94dba2f33031e498b5776d03437965ed4514815e6122c78d18c
+  languageName: node
+  linkType: hard
+
+"globalthis@npm:^1.0.0, globalthis@npm:^1.0.1, globalthis@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "globalthis@npm:1.0.3"
+  dependencies:
+    define-properties: ^1.1.3
+  checksum: fbd7d760dc464c886d0196166d92e5ffb4c84d0730846d6621a39fbbc068aeeb9c8d1421ad330e94b7bca4bb4ea092f5f21f3d36077812af5d098b4dc006c998
   languageName: node
   linkType: hard
 
@@ -24607,7 +24616,7 @@ __metadata:
     ganache: ^v7.0.4
     geckodriver: ^3.2.0
     gh-pages: ^3.2.3
-    globalthis: ^1.0.1
+    globalthis: ^1.0.3
     globby: ^11.0.4
     gulp: ^4.0.2
     gulp-autoprefixer: ^8.0.0

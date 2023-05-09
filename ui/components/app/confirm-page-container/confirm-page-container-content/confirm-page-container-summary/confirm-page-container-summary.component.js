@@ -1,22 +1,20 @@
 /* eslint-disable no-negated-condition */
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
+import { ORIGIN_METAMASK } from '../../../../../../shared/constants/app';
 import { TransactionType } from '../../../../../../shared/constants/transaction';
 import { toChecksumHexAddress } from '../../../../../../shared/modules/hexstring-utils';
-import { useI18nContext } from '../../../../../hooks/useI18nContext';
+import { getAssetImageURL } from '../../../../../helpers/utils/util';
 import useAddressDetails from '../../../../../hooks/useAddressDetails';
+import { useI18nContext } from '../../../../../hooks/useI18nContext';
 import { getIpfsGateway } from '../../../../../selectors';
-
 import Identicon from '../../../../ui/identicon';
 import InfoTooltip from '../../../../ui/info-tooltip';
-import NicknamePopovers from '../../../modals/nickname-popovers';
-import { ORIGIN_METAMASK } from '../../../../../../shared/constants/app';
 import SiteOrigin from '../../../../ui/site-origin';
-import { getAssetImageURL } from '../../../../../helpers/utils/util';
+import NicknamePopovers from '../../../modals/nickname-popovers';
 
 const ConfirmPageContainerSummary = (props) => {
   const {

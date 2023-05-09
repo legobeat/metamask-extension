@@ -1,11 +1,11 @@
-import browser from 'webextension-polyfill';
-
 import { getBlockExplorerLink } from '@metamask/etherscan-link';
 import { startCase, toLower } from 'lodash';
-import { getEnvironmentType } from '../lib/util';
+import browser from 'webextension-polyfill';
+
 import { ENVIRONMENT_TYPE_BACKGROUND } from '../../../shared/constants/app';
 import { TransactionStatus } from '../../../shared/constants/transaction';
 import { getURLHostName } from '../../../ui/helpers/utils/util';
+import { getEnvironmentType } from '../lib/util';
 
 export default class ExtensionPlatform {
   //

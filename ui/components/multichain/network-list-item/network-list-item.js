@@ -1,7 +1,12 @@
-import React, { useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Box from '../../ui/box/box';
+import React, { useEffect, useRef } from 'react';
+
+import {
+  GOERLI_DISPLAY_NAME,
+  LINEA_TESTNET_DISPLAY_NAME,
+  SEPOLIA_DISPLAY_NAME,
+} from '../../../../shared/constants/network';
 import {
   AlignItems,
   IconColor,
@@ -13,19 +18,15 @@ import {
   BLOCK_SIZES,
   BackgroundColor,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   AvatarNetwork,
   ButtonIcon,
   ButtonLink,
   IconName,
 } from '../../component-library';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import Box from '../../ui/box/box';
 import Tooltip from '../../ui/tooltip/tooltip';
-import {
-  GOERLI_DISPLAY_NAME,
-  LINEA_TESTNET_DISPLAY_NAME,
-  SEPOLIA_DISPLAY_NAME,
-} from '../../../../shared/constants/network';
 
 const MAXIMUM_CHARACTERS_WITHOUT_TOOLTIP = 17;
 

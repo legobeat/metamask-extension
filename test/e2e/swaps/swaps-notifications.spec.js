@@ -1,7 +1,6 @@
 const { strict: assert } = require('assert');
 
 const { withFixtures } = require('../helpers');
-
 const { withFixturesOptions, loadExtension, buildQuote } = require('./shared');
 
 describe('Swaps - notifications', function () {

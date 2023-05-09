@@ -1,10 +1,11 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
+import React from 'react';
 import configureStore from 'redux-mock-store';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
-import testData from '../../../../.storybook/test-data';
-import { hideModal } from '../../../store/actions';
+
 import CustodyConfirmLink from '.';
+import testData from '../../../../.storybook/test-data';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import { hideModal } from '../../../store/actions';
 
 const mockedSetWaitForConfirmDeepLinkDialog = jest
   .fn()

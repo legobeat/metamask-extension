@@ -1,13 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import { TransactionType } from '../../../../shared/constants/transaction';
 import { PRIMARY } from '../../../helpers/constants/common';
-import { Text } from '../../component-library';
 import {
   FONT_WEIGHT,
   TextVariant,
 } from '../../../helpers/constants/design-system';
+import { Text } from '../../component-library';
 import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
 
 const ConfirmTitle = ({ title, hexTransactionAmount, txData }) => {

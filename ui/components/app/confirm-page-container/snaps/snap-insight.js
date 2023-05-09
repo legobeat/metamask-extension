@@ -1,9 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import { useSelector } from 'react-redux';
-import Preloader from '../../../ui/icon/preloader/preloader-icon.component';
-import { Text } from '../../../component-library';
+
 import {
   AlignItems,
   FLEX_DIRECTION,
@@ -12,15 +10,17 @@ import {
   TextColor,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import { useTransactionInsightSnap } from '../../../../hooks/snaps/useTransactionInsightSnap';
-import Box from '../../../ui/box/box';
-import { SnapUIRenderer } from '../../snaps/snap-ui-renderer';
-import { SnapDelineator } from '../../snaps/snap-delineator';
 import { DelineatorType } from '../../../../helpers/constants/snaps';
 import { getSnapName } from '../../../../helpers/utils/util';
-import { Copyable } from '../../snaps/copyable';
+import { useTransactionInsightSnap } from '../../../../hooks/snaps/useTransactionInsightSnap';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { getTargetSubjectMetadata } from '../../../../selectors';
+import { Text } from '../../../component-library';
+import Box from '../../../ui/box/box';
+import Preloader from '../../../ui/icon/preloader/preloader-icon.component';
+import { Copyable } from '../../snaps/copyable';
+import { SnapDelineator } from '../../snaps/snap-delineator';
+import { SnapUIRenderer } from '../../snaps/snap-ui-renderer';
 
 export const SnapInsight = ({ transaction, origin, chainId, selectedSnap }) => {
   const t = useI18nContext();

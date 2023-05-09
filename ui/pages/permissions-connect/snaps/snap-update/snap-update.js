@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { useCallback, useState } from 'react';
-import { PageContainerFooter } from '../../../../components/ui/page-container';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
+
+import InstallError from '../../../../components/app/snaps/install-error/install-error';
+import SnapAuthorship from '../../../../components/app/snaps/snap-authorship';
 import SnapInstallWarning from '../../../../components/app/snaps/snap-install-warning';
+import UpdateSnapPermissionList from '../../../../components/app/snaps/update-snap-permission-list';
+import { Text } from '../../../../components/component-library';
 import Box from '../../../../components/ui/box/box';
+import { PageContainerFooter } from '../../../../components/ui/page-container';
+import PulseLoader from '../../../../components/ui/pulse-loader/pulse-loader';
 import {
   AlignItems,
   BLOCK_SIZES,
@@ -13,15 +18,10 @@ import {
   TextVariant,
   TEXT_ALIGN,
 } from '../../../../helpers/constants/design-system';
-
-import UpdateSnapPermissionList from '../../../../components/app/snaps/update-snap-permission-list';
-import { getSnapInstallWarnings } from '../util';
-import PulseLoader from '../../../../components/ui/pulse-loader/pulse-loader';
-import InstallError from '../../../../components/app/snaps/install-error/install-error';
-import SnapAuthorship from '../../../../components/app/snaps/snap-authorship';
-import { Text } from '../../../../components/component-library';
-import { useOriginMetadata } from '../../../../hooks/useOriginMetadata';
 import { getSnapName } from '../../../../helpers/utils/util';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { useOriginMetadata } from '../../../../hooks/useOriginMetadata';
+import { getSnapInstallWarnings } from '../util';
 
 export default function SnapUpdate({
   request,

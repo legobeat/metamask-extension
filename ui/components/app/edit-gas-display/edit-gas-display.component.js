@@ -1,26 +1,22 @@
-import React, { useContext, useRef } from 'react';
-import PropTypes from 'prop-types';
-
 import BigNumber from 'bignumber.js';
+import PropTypes from 'prop-types';
+import React, { useContext, useRef } from 'react';
+
 import { EditGasModes } from '../../../../shared/constants/gas';
-
-import Button from '../../ui/button';
-
+import { I18nContext } from '../../../contexts/i18n';
 import {
   TEXT_ALIGN,
   FONT_WEIGHT,
   TextColor,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { Text } from '../../component-library';
 import { areDappSuggestedAndTxParamGasFeesTheSame } from '../../../helpers/utils/confirm-tx.util';
-
-import InfoTooltip from '../../ui/info-tooltip';
-import ErrorMessage from '../../ui/error-message';
-import AdvancedGasControls from '../advanced-gas-controls/advanced-gas-controls.component';
+import { Text } from '../../component-library';
 import ActionableMessage from '../../ui/actionable-message/actionable-message';
-
-import { I18nContext } from '../../../contexts/i18n';
+import Button from '../../ui/button';
+import ErrorMessage from '../../ui/error-message';
+import InfoTooltip from '../../ui/info-tooltip';
+import AdvancedGasControls from '../advanced-gas-controls/advanced-gas-controls.component';
 
 export default function EditGasDisplay({
   mode = EditGasModes.modifyInPlace,

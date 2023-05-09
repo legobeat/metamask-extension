@@ -1,8 +1,9 @@
+import type { JSONRPCResponse } from '@json-rpc-specification/meta-schema';
+import { Hex } from '@metamask/utils';
+import EthQuery from 'eth-query';
 import nock, { Scope as NockScope } from 'nock';
 import sinon from 'sinon';
-import type { JSONRPCResponse } from '@json-rpc-specification/meta-schema';
-import EthQuery from 'eth-query';
-import { Hex } from '@metamask/utils';
+
 import { BuiltInInfuraNetwork } from '../../../../../shared/constants/network';
 import {
   createNetworkClient,
@@ -262,7 +263,7 @@ async function mockAllBlockTrackerRequests({
  * response if it is successful or rejects with the error from the JSON-RPC
  * response otherwise.
  */
-function makeRpcCall(ethQuery: EthQuery, request: Request) {
+async function makeRpcCall(ethQuery: EthQuery, request: Request) {
   return new Promise((resolve, reject) => {
     debug('[makeRpcCall] making request', request);
     ethQuery.sendAsync(request, (error, result) => {
@@ -327,7 +328,7 @@ export async function withMockedCommunications(
   const nockScope = buildScopeForMockingRequests(rpcUrl);
   const curriedMockNextBlockTrackerRequest = (localOptions: any) =>
     mockNextBlockTrackerRequest({ nockScope, ...localOptions });
-  const curriedMockAllBlockTrackerRequests = (localOptions: any) =>
+  const curriedMockAllBlockTrackerRequests = async (localOptions: any) =>
     mockAllBlockTrackerRequests({ nockScope, ...localOptions });
   const curriedMockRpcCall = (localOptions: any) =>
     mockRpcCall({ nockScope, ...localOptions });
@@ -463,7 +464,7 @@ export async function withNetworkClient(
   const { provider, blockTracker } = clientUnderTest;
 
   const ethQuery = new EthQuery(provider);
-  const curriedMakeRpcCall = (request: Request) =>
+  const curriedMakeRpcCall = async (request: Request) =>
     makeRpcCall(ethQuery, request);
   const makeRpcCallsInSeries = async (requests: Request[]) => {
     const responses = [];

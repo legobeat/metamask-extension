@@ -1,12 +1,12 @@
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import userEvent from '@testing-library/user-event';
 
 import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
-import * as Actions from '../../../store/actions';
 import * as GasFeeContext from '../../../contexts/gasFee';
+import * as Actions from '../../../store/actions';
 import CustomSpendingCap from './custom-spending-cap';
 
 const props = {

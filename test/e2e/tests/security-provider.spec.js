@@ -1,6 +1,7 @@
 const { strict: assert } = require('assert');
-const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
+
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
 
 const OPENSEA_URL =
   'https://proxy.metafi.codefi.network/opensea/security/v1/validate';

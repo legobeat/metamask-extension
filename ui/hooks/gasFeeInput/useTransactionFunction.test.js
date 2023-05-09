@@ -1,6 +1,6 @@
+import { renderHook } from '@testing-library/react-hooks';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { renderHook } from '@testing-library/react-hooks';
 
 import {
   CUSTOM_GAS_ESTIMATE,

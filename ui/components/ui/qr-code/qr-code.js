@@ -1,20 +1,21 @@
-import PropTypes from 'prop-types';
-import React, { useContext } from 'react';
-import qrCode from 'qrcode-generator';
-import { connect } from 'react-redux';
 import { isHexPrefixed } from 'ethereumjs-util';
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
-import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
-import Tooltip from '../tooltip';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { AddressCopyButton } from '../../multichain/address-copy-button';
-import Box from '../box/box';
-import { Icon, IconName, IconSize } from '../../component-library';
+import PropTypes from 'prop-types';
+import qrCode from 'qrcode-generator';
+import React, { useContext } from 'react';
+import { connect } from 'react-redux';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
+import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
 import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { Icon, IconName, IconSize } from '../../component-library';
+import { AddressCopyButton } from '../../multichain/address-copy-button';
+import Box from '../box/box';
+import Tooltip from '../tooltip';
 
 export default connect(mapStateToProps)(QrCodeView);
 

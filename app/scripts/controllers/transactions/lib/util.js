@@ -1,13 +1,14 @@
-import { ethErrors } from 'eth-rpc-errors';
 import { Interface } from '@ethersproject/abi';
+import { ethErrors } from 'eth-rpc-errors';
 import abi from 'human-standard-token-abi';
-import { addHexPrefix } from '../../../lib/util';
+
 import {
   TransactionEnvelopeType,
   TransactionStatus,
 } from '../../../../../shared/constants/transaction';
-import { isEIP1559Transaction } from '../../../../../shared/modules/transaction.utils';
 import { isValidHexAddress } from '../../../../../shared/modules/hexstring-utils';
+import { isEIP1559Transaction } from '../../../../../shared/modules/transaction.utils';
+import { addHexPrefix } from '../../../lib/util';
 
 const normalizers = {
   from: addHexPrefix,

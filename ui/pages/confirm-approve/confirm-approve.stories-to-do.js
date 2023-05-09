@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
 import { text } from '@storybook/addon-knobs';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { updateMetamaskState } from '../../store/actions';
-import { currentNetworkTxListSelector } from '../../selectors/transactions';
-import { store, getNewState } from '../../../.storybook/preview';
+import { useParams } from 'react-router-dom';
 
-import { subjectMetadata } from '../../../.storybook/initial-states/approval-screens/token-approval';
 import ConfirmApprove from '.';
+import { subjectMetadata } from '../../../.storybook/initial-states/approval-screens/token-approval';
+import { store, getNewState } from '../../../.storybook/preview';
+import { currentNetworkTxListSelector } from '../../selectors/transactions';
+import { updateMetamaskState } from '../../store/actions';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

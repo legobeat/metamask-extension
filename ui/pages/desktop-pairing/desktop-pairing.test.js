@@ -1,13 +1,14 @@
+import { waitFor, act, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import reactRouterDom from 'react-router-dom';
-import { waitFor, act, screen, fireEvent } from '@testing-library/react';
+
+import DesktopPairingPage from '.';
+import { SECOND } from '../../../shared/constants/time';
+import mockState from '../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../test/jest';
+import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import actions from '../../store/actions';
 import configureStore from '../../store/store';
-import { renderWithProvider } from '../../../test/jest';
-import mockState from '../../../test/data/mock-state.json';
-import { SECOND } from '../../../shared/constants/time';
-import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
-import DesktopPairingPage from '.';
 
 const mockHideLoadingIndication = jest.fn();
 const mockShowLoadingIndication = jest.fn();

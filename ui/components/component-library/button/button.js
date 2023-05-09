@@ -1,10 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
+import { ButtonLink } from '../button-link';
 import { ButtonPrimary } from '../button-primary';
 import { ButtonSecondary } from '../button-secondary';
-import { ButtonLink } from '../button-link';
-
 import { BUTTON_VARIANT } from './button.constants';
 
 export const Button = ({ variant, ...props }) => {

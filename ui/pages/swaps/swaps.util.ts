@@ -1,6 +1,9 @@
-import { BigNumber } from 'bignumber.js';
 import { Json } from '@metamask/controller-utils';
 import { IndividualTxFees } from '@metamask/smart-transactions-controller/dist/types';
+import { BigNumber } from 'bignumber.js';
+
+import { EtherDenomination } from '../../../shared/constants/common';
+import { CHAIN_IDS } from '../../../shared/constants/network';
 import {
   ALLOWED_CONTRACT_ADDRESSES,
   ARBITRUM,
@@ -16,31 +19,28 @@ import {
   SWAPS_DEV_API_V2_BASE_URL,
   SwapsTokenObject,
 } from '../../../shared/constants/swaps';
-import {
-  isSwapsDefaultTokenAddress,
-  isSwapsDefaultTokenSymbol,
-} from '../../../shared/modules/swaps.utils';
-import { CHAIN_IDS } from '../../../shared/constants/network';
-import { formatCurrency } from '../../helpers/utils/confirm-tx.util';
 import fetchWithCache from '../../../shared/lib/fetch-with-cache';
-
-import { isValidHexAddress } from '../../../shared/modules/hexstring-utils';
-import {
-  calcGasTotal,
-  calcTokenAmount,
-  toPrecisionWithoutTrailingZeros,
-} from '../../../shared/lib/transactions-controller-utils';
 import {
   getBaseApi,
   truthyString,
   validateData,
 } from '../../../shared/lib/swaps-utils';
 import {
+  calcGasTotal,
+  calcTokenAmount,
+  toPrecisionWithoutTrailingZeros,
+} from '../../../shared/lib/transactions-controller-utils';
+import {
   decimalToHex,
   getValueFromWeiHex,
   sumHexes,
 } from '../../../shared/modules/conversion.utils';
-import { EtherDenomination } from '../../../shared/constants/common';
+import { isValidHexAddress } from '../../../shared/modules/hexstring-utils';
+import {
+  isSwapsDefaultTokenAddress,
+  isSwapsDefaultTokenSymbol,
+} from '../../../shared/modules/swaps.utils';
+import { formatCurrency } from '../../helpers/utils/confirm-tx.util';
 
 const CACHE_REFRESH_FIVE_MINUTES = 300000;
 const USD_CURRENCY_CODE = 'usd';

@@ -1,11 +1,12 @@
 const { strict: assert } = require('assert');
+
+const FixtureBuilder = require('../fixture-builder');
 const {
   convertToHexValue,
   getWindowHandles,
   withFixtures,
   openDapp,
 } = require('../helpers');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('Editing Confirm Transaction', function () {
   it('allows selecting high, medium, low gas estimates on edit gas fee popover', async function () {

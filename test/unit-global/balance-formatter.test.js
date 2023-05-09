@@ -1,5 +1,6 @@
 import { strict as assert } from 'assert';
 import currencyFormatter from 'currency-formatter';
+
 import availableCurrencies from '../../ui/helpers/constants/available-conversions.json';
 
 describe('currencyFormatting', function () {

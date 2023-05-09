@@ -1,13 +1,7 @@
-import React, { memo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { memo, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Modal from '../../app/modal';
-import CustodyAccountList from '../../../pages/institutional/connect-custody/account-list';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { removeAccount } from '../../../store/actions';
-import withModalProps from '../../../helpers/higher-order-components/with-modal-props';
-import { Text } from '../../component-library';
-import Box from '../../ui/box';
+
 import {
   BorderRadius,
   DISPLAY,
@@ -15,6 +9,13 @@ import {
   TextColor,
   TextVariant,
 } from '../../../helpers/constants/design-system';
+import withModalProps from '../../../helpers/higher-order-components/with-modal-props';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import CustodyAccountList from '../../../pages/institutional/connect-custody/account-list';
+import { removeAccount } from '../../../store/actions';
+import Modal from '../../app/modal';
+import { Text } from '../../component-library';
+import Box from '../../ui/box';
 
 const ConfirmRemoveJWT = ({
   custodyAccountDetails,

@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Icon, IconName, IconSize } from '..';
 import {
   DISPLAY,
   FLEX_DIRECTION,
@@ -6,13 +8,8 @@ import {
   TextColor,
   SEVERITIES,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box';
-
-import { Icon, IconName, IconSize } from '..';
-
 import { HelpText } from './help-text';
-
 import README from './README.mdx';
 
 export default {

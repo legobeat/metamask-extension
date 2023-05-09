@@ -1,12 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  BannerAlert,
-  ButtonIcon,
-  ButtonPrimary,
-  IconName,
-  Text,
-} from '../../component-library';
+import React from 'react';
+
 import {
   AlignItems,
   BorderColor,
@@ -16,9 +10,16 @@ import {
   SEVERITIES,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import Box from '../../ui/box/box';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import {
+  BannerAlert,
+  ButtonIcon,
+  ButtonPrimary,
+  IconName,
+  Text,
+} from '../../component-library';
+import Box from '../../ui/box/box';
 
 export const AccountDetailsKey = ({ accountName, onClose, privateKey }) => {
   const t = useI18nContext();

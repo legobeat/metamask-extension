@@ -1,6 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+
+import { pageChanged } from '../../ducks/history/history';
+import { getProviderConfig } from '../../ducks/metamask/metamask';
+import { getSendStage } from '../../ducks/send';
+import { prepareToLeaveSwaps } from '../../ducks/swaps/swaps';
 import {
   getAllAccountsOnNetworkAreEmpty,
   getIsNetworkUsed,
@@ -21,10 +26,6 @@ import {
   toggleAccountMenu,
   toggleNetworkMenu,
 } from '../../store/actions';
-import { pageChanged } from '../../ducks/history/history';
-import { prepareToLeaveSwaps } from '../../ducks/swaps/swaps';
-import { getSendStage } from '../../ducks/send';
-import { getProviderConfig } from '../../ducks/metamask/metamask';
 import Routes from './routes.component';
 
 function mapStateToProps(state) {

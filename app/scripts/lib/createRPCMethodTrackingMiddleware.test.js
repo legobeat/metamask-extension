@@ -1,5 +1,6 @@
-import { errorCodes } from 'eth-rpc-errors';
 import { detectSIWE } from '@metamask/controller-utils';
+import { errorCodes } from 'eth-rpc-errors';
+
 import { MESSAGE_TYPE } from '../../../shared/constants/app';
 import {
   MetaMetricsEventName,

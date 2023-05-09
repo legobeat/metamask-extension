@@ -1,23 +1,24 @@
-import React, { useMemo, useContext } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { useMemo, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Identicon from '../../ui/identicon';
-import ListItem from '../../ui/list-item';
-import Tooltip from '../../ui/tooltip';
-import InfoIcon from '../../ui/icon/info-icon.component';
-import Button from '../../ui/button';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { startNewDraftTransaction } from '../../../ducks/send';
-import { SEND_ROUTE } from '../../../helpers/constants/routes';
-import { Color, SEVERITIES } from '../../../helpers/constants/design-system';
-import { INVALID_ASSET_TYPE } from '../../../helpers/constants/error-keys';
+
 import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import { AssetType } from '../../../../shared/constants/transaction';
 import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { startNewDraftTransaction } from '../../../ducks/send';
+import { Color, SEVERITIES } from '../../../helpers/constants/design-system';
+import { INVALID_ASSET_TYPE } from '../../../helpers/constants/error-keys';
+import { SEND_ROUTE } from '../../../helpers/constants/routes';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { Icon, IconName, IconSize } from '../../component-library';
 import Box from '../../ui/box/box';
+import Button from '../../ui/button';
+import InfoIcon from '../../ui/icon/info-icon.component';
+import Identicon from '../../ui/identicon';
+import ListItem from '../../ui/list-item';
+import Tooltip from '../../ui/tooltip';
 
 const AssetListItem = ({
   className,

@@ -1,4 +1,5 @@
 import { BN } from 'ethereumjs-util';
+
 import buildUnserializedTransaction from './buildUnserializedTransaction';
 
 describe('buildUnserializedTransaction', () => {

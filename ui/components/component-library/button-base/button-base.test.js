@@ -1,9 +1,10 @@
 /* eslint-disable jest/require-top-level-describe */
 import { render } from '@testing-library/react';
 import React from 'react';
+
 import { IconName } from '..';
-import { BUTTON_BASE_SIZES } from './button-base.constants';
 import { ButtonBase } from './button-base';
+import { BUTTON_BASE_SIZES } from './button-base.constants';
 
 describe('ButtonBase', () => {
   it('should render button element correctly and match snapshot', () => {

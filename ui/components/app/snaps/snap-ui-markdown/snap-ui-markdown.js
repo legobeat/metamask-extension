@@ -1,6 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
+
 import {
   TypographyVariant,
   OVERFLOW_WRAP,

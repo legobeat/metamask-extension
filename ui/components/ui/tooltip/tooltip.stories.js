@@ -1,7 +1,8 @@
 import React from 'react';
-import Box from '../box/box';
-import { Text } from '../../component-library';
+
 import Tooltip from '.';
+import { Text } from '../../component-library';
+import Box from '../box/box';
 
 export default {
   title: 'Components/UI/Tooltip',

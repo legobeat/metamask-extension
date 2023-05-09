@@ -1,14 +1,15 @@
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import reactRouterDom from 'react-router-dom';
-import { fireEvent, screen } from '@testing-library/react';
+
+import ConfirmImportToken from '.';
+import { renderWithProvider } from '../../../test/jest';
 import {
   ASSET_ROUTE,
   IMPORT_TOKEN_ROUTE,
 } from '../../helpers/constants/routes';
 import { addTokens, clearPendingTokens } from '../../store/actions';
 import configureStore from '../../store/store';
-import { renderWithProvider } from '../../../test/jest';
-import ConfirmImportToken from '.';
 
 const MOCK_PENDING_TOKENS = {
   '0x6b175474e89094c44da98b954eedeac495271d0f': {

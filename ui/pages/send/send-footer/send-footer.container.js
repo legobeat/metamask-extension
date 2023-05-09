@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
-import { cancelTx } from '../../../store/actions';
+
+import { getMostRecentOverviewPage } from '../../../ducks/history/history';
+import { getSendToAccounts } from '../../../ducks/metamask/metamask';
 import {
   resetSendState,
   getSendStage,
@@ -9,8 +11,7 @@ import {
   signTransaction,
   getDraftTransactionID,
 } from '../../../ducks/send';
-import { getMostRecentOverviewPage } from '../../../ducks/history/history';
-import { getSendToAccounts } from '../../../ducks/metamask/metamask';
+import { cancelTx } from '../../../store/actions';
 import SendFooter from './send-footer.component';
 
 export default connect(mapStateToProps, mapDispatchToProps)(SendFooter);

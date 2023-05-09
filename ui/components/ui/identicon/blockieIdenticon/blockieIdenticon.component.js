@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 import { renderIcon } from '@download/blockies';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 const BlockieIdenticon = ({ address, diameter, alt = '', borderRadius }) => {
   const [dataUrl, setDataUrl] = useState(null);

@@ -1,20 +1,21 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
-import { getProviderConfig, getTokens } from '../../ducks/metamask/metamask';
-import { getTokenList } from '../../selectors';
-import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
-import Identicon from '../../components/ui/identicon';
-import { I18nContext } from '../../contexts/i18n';
-import { useTokenTracker } from '../../hooks/useTokenTracker';
-import { useTokenFiatAmount } from '../../hooks/useTokenFiatAmount';
-import { showModal } from '../../store/actions';
+
 import { NETWORK_TYPES } from '../../../shared/constants/network';
-import { ASSET_ROUTE, DEFAULT_ROUTE } from '../../helpers/constants/routes';
-import Tooltip from '../../components/ui/tooltip';
-import Button from '../../components/ui/button';
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
+import {
+  ButtonIcon,
+  ButtonIconSize,
+  IconName,
+} from '../../components/component-library';
 import Box from '../../components/ui/box';
+import Button from '../../components/ui/button';
+import Identicon from '../../components/ui/identicon';
+import Tooltip from '../../components/ui/tooltip';
 import Typography from '../../components/ui/typography';
+import { I18nContext } from '../../contexts/i18n';
+import { getProviderConfig, getTokens } from '../../ducks/metamask/metamask';
 import {
   TypographyVariant,
   FONT_WEIGHT,
@@ -24,12 +25,12 @@ import {
   TextColor,
   IconColor,
 } from '../../helpers/constants/design-system';
-import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
-import {
-  ButtonIcon,
-  ButtonIconSize,
-  IconName,
-} from '../../components/component-library';
+import { ASSET_ROUTE, DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
+import { useTokenFiatAmount } from '../../hooks/useTokenFiatAmount';
+import { useTokenTracker } from '../../hooks/useTokenTracker';
+import { getTokenList } from '../../selectors';
+import { showModal } from '../../store/actions';
 
 export default function TokenDetailsPage() {
   const dispatch = useDispatch();

@@ -1,48 +1,48 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import {
-  getDetectedTokensInCurrentNetwork,
-  getKnownMethodData,
-  getTokenList,
-} from '../selectors/selectors';
-import {
-  getStatusKey,
-  getTransactionTypeTitle,
-} from '../helpers/utils/transactions.util';
-import { camelCaseToCapitalize } from '../helpers/utils/common.util';
+  TransactionType,
+  TransactionGroupCategory,
+  TransactionStatus,
+} from '../../shared/constants/transaction';
+import { getTokenValueParam } from '../../shared/lib/metamask-controller-utils';
+import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
+import { getNfts, getTokens } from '../ducks/metamask/metamask';
 import { PRIMARY, SECONDARY } from '../helpers/constants/common';
+import {
+  PENDING_STATUS_HASH,
+  TOKEN_CATEGORY_HASH,
+} from '../helpers/constants/transactions';
+import { camelCaseToCapitalize } from '../helpers/utils/common.util';
 import {
   getAssetDetails,
   getTokenAddressParam,
   getTokenIdParam,
 } from '../helpers/utils/token-util';
 import {
+  getStatusKey,
+  getTransactionTypeTitle,
+} from '../helpers/utils/transactions.util';
+import {
   formatDateWithYearContext,
   shortenAddress,
   stripHttpSchemes,
 } from '../helpers/utils/util';
-
 import {
-  PENDING_STATUS_HASH,
-  TOKEN_CATEGORY_HASH,
-} from '../helpers/constants/transactions';
-import { getNfts, getTokens } from '../ducks/metamask/metamask';
-import {
-  TransactionType,
-  TransactionGroupCategory,
-  TransactionStatus,
-} from '../../shared/constants/transaction';
+  getDetectedTokensInCurrentNetwork,
+  getKnownMethodData,
+  getTokenList,
+} from '../selectors/selectors';
 import { captureSingleException } from '../store/actions';
-import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
-import { getTokenValueParam } from '../../shared/lib/metamask-controller-utils';
+import { useCurrencyDisplay } from './useCurrencyDisplay';
+import { useCurrentAsset } from './useCurrentAsset';
 import { useI18nContext } from './useI18nContext';
+import { useSwappedTokenValue } from './useSwappedTokenValue';
+import { useTokenData } from './useTokenData';
+import { useTokenDisplayValue } from './useTokenDisplayValue';
 import { useTokenFiatAmount } from './useTokenFiatAmount';
 import { useUserPreferencedCurrency } from './useUserPreferencedCurrency';
-import { useCurrencyDisplay } from './useCurrencyDisplay';
-import { useTokenDisplayValue } from './useTokenDisplayValue';
-import { useTokenData } from './useTokenData';
-import { useSwappedTokenValue } from './useSwappedTokenValue';
-import { useCurrentAsset } from './useCurrentAsset';
 
 /**
  *  There are seven types of transaction entries that are currently differentiated in the design:

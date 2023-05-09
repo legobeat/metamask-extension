@@ -1,5 +1,6 @@
-import React, { createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { createContext, useContext } from 'react';
+
 import { useGasFeeInputs } from '../hooks/gasFeeInput/useGasFeeInputs';
 
 export const GasFeeContext = createContext({});

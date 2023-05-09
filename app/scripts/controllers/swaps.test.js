@@ -1,22 +1,22 @@
+import { BigNumber } from '@ethersproject/bignumber';
 import { strict as assert } from 'assert';
+import BigNumberjs from 'bignumber.js';
+import { mapValues } from 'lodash';
 import sinon from 'sinon';
 
-import { BigNumber } from '@ethersproject/bignumber';
-import { mapValues } from 'lodash';
-import BigNumberjs from 'bignumber.js';
+import { GasEstimateTypes } from '../../../shared/constants/gas';
 import {
   CHAIN_IDS,
   NETWORK_IDS,
   NetworkStatus,
 } from '../../../shared/constants/network';
-import { ETH_SWAPS_TOKEN_OBJECT } from '../../../shared/constants/swaps';
-import { createTestProviderTools } from '../../../test/stub/provider';
-import { SECOND } from '../../../shared/constants/time';
-import { GasEstimateTypes } from '../../../shared/constants/gas';
 import {
   FALLBACK_SMART_TRANSACTIONS_REFRESH_TIME,
   FALLBACK_SMART_TRANSACTIONS_MAX_FEE_MULTIPLIER,
 } from '../../../shared/constants/smartTransactions';
+import { ETH_SWAPS_TOKEN_OBJECT } from '../../../shared/constants/swaps';
+import { SECOND } from '../../../shared/constants/time';
+import { createTestProviderTools } from '../../../test/stub/provider';
 import SwapsController, { utils } from './swaps';
 
 const MOCK_FETCH_PARAMS = {

@@ -1,26 +1,26 @@
 import { addHexPrefix, isHexString } from 'ethereumjs-util';
-import * as actionConstants from '../../store/actionConstants';
+
 import { AlertTypes } from '../../../shared/constants/alerts';
 import {
   GasEstimateTypes,
   NetworkCongestionThresholds,
 } from '../../../shared/constants/gas';
+import { KeyringType } from '../../../shared/constants/keyring';
+import {
+  decGWEIToHexWEI,
+  hexToDecimal,
+} from '../../../shared/modules/conversion.utils';
+import { stripHexPrefix } from '../../../shared/modules/hexstring-utils';
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
 import {
   accountsWithSendEtherInfoSelector,
   checkNetworkAndAccountSupports1559,
   getAddressBook,
   getUseCurrencyRateCheck,
 } from '../../selectors';
+import * as actionConstants from '../../store/actionConstants';
 import { updateTransactionGasFees } from '../../store/actions';
 import { setCustomGasLimit, setCustomGasPrice } from '../gas/gas.duck';
-
-import { KeyringType } from '../../../shared/constants/keyring';
-import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
-import { stripHexPrefix } from '../../../shared/modules/hexstring-utils';
-import {
-  decGWEIToHexWEI,
-  hexToDecimal,
-} from '../../../shared/modules/conversion.utils';
 
 const initialState = {
   isInitialized: false,

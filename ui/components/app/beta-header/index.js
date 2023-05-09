@@ -1,7 +1,6 @@
 import React from 'react';
-import { useI18nContext } from '../../../hooks/useI18nContext';
 
-import Box from '../../ui/box/box';
+import { BETA_BUGS_URL } from '../../../helpers/constants/beta';
 import {
   TextVariant,
   Color,
@@ -11,8 +10,7 @@ import {
   IconColor,
   TextColor,
 } from '../../../helpers/constants/design-system';
-import { BETA_BUGS_URL } from '../../../helpers/constants/beta';
-
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { hideBetaHeader } from '../../../store/actions';
 import {
   ButtonIcon,
@@ -20,6 +18,7 @@ import {
   IconName,
   Text,
 } from '../../component-library';
+import Box from '../../ui/box/box';
 
 const BetaHeader = () => {
   const t = useI18nContext();

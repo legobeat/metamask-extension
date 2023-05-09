@@ -1,9 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import withModalProps from '../../../helpers/higher-order-components/with-modal-props';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import Modal from '../../app/modal';
-import Box from '../../ui/box/box';
+import React from 'react';
+
 import {
   AlignItems,
   BorderRadius,
@@ -13,7 +10,11 @@ import {
   TEXT_ALIGN,
   TextVariant,
 } from '../../../helpers/constants/design-system';
+import withModalProps from '../../../helpers/higher-order-components/with-modal-props';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import Modal from '../../app/modal';
 import { Text, Icon, IconName, IconSize } from '../../component-library';
+import Box from '../../ui/box/box';
 
 const TransactionFailedModal = ({
   hideModal,

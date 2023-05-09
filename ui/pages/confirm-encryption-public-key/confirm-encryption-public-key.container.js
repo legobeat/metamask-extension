@@ -1,13 +1,10 @@
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 
-import {
-  goHome,
-  encryptionPublicKeyMsg,
-  cancelEncryptionPublicKeyMsg,
-} from '../../store/actions';
-
+import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
+import { getNativeCurrency } from '../../ducks/metamask/metamask';
 import {
   conversionRateSelector,
   unconfirmedTransactionsListSelector,
@@ -15,10 +12,11 @@ import {
   getPreferences,
   getCurrentCurrency,
 } from '../../selectors';
-
-import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
-import { getNativeCurrency } from '../../ducks/metamask/metamask';
+import {
+  goHome,
+  encryptionPublicKeyMsg,
+  cancelEncryptionPublicKeyMsg,
+} from '../../store/actions';
 import ConfirmEncryptionPublicKey from './confirm-encryption-public-key.component';
 
 function mapStateToProps(state) {

@@ -1,11 +1,10 @@
-import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Jazzicon from '../../ui/jazzicon/jazzicon.component';
-import BlockieIdenticon from '../../ui/identicon/blockieIdenticon/blockieIdenticon.component';
+import React from 'react';
 
 import Box from '../../ui/box/box';
-
+import BlockieIdenticon from '../../ui/identicon/blockieIdenticon/blockieIdenticon.component';
+import Jazzicon from '../../ui/jazzicon/jazzicon.component';
 import { AvatarBase } from '../avatar-base';
 import {
   AvatarAccountDiameter,

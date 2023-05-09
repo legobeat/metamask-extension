@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import { getSendHexData, updateSendHexData } from '../../../../ducks/send';
 import SendHexDataRow from './send-hex-data-row.component';
 

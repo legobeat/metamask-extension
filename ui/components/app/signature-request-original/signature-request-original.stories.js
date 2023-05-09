@@ -1,7 +1,8 @@
-import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { MESSAGE_TYPE } from '../../../../shared/constants/app';
+import React from 'react';
+
 import testData from '../../../../.storybook/test-data';
+import { MESSAGE_TYPE } from '../../../../shared/constants/app';
 import README from './README.mdx';
 import SignatureRequestOriginal from './signature-request-original.component';
 

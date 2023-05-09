@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
+
 import {
   STATUS_CONNECTED_TO_ANOTHER_ACCOUNT,
   STATUS_NOT_CONNECTED,
@@ -15,6 +16,8 @@ import {
   IconColor,
   JustifyContent,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getSelectedIdentity } from '../../../selectors';
 import {
   BadgeWrapper,
   Icon,
@@ -22,9 +25,7 @@ import {
   IconSize,
 } from '../../component-library';
 import Box from '../../ui/box';
-import { getSelectedIdentity } from '../../../selectors';
 import Tooltip from '../../ui/tooltip';
-import { useI18nContext } from '../../../hooks/useI18nContext';
 
 export const MultichainConnectedSiteMenu = ({
   className,

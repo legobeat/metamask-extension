@@ -1,8 +1,9 @@
+import { fireEvent } from '@testing-library/react';
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { fireEvent } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+
 import mockState from '../../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import AccountListItem from './account-list-item';
 
 jest.mock('../../../../shared/modules/hexstring-utils', () => ({

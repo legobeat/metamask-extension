@@ -1,11 +1,19 @@
-import EventEmitter from 'events';
-import log from 'loglevel';
+import {
+  AcceptRequest,
+  AddApprovalRequest,
+  RejectRequest,
+} from '@metamask/approval-controller';
+import {
+  BaseControllerV2,
+  RestrictedControllerMessenger,
+} from '@metamask/base-controller';
+import { ApprovalType, ORIGIN_METAMASK } from '@metamask/controller-utils';
+import { KeyringController } from '@metamask/eth-keyring-controller';
 import {
   DecryptMessageManager,
   DecryptMessageParams,
   DecryptMessageParamsMetamask,
 } from '@metamask/message-manager';
-import { KeyringController } from '@metamask/eth-keyring-controller';
 import {
   AbstractMessage,
   AbstractMessageManager,
@@ -14,17 +22,10 @@ import {
   MessageManagerState,
   OriginalRequest,
 } from '@metamask/message-manager/dist/AbstractMessageManager';
-import {
-  BaseControllerV2,
-  RestrictedControllerMessenger,
-} from '@metamask/base-controller';
-import {
-  AcceptRequest,
-  AddApprovalRequest,
-  RejectRequest,
-} from '@metamask/approval-controller';
-import { ApprovalType, ORIGIN_METAMASK } from '@metamask/controller-utils';
+import EventEmitter from 'events';
 import { Patch } from 'immer';
+import log from 'loglevel';
+
 import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
 import { stripHexPrefix } from '../../../shared/modules/hexstring-utils';
 
@@ -94,13 +95,13 @@ export default class DecryptMessageController extends BaseControllerV2<
 > {
   hub: EventEmitter;
 
-  private _getState: () => any;
+  private readonly _getState: () => any;
 
-  private _keyringController: KeyringController;
+  private readonly _keyringController: KeyringController;
 
-  private _metricsEvent: (payload: any, options?: any) => void;
+  private readonly _metricsEvent: (payload: any, options?: any) => void;
 
-  private _decryptMessageManager: DecryptMessageManager;
+  private readonly _decryptMessageManager: DecryptMessageManager;
 
   /**
    * Construct a DecryptMessage controller.

@@ -1,13 +1,11 @@
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 
 import {
   BackgroundColor,
   BLOCK_SIZES,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box/box';
-
 import { ModalOverlayProps } from './modal-overlay.types';
 
 export const ModalOverlay: React.FC<ModalOverlayProps> = ({

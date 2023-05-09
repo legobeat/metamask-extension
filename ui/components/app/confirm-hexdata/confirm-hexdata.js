@@ -1,19 +1,19 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { toBuffer } from '../../../../shared/modules/buffer-utils';
-import { getKnownMethodData } from '../../../selectors';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { useTransactionFunctionType } from '../../../hooks/useTransactionFunctionType';
 import {
   Color,
   OverflowWrap,
   TextVariant,
   TextTransform,
 } from '../../../helpers/constants/design-system';
-import Box from '../../ui/box';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { useTransactionFunctionType } from '../../../hooks/useTransactionFunctionType';
+import { getKnownMethodData } from '../../../selectors';
 import { Text } from '../../component-library';
+import Box from '../../ui/box';
 import CopyRawData from '../transaction-decoding/components/ui/copy-raw-data';
 
 const ConfirmHexData = ({ txData, dataHexComponent }) => {

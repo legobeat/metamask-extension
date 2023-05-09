@@ -2,6 +2,7 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
+import BuildQuote from '.';
 import {
   renderWithProvider,
   createSwapsMockStore,
@@ -14,7 +15,6 @@ import {
   setSwapToToken,
   setFromTokenInputValue,
 } from '../../../ducks/swaps/swaps';
-import BuildQuote from '.';
 
 const middleware = [thunk];
 const createProps = (customProps = {}) => {

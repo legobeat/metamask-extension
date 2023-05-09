@@ -1,6 +1,6 @@
 import React from 'react';
-import { DISPLAY } from '../../../../helpers/constants/design-system';
 
+import { DISPLAY } from '../../../../helpers/constants/design-system';
 import Box from '../../../ui/box';
 import DetectedTokenAggregators from './detected-token-aggregators';
 

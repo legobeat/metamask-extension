@@ -1,9 +1,9 @@
 import React from 'react';
+
 import {
   DISPLAY,
   FLEX_DIRECTION,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box';
 import README from './README.mdx';
 import { TagUrl } from './tag-url';

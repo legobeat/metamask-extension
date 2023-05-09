@@ -1,5 +1,6 @@
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import { getTokenExchangeRates, getShouldShowFiat } from '../../../selectors';
 import TokenInput from './token-input.component';
 

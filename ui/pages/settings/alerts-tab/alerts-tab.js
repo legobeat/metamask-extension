@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { AlertTypes } from '../../../../shared/constants/alerts';
-import Tooltip from '../../../components/ui/tooltip';
 import ToggleButton from '../../../components/ui/toggle-button';
-import { setAlertEnabledness } from '../../../store/actions';
+import Tooltip from '../../../components/ui/tooltip';
 import { getAlertEnabledness } from '../../../ducks/metamask/metamask';
-import { useI18nContext } from '../../../hooks/useI18nContext';
 import { handleSettingsRefs } from '../../../helpers/utils/settings-search';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { setAlertEnabledness } from '../../../store/actions';
 
 const AlertSettingsEntry = ({ alertId, description, title }) => {
   const t = useI18nContext();

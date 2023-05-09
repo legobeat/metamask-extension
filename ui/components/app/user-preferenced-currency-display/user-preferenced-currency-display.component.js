@@ -1,9 +1,10 @@
-import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
-import CurrencyDisplay from '../../ui/currency-display';
-import { useUserPreferencedCurrency } from '../../../hooks/useUserPreferencedCurrency';
+import React, { useMemo } from 'react';
+
 import { EtherDenomination } from '../../../../shared/constants/common';
+import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
+import { useUserPreferencedCurrency } from '../../../hooks/useUserPreferencedCurrency';
+import CurrencyDisplay from '../../ui/currency-display';
 
 export default function UserPreferencedCurrencyDisplay({
   'data-testid': dataTestId,

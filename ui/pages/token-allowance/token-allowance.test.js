@@ -1,8 +1,9 @@
+import { act, fireEvent } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { act, fireEvent } from '@testing-library/react';
-import { renderWithProvider } from '../../../test/lib/render-helpers';
+
 import { KeyringType } from '../../../shared/constants/keyring';
+import { renderWithProvider } from '../../../test/lib/render-helpers';
 import TokenAllowance from './token-allowance';
 
 const testTokenAddress = '0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F';

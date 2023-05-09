@@ -1,11 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { getAccountLink } from '@metamask/etherscan-link';
-import Box from '../box/box';
-import Tooltip from '../tooltip/tooltip';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import Identicon from '../identicon';
-import Typography from '../typography/typography';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   FONT_WEIGHT,
   TypographyVariant,
@@ -16,7 +12,12 @@ import {
   Color,
 } from '../../../helpers/constants/design-system';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { ButtonIcon, IconName } from '../../component-library';
+import Box from '../box/box';
+import Identicon from '../identicon';
+import Tooltip from '../tooltip/tooltip';
+import Typography from '../typography/typography';
 
 export default function ContractTokenValues({
   address,

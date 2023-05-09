@@ -1,14 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { getAccountLink } from '@metamask/etherscan-link';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import Box from '../../../ui/box';
-import Button from '../../../ui/button/button.component';
-import Tooltip from '../../../ui/tooltip/tooltip';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import Identicon from '../../../ui/identicon';
-import { ellipsify } from '../../../../pages/send/send.utils';
-import Popover from '../../../ui/popover';
+
+import { TokenStandard } from '../../../../../shared/constants/transaction';
 import {
   FontWeight,
   TextVariant,
@@ -21,10 +16,16 @@ import {
   AlignItems,
 } from '../../../../helpers/constants/design-system';
 import { useCopyToClipboard } from '../../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { ellipsify } from '../../../../pages/send/send.utils';
 import { getAddressBookEntry } from '../../../../selectors';
-import { TokenStandard } from '../../../../../shared/constants/transaction';
-import NftCollectionImage from '../../../ui/nft-collection-image/nft-collection-image';
 import { ButtonIcon, IconName, Text } from '../../../component-library';
+import Box from '../../../ui/box';
+import Button from '../../../ui/button/button.component';
+import Identicon from '../../../ui/identicon';
+import NftCollectionImage from '../../../ui/nft-collection-image/nft-collection-image';
+import Popover from '../../../ui/popover';
+import Tooltip from '../../../ui/tooltip/tooltip';
 
 export default function ContractDetailsModal({
   onClose,

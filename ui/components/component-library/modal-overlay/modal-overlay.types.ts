@@ -5,7 +5,7 @@ export interface ModalOverlayProps extends BoxProps {
    * onClick handler for the overlay
    * Not necessary when used with Modal and closeOnClickOutside is true
    */
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   /**
    * Additional className to add to the ModalOverlay
    */

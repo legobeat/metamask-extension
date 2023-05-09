@@ -1,6 +1,6 @@
 import React from 'react';
-import { hexToDecimal } from '../../../../shared/modules/conversion.utils';
 
+import { hexToDecimal } from '../../../../shared/modules/conversion.utils';
 import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import configureStore from '../../../store/store';

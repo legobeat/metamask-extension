@@ -1,22 +1,20 @@
-import React, { useContext, useState, useRef, useCallback } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import browser from 'webextension-polyfill';
+import React, { useContext, useState, useRef, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, matchPath } from 'react-router-dom';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
+import browser from 'webextension-polyfill';
+
+import { GlobalMenu, ProductTour, AccountPicker } from '..';
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
-import {
-  BUILD_QUOTE_ROUTE,
-  CONFIRM_TRANSACTION_ROUTE,
-  CONNECTED_ACCOUNTS_ROUTE,
-  DEFAULT_ROUTE,
-  SWAPS_ROUTE,
-} from '../../../helpers/constants/routes';
-
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { getCompletedOnboarding } from '../../../ducks/metamask/metamask';
+import { getSendStage, SEND_STAGES } from '../../../ducks/send';
 import {
   AlignItems,
   BackgroundColor,
@@ -26,14 +24,13 @@ import {
   Size,
 } from '../../../helpers/constants/design-system';
 import {
-  AvatarNetwork,
-  ButtonIcon,
-  ButtonIconSize,
-  IconName,
-  IconSize,
-  PickerNetwork,
-} from '../../component-library';
-
+  BUILD_QUOTE_ROUTE,
+  CONFIRM_TRANSACTION_ROUTE,
+  CONNECTED_ACCOUNTS_ROUTE,
+  DEFAULT_ROUTE,
+  SWAPS_ROUTE,
+} from '../../../helpers/constants/routes';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   getCurrentChainId,
   getCurrentNetwork,
@@ -42,21 +39,22 @@ import {
   getSelectedIdentity,
   getShowProductTour,
 } from '../../../selectors';
-import { GlobalMenu, ProductTour, AccountPicker } from '..';
-
-import Box from '../../ui/box/box';
 import {
   hideProductTour,
   toggleAccountMenu,
   toggleNetworkMenu,
 } from '../../../store/actions';
-import MetafoxLogo from '../../ui/metafox-logo';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
-import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
 import ConnectedStatusIndicator from '../../app/connected-status-indicator';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { getCompletedOnboarding } from '../../../ducks/metamask/metamask';
-import { getSendStage, SEND_STAGES } from '../../../ducks/send';
+import {
+  AvatarNetwork,
+  ButtonIcon,
+  ButtonIconSize,
+  IconName,
+  IconSize,
+  PickerNetwork,
+} from '../../component-library';
+import Box from '../../ui/box/box';
+import MetafoxLogo from '../../ui/metafox-logo';
 
 export const AppHeader = ({ location }) => {
   const trackEvent = useContext(MetaMetricsContext);

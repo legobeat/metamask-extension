@@ -1,31 +1,31 @@
 import copyToClipboard from 'copy-to-clipboard';
-import log from 'loglevel';
 import { clone } from 'lodash';
+import log from 'loglevel';
 import React from 'react';
 import { render } from 'react-dom';
 import browser from 'webextension-polyfill';
 
+import { SENTRY_STATE } from '../app/scripts/lib/setupSentry';
 import { getEnvironmentType } from '../app/scripts/lib/util';
 import { AlertTypes } from '../shared/constants/alerts';
-import { maskObject } from '../shared/modules/object.utils';
-import { SENTRY_STATE } from '../app/scripts/lib/setupSentry';
 import { ENVIRONMENT_TYPE_POPUP } from '../shared/constants/app';
-import switchDirection from '../shared/lib/switch-direction';
 import { setupLocale } from '../shared/lib/error-utils';
-import * as actions from './store/actions';
-import configureStore from './store/store';
-import {
-  getPermittedAccountsForCurrentTab,
-  getSelectedAddress,
-} from './selectors';
+import switchDirection from '../shared/lib/switch-direction';
+import { maskObject } from '../shared/modules/object.utils';
 import { ALERT_STATE } from './ducks/alerts';
 import {
   getUnconnectedAccountAlertEnabledness,
   getUnconnectedAccountAlertShown,
 } from './ducks/metamask/metamask';
-import Root from './pages';
 import txHelper from './helpers/utils/tx-helper';
+import Root from './pages';
+import {
+  getPermittedAccountsForCurrentTab,
+  getSelectedAddress,
+} from './selectors';
 import { _setBackgroundConnection } from './store/action-queue';
+import * as actions from './store/actions';
+import configureStore from './store/store';
 
 log.setLevel(global.METAMASK_DEBUG ? 'debug' : 'warn');
 

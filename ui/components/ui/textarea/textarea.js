@@ -1,7 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import {
   RESIZE,
@@ -11,7 +10,6 @@ import {
   BorderColor,
   BackgroundColor,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../box';
 
 const TextArea = ({

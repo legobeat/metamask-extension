@@ -1,35 +1,34 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import QrView from '../../ui/qr-code';
-import EditableLabel from '../../ui/editable-label/editable-label';
-
-import { setAccountLabel } from '../../../store/actions';
 import {
-  getCurrentChainId,
-  getHardwareWalletType,
-  getMetaMaskKeyrings,
-} from '../../../selectors';
-import { isHardwareKeyring } from '../../../helpers/utils/hardware';
-import {
-  BUTTON_SECONDARY_SIZES,
-  ButtonSecondary,
-} from '../../component-library';
+  MetaMetricsEventCategory,
+  MetaMetricsEventKeyType,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   AlignItems,
   DISPLAY,
   FLEX_DIRECTION,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventKeyType,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
+import { isHardwareKeyring } from '../../../helpers/utils/hardware';
 import { useI18nContext } from '../../../hooks/useI18nContext';
+import {
+  getCurrentChainId,
+  getHardwareWalletType,
+  getMetaMaskKeyrings,
+} from '../../../selectors';
+import { setAccountLabel } from '../../../store/actions';
+import {
+  BUTTON_SECONDARY_SIZES,
+  ButtonSecondary,
+} from '../../component-library';
 import Box from '../../ui/box/box';
+import EditableLabel from '../../ui/editable-label/editable-label';
+import QrView from '../../ui/qr-code';
 
 export const AccountDetailsDisplay = ({
   accounts,

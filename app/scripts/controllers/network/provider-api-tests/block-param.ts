@@ -78,7 +78,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
         const results = await withNetworkClient(
           { providerType },
-          ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+          async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
         );
 
         expect(results).toStrictEqual([mockResults[0], mockResults[0]]);
@@ -137,7 +137,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
           const results = await withNetworkClient(
             { providerType },
-            ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+            async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
           );
 
           expect(results).toStrictEqual([mockResults[0], mockResults[1]]);
@@ -226,7 +226,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
           const result = await withNetworkClient(
             { providerType },
-            ({ makeRpcCall }) => makeRpcCall(request),
+            async ({ makeRpcCall }) => makeRpcCall(request),
           );
 
           expect(result).toStrictEqual(mockResult);
@@ -270,7 +270,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
           const results = await withNetworkClient(
             { providerType },
-            ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+            async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
           );
 
           expect(results).toStrictEqual(mockResults);
@@ -1487,7 +1487,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
         const results = await withNetworkClient(
           { providerType },
-          ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+          async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
         );
 
         expect(results).toStrictEqual([mockResults[0], mockResults[0]]);
@@ -1537,7 +1537,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
           const results = await withNetworkClient(
             { providerType },
-            ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+            async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
           );
 
           expect(results).toStrictEqual([mockResults[0], mockResults[1]]);
@@ -1617,7 +1617,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
           const results = await withNetworkClient(
             { providerType },
-            ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+            async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
           );
 
           expect(results).toStrictEqual([mockResults[0], mockResults[0]]);
@@ -1644,7 +1644,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
             const result = await withNetworkClient(
               { providerType },
-              ({ makeRpcCall }) => makeRpcCall(request),
+              async ({ makeRpcCall }) => makeRpcCall(request),
             );
 
             expect(result).toStrictEqual(mockResult);
@@ -1680,7 +1680,8 @@ export function testsForRpcMethodSupportingBlockParam(
 
             const results = await withNetworkClient(
               { providerType },
-              ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+              async ({ makeRpcCallsInSeries }) =>
+                makeRpcCallsInSeries(requests),
             );
 
             expect(results).toStrictEqual(mockResults);
@@ -1718,7 +1719,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
           const results = await withNetworkClient(
             { providerType },
-            ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+            async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
           );
 
           expect(results).toStrictEqual(['first result', 'second result']);
@@ -1752,7 +1753,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
               const result = await withNetworkClient(
                 { providerType },
-                ({ makeRpcCall }) => makeRpcCall(request),
+                async ({ makeRpcCall }) => makeRpcCall(request),
               );
 
               expect(result).toStrictEqual('the result');
@@ -1788,7 +1789,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
                     const result = await withNetworkClient(
                       { providerType },
-                      ({ makeRpcCall, clock }) =>
+                      async ({ makeRpcCall, clock }) =>
                         waitForPromiseToBeFulfilledAfterRunningAllTimers(
                           makeRpcCall(request),
                           clock,
@@ -1824,7 +1825,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
                     const promiseForResult = withNetworkClient(
                       { providerType },
-                      ({ makeRpcCall, clock }) =>
+                      async ({ makeRpcCall, clock }) =>
                         waitForPromiseToBeFulfilledAfterRunningAllTimers(
                           makeRpcCall(request),
                           clock,
@@ -1865,7 +1866,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
                     const result = await withNetworkClient(
                       { providerType },
-                      ({ makeRpcCall }) => makeRpcCall(request),
+                      async ({ makeRpcCall }) => makeRpcCall(request),
                     );
 
                     expect(result).toStrictEqual(mockResult);
@@ -1915,7 +1916,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
                     const results = await withNetworkClient(
                       { providerType },
-                      ({ makeRpcCallsInSeries }) =>
+                      async ({ makeRpcCallsInSeries }) =>
                         makeRpcCallsInSeries(requests),
                     );
 
@@ -1947,7 +1948,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
             const result = await withNetworkClient(
               { providerType },
-              ({ makeRpcCall }) => makeRpcCall(request),
+              async ({ makeRpcCall }) => makeRpcCall(request),
             );
 
             expect(result).toStrictEqual('the result');
@@ -1978,7 +1979,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
               const result = await withNetworkClient(
                 { providerType },
-                ({ makeRpcCall }) => makeRpcCall(request),
+                async ({ makeRpcCall }) => makeRpcCall(request),
               );
 
               expect(result).toStrictEqual(mockResult);
@@ -2023,7 +2024,8 @@ export function testsForRpcMethodSupportingBlockParam(
 
               const results = await withNetworkClient(
                 { providerType },
-                ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+                async ({ makeRpcCallsInSeries }) =>
+                  makeRpcCallsInSeries(requests),
               );
 
               expect(results).toStrictEqual(mockResults);
@@ -2060,7 +2062,7 @@ export function testsForRpcMethodSupportingBlockParam(
 
         const results = await withNetworkClient(
           { providerType },
-          ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+          async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
         );
 
         expect(results).toStrictEqual(mockResults);

@@ -1,18 +1,19 @@
 import log from 'loglevel';
-import { ThunkAction } from 'redux-thunk';
 import { AnyAction } from 'redux';
+import { ThunkAction } from 'redux-thunk';
+
+import { isErrorWithMessage } from '../../../shared/modules/error';
+import {
+  callBackgroundMethod,
+  submitRequestToBackground,
+} from '../action-queue';
 import {
   forceUpdateMetamaskState,
   displayWarning,
   hideLoadingIndication,
   showLoadingIndication,
 } from '../actions';
-import {
-  callBackgroundMethod,
-  submitRequestToBackground,
-} from '../action-queue';
 import { MetaMaskReduxState } from '../store';
-import { isErrorWithMessage } from '../../../shared/modules/error';
 
 export function showInteractiveReplacementTokenBanner({
   url,
@@ -27,10 +28,10 @@ export function showInteractiveReplacementTokenBanner({
         url,
         oldRefreshToken,
       ]);
-    } catch (err: any) {
-      if (err) {
-        dispatch(displayWarning(err.message));
-        throw new Error(err.message);
+    } catch (error: any) {
+      if (error) {
+        dispatch(displayWarning(error.message));
+        throw new Error(error.message);
       }
     }
   };
@@ -77,9 +78,9 @@ export function mmiActionsFactory() {
 
   function createAction(name: string, payload: any) {
     return () => {
-      callBackgroundMethod(name, [payload], (err) => {
-        if (isErrorWithMessage(err)) {
-          throw new Error(err.message);
+      callBackgroundMethod(name, [payload], (error) => {
+        if (isErrorWithMessage(error)) {
+          throw new Error(error.message);
         }
       });
     };

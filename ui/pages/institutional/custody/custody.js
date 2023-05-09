@@ -8,9 +8,7 @@ import React, {
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { mmiActionsFactory } from '../../../store/institutional/institution-background';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
+
 import {
   ButtonIcon,
   Button,
@@ -21,6 +19,9 @@ import {
   BUTTON_SIZES,
   BUTTON_VARIANT,
 } from '../../../components/component-library';
+import JwtUrlForm from '../../../components/institutional/jwt-url-form';
+import Box from '../../../components/ui/box';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   AlignItems,
   DISPLAY,
@@ -35,15 +36,15 @@ import {
   TEXT_ALIGN,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import Box from '../../../components/ui/box';
 import {
   CUSTODY_ACCOUNT_DONE_ROUTE,
   DEFAULT_ROUTE,
 } from '../../../helpers/constants/routes';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { getCurrentChainId } from '../../../selectors';
 import { getMMIConfiguration } from '../../../selectors/institutional/selectors';
+import { mmiActionsFactory } from '../../../store/institutional/institution-background';
 import CustodyAccountList from '../connect-custody/account-list';
-import JwtUrlForm from '../../../components/institutional/jwt-url-form';
 
 const CustodyPage = () => {
   const t = useI18nContext();

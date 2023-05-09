@@ -1,17 +1,16 @@
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import { I18nContext } from '../../../contexts/i18n';
-
+import { GasRecommendations } from '../../../../shared/constants/gas';
 import ActionableMessage from '../../../components/ui/actionable-message/actionable-message';
-import Tooltip from '../../../components/ui/tooltip';
 import Box from '../../../components/ui/box';
+import Tooltip from '../../../components/ui/tooltip';
+import { I18nContext } from '../../../contexts/i18n';
 import {
   JustifyContent,
   DISPLAY,
 } from '../../../helpers/constants/design-system';
-import { GasRecommendations } from '../../../../shared/constants/gas';
 
 export default function ViewQuotePriceDifference(props) {
   const {

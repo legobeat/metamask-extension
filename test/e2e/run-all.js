@@ -1,9 +1,10 @@
-const path = require('path');
 const { promises: fs } = require('fs');
-const yargs = require('yargs/yargs');
+const path = require('path');
 const { hideBin } = require('yargs/helpers');
-const { runInShell } = require('../../development/lib/run-command');
+const yargs = require('yargs/yargs');
+
 const { exitWithError } = require('../../development/lib/exit-with-error');
+const { runInShell } = require('../../development/lib/run-command');
 
 const getTestPathsForTestDir = async (testDir) => {
   const testFilenames = await fs.readdir(testDir);

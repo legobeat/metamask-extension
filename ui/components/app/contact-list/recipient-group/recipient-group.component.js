@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Identicon from '../../../ui/identicon';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { ellipsify } from '../../../../pages/send/send.utils';
+import Identicon from '../../../ui/identicon';
 
 function addressesEqual(address1, address2) {
   return String(address1).toLowerCase() === String(address2).toLowerCase();

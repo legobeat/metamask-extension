@@ -1,11 +1,12 @@
 const { strict: assert } = require('assert');
+
+const FixtureBuilder = require('../fixture-builder');
 const {
   convertToHexValue,
   withFixtures,
   openDapp,
   DAPP_URL,
 } = require('../helpers');
-const FixtureBuilder = require('../fixture-builder');
 
 const ganacheOptions = {
   accounts: [

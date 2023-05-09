@@ -31,9 +31,10 @@ const restoreContextAfterImports = () => {
 cleanContextForImports();
 
 /* eslint-disable import/first */
-import log from 'loglevel';
 import { WindowPostMessageStream } from '@metamask/post-message-stream';
 import { initializeProvider } from '@metamask/providers/dist/initializeInpageProvider';
+import log from 'loglevel';
+
 import shouldInjectProvider from '../../shared/modules/provider-injection';
 
 // contexts

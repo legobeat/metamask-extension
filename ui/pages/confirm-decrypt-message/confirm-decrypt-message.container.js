@@ -1,14 +1,11 @@
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
 import { cloneDeep } from 'lodash';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 
-import {
-  goHome,
-  decryptMsg,
-  cancelDecryptMsg,
-  decryptMsgInline,
-} from '../../store/actions';
+import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
+import { getNativeCurrency } from '../../ducks/metamask/metamask';
 import {
   conversionRateSelector,
   getCurrentCurrency,
@@ -16,9 +13,12 @@ import {
   getTargetAccountWithSendEtherInfo,
   unconfirmedTransactionsListSelector,
 } from '../../selectors';
-import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
-import { getNativeCurrency } from '../../ducks/metamask/metamask';
+import {
+  goHome,
+  decryptMsg,
+  cancelDecryptMsg,
+  decryptMsgInline,
+} from '../../store/actions';
 import ConfirmDecryptMessage from './confirm-decrypt-message.component';
 
 function mapStateToProps(state) {

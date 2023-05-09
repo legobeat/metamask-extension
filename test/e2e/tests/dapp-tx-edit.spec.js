@@ -1,7 +1,8 @@
 const { strict: assert } = require('assert');
+
+const FixtureBuilder = require('../fixture-builder');
 const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
 const { SMART_CONTRACTS } = require('../seeder/smart-contracts');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('Editing confirmations of dapp initiated contract interactions', function () {
   const ganacheOptions = {

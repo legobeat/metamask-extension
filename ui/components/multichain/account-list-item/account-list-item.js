@@ -1,25 +1,18 @@
-import React, { useState, useRef, useContext } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
+import PropTypes from 'prop-types';
+import React, { useState, useRef, useContext } from 'react';
 import { useSelector } from 'react-redux';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { getRpcPrefsForCurrentProvider } from '../../../selectors';
-import { getURLHostName, shortenAddress } from '../../../helpers/utils/util';
 
 import { AccountListItemMenu } from '..';
-import Box from '../../ui/box/box';
+import { HardwareKeyringNames } from '../../../../shared/constants/hardware-wallets';
+import { KeyringType } from '../../../../shared/constants/keyring';
 import {
-  AvatarAccount,
-  Text,
-  AvatarFavicon,
-  Tag,
-  ButtonLink,
-  ButtonIcon,
-  IconName,
-  IconSize,
-  AvatarAccountVariant,
-} from '../../component-library';
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { findKeyringForAddress } from '../../../ducks/metamask/metamask';
+import { SECONDARY, PRIMARY } from '../../../helpers/constants/common';
 import {
   Color,
   TEXT_ALIGN,
@@ -32,17 +25,23 @@ import {
   Size,
   BorderColor,
 } from '../../../helpers/constants/design-system';
-import { HardwareKeyringNames } from '../../../../shared/constants/hardware-wallets';
-import { KeyringType } from '../../../../shared/constants/keyring';
+import { getURLHostName, shortenAddress } from '../../../helpers/utils/util';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getRpcPrefsForCurrentProvider } from '../../../selectors';
 import UserPreferencedCurrencyDisplay from '../../app/user-preferenced-currency-display/user-preferenced-currency-display.component';
-import { SECONDARY, PRIMARY } from '../../../helpers/constants/common';
-import { findKeyringForAddress } from '../../../ducks/metamask/metamask';
-import Tooltip from '../../ui/tooltip/tooltip';
 import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
+  AvatarAccount,
+  Text,
+  AvatarFavicon,
+  Tag,
+  ButtonLink,
+  ButtonIcon,
+  IconName,
+  IconSize,
+  AvatarAccountVariant,
+} from '../../component-library';
+import Box from '../../ui/box/box';
+import Tooltip from '../../ui/tooltip/tooltip';
 
 const MAXIMUM_CURRENCY_DECIMALS = 3;
 const MAXIMUM_CHARACTERS_WITHOUT_TOOLTIP = 17;

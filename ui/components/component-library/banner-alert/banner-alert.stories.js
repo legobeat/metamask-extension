@@ -1,5 +1,8 @@
-import React from 'react';
 import { useState } from '@storybook/addons';
+import React from 'react';
+
+import { BannerAlert, BANNER_ALERT_SEVERITIES } from '.';
+import { ButtonLink, ButtonPrimary, IconName } from '..';
 import {
   DISPLAY,
   FLEX_DIRECTION,
@@ -7,9 +10,7 @@ import {
   Size,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box/box';
-import { ButtonLink, ButtonPrimary, IconName } from '..';
 import README from './README.mdx';
-import { BannerAlert, BANNER_ALERT_SEVERITIES } from '.';
 
 const marginSizeControlOptions = [
   undefined,

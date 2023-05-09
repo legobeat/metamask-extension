@@ -1,10 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { AvatarNetwork } from '../avatar-network';
-import { IconName, Icon, IconSize } from '../icon';
-import { Text } from '../text';
-import Box from '../../ui/box';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   AlignItems,
   DISPLAY,
@@ -14,6 +11,10 @@ import {
   IconColor,
   BackgroundColor,
 } from '../../../helpers/constants/design-system';
+import Box from '../../ui/box';
+import { AvatarNetwork } from '../avatar-network';
+import { IconName, Icon, IconSize } from '../icon';
+import { Text } from '../text';
 
 export const PickerNetwork = ({
   className,

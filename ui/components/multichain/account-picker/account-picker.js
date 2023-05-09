@@ -1,14 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import {
-  Button,
-  AvatarAccount,
-  AvatarAccountVariant,
-  Icon,
-  IconName,
-  Text,
-} from '../../component-library';
+
 import {
   AlignItems,
   BackgroundColor,
@@ -18,6 +11,14 @@ import {
   IconColor,
   Size,
 } from '../../../helpers/constants/design-system';
+import {
+  Button,
+  AvatarAccount,
+  AvatarAccountVariant,
+  Icon,
+  IconName,
+  Text,
+} from '../../component-library';
 
 export const AccountPicker = ({ address, name, onClick, disabled }) => {
   const useBlockie = useSelector((state) => state.metamask.useBlockie);

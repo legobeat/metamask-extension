@@ -1,11 +1,6 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Button from '../../../components/ui/button';
-import LogoLedger from '../../../components/ui/logo/logo-ledger';
-import LogoQRBased from '../../../components/ui/logo/logo-qr-based';
-import LogoTrezor from '../../../components/ui/logo/logo-trezor';
-import LogoLattice from '../../../components/ui/logo/logo-lattice';
 
 import {
   HardwareDeviceNames,
@@ -13,9 +8,14 @@ import {
   HardwareAffiliateLinks,
   HardwareAffiliateTutorialLinks,
 } from '../../../../shared/constants/hardware-wallets';
-import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
 import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import { isManifestV3 } from '../../../../shared/modules/mv3.utils';
+import Button from '../../../components/ui/button';
+import LogoLattice from '../../../components/ui/logo/logo-lattice';
+import LogoLedger from '../../../components/ui/logo/logo-ledger';
+import LogoQRBased from '../../../components/ui/logo/logo-qr-based';
+import LogoTrezor from '../../../components/ui/logo/logo-trezor';
+import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
 import { openWindow } from '../../../helpers/utils/window';
 
 export default class SelectHardware extends Component {

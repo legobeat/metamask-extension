@@ -1,18 +1,19 @@
 #!/usr/bin/env node
-const path = require('path');
 const { promises: fs } = require('fs');
-const yargs = require('yargs/yargs');
-const { hideBin } = require('yargs/helpers');
+const path = require('path');
 const ttest = require('ttest');
-const { retry } = require('../../development/lib/retry');
+const { hideBin } = require('yargs/helpers');
+const yargs = require('yargs/yargs');
+
 const { exitWithError } = require('../../development/lib/exit-with-error');
+const { retry } = require('../../development/lib/retry');
 const {
   isWritable,
   getFirstParentDirectoryThatExists,
 } = require('../helpers/file');
+const FixtureBuilder = require('./fixture-builder');
 const { withFixtures, tinyDelayMs } = require('./helpers');
 const { PAGES } = require('./webdriver/driver');
-const FixtureBuilder = require('./fixture-builder');
 
 const DEFAULT_NUM_SAMPLES = 20;
 const ALL_PAGES = Object.values(PAGES);

@@ -1,8 +1,8 @@
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
 
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 import ConfirmDetailRow from '.';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 
 describe('Confirm Detail Row Component', () => {
   const mockState = {

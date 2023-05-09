@@ -1,12 +1,13 @@
-import { StoreEnhancer } from 'redux';
-import { configureStore as baseConfigureStore } from '@reduxjs/toolkit';
-import devtoolsEnhancer from 'remote-redux-devtools';
 import { ApprovalControllerState } from '@metamask/approval-controller';
 import { GasEstimateType, GasFeeEstimates } from '@metamask/gas-fee-controller';
-import rootReducer from '../ducks';
+import { configureStore as baseConfigureStore } from '@reduxjs/toolkit';
+import { StoreEnhancer } from 'redux';
+import devtoolsEnhancer from 'remote-redux-devtools';
+
 import { LedgerTransportTypes } from '../../shared/constants/hardware-wallets';
-import { TransactionMeta } from '../../shared/constants/transaction';
 import type { NetworkStatus } from '../../shared/constants/network';
+import { TransactionMeta } from '../../shared/constants/transaction';
+import rootReducer from '../ducks';
 
 /**
  * This interface is temporary and is copied from the message-manager.js file
@@ -100,7 +101,7 @@ export default function configureStore(preloadedState: any) {
         hostname: 'localhost',
         port: 8000,
         realtime: true,
-      }) as StoreEnhancer,
+      }),
     );
   }
 

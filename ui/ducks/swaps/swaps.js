@@ -1,9 +1,64 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { captureMessage } from '@sentry/browser';
 import BigNumber from 'bignumber.js';
 import log from 'loglevel';
 
-import { captureMessage } from '@sentry/browser';
-
+import { ORIGIN_METAMASK } from '../../../shared/constants/app';
+import { EtherDenomination } from '../../../shared/constants/common';
+import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
+import {
+  ERROR_FETCHING_QUOTES,
+  QUOTES_NOT_AVAILABLE_ERROR,
+  CONTRACT_DATA_DISABLED_ERROR,
+  SWAP_FAILED_ERROR,
+  SWAPS_FETCH_ORDER_CONFLICT,
+  ALLOWED_SMART_TRANSACTIONS_CHAIN_IDS,
+  Slippage,
+} from '../../../shared/constants/swaps';
+import {
+  TransactionType,
+  IN_PROGRESS_TRANSACTION_STATUSES,
+  SmartTransactionStatus,
+} from '../../../shared/constants/transaction';
+import {
+  calcGasTotal,
+  calcTokenAmount,
+} from '../../../shared/lib/transactions-controller-utils';
+import {
+  addHexes,
+  decGWEIToHexWEI,
+  decimalToHex,
+  getValueFromWeiHex,
+  hexWEIToDecGWEI,
+} from '../../../shared/modules/conversion.utils';
+import { Numeric } from '../../../shared/modules/Numeric';
+import {
+  AWAITING_SIGNATURES_ROUTE,
+  AWAITING_SWAP_ROUTE,
+  BUILD_QUOTE_ROUTE,
+  LOADING_QUOTES_ROUTE,
+  SWAPS_ERROR_ROUTE,
+  SWAPS_MAINTENANCE_ROUTE,
+  SMART_TRANSACTION_STATUS_ROUTE,
+} from '../../helpers/constants/routes';
+import {
+  fetchSwapsFeatureFlags,
+  fetchSwapsGasPrices,
+  isContractAddressValid,
+  getSwapsLivenessForNetwork,
+  parseSmartTransactionsError,
+  StxErrorTypes,
+} from '../../pages/swaps/swaps.util';
+import {
+  getSelectedAccount,
+  getTokenExchangeRates,
+  getUSDConversionRate,
+  getSwapsDefaultToken,
+  getCurrentChainId,
+  isHardwareWallet,
+  getHardwareWalletType,
+  checkNetworkAndAccountSupports1559,
+} from '../../selectors';
 import {
   addToken,
   addUnapprovedTransaction,
@@ -34,64 +89,7 @@ import {
   cancelSmartTransaction,
   getTransactions,
 } from '../../store/actions';
-import {
-  AWAITING_SIGNATURES_ROUTE,
-  AWAITING_SWAP_ROUTE,
-  BUILD_QUOTE_ROUTE,
-  LOADING_QUOTES_ROUTE,
-  SWAPS_ERROR_ROUTE,
-  SWAPS_MAINTENANCE_ROUTE,
-  SMART_TRANSACTION_STATUS_ROUTE,
-} from '../../helpers/constants/routes';
-import {
-  fetchSwapsFeatureFlags,
-  fetchSwapsGasPrices,
-  isContractAddressValid,
-  getSwapsLivenessForNetwork,
-  parseSmartTransactionsError,
-  StxErrorTypes,
-} from '../../pages/swaps/swaps.util';
-import {
-  addHexes,
-  decGWEIToHexWEI,
-  decimalToHex,
-  getValueFromWeiHex,
-  hexWEIToDecGWEI,
-} from '../../../shared/modules/conversion.utils';
-import {
-  getSelectedAccount,
-  getTokenExchangeRates,
-  getUSDConversionRate,
-  getSwapsDefaultToken,
-  getCurrentChainId,
-  isHardwareWallet,
-  getHardwareWalletType,
-  checkNetworkAndAccountSupports1559,
-} from '../../selectors';
-
-import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
-import {
-  ERROR_FETCHING_QUOTES,
-  QUOTES_NOT_AVAILABLE_ERROR,
-  CONTRACT_DATA_DISABLED_ERROR,
-  SWAP_FAILED_ERROR,
-  SWAPS_FETCH_ORDER_CONFLICT,
-  ALLOWED_SMART_TRANSACTIONS_CHAIN_IDS,
-  Slippage,
-} from '../../../shared/constants/swaps';
-import {
-  TransactionType,
-  IN_PROGRESS_TRANSACTION_STATUSES,
-  SmartTransactionStatus,
-} from '../../../shared/constants/transaction';
 import { getGasFeeEstimates, getTokens } from '../metamask/metamask';
-import { ORIGIN_METAMASK } from '../../../shared/constants/app';
-import {
-  calcGasTotal,
-  calcTokenAmount,
-} from '../../../shared/lib/transactions-controller-utils';
-import { EtherDenomination } from '../../../shared/constants/common';
-import { Numeric } from '../../../shared/modules/Numeric';
 
 export const GAS_PRICES_LOADING_STATES = {
   INITIAL: 'INITIAL',

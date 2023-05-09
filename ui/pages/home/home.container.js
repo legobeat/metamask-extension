@@ -1,16 +1,29 @@
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { ApprovalType } from '@metamask/controller-utils';
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import {
   getMmiPortfolioEnabled,
   getMmiPortfolioUrl,
 } from '@metamask-institutional/portfolio-dashboard';
-import { mmiActionsFactory } from '../../store/institutional/institution-background';
-import { getWaitForConfirmDeepLinkDialog } from '../../selectors/institutional/selectors';
-import { getInstitutionalConnectRequests } from '../../ducks/institutional/institutional';
+import { ApprovalType } from '@metamask/controller-utils';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+
 ///: END:ONLY_INCLUDE_IN
+
+import { getEnvironmentType } from '../../../app/scripts/lib/util';
+import {
+  AlertTypes,
+  Web3ShimUsageAlertStates,
+} from '../../../shared/constants/alerts';
+import {
+  ENVIRONMENT_TYPE_NOTIFICATION,
+  ENVIRONMENT_TYPE_POPUP,
+} from '../../../shared/constants/app';
+import { hideWhatsNewPopup } from '../../ducks/app/app';
+import { getInstitutionalConnectRequests } from '../../ducks/institutional/institutional';
+import { getWeb3ShimUsageAlertEnabledness } from '../../ducks/metamask/metamask';
+import { getSwapsFeatureIsLive } from '../../ducks/swaps/swaps';
+import { getIsBrowserDeprecated } from '../../helpers/utils/util';
 import {
   activeTabHasPermissions,
   getFirstPermissionRequest,
@@ -38,7 +51,7 @@ import {
   getRemoveNftMessage,
   hasPendingApprovalsSelector,
 } from '../../selectors';
-
+import { getWaitForConfirmDeepLinkDialog } from '../../selectors/institutional/selectors';
 import {
   closeNotificationPopup,
   setConnectedStatusPopoverHasBeenShown,
@@ -58,19 +71,7 @@ import {
   removeSnapError,
   ///: END:ONLY_INCLUDE_IN
 } from '../../store/actions';
-import { hideWhatsNewPopup } from '../../ducks/app/app';
-import { getWeb3ShimUsageAlertEnabledness } from '../../ducks/metamask/metamask';
-import { getSwapsFeatureIsLive } from '../../ducks/swaps/swaps';
-import { getEnvironmentType } from '../../../app/scripts/lib/util';
-import { getIsBrowserDeprecated } from '../../helpers/utils/util';
-import {
-  ENVIRONMENT_TYPE_NOTIFICATION,
-  ENVIRONMENT_TYPE_POPUP,
-} from '../../../shared/constants/app';
-import {
-  AlertTypes,
-  Web3ShimUsageAlertStates,
-} from '../../../shared/constants/alerts';
+import { mmiActionsFactory } from '../../store/institutional/institution-background';
 import Home from './home.component';
 
 const mapStateToProps = (state) => {

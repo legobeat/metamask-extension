@@ -1,20 +1,18 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
-
-import Identicon from '../../../../components/ui/identicon';
-import Button from '../../../../components/ui/button/button.component';
 
 import {
   ButtonIcon,
   ButtonIconSize,
   IconName,
 } from '../../../../components/component-library';
-
+import Button from '../../../../components/ui/button/button.component';
+import Identicon from '../../../../components/ui/identicon';
 import Tooltip from '../../../../components/ui/tooltip';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import { useCopyToClipboard } from '../../../../hooks/useCopyToClipboard';
 import { IconColor } from '../../../../helpers/constants/design-system';
+import { useCopyToClipboard } from '../../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 
 function quadSplit(address) {
   return `0x${address

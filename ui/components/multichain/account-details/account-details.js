@@ -1,7 +1,17 @@
-import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Popover from '../../ui/popover/popover.component';
+
+import {
+  AlignItems,
+  DISPLAY,
+  FLEX_DIRECTION,
+  JustifyContent,
+  TextVariant,
+  Size,
+} from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getMetaMaskAccountsOrdered } from '../../../selectors';
 import {
   setAccountDetailsAddress,
   clearAccountDetails,
@@ -17,19 +27,10 @@ import {
   Text,
 } from '../../component-library';
 import Box from '../../ui/box/box';
-import { getMetaMaskAccountsOrdered } from '../../../selectors';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import {
-  AlignItems,
-  DISPLAY,
-  FLEX_DIRECTION,
-  JustifyContent,
-  TextVariant,
-  Size,
-} from '../../../helpers/constants/design-system';
+import Popover from '../../ui/popover/popover.component';
 import { AddressCopyButton } from '../address-copy-button';
-import { AccountDetailsDisplay } from './account-details-display';
 import { AccountDetailsAuthenticate } from './account-details-authenticate';
+import { AccountDetailsDisplay } from './account-details-display';
 import { AccountDetailsKey } from './account-details-key';
 
 export const AccountDetails = ({ address }) => {

@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactToggleButton from 'react-toggle-button';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactToggleButton from 'react-toggle-button';
 
 const trackStyle = {
   width: '40px',

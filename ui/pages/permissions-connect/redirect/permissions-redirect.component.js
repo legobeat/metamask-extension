@@ -1,20 +1,21 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import SiteIcon from '../../../components/ui/site-icon';
+import React, { useContext } from 'react';
+
+import {
+  Icon,
+  IconName,
+  IconSize,
+} from '../../../components/component-library';
 import Box from '../../../components/ui/box';
+import SiteIcon from '../../../components/ui/site-icon';
 import Typography from '../../../components/ui/typography/typography';
+import { I18nContext } from '../../../contexts/i18n';
 import {
   TypographyVariant,
   DISPLAY,
   JustifyContent,
   AlignItems,
 } from '../../../helpers/constants/design-system';
-import { I18nContext } from '../../../contexts/i18n';
-import {
-  Icon,
-  IconName,
-  IconSize,
-} from '../../../components/component-library';
 
 export default function PermissionsRedirect({ subjectMetadata }) {
   const t = useContext(I18nContext);

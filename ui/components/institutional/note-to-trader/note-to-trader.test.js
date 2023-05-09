@@ -1,6 +1,7 @@
 import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
 import sinon from 'sinon';
+
 import NoteToTrader from './note-to-trader';
 
 describe('NoteToTrader', () => {

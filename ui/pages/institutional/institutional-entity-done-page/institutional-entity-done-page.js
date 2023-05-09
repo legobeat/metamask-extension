@@ -1,16 +1,17 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
+
+import { Text } from '../../../components/component-library';
+import Box from '../../../components/ui/box';
 import Button from '../../../components/ui/button';
 import { getMostRecentOverviewPage } from '../../../ducks/history/history';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { Text } from '../../../components/component-library';
 import {
   TextColor,
   BorderRadius,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
-import Box from '../../../components/ui/box';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 
 export default function InstitutionalEntityDonePage(props) {
   const mostRecentOverviewPage = useSelector(getMostRecentOverviewPage);

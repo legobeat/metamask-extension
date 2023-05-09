@@ -1,13 +1,14 @@
-import React from 'react';
 import { screen, act, fireEvent, waitFor } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
-import mockState from '../../../../test/data/mock-state.json';
-import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
-import { CHAIN_IDS } from '../../../../shared/constants/network';
-import { shortenAddress } from '../../../helpers/utils/util';
+
 import InteractiveReplacementTokenPage from '.';
+import { CHAIN_IDS } from '../../../../shared/constants/network';
+import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
+import mockState from '../../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import { shortenAddress } from '../../../helpers/utils/util';
 
 const custodianAccounts = [
   {

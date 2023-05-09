@@ -1,30 +1,31 @@
+import { renderHook } from '@testing-library/react-hooks';
 import React from 'react';
 import * as reactRedux from 'react-redux';
-import { renderHook } from '@testing-library/react-hooks';
-import sinon from 'sinon';
 import { MemoryRouter } from 'react-router-dom';
-import transactions from '../../test/data/transaction-data.json';
-import {
-  getPreferences,
-  getShouldShowFiat,
-  getCurrentCurrency,
-  getCurrentChainId,
-} from '../selectors';
-import {
-  getTokens,
-  getNativeCurrency,
-  getNfts,
-} from '../ducks/metamask/metamask';
-import { getMessage } from '../helpers/utils/i18n-helper';
+import sinon from 'sinon';
+
 import messages from '../../app/_locales/en/messages.json';
-import { ASSET_ROUTE, DEFAULT_ROUTE } from '../helpers/constants/routes';
 import { CHAIN_IDS } from '../../shared/constants/network';
 import {
   TransactionType,
   TransactionGroupCategory,
   TransactionStatus,
 } from '../../shared/constants/transaction';
+import transactions from '../../test/data/transaction-data.json';
+import {
+  getTokens,
+  getNativeCurrency,
+  getNfts,
+} from '../ducks/metamask/metamask';
+import { ASSET_ROUTE, DEFAULT_ROUTE } from '../helpers/constants/routes';
+import { getMessage } from '../helpers/utils/i18n-helper';
 import { formatDateWithYearContext } from '../helpers/utils/util';
+import {
+  getPreferences,
+  getShouldShowFiat,
+  getCurrentCurrency,
+  getCurrentChainId,
+} from '../selectors';
 import * as i18nhooks from './useI18nContext';
 import * as useTokenFiatAmountHooks from './useTokenFiatAmount';
 import { useTransactionDisplayData } from './useTransactionDisplayData';

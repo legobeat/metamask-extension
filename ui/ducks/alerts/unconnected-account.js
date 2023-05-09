@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import { captureException } from '@sentry/browser';
 
 import { AlertTypes } from '../../../shared/constants/alerts';
+import { getOriginOfCurrentTab, getSelectedAddress } from '../../selectors';
 import * as actionConstants from '../../store/actionConstants';
 import {
   addPermittedAccount,
   setAlertEnabledness,
   setSelectedAddress,
 } from '../../store/actions';
-import { getOriginOfCurrentTab, getSelectedAddress } from '../../selectors';
 import { ALERT_STATE } from './enums';
 
 // Constants

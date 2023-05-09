@@ -1,13 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Provider } from 'react-redux';
-import { suggestedAssets as mockSuggestedAssets } from '../../../.storybook/initial-states/approval-screens/add-suggested-token';
-
-import configureStore from '../../store/store';
-
-import mockState from '../../../.storybook/test-data';
 
 import ConfirmAddSuggestedToken from '.';
+import { suggestedAssets as mockSuggestedAssets } from '../../../.storybook/initial-states/approval-screens/add-suggested-token';
+import mockState from '../../../.storybook/test-data';
+import configureStore from '../../store/store';
 
 const store = configureStore({
   metamask: {

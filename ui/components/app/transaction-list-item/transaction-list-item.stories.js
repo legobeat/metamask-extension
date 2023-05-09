@@ -1,10 +1,11 @@
 import React from 'react';
+
+import TransactionListItem from '.';
+import { MOCK_TRANSACTION_BY_TYPE } from '../../../../.storybook/initial-states/transactions';
 import {
   TransactionStatus,
   TransactionType,
 } from '../../../../shared/constants/transaction';
-import { MOCK_TRANSACTION_BY_TYPE } from '../../../../.storybook/initial-states/transactions';
-import TransactionListItem from '.';
 
 /**
  * @typedef {(import('../../selectors/transactions').TransactionGroup} TransactionGroup

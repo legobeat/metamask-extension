@@ -1,21 +1,21 @@
+import ConfirmationNetworkSwitch from '../../../pages/confirmation/components/confirmation-network-switch';
+import Box from '../../ui/box';
 import Button from '../../ui/button';
 import Chip from '../../ui/chip';
 import DefinitionList from '../../ui/definition-list';
-import TruncatedDefinitionList from '../../ui/truncated-definition-list';
 import Popover from '../../ui/popover';
+import Spinner from '../../ui/spinner';
+import TextField from '../../ui/text-field';
+import TextArea from '../../ui/textarea/textarea';
+import Tooltip from '../../ui/tooltip/tooltip';
+import TruncatedDefinitionList from '../../ui/truncated-definition-list';
 import Typography from '../../ui/typography';
-import Box from '../../ui/box';
+import UrlIcon from '../../ui/url-icon';
 import MetaMaskTranslation from '../metamask-translation';
 import NetworkDisplay from '../network-display';
-import TextArea from '../../ui/textarea/textarea';
-import TextField from '../../ui/text-field';
-import ConfirmationNetworkSwitch from '../../../pages/confirmation/components/confirmation-network-switch';
-import UrlIcon from '../../ui/url-icon';
-import Tooltip from '../../ui/tooltip/tooltip';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import { SnapDelineator } from '../snaps/snap-delineator';
 import { Copyable } from '../snaps/copyable';
-import Spinner from '../../ui/spinner';
+import { SnapDelineator } from '../snaps/snap-delineator';
 import { SnapUIMarkdown } from '../snaps/snap-ui-markdown';
 ///: END:ONLY_INCLUDE_IN
 

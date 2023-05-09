@@ -1,6 +1,7 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
+
 import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';

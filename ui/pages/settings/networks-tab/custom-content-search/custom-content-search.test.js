@@ -1,9 +1,10 @@
-import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Fuse from 'fuse.js';
-import configureStore from '../../../../store/store';
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
+import React from 'react';
+
 import testData from '../../../../../.storybook/test-data';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
+import configureStore from '../../../../store/store';
 import CustomContentSearch from './custom-content-search';
 
 function renderComponent({ componentProps = {} } = {}) {

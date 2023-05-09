@@ -1,9 +1,12 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import { Switch, Route, matchPath } from 'react-router-dom';
 import classnames from 'classnames';
-import TabBar from '../../components/app/tab-bar';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import { Switch, Route, matchPath } from 'react-router-dom';
 
+import AddNetwork from '../../components/app/add-network/add-network';
+import TabBar from '../../components/app/tab-bar';
+import { ButtonIcon, Icon, IconName } from '../../components/component-library';
+import { Color, DISPLAY } from '../../helpers/constants/design-system';
 import {
   ALERTS_ROUTE,
   ADVANCED_ROUTE,
@@ -24,25 +27,21 @@ import {
   ADD_NETWORK_ROUTE,
   ADD_POPULAR_CUSTOM_NETWORK,
 } from '../../helpers/constants/routes';
-
 import { getSettingsRoutes } from '../../helpers/utils/settings-search';
-import AddNetwork from '../../components/app/add-network/add-network';
-import { ButtonIcon, Icon, IconName } from '../../components/component-library';
-import { Color, DISPLAY } from '../../helpers/constants/design-system';
-import SettingsTab from './settings-tab';
-import AlertsTab from './alerts-tab';
-import NetworksTab from './networks-tab';
 import AdvancedTab from './advanced-tab';
-import InfoTab from './info-tab';
-import SecurityTab from './security-tab';
+import AlertsTab from './alerts-tab';
 import ContactListTab from './contact-list-tab';
 import ExperimentalTab from './experimental-tab';
+import InfoTab from './info-tab';
+import NetworksTab from './networks-tab';
+import SecurityTab from './security-tab';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import SnapListTab from './snaps/snaps-list-tab';
-import ViewSnap from './snaps/view-snap';
 ///: END:ONLY_INCLUDE_IN
 import SettingsSearch from './settings-search';
 import SettingsSearchList from './settings-search-list';
+import SettingsTab from './settings-tab';
+import SnapListTab from './snaps/snaps-list-tab';
+import ViewSnap from './snaps/view-snap';
 
 class SettingsPage extends PureComponent {
   static propTypes = {

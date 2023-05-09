@@ -1,4 +1,10 @@
 import { connect } from 'react-redux';
+
+import { hexToDecimal } from '../../../../../shared/modules/conversion.utils';
+import {
+  setCustomGasPrice,
+  setCustomGasLimit,
+} from '../../../../ducks/gas/gas.duck';
 import {
   getGasPrice,
   getGasLimit,
@@ -10,11 +16,6 @@ import {
   getIsBalanceInsufficient,
   getMinimumGasLimitForSend,
 } from '../../../../ducks/send';
-import {
-  setCustomGasPrice,
-  setCustomGasLimit,
-} from '../../../../ducks/gas/gas.duck';
-import { hexToDecimal } from '../../../../../shared/modules/conversion.utils';
 import SendGasRow from './send-gas-row.component';
 
 export default connect(mapStateToProps, mapDispatchToProps)(SendGasRow);

@@ -1,11 +1,11 @@
-import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Chip from '../../../components/ui/chip';
+import React from 'react';
+
 import Box from '../../../components/ui/box';
-import Typography from '../../../components/ui/typography';
+import Chip from '../../../components/ui/chip';
 import { ChipWithInput } from '../../../components/ui/chip/chip-with-input';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import Typography from '../../../components/ui/typography';
 import {
   TypographyVariant,
   BorderStyle,
@@ -14,6 +14,7 @@ import {
   BorderColor,
   Color,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 
 export default function RecoveryPhraseChips({
   secretRecoveryPhrase,

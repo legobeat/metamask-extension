@@ -1,19 +1,8 @@
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import ToggleButton from '../../../components/ui/toggle-button';
-import TextField from '../../../components/ui/text-field';
-import Button from '../../../components/ui/button';
-import Dropdown from '../../../components/ui/dropdown';
-import Dialog from '../../../components/ui/dialog';
+import React, { PureComponent } from 'react';
 
 import { getPlatform } from '../../../../app/scripts/lib/util';
-
 import { PLATFORM_FIREFOX } from '../../../../shared/constants/app';
-import {
-  getNumberOfSettingsInSection,
-  handleSettingsRefs,
-} from '../../../helpers/utils/settings-search';
-
 import {
   LedgerTransportTypes,
   LEDGER_USB_VENDOR_ID,
@@ -22,14 +11,23 @@ import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
-import { exportAsFile } from '../../../helpers/utils/export-utils';
-import ActionableMessage from '../../../components/ui/actionable-message';
-import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
 import { BannerAlert } from '../../../components/component-library';
+import ActionableMessage from '../../../components/ui/actionable-message';
+import Button from '../../../components/ui/button';
+import Dialog from '../../../components/ui/dialog';
+import Dropdown from '../../../components/ui/dropdown';
+import TextField from '../../../components/ui/text-field';
+import ToggleButton from '../../../components/ui/toggle-button';
 import {
   SEVERITIES,
   TextVariant,
 } from '../../../helpers/constants/design-system';
+import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
+import { exportAsFile } from '../../../helpers/utils/export-utils';
+import {
+  getNumberOfSettingsInSection,
+  handleSettingsRefs,
+} from '../../../helpers/utils/settings-search';
 
 const CORRUPT_JSON_FILE = 'CORRUPT_JSON_FILE';
 

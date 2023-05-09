@@ -1,16 +1,17 @@
 import React, { useContext } from 'react';
+
+import { useGasFeeContext } from '../../../../contexts/gasFee';
+import { I18nContext } from '../../../../contexts/i18n';
 import {
   FontWeight,
   TextColor,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import { isNullish } from '../../../../helpers/utils/util';
 import { formatGasFeeOrFeeRange } from '../../../../helpers/utils/gas';
-import { I18nContext } from '../../../../contexts/i18n';
-import { useGasFeeContext } from '../../../../contexts/gasFee';
+import { isNullish } from '../../../../helpers/utils/util';
 import { Text } from '../../../component-library';
-import { BaseFeeTooltip, PriorityFeeTooltip } from './tooltips';
 import StatusSlider from './status-slider';
+import { BaseFeeTooltip, PriorityFeeTooltip } from './tooltips';
 
 const NetworkStatistics = () => {
   const t = useContext(I18nContext);

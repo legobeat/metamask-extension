@@ -1,12 +1,13 @@
+const glob = require('fast-glob');
 const fs = require('fs');
-const path = require('path');
 const libCoverage = require('istanbul-lib-coverage');
 const libReport = require('istanbul-lib-report');
 const reports = require('istanbul-reports');
-const glob = require('fast-glob');
-const yargs = require('yargs/yargs');
-const { hideBin } = require('yargs/helpers');
 const yaml = require('js-yaml');
+const path = require('path');
+const { hideBin } = require('yargs/helpers');
+const yargs = require('yargs/yargs');
+
 const codecovTargets = require('../coverage-targets');
 
 const codecovConfig = yaml.load(fs.readFileSync('codecov.yml', 'utf8'));

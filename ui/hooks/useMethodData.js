@@ -1,8 +1,8 @@
 import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContractMethodData as getContractMethodDataAction } from '../store/actions';
 
 import { getKnownMethodData } from '../selectors/selectors';
+import { getContractMethodData as getContractMethodDataAction } from '../store/actions';
 
 /**
  * Access known method data and attempt to resolve unknown method data

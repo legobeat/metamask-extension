@@ -1,10 +1,10 @@
-import pump from 'pump';
 import { WindowPostMessageStream } from '@metamask/post-message-stream';
-import ObjectMultiplex from 'obj-multiplex';
-import browser from 'webextension-polyfill';
 import PortStream from 'extension-port-stream';
-import { obj as createThoughStream } from 'through2';
 import log from 'loglevel';
+import ObjectMultiplex from 'obj-multiplex';
+import pump from 'pump';
+import { obj as createThoughStream } from 'through2';
+import browser from 'webextension-polyfill';
 
 import { EXTENSION_MESSAGES, MESSAGE_TYPE } from '../../shared/constants/app';
 import { checkForLastError } from '../../shared/modules/browser-runtime.utils';

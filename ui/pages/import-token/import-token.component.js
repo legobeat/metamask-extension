@@ -1,33 +1,34 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { getTokenTrackerLink } from '@metamask/etherscan-link';
-import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
-import {
-  checkExistingAddresses,
-  getURLHostName,
-} from '../../helpers/utils/util';
-import { tokenInfoGetter } from '../../helpers/utils/token-util';
-import {
-  ADD_NFT_ROUTE,
-  CONFIRM_IMPORT_TOKEN_ROUTE,
-  SECURITY_ROUTE,
-} from '../../helpers/constants/routes';
-import TextField from '../../components/ui/text-field';
-import PageContainer from '../../components/ui/page-container';
-import { Tabs, Tab } from '../../components/ui/tabs';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import { addHexPrefix } from '../../../app/scripts/lib/util';
+import { STATIC_MAINNET_TOKEN_LIST } from '../../../shared/constants/tokens';
+import { TokenStandard } from '../../../shared/constants/transaction';
 import { isValidHexAddress } from '../../../shared/modules/hexstring-utils';
 import ActionableMessage from '../../components/ui/actionable-message/actionable-message';
+import Button from '../../components/ui/button';
+import PageContainer from '../../components/ui/page-container';
+import { Tabs, Tab } from '../../components/ui/tabs';
+import TextField from '../../components/ui/text-field';
 import Typography from '../../components/ui/typography';
 import {
   TypographyVariant,
   FONT_WEIGHT,
 } from '../../helpers/constants/design-system';
-import Button from '../../components/ui/button';
-import { TokenStandard } from '../../../shared/constants/transaction';
-import { STATIC_MAINNET_TOKEN_LIST } from '../../../shared/constants/tokens';
-import TokenSearch from './token-search';
+import {
+  ADD_NFT_ROUTE,
+  CONFIRM_IMPORT_TOKEN_ROUTE,
+  SECURITY_ROUTE,
+} from '../../helpers/constants/routes';
+import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
+import { tokenInfoGetter } from '../../helpers/utils/token-util';
+import {
+  checkExistingAddresses,
+  getURLHostName,
+} from '../../helpers/utils/util';
 import TokenList from './token-list';
+import TokenSearch from './token-search';
 
 const emptyAddr = '0x0000000000000000000000000000000000000000';
 

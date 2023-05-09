@@ -1,11 +1,12 @@
-const pify = require('pify');
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
+const rename = require('gulp-rename');
+const rtlcss = require('gulp-rtlcss');
+const sourcemaps = require('gulp-sourcemaps');
 const gulpStylelint = require('gulp-stylelint');
 const watch = require('gulp-watch');
-const sourcemaps = require('gulp-sourcemaps');
-const rtlcss = require('gulp-rtlcss');
-const rename = require('gulp-rename');
+const pify = require('pify');
+
 const pump = pify(require('pump'));
 const { TASKS } = require('./constants');
 const { createTask } = require('./task');

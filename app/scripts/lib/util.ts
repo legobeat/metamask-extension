@@ -1,7 +1,6 @@
+import { AccessList } from '@ethereumjs/tx';
 import BN from 'bn.js';
 import { memoize } from 'lodash';
-import { AccessList } from '@ethereumjs/tx';
-import { CHAIN_IDS, TEST_CHAINS } from '../../../shared/constants/network';
 
 import {
   ENVIRONMENT_TYPE_POPUP,
@@ -14,11 +13,12 @@ import {
   PLATFORM_EDGE,
   PLATFORM_BRAVE,
 } from '../../../shared/constants/app';
-import { stripHexPrefix } from '../../../shared/modules/hexstring-utils';
+import { CHAIN_IDS, TEST_CHAINS } from '../../../shared/constants/network';
 import {
   TransactionEnvelopeType,
   TransactionMeta,
 } from '../../../shared/constants/transaction';
+import { stripHexPrefix } from '../../../shared/modules/hexstring-utils';
 
 /**
  * @see {@link getEnvironmentType}

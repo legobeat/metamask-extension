@@ -1,4 +1,5 @@
 import { ethErrors } from 'eth-rpc-errors';
+
 import { MESSAGE_TYPE } from '../../../../../shared/constants/app';
 
 const watchAsset = {

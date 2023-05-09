@@ -1,5 +1,6 @@
-import React, { isValidElement } from 'react';
 import PropTypes from 'prop-types';
+import React, { isValidElement } from 'react';
+
 import Spinner from '../spinner';
 
 const LoadingScreen = ({

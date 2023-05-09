@@ -1,17 +1,18 @@
 import { createSelector } from 'reselect';
-import {
-  PRIORITY_STATUS_HASH,
-  PENDING_STATUS_HASH,
-} from '../helpers/constants/transactions';
-import txHelper from '../helpers/utils/tx-helper';
+
 import {
   TransactionStatus,
   TransactionType,
   SmartTransactionStatus,
 } from '../../shared/constants/transaction';
-import { transactionMatchesNetwork } from '../../shared/modules/transaction.utils';
 import { hexToDecimal } from '../../shared/modules/conversion.utils';
+import { transactionMatchesNetwork } from '../../shared/modules/transaction.utils';
 import { getProviderConfig } from '../ducks/metamask/metamask';
+import {
+  PRIORITY_STATUS_HASH,
+  PENDING_STATUS_HASH,
+} from '../helpers/constants/transactions';
+import txHelper from '../helpers/utils/tx-helper';
 import {
   getCurrentChainId,
   deprecatedGetCurrentNetworkId,

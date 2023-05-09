@@ -1,5 +1,5 @@
-import firstTimeState from '../first-time-state';
 import { TransactionStatus } from '../../../shared/constants/transaction';
+import firstTimeState from '../first-time-state';
 import migration27 from './027';
 
 const oldStorage = {

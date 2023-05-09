@@ -1,31 +1,30 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
 import { chain } from 'lodash';
+import PropTypes from 'prop-types';
+import React, { useState, useContext } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import {
-  addImportedTokens,
-  ignoreTokens,
-  setNewTokensImported,
-} from '../../../store/actions';
-import {
-  getCurrentChainId,
-  getDetectedTokensInCurrentNetwork,
-} from '../../../selectors';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-
-import {
-  AssetType,
-  TokenStandard,
-} from '../../../../shared/constants/transaction';
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventLocation,
   MetaMetricsEventName,
   MetaMetricsTokenEventSource,
 } from '../../../../shared/constants/metametrics';
-import DetectedTokenSelectionPopover from './detected-token-selection-popover/detected-token-selection-popover';
+import {
+  AssetType,
+  TokenStandard,
+} from '../../../../shared/constants/transaction';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import {
+  getCurrentChainId,
+  getDetectedTokensInCurrentNetwork,
+} from '../../../selectors';
+import {
+  addImportedTokens,
+  ignoreTokens,
+  setNewTokensImported,
+} from '../../../store/actions';
 import DetectedTokenIgnoredPopover from './detected-token-ignored-popover/detected-token-ignored-popover';
+import DetectedTokenSelectionPopover from './detected-token-selection-popover/detected-token-selection-popover';
 
 const sortingBasedOnTokenSelection = (tokensDetected) => {
   return (

@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { AvatarIcon, AVATAR_ICON_SIZES } from '.';
+import { IconName } from '..';
 import {
   Size,
   DISPLAY,
@@ -7,13 +10,8 @@ import {
   IconColor,
   Color,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box/box';
-
-import { IconName } from '..';
-
 import README from './README.mdx';
-import { AvatarIcon, AVATAR_ICON_SIZES } from '.';
 
 const marginSizeControlOptions = [
   undefined,

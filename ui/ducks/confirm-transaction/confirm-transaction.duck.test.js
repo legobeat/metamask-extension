@@ -1,8 +1,8 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import sinon from 'sinon';
-import { TransactionStatus } from '../../../shared/constants/transaction';
 
+import { TransactionStatus } from '../../../shared/constants/transaction';
 import ConfirmTransactionReducer, * as actions from './confirm-transaction.duck';
 
 const initialState = {

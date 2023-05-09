@@ -1,6 +1,7 @@
 import browser from 'webextension-polyfill';
+
 import { fetchLocale } from '../../ui/helpers/utils/i18n-helper';
-import { SUPPORT_LINK } from './ui-utils';
+import { openCustomProtocol } from './deep-linking';
 import {
   downloadDesktopApp,
   openOrDownloadMMD,
@@ -10,7 +11,7 @@ import {
   registerDesktopErrorActions,
   MMD_DOWNLOAD_LINK,
 } from './error-utils';
-import { openCustomProtocol } from './deep-linking';
+import { SUPPORT_LINK } from './ui-utils';
 
 jest.mock('../../ui/helpers/utils/i18n-helper', () => ({
   fetchLocale: jest.fn(),

@@ -1,7 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import CurrencyDisplay from '../currency-display';
+import React from 'react';
+
 import { useTokenTracker } from '../../../hooks/useTokenTracker';
+import CurrencyDisplay from '../currency-display';
 
 export default function TokenBalance({ className, token }) {
   const { tokensWithBalances } = useTokenTracker([token]);

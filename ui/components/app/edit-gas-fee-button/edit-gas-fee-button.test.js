@@ -1,5 +1,5 @@
-import React from 'react';
 import { screen } from '@testing-library/react';
+import React from 'react';
 
 import {
   EditGasModes,
@@ -7,13 +7,11 @@ import {
   PriorityLevels,
 } from '../../../../shared/constants/gas';
 import { TransactionEnvelopeType } from '../../../../shared/constants/transaction';
-
-import { GasFeeContextProvider } from '../../../contexts/gasFee';
-import { renderWithProvider } from '../../../../test/jest';
 import mockEstimates from '../../../../test/data/mock-estimates.json';
 import mockState from '../../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../../test/jest';
+import { GasFeeContextProvider } from '../../../contexts/gasFee';
 import configureStore from '../../../store/store';
-
 import EditGasFeeButton from './edit-gas-fee-button';
 
 jest.mock('../../../store/actions', () => ({

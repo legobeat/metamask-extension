@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+
+import { getTokenList, getPreferences, getTheme } from '../../../selectors';
 import {
   setCurrentCurrency,
   setUseBlockie,
@@ -8,7 +10,6 @@ import {
   setParticipateInMetaMetrics,
   setTheme,
 } from '../../../store/actions';
-import { getTokenList, getPreferences, getTheme } from '../../../selectors';
 import SettingsTab from './settings-tab.component';
 
 const mapStateToProps = (state, ownProps) => {

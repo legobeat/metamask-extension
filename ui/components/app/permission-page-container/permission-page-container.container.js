@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import {
   getMetaMaskIdentities,
   ///: BEGIN:ONLY_INCLUDE_IN(snaps)

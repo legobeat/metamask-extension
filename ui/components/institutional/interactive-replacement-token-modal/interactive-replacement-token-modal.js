@@ -1,13 +1,8 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Modal from '../../app/modal';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { hideModal } from '../../../store/actions';
-import { getSelectedAddress } from '../../../selectors/selectors';
+
 import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
-import { Text } from '../../component-library';
-import Box from '../../ui/box';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   BLOCK_SIZES,
   BackgroundColor,
@@ -19,6 +14,12 @@ import {
   TextAlign,
   AlignItems,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getSelectedAddress } from '../../../selectors/selectors';
+import { hideModal } from '../../../store/actions';
+import Modal from '../../app/modal';
+import { Text } from '../../component-library';
+import Box from '../../ui/box';
 
 const InteractiveReplacementTokenModal = () => {
   const t = useI18nContext();

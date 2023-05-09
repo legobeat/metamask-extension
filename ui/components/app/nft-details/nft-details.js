@@ -1,10 +1,20 @@
-import React, { useEffect } from 'react';
+import { isEqual } from 'lodash';
 import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { isEqual } from 'lodash';
-import Box from '../../ui/box';
-import Card from '../../ui/card';
+
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
+import { CHAIN_IDS } from '../../../../shared/constants/network';
+import {
+  AssetType,
+  TokenStandard,
+} from '../../../../shared/constants/transaction';
+import { decWEIToDecETH } from '../../../../shared/modules/conversion.utils';
+import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
+import { getNftContracts } from '../../../ducks/metamask/metamask';
+import { startNewDraftTransaction } from '../../../ducks/send';
 import {
   TextColor,
   IconColor,
@@ -16,45 +26,36 @@ import {
   DISPLAY,
   BLOCK_SIZES,
 } from '../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import { DEFAULT_ROUTE, SEND_ROUTE } from '../../../helpers/constants/routes';
+import { getNftImageAlt } from '../../../helpers/utils/nfts';
 import {
   formatDate,
   getAssetImageURL,
   shortenAddress,
 } from '../../../helpers/utils/util';
-import { getNftImageAlt } from '../../../helpers/utils/nfts';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { usePrevious } from '../../../hooks/usePrevious';
+import AssetNavigation from '../../../pages/asset/components/asset-navigation';
 import {
   getCurrentChainId,
   getIpfsGateway,
   getSelectedIdentity,
 } from '../../../selectors';
-import AssetNavigation from '../../../pages/asset/components/asset-navigation';
-import { getNftContracts } from '../../../ducks/metamask/metamask';
-import { DEFAULT_ROUTE, SEND_ROUTE } from '../../../helpers/constants/routes';
 import {
   checkAndUpdateSingleNftOwnershipStatus,
   removeAndIgnoreNft,
   setRemoveNftMessage,
   setNewNftAddedMessage,
 } from '../../../store/actions';
-import { CHAIN_IDS } from '../../../../shared/constants/network';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
-import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
-import NftOptions from '../nft-options/nft-options';
-import Button from '../../ui/button';
-import { startNewDraftTransaction } from '../../../ducks/send';
-import InfoTooltip from '../../ui/info-tooltip';
-import { usePrevious } from '../../../hooks/usePrevious';
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
-import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
-import {
-  AssetType,
-  TokenStandard,
-} from '../../../../shared/constants/transaction';
-import NftDefaultImage from '../nft-default-image';
 import { ButtonIcon, IconName, Text } from '../../component-library';
+import Box from '../../ui/box';
+import Button from '../../ui/button';
+import Card from '../../ui/card';
+import InfoTooltip from '../../ui/info-tooltip';
 import Tooltip from '../../ui/tooltip';
-import { decWEIToDecETH } from '../../../../shared/modules/conversion.utils';
+import NftDefaultImage from '../nft-default-image';
+import NftOptions from '../nft-options/nft-options';
 
 export default function NftDetails({ nft }) {
   const {

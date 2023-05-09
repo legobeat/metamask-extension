@@ -1,15 +1,15 @@
+import { fireEvent } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { fireEvent } from '@testing-library/react';
-import { AMOUNT_MODES, SEND_STATUSES } from '../../../../../ducks/send';
-import { renderWithProvider } from '../../../../../../test/jest';
 import { GasEstimateTypes } from '../../../../../../shared/constants/gas';
+import { renderWithProvider } from '../../../../../../test/jest';
 import {
   getInitialSendStateWithExistingTxState,
   INITIAL_SEND_STATE_FOR_EXISTING_DRAFT,
 } from '../../../../../../test/jest/mocks';
+import { AMOUNT_MODES, SEND_STATUSES } from '../../../../../ducks/send';
 import AmountMaxButton from './amount-max-button';
 
 const middleware = [thunk];

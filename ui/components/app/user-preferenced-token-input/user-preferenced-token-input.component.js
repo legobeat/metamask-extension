@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import TokenInput from '../../ui/token-input';
 
 export default class UserPreferencedTokenInput extends PureComponent {

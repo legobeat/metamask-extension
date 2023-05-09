@@ -1,15 +1,14 @@
 import React from 'react';
+
+import { AvatarFavicon, AVATAR_FAVICON_SIZES } from '.';
 import {
   DISPLAY,
   AlignItems,
   BorderColor,
   Size,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box/box';
-
 import README from './README.mdx';
-import { AvatarFavicon, AVATAR_FAVICON_SIZES } from '.';
 
 export default {
   title: 'Components/ComponentLibrary/AvatarFavicon',

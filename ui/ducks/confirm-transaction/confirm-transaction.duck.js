@@ -1,25 +1,23 @@
 import {
-  conversionRateSelector,
-  currentCurrencySelector,
-  unconfirmedTransactionsHashSelector,
-} from '../../selectors';
-import { getNativeCurrency, getTokens } from '../metamask/metamask';
-
+  getValueFromWeiHex,
+  hexToDecimal,
+  sumHexes,
+} from '../../../shared/modules/conversion.utils';
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
+import { parseStandardTokenTransactionData } from '../../../shared/modules/transaction.utils';
 import {
   getTransactionFee,
   getHexGasTotal,
   addFiat,
   addEth,
 } from '../../helpers/utils/confirm-tx.util';
-
 import {
-  getValueFromWeiHex,
-  hexToDecimal,
-  sumHexes,
-} from '../../../shared/modules/conversion.utils';
+  conversionRateSelector,
+  currentCurrencySelector,
+  unconfirmedTransactionsHashSelector,
+} from '../../selectors';
 import { getAveragePriceEstimateInHexWEI } from '../../selectors/custom-gas';
-import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
-import { parseStandardTokenTransactionData } from '../../../shared/modules/transaction.utils';
+import { getNativeCurrency, getTokens } from '../metamask/metamask';
 
 // Actions
 const createActionType = (action) => `metamask/confirm-transaction/${action}`;

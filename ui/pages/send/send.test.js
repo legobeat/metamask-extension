@@ -1,17 +1,18 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { useLocation } from 'react-router-dom';
-import { SEND_STAGES, startNewDraftTransaction } from '../../ducks/send';
-import { domainInitialState } from '../../ducks/domains';
+
+import { GasEstimateTypes } from '../../../shared/constants/gas';
+import { KeyringType } from '../../../shared/constants/keyring';
 import { CHAIN_IDS } from '../../../shared/constants/network';
 import {
   renderWithProvider,
   setBackgroundConnection,
 } from '../../../test/jest';
-import { GasEstimateTypes } from '../../../shared/constants/gas';
-import { KeyringType } from '../../../shared/constants/keyring';
 import { INITIAL_SEND_STATE_FOR_EXISTING_DRAFT } from '../../../test/jest/mocks';
+import { domainInitialState } from '../../ducks/domains';
+import { SEND_STAGES, startNewDraftTransaction } from '../../ducks/send';
 import Send from './send';
 
 const middleware = [thunk];

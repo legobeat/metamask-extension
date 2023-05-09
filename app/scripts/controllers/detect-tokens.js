@@ -1,17 +1,18 @@
 import { warn } from 'loglevel';
-import { MINUTE } from '../../../shared/constants/time';
-import { CHAIN_IDS } from '../../../shared/constants/network';
-import { STATIC_MAINNET_TOKEN_LIST } from '../../../shared/constants/tokens';
-import { isTokenDetectionEnabledForNetwork } from '../../../shared/modules/network.utils';
-import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
-import {
-  AssetType,
-  TokenStandard,
-} from '../../../shared/constants/transaction';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../shared/constants/metametrics';
+import { CHAIN_IDS } from '../../../shared/constants/network';
+import { MINUTE } from '../../../shared/constants/time';
+import { STATIC_MAINNET_TOKEN_LIST } from '../../../shared/constants/tokens';
+import {
+  AssetType,
+  TokenStandard,
+} from '../../../shared/constants/transaction';
+import { isTokenDetectionEnabledForNetwork } from '../../../shared/modules/network.utils';
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
 
 // By default, poll every 3 minutes
 const DEFAULT_INTERVAL = MINUTE * 3;

@@ -1,4 +1,5 @@
 import { ObservableStore } from '@metamask/obs-store';
+
 import {
   TOGGLEABLE_ALERT_TYPES,
   Web3ShimUsageAlertStates,

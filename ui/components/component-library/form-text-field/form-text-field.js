@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import {
   DISPLAY,
@@ -8,12 +8,10 @@ import {
   SEVERITIES,
   Size,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box/box';
-
-import { TextField } from '../text-field';
 import { HelpText } from '../help-text';
 import { Label } from '../label';
+import { TextField } from '../text-field';
 
 export const FormTextField = ({
   autoComplete,

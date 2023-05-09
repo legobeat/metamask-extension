@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SnapVersion from '.';
 
 export default {

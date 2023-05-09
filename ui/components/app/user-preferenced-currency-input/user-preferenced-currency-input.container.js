@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import { toggleCurrencySwitch } from '../../../ducks/app/app';
 import { getPreferences } from '../../../selectors';
 import UserPreferencedCurrencyInput from './user-preferenced-currency-input.component';

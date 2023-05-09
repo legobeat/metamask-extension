@@ -1,6 +1,7 @@
 const { strict: assert } = require('assert');
-const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
+
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
 
 describe('MV3 - Dapp interactions', function () {
   let windowHandles;

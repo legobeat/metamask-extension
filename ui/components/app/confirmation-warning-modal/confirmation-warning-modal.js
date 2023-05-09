@@ -1,10 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import React from 'react';
 
-import Popover from '../../ui/popover';
-import Box from '../../ui/box';
-import Button from '../../ui/button';
 import {
   DISPLAY,
   FLEX_DIRECTION,
@@ -14,7 +10,11 @@ import {
   AlignItems,
   IconColor,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { Icon, IconName, IconSize, Text } from '../../component-library';
+import Box from '../../ui/box';
+import Button from '../../ui/button';
+import Popover from '../../ui/popover';
 
 const ConfirmationWarningModal = ({ onSubmit, onCancel }) => {
   const t = useI18nContext();

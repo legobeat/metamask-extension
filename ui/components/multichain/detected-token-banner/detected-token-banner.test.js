@@ -1,8 +1,8 @@
 import React from 'react';
+
+import testData from '../../../../.storybook/test-data';
 import { renderWithProvider, screen, fireEvent } from '../../../../test/jest';
 import configureStore from '../../../store/store';
-import testData from '../../../../.storybook/test-data';
-
 import { DetectedTokensBanner } from './detected-token-banner';
 
 describe('DetectedTokensBanner', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { BoxProps } from '../../ui/box/box.d';
+
 import {
   FontWeight,
   FontStyle,
@@ -10,6 +10,7 @@ import {
   TextColor,
   Color,
 } from '../../../helpers/constants/design-system';
+import type { BoxProps } from '../../ui/box/box.d';
 
 export enum TextDirection {
   LeftToRight = 'ltr',

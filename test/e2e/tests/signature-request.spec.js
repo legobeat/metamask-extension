@@ -1,4 +1,6 @@
 const { strict: assert } = require('assert');
+
+const FixtureBuilder = require('../fixture-builder');
 const {
   convertToHexValue,
   withFixtures,
@@ -6,7 +8,6 @@ const {
   openDapp,
   DAPP_URL,
 } = require('../helpers');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('Sign Typed Data V4 Signature Request', function () {
   it('can initiate and confirm a Signature Request', async function () {

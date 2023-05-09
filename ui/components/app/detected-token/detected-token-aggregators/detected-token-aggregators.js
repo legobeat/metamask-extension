@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-
-import Box from '../../../ui/box';
-import Button from '../../../ui/button';
 import {
   DISPLAY,
   FontWeight,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { Text } from '../../../component-library';
+import Box from '../../../ui/box';
+import Button from '../../../ui/button';
 
 const NUMBER_OF_AGGREGATORS_TO_DISPLAY = 2;
 

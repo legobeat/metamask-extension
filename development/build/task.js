@@ -1,5 +1,5 @@
-const EventEmitter = require('events');
 const spawn = require('cross-spawn');
+const EventEmitter = require('events');
 
 const tasks = {};
 const taskEvents = new EventEmitter();

@@ -1,16 +1,16 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { formatCurrency } from '../helpers/utils/confirm-tx.util';
-import { getCurrentCurrency } from '../selectors';
+
+import { EtherDenomination } from '../../shared/constants/common';
+import { TEST_NETWORK_TICKER_MAP } from '../../shared/constants/network';
+import { getValueFromWeiHex } from '../../shared/modules/conversion.utils';
+import { Numeric } from '../../shared/modules/Numeric';
 import {
   getConversionRate,
   getNativeCurrency,
 } from '../ducks/metamask/metamask';
-
-import { getValueFromWeiHex } from '../../shared/modules/conversion.utils';
-import { TEST_NETWORK_TICKER_MAP } from '../../shared/constants/network';
-import { Numeric } from '../../shared/modules/Numeric';
-import { EtherDenomination } from '../../shared/constants/common';
+import { formatCurrency } from '../helpers/utils/confirm-tx.util';
+import { getCurrentCurrency } from '../selectors';
 
 /**
  * Defines the shape of the options parameter for useCurrencyDisplay

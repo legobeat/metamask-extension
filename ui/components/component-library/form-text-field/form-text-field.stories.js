@@ -1,16 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import { useArgs } from '@storybook/client-api';
+import React, { useState, useEffect } from 'react';
 
-import {
-  DISPLAY,
-  AlignItems,
-  TextVariant,
-  JustifyContent,
-  TextColor,
-  IconColor,
-} from '../../../helpers/constants/design-system';
-
-import Box from '../../ui/box/box';
 import {
   ButtonLink,
   ButtonPrimary,
@@ -24,9 +14,16 @@ import {
   IconName,
   IconSize,
 } from '..';
-
+import {
+  DISPLAY,
+  AlignItems,
+  TextVariant,
+  JustifyContent,
+  TextColor,
+  IconColor,
+} from '../../../helpers/constants/design-system';
+import Box from '../../ui/box/box';
 import { FormTextField } from './form-text-field';
-
 import README from './README.mdx';
 
 const marginSizeControlOptions = [

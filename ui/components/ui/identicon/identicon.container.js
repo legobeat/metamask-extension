@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import { getTokenList } from '../../../selectors';
 import Identicon from './identicon.component';
 

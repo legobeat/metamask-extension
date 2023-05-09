@@ -1,42 +1,41 @@
-import React, { useMemo, useState, useCallback, useContext } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import React, { useMemo, useState, useCallback, useContext } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
-import ListItem from '../../ui/list-item';
-import { useTransactionDisplayData } from '../../../hooks/useTransactionDisplayData';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-
-import TransactionListItemDetails from '../transaction-list-item-details';
-import { CONFIRM_TRANSACTION_ROUTE } from '../../../helpers/constants/routes';
-import { useShouldShowSpeedUp } from '../../../hooks/useShouldShowSpeedUp';
-import TransactionStatusLabel from '../transaction-status-label/transaction-status-label';
-import TransactionIcon from '../transaction-icon';
+import { EditGasModes } from '../../../../shared/constants/gas';
 import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import {
   TransactionGroupCategory,
   TransactionStatus,
 } from '../../../../shared/constants/transaction';
-import { EditGasModes } from '../../../../shared/constants/gas';
 import {
   GasFeeContextProvider,
   useGasFeeContext,
 } from '../../../contexts/gasFee';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   TransactionModalContextProvider,
   useTransactionModalContext,
 } from '../../../contexts/transaction-modal';
-import { checkNetworkAndAccountSupports1559 } from '../../../selectors';
+import { CONFIRM_TRANSACTION_ROUTE } from '../../../helpers/constants/routes';
 import { isLegacyTransaction } from '../../../helpers/utils/transactions.util';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { useShouldShowSpeedUp } from '../../../hooks/useShouldShowSpeedUp';
+import { useTransactionDisplayData } from '../../../hooks/useTransactionDisplayData';
+import { checkNetworkAndAccountSupports1559 } from '../../../selectors';
 import Button from '../../ui/button';
+import ListItem from '../../ui/list-item';
+import SiteOrigin from '../../ui/site-origin';
 import AdvancedGasFeePopover from '../advanced-gas-fee-popover';
 import CancelButton from '../cancel-button';
 import CancelSpeedupPopover from '../cancel-speedup-popover';
 import EditGasFeePopover from '../edit-gas-fee-popover';
 import EditGasPopover from '../edit-gas-popover';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import SiteOrigin from '../../ui/site-origin';
+import TransactionIcon from '../transaction-icon';
+import TransactionListItemDetails from '../transaction-list-item-details';
+import TransactionStatusLabel from '../transaction-status-label/transaction-status-label';
 
 function TransactionListItemInner({
   transactionGroup,

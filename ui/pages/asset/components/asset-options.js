@@ -1,14 +1,14 @@
-import React, { useContext, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-
-import { useHistory } from 'react-router-dom';
+import React, { useContext, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { I18nContext } from '../../../contexts/i18n';
-import { Menu, MenuItem } from '../../../components/ui/menu';
-import { getBlockExplorerLinkText } from '../../../selectors';
-import { NETWORKS_ROUTE } from '../../../helpers/constants/routes';
+import { useHistory } from 'react-router-dom';
+
 import { ButtonIcon, IconName } from '../../../components/component-library';
+import { Menu, MenuItem } from '../../../components/ui/menu';
+import { I18nContext } from '../../../contexts/i18n';
 import { Color } from '../../../helpers/constants/design-system';
+import { NETWORKS_ROUTE } from '../../../helpers/constants/routes';
+import { getBlockExplorerLinkText } from '../../../selectors';
 
 const AssetOptions = ({
   onRemove,

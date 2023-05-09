@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
+
 import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
 import { getSelectedIdentity } from '../../../selectors';
 import { AddressCopyButton } from '../../multichain';

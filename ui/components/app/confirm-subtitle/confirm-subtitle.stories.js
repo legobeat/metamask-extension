@@ -3,9 +3,8 @@ import { Provider } from 'react-redux';
 
 import mockState from '../../../../test/data/mock-state.json';
 import configureStore from '../../../store/store';
-
-import README from './README.mdx';
 import ConfirmSubTitle from './confirm-subtitle';
+import README from './README.mdx';
 
 mockState.metamask.preferences.showFiatInTestnets = true;
 const store = configureStore(mockState);

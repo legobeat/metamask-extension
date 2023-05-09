@@ -1,8 +1,20 @@
 import React, { useState, useContext } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useHistory, useLocation } from 'react-router-dom';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import {
+  ThreeStepProgressBar,
+  threeStepStages,
+} from '../../../components/app/step-progress-bar';
+import { Text } from '../../../components/component-library';
 import Box from '../../../components/ui/box';
 import Button from '../../../components/ui/button';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { getCurrentLocale } from '../../../ducks/locale/locale';
 import {
   TextAlign,
   TextVariant,
@@ -10,19 +22,8 @@ import {
   FontWeight,
   DISPLAY,
 } from '../../../helpers/constants/design-system';
-import {
-  ThreeStepProgressBar,
-  threeStepStages,
-} from '../../../components/app/step-progress-bar';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
 import { ONBOARDING_REVIEW_SRP_ROUTE } from '../../../helpers/constants/routes';
-import { getCurrentLocale } from '../../../ducks/locale/locale';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import { Text } from '../../../components/component-library';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import SkipSRPBackup from './skip-srp-backup-popover';
 
 export default function SecureYourWallet() {

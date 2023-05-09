@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import { ButtonBase } from '../button-base';
 import { Color } from '../../../helpers/constants/design-system';
+import { ButtonBase } from '../button-base';
 import { BUTTON_SECONDARY_SIZES } from './button-secondary.constants';
 
 export const ButtonSecondary = ({

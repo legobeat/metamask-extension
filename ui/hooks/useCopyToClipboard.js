@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react';
 import copyToClipboard from 'copy-to-clipboard';
+import { useState, useCallback } from 'react';
+
 import { SECOND } from '../../shared/constants/time';
 import { useTimeout } from './useTimeout';
 

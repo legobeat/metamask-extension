@@ -1,8 +1,9 @@
+import { fireEvent } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent } from '@testing-library/react';
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
+
 import ConfirmRemoveAccount from '.';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 
 describe('Confirm Remove Account', () => {
   const state = {

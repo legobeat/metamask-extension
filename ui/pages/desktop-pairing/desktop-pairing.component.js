@@ -1,9 +1,13 @@
+import PropTypes from 'prop-types';
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
 import { SECOND } from '../../../shared/constants/time';
-import { I18nContext } from '../../contexts/i18n';
+import { Text, Button } from '../../components/component-library';
+import Box from '../../components/ui/box/box';
 import IconDesktopPairing from '../../components/ui/icon/icon-desktop-pairing';
+import Tooltip from '../../components/ui/tooltip';
+import { I18nContext } from '../../contexts/i18n';
 import {
   TEXT_ALIGN,
   TextVariant,
@@ -13,10 +17,7 @@ import {
   BackgroundColor,
   BorderRadius,
 } from '../../helpers/constants/design-system';
-import Box from '../../components/ui/box/box';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
-import Tooltip from '../../components/ui/tooltip';
-import { Text, Button } from '../../components/component-library';
 
 export default function DesktopPairingPage({
   generateDesktopOtp,

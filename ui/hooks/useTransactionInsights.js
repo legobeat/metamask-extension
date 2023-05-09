@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { CHAIN_ID_TO_NETWORK_ID_MAP } from '../../shared/constants/network';
-import { stripHexPrefix } from '../../shared/modules/hexstring-utils';
 import { TransactionType } from '../../shared/constants/transaction';
-import { getInsightSnaps } from '../selectors';
+import { stripHexPrefix } from '../../shared/modules/hexstring-utils';
+import { SnapInsight } from '../components/app/confirm-page-container/snaps/snap-insight';
 import { Tab } from '../components/ui/tabs';
 import DropdownTab from '../components/ui/tabs/snaps/dropdown-tab';
-import { SnapInsight } from '../components/app/confirm-page-container/snaps/snap-insight';
+import { getInsightSnaps } from '../selectors';
 
 const isAllowedTransactionTypes = (transactionType) =>
   transactionType === TransactionType.contractInteraction ||

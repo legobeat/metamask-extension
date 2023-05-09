@@ -1,13 +1,13 @@
+import isEqual from 'lodash/isEqual';
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import isEqual from 'lodash/isEqual';
 
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import Box from '../../../components/ui/box';
 import { I18nContext } from '../../../contexts/i18n';
 import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import {
   navigateBackToBuildQuote,
   setSwapsFromToken,

@@ -1,18 +1,19 @@
 import { strict as assert } from 'assert';
 import sinon from 'sinon';
-import {
-  TransactionStatus,
-  TransactionType,
-} from '../../../../shared/constants/transaction';
+
+import { ORIGIN_METAMASK } from '../../../../shared/constants/app';
+import { GAS_LIMITS } from '../../../../shared/constants/gas';
 import {
   CHAIN_IDS,
   NETWORK_IDS,
   NetworkStatus,
 } from '../../../../shared/constants/network';
-import { GAS_LIMITS } from '../../../../shared/constants/gas';
-import { ORIGIN_METAMASK } from '../../../../shared/constants/app';
-import TxStateManager, { ERROR_SUBMITTING } from './tx-state-manager';
+import {
+  TransactionStatus,
+  TransactionType,
+} from '../../../../shared/constants/transaction';
 import { snapshotFromTxMeta } from './lib/tx-state-history-helpers';
+import TxStateManager, { ERROR_SUBMITTING } from './tx-state-manager';
 
 const VALID_ADDRESS = '0x0000000000000000000000000000000000000000';
 const VALID_ADDRESS_TWO = '0x0000000000000000000000000000000000000001';

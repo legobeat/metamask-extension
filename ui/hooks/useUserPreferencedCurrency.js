@@ -1,13 +1,13 @@
 import { shallowEqual, useSelector } from 'react-redux';
+
+import { EtherDenomination } from '../../shared/constants/common';
+import { getNativeCurrency } from '../ducks/metamask/metamask';
+import { PRIMARY, SECONDARY } from '../helpers/constants/common';
 import {
   getPreferences,
   getShouldShowFiat,
   getCurrentCurrency,
 } from '../selectors';
-import { getNativeCurrency } from '../ducks/metamask/metamask';
-
-import { PRIMARY, SECONDARY } from '../helpers/constants/common';
-import { EtherDenomination } from '../../shared/constants/common';
 
 /**
  * Defines the shape of the options parameter for useUserPreferencedCurrency

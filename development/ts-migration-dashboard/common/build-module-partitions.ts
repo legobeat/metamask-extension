@@ -1,7 +1,8 @@
-import fs from 'fs';
-import path from 'path';
 import fg from 'fast-glob';
+import fs from 'fs';
 import madge from 'madge';
+import path from 'path';
+
 import {
   ROOT_DIRECTORY_PATH,
   ENTRYPOINT_PATTERNS,
@@ -76,7 +77,7 @@ export default async function buildModulePartitions(): Promise<
 
   const possibleEntryFilePaths = (
     await Promise.all(
-      ENTRYPOINT_PATTERNS.map((entrypointPattern) => {
+      ENTRYPOINT_PATTERNS.map(async (entrypointPattern) => {
         return fg(
           path.resolve(ROOT_DIRECTORY_PATH, `${entrypointPattern}.{js,ts,tsx}`),
         );

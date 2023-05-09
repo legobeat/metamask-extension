@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import Typography from '../../ui/typography/typography';
 import {
   Color,
   FONT_WEIGHT,
@@ -12,6 +11,7 @@ import {
   AlignItems,
   TEXT_ALIGN,
 } from '../../../helpers/constants/design-system';
+import Typography from '../../ui/typography/typography';
 
 export default function TransactionDetailItem({
   detailTitle = '',

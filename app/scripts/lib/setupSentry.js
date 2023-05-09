@@ -1,8 +1,8 @@
 import * as Sentry from '@sentry/browser';
 import { Dedupe, ExtraErrorData } from '@sentry/integrations';
 
-import { FilterEvents } from './sentry-filter-events';
 import extractEthjsErrorMessage from './extractEthjsErrorMessage';
+import { FilterEvents } from './sentry-filter-events';
 
 /* eslint-disable prefer-destructuring */
 // Destructuring breaks the inlining of the environment variables

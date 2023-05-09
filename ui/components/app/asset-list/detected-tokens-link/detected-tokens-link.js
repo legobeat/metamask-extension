@@ -1,21 +1,21 @@
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
-import Box from '../../../ui/box/box';
-import Button from '../../../ui/button';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import {
-  getCurrentChainId,
-  getDetectedTokensInCurrentNetwork,
-} from '../../../../selectors';
-import { MetaMetricsContext } from '../../../../contexts/metametrics';
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
   MetaMetricsTokenEventSource,
 } from '../../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../../contexts/metametrics';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import {
+  getCurrentChainId,
+  getDetectedTokensInCurrentNetwork,
+} from '../../../../selectors';
+import Box from '../../../ui/box/box';
+import Button from '../../../ui/button';
 
 const DetectedTokensLink = ({ className = '', setShowDetectedTokens }) => {
   const t = useI18nContext();

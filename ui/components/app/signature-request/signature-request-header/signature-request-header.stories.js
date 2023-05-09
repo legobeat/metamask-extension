@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SignatureRequestHeader from '.';
 
 export default {

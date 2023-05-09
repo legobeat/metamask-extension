@@ -1,5 +1,5 @@
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 
 import {
   AlignItems,
@@ -9,10 +9,8 @@ import {
   IconColor,
   JustifyContent,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box';
 import { Icon, IconSize } from '../icon';
-
 import { ButtonIconSize, ButtonIconProps } from './button-icon.types';
 
 const buttonIconSizeToIconSize: Record<ButtonIconSize, IconSize> = {

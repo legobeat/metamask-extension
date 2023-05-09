@@ -1,7 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, useHistory } from 'react-router-dom';
+
+import { AssetType } from '../../../shared/constants/transaction';
+import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
+import { editExistingTransaction } from '../../ducks/send';
 import {
   CONFIRM_APPROVE_PATH,
   CONFIRM_SAFE_TRANSFER_FROM_PATH,
@@ -11,16 +15,12 @@ import {
   CONFIRM_TRANSFER_FROM_PATH,
   SEND_ROUTE,
 } from '../../helpers/constants/routes';
+import { useAssetDetails } from '../../hooks/useAssetDetails';
 import { transactionFeeSelector } from '../../selectors';
 import ConfirmApprove from '../confirm-approve';
 import ConfirmSendToken from '../confirm-send-token';
 import ConfirmTokenTransactionBase from '../confirm-token-transaction-base';
 import ConfirmTransactionSwitch from '../confirm-transaction-switch';
-import { editExistingTransaction } from '../../ducks/send';
-import { AssetType } from '../../../shared/constants/transaction';
-import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
-
-import { useAssetDetails } from '../../hooks/useAssetDetails';
 
 export default function ConfirmTokenTransactionSwitch({ transaction }) {
   const { txParams: { data, to: tokenAddress, from: userAddress } = {} } =

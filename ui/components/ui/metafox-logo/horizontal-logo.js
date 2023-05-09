@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 const LOGO_WIDTH = 162;
 const LOGO_HEIGHT = 30;

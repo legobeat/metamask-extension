@@ -1,9 +1,10 @@
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
-import mockState from '../../../../../test/data/mock-state.json';
-import mockSendState from '../../../../../test/data/mock-send-state.json';
+
 import AddRecipient from '.';
+import mockSendState from '../../../../../test/data/mock-send-state.json';
+import mockState from '../../../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 
 describe('Add Recipient Component', () => {
   describe('render', () => {

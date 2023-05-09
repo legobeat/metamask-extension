@@ -1,12 +1,20 @@
+import PropTypes from 'prop-types';
 import React, { useState, useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import {
+  ThreeStepProgressBar,
+  threeStepStages,
+} from '../../../components/app/step-progress-bar';
+import { Icon, IconName } from '../../../components/component-library';
 import Box from '../../../components/ui/box';
 import Button from '../../../components/ui/button';
 import Typography from '../../../components/ui/typography';
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { ONBOARDING_CONFIRM_SRP_ROUTE } from '../../../helpers/constants/routes';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   TEXT_ALIGN,
   TypographyVariant,
@@ -14,16 +22,9 @@ import {
   FONT_WEIGHT,
   IconColor,
 } from '../../../helpers/constants/design-system';
-import {
-  ThreeStepProgressBar,
-  threeStepStages,
-} from '../../../components/app/step-progress-bar';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { Icon, IconName } from '../../../components/component-library';
+import { ONBOARDING_CONFIRM_SRP_ROUTE } from '../../../helpers/constants/routes';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import RecoveryPhraseChips from './recovery-phrase-chips';
 
 export default function RecoveryPhrase({ secretRecoveryPhrase }) {

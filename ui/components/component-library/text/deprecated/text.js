@@ -1,7 +1,7 @@
-import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Box from '../../../ui/box';
+import React from 'react';
+
 import {
   FONT_WEIGHT,
   FONT_STYLE,
@@ -11,6 +11,7 @@ import {
   OVERFLOW_WRAP,
   TextColor,
 } from '../../../../helpers/constants/design-system';
+import Box from '../../../ui/box';
 import { TEXT_DIRECTIONS } from './text.constants';
 
 export const ValidTags = [

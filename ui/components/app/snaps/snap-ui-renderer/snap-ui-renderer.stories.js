@@ -1,9 +1,10 @@
+import { panel, text, heading, divider, copyable } from '@metamask/snaps-ui';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { panel, text, heading, divider, copyable } from '@metamask/snaps-ui';
-import configureStore from '../../../../store/store';
-import testData from '../../../../../.storybook/test-data';
+
 import { SnapUIRenderer } from '.';
+import testData from '../../../../../.storybook/test-data';
+import configureStore from '../../../../store/store';
 
 const store = configureStore(testData);
 

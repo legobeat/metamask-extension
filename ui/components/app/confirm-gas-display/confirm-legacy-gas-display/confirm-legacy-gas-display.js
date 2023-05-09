@@ -1,6 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { getNativeCurrency } from '../../../../ducks/metamask/metamask';
+import { PRIMARY, SECONDARY } from '../../../../helpers/constants/common';
+import {
+  FONT_STYLE,
+  TextVariant,
+  TextColor,
+} from '../../../../helpers/constants/design-system';
+import { useDraftTransactionGasValues } from '../../../../hooks/useDraftTransactionGasValues';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
 import {
   getIsMainnet,
@@ -11,21 +19,12 @@ import {
   transactionFeeSelector,
   txDataSelector,
 } from '../../../../selectors';
-import { PRIMARY, SECONDARY } from '../../../../helpers/constants/common';
-
-import TransactionDetailItem from '../../transaction-detail-item';
-import UserPreferencedCurrencyDisplay from '../../user-preferenced-currency-display';
+import { Text } from '../../../component-library/text';
 import InfoTooltip from '../../../ui/info-tooltip';
 import LoadingHeartBeat from '../../../ui/loading-heartbeat';
-import { Text } from '../../../component-library/text';
-import {
-  FONT_STYLE,
-  TextVariant,
-  TextColor,
-} from '../../../../helpers/constants/design-system';
-import { useDraftTransactionGasValues } from '../../../../hooks/useDraftTransactionGasValues';
-import { getNativeCurrency } from '../../../../ducks/metamask/metamask';
 import MultilayerFeeMessage from '../../multilayer-fee-message/multi-layer-fee-message';
+import TransactionDetailItem from '../../transaction-detail-item';
+import UserPreferencedCurrencyDisplay from '../../user-preferenced-currency-display';
 
 const renderHeartBeatIfNotInTest = () =>
   process.env.IN_TEST ? null : <LoadingHeartBeat />;

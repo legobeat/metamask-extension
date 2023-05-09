@@ -52,7 +52,7 @@ export function testsForRpcMethodsThatCheckForBlockHashInResponse(
 
       const results = await withNetworkClient(
         { providerType },
-        ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+        async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
       );
 
       expect(results).toStrictEqual([mockResult, mockResult]);
@@ -119,7 +119,7 @@ export function testsForRpcMethodsThatCheckForBlockHashInResponse(
 
       const results = await withNetworkClient(
         { providerType },
-        ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+        async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
       );
 
       expect(results).toStrictEqual(mockResults);
@@ -149,7 +149,7 @@ export function testsForRpcMethodsThatCheckForBlockHashInResponse(
 
       const results = await withNetworkClient(
         { providerType },
-        ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+        async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
       );
 
       expect(results).toStrictEqual(mockResults);
@@ -183,7 +183,7 @@ export function testsForRpcMethodsThatCheckForBlockHashInResponse(
 
       const results = await withNetworkClient(
         { providerType },
-        ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+        async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
       );
 
       expect(results).toStrictEqual(mockResults);
@@ -207,7 +207,7 @@ export function testsForRpcMethodsThatCheckForBlockHashInResponse(
 
         const result = await withNetworkClient(
           { providerType },
-          ({ makeRpcCall }) => makeRpcCall(request),
+          async ({ makeRpcCall }) => makeRpcCall(request),
         );
 
         expect(result).toStrictEqual(mockResult);
@@ -234,7 +234,7 @@ export function testsForRpcMethodsThatCheckForBlockHashInResponse(
 
         const results = await withNetworkClient(
           { providerType },
-          ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+          async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
         );
 
         expect(results).toStrictEqual(mockResults);
@@ -274,7 +274,7 @@ export function testsForRpcMethodsThatCheckForBlockHashInResponse(
 
         const results = await withNetworkClient(
           { providerType },
-          ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
+          async ({ makeRpcCallsInSeries }) => makeRpcCallsInSeries(requests),
         );
 
         expect(results).toStrictEqual([mockResults[0], mockResults[1]]);

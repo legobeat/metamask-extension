@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react';
+import * as Sentry from '@sentry/browser';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
-import * as Sentry from '@sentry/browser';
+
 import { I18nProvider, LegacyI18nProvider } from '../contexts/i18n';
 import {
   MetaMetricsProvider,

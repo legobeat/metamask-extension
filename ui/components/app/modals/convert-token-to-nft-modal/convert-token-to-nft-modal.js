@@ -1,19 +1,20 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Modal from '../../modal';
-import Typography from '../../../ui/typography';
+import { useHistory } from 'react-router-dom';
+
+import { isEqualCaseInsensitive } from '../../../../../shared/modules/string-utils';
+import { getNfts } from '../../../../ducks/metamask/metamask';
 import { TypographyVariant } from '../../../../helpers/constants/design-system';
-import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
 import {
   ADD_NFT_ROUTE,
   ASSET_ROUTE,
 } from '../../../../helpers/constants/routes';
-import { getNfts } from '../../../../ducks/metamask/metamask';
+import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { ignoreTokens } from '../../../../store/actions';
-import { isEqualCaseInsensitive } from '../../../../../shared/modules/string-utils';
+import Typography from '../../../ui/typography';
+import Modal from '../../modal';
 
 const ConvertTokenToNFTModal = ({ hideModal, tokenAddress }) => {
   const history = useHistory();

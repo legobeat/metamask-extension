@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   STATUS_CONNECTED,
   STATUS_CONNECTED_TO_ANOTHER_ACCOUNT,

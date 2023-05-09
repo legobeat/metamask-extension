@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
-import Box from '../../../ui/box';
-import CheckBox from '../../../ui/check-box';
 
 import {
   DISPLAY,
   TextColor,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import { useTokenTracker } from '../../../../hooks/useTokenTracker';
 import { useTokenFiatAmount } from '../../../../hooks/useTokenFiatAmount';
+import { useTokenTracker } from '../../../../hooks/useTokenTracker';
 import { getUseCurrencyRateCheck } from '../../../../selectors';
 import { Text } from '../../../component-library';
+import Box from '../../../ui/box';
+import CheckBox from '../../../ui/check-box';
 
 const DetectedTokenValues = ({
   token,

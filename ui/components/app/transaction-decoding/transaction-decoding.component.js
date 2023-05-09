@@ -1,25 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import inspect from 'browser-util-inspect';
-import { forAddress } from '@truffle/decoder';
-import { useSelector } from 'react-redux';
 import * as Codec from '@truffle/codec';
-import Spinner from '../../ui/spinner';
-import ErrorMessage from '../../ui/error-message';
+import { forAddress } from '@truffle/decoder';
+import inspect from 'browser-util-inspect';
+import PropTypes from 'prop-types';
+import React, { useContext, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import fetchWithCache from '../../../../shared/lib/fetch-with-cache';
-import { getSelectedAccount, getCurrentChainId } from '../../../selectors';
-import { I18nContext } from '../../../contexts/i18n';
-import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
 import { hexToDecimal } from '../../../../shared/modules/conversion.utils';
-import { transformTxDecoding } from './transaction-decoding.util';
+import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
+import { I18nContext } from '../../../contexts/i18n';
+import { getSelectedAccount, getCurrentChainId } from '../../../selectors';
+import ErrorMessage from '../../ui/error-message';
+import Spinner from '../../ui/spinner';
+import Address from './components/decoding/address';
+import Accreditation from './components/ui/accreditation';
+import CopyRawData from './components/ui/copy-raw-data';
 import {
   FETCH_PROJECT_INFO_URI,
   FETCH_SUPPORTED_NETWORKS_URI,
 } from './constants';
-
-import Address from './components/decoding/address';
-import CopyRawData from './components/ui/copy-raw-data';
-import Accreditation from './components/ui/accreditation';
+import { transformTxDecoding } from './transaction-decoding.util';
 
 export default function TransactionDecoding({ to = '', inputData: data = '' }) {
   const t = useContext(I18nContext);

@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { I18nContext } from '../../../contexts/i18n';
-import UrlIcon from '../../../components/ui/url-icon';
-import Popover from '../../../components/ui/popover';
-import Button from '../../../components/ui/button';
-import Box from '../../../components/ui/box';
+import React, { useContext } from 'react';
+
 import { Text } from '../../../components/component-library';
 import ActionableMessage from '../../../components/ui/actionable-message/actionable-message';
+import Box from '../../../components/ui/box';
+import Button from '../../../components/ui/button';
+import Popover from '../../../components/ui/popover';
+import UrlIcon from '../../../components/ui/url-icon';
+import { I18nContext } from '../../../contexts/i18n';
 import {
   TextVariant,
   FONT_WEIGHT,

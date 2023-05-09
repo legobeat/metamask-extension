@@ -1,27 +1,28 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { formatDate } from '../../helpers/utils/util';
-import {
-  getNotifications,
-  getSnapsRouteObjects,
-  getUnreadNotifications,
-} from '../../selectors';
-import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
-import {
-  deleteExpiredNotifications,
-  markNotificationsAsRead,
-} from '../../store/actions';
-import Button from '../../components/ui/button';
-import { useI18nContext } from '../../hooks/useI18nContext';
+
 import {
   ButtonIcon,
   ButtonIconSize,
   IconName,
 } from '../../components/component-library';
+import Button from '../../components/ui/button';
 import { Color } from '../../helpers/constants/design-system';
+import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import { formatDate } from '../../helpers/utils/util';
+import { useI18nContext } from '../../hooks/useI18nContext';
+import {
+  getNotifications,
+  getSnapsRouteObjects,
+  getUnreadNotifications,
+} from '../../selectors';
+import {
+  deleteExpiredNotifications,
+  markNotificationsAsRead,
+} from '../../store/actions';
 
 export function NotificationItem({ notification, snaps, onItemClick }) {
   const { message, origin, createdDate, readDate } = notification;

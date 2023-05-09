@@ -1,10 +1,17 @@
-import EventEmitter from 'events';
-import log from 'loglevel';
+import {
+  AcceptRequest,
+  AddApprovalRequest,
+  RejectRequest,
+} from '@metamask/approval-controller';
+import {
+  BaseControllerV2,
+  RestrictedControllerMessenger,
+} from '@metamask/base-controller';
+import { KeyringController } from '@metamask/eth-keyring-controller';
 import {
   EncryptionPublicKeyManager,
   EncryptionPublicKeyParamsMetamask,
 } from '@metamask/message-manager';
-import { KeyringController } from '@metamask/eth-keyring-controller';
 import {
   AbstractMessageManager,
   AbstractMessage,
@@ -13,19 +20,13 @@ import {
   AbstractMessageParamsMetamask,
   OriginalRequest,
 } from '@metamask/message-manager/dist/AbstractMessageManager';
-import {
-  BaseControllerV2,
-  RestrictedControllerMessenger,
-} from '@metamask/base-controller';
+import EventEmitter from 'events';
 import { Patch } from 'immer';
-import {
-  AcceptRequest,
-  AddApprovalRequest,
-  RejectRequest,
-} from '@metamask/approval-controller';
-import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
-import { KeyringType } from '../../../shared/constants/keyring';
+import log from 'loglevel';
+
 import { ORIGIN_METAMASK } from '../../../shared/constants/app';
+import { KeyringType } from '../../../shared/constants/keyring';
+import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
 
 const controllerName = 'EncryptionPublicKeyController';
 const methodNameGetEncryptionPublicKey = 'eth_getEncryptionPublicKey';
@@ -98,13 +99,13 @@ export default class EncryptionPublicKeyController extends BaseControllerV2<
 > {
   hub: EventEmitter;
 
-  private _keyringController: KeyringController;
+  private readonly _keyringController: KeyringController;
 
-  private _getState: () => any;
+  private readonly _getState: () => any;
 
-  private _encryptionPublicKeyManager: EncryptionPublicKeyManager;
+  private readonly _encryptionPublicKeyManager: EncryptionPublicKeyManager;
 
-  private _metricsEvent: (payload: any, options?: any) => void;
+  private readonly _metricsEvent: (payload: any, options?: any) => void;
 
   /**
    * Construct a EncryptionPublicKey controller.

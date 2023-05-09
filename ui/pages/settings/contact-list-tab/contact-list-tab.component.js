@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import ContactList from '../../../components/app/contact-list';
-import {
-  CONTACT_ADD_ROUTE,
-  CONTACT_VIEW_ROUTE,
-} from '../../../helpers/constants/routes';
-import Button from '../../../components/ui/button';
-import {
-  getNumberOfSettingsInSection,
-  handleSettingsRefs,
-} from '../../../helpers/utils/settings-search';
 import {
   Icon,
   IconName,
   IconSize,
 } from '../../../components/component-library';
+import Button from '../../../components/ui/button';
 import { IconColor } from '../../../helpers/constants/design-system';
-import EditContact from './edit-contact';
+import {
+  CONTACT_ADD_ROUTE,
+  CONTACT_VIEW_ROUTE,
+} from '../../../helpers/constants/routes';
+import {
+  getNumberOfSettingsInSection,
+  handleSettingsRefs,
+} from '../../../helpers/utils/settings-search';
 import AddContact from './add-contact';
+import EditContact from './edit-contact';
 import ViewContact from './view-contact';
 
 export default class ContactListTab extends Component {

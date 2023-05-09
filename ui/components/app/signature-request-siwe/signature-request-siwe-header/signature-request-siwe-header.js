@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import AccountListItem from '../../account-list-item';
+import React, { useContext } from 'react';
+
 import { I18nContext } from '../../../../contexts/i18n';
+import Tooltip from '../../../ui/tooltip';
+import AccountListItem from '../../account-list-item';
 import PermissionsConnectHeader from '../../permissions-connect-header';
 import SignatureRequestSIWEIcon from '../signature-request-siwe-icon';
 import SignatureRequestSIWETag from '../signature-request-siwe-tag';
-import Tooltip from '../../../ui/tooltip';
 
 export default function SignatureRequestSIWEHeader({
   fromAccount,

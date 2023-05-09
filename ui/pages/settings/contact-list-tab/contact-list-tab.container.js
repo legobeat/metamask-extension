@@ -1,15 +1,15 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getAddressBook } from '../../../selectors';
-import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { compose } from 'redux';
 
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
 import {
   CONTACT_ADD_ROUTE,
   CONTACT_EDIT_ROUTE,
   CONTACT_VIEW_ROUTE,
 } from '../../../helpers/constants/routes';
+import { getAddressBook } from '../../../selectors';
 import ContactListTab from './contact-list-tab.component';
 
 const mapStateToProps = (state, ownProps) => {

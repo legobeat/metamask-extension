@@ -1,4 +1,5 @@
 import React from 'react';
+
 import DesktopPairingPage from './desktop-pairing.component';
 
 export default {

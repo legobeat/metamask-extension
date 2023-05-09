@@ -1,7 +1,7 @@
 import React from 'react';
-import InfoIcon from '../icon/info-icon.component';
 
 import SiteOrigin from '.';
+import InfoIcon from '../icon/info-icon.component';
 
 export default {
   title: 'Components/UI/SiteOrigin',

@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import IconBorder from '../icon-border';
 import IconWithFallback from '../icon-with-fallback';
 

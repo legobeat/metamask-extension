@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Box from '../../ui/box/box';
-import { AvatarBase } from '../avatar-base';
+import React, { useState, useEffect } from 'react';
+
 import {
   Size,
   DISPLAY,
@@ -12,6 +11,8 @@ import {
   BorderColor,
   BackgroundColor,
 } from '../../../helpers/constants/design-system';
+import Box from '../../ui/box/box';
+import { AvatarBase } from '../avatar-base';
 import { AVATAR_TOKEN_SIZES } from './avatar-token.constants';
 
 export const AvatarToken = React.forwardRef(

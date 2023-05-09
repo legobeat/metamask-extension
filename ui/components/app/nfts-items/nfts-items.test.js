@@ -1,11 +1,12 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+
+import NftsItems from '.';
 import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import { updateNftDropDownState } from '../../../store/actions';
-import NftsItems from '.';
 
 const mockHistoryPush = jest.fn();
 

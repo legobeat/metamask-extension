@@ -1,19 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import UnitInput from '../../ui/unit-input';
-import CurrencyDisplay from '../../ui/currency-display';
+
+import { EtherDenomination } from '../../../../shared/constants/common';
+import {
+  getValueFromWeiHex,
+  getWeiHexFromDecimalValue,
+} from '../../../../shared/modules/conversion.utils';
 import { I18nContext } from '../../../contexts/i18n';
 import {
   getConversionRate,
   getNativeCurrency,
 } from '../../../ducks/metamask/metamask';
 import { getCurrentCurrency, getShouldShowFiat } from '../../../selectors';
-import {
-  getValueFromWeiHex,
-  getWeiHexFromDecimalValue,
-} from '../../../../shared/modules/conversion.utils';
-import { EtherDenomination } from '../../../../shared/constants/common';
+import CurrencyDisplay from '../../ui/currency-display';
+import UnitInput from '../../ui/unit-input';
 
 /**
  * Component that allows user to enter currency values as a number, and props receive a converted

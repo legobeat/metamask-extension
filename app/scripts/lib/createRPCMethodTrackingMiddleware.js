@@ -1,16 +1,15 @@
-import { errorCodes } from 'eth-rpc-errors';
 import { detectSIWE } from '@metamask/controller-utils';
+import { errorCodes } from 'eth-rpc-errors';
 import { isValidAddress } from 'ethereumjs-util';
 
 import { MESSAGE_TYPE, ORIGIN_METAMASK } from '../../../shared/constants/app';
-import { TransactionStatus } from '../../../shared/constants/transaction';
-import { SECOND } from '../../../shared/constants/time';
-
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
   MetaMetricsEventUiCustomization,
 } from '../../../shared/constants/metametrics';
+import { SECOND } from '../../../shared/constants/time';
+import { TransactionStatus } from '../../../shared/constants/transaction';
 
 /**
  * These types determine how the method tracking middleware handles incoming

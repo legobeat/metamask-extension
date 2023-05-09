@@ -1,5 +1,7 @@
 const { strict: assert } = require('assert');
 const path = require('path');
+
+const FixtureBuilder = require('../fixture-builder');
 const {
   convertToHexValue,
   withFixtures,
@@ -8,7 +10,6 @@ const {
   completeImportSRPOnboardingFlow,
   completeImportSRPOnboardingFlowWordByWord,
 } = require('../helpers');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('MetaMask Import UI', function () {
   it('Importing wallet using Secret Recovery Phrase', async function () {

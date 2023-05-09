@@ -1,17 +1,12 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { startCase } from 'lodash';
-import ToggleButton from '../../../components/ui/toggle-button';
-import TextField from '../../../components/ui/text-field';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import {
-  ADD_POPULAR_CUSTOM_NETWORK,
-  REVEAL_SEED_ROUTE,
-} from '../../../helpers/constants/routes';
-import Button from '../../../components/ui/button';
-import {
-  getNumberOfSettingsInSection,
-  handleSettingsRefs,
-} from '../../../helpers/utils/settings-search';
+  addUrlProtocolPrefix,
+  getEnvironmentType,
+} from '../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventKeyType,
@@ -25,11 +20,17 @@ import {
   CONSENSYS_PRIVACY_LINK,
   ETHERSCAN_PRIVACY_LINK,
 } from '../../../../shared/lib/ui-utils';
-import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
+import Button from '../../../components/ui/button';
+import TextField from '../../../components/ui/text-field';
+import ToggleButton from '../../../components/ui/toggle-button';
 import {
-  addUrlProtocolPrefix,
-  getEnvironmentType,
-} from '../../../../app/scripts/lib/util';
+  ADD_POPULAR_CUSTOM_NETWORK,
+  REVEAL_SEED_ROUTE,
+} from '../../../helpers/constants/routes';
+import {
+  getNumberOfSettingsInSection,
+  handleSettingsRefs,
+} from '../../../helpers/utils/settings-search';
 
 export default class SecurityTab extends PureComponent {
   static contextTypes = {

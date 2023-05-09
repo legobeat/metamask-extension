@@ -1,5 +1,6 @@
 import { cleanup, renderHook } from '@testing-library/react-hooks';
 import { useSelector } from 'react-redux';
+
 import { GasEstimateTypes } from '../../shared/constants/gas';
 import createRandomId from '../../shared/modules/random-id';
 import {
@@ -12,7 +13,6 @@ import {
   disconnectGasFeeEstimatePoller,
   getGasFeeEstimatesAndStartPolling,
 } from '../store/actions';
-
 import { useGasFeeEstimates } from './useGasFeeEstimates';
 
 jest.mock('../store/actions', () => ({

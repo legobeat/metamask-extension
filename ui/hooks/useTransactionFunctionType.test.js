@@ -1,6 +1,6 @@
 import { TransactionType } from '../../shared/constants/transaction';
-import { renderHookWithProvider } from '../../test/lib/render-helpers';
 import mockState from '../../test/data/mock-state.json';
+import { renderHookWithProvider } from '../../test/lib/render-helpers';
 import { useTransactionFunctionType } from './useTransactionFunctionType';
 
 describe('useTransactionFunctionType', () => {

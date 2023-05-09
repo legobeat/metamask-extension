@@ -1,8 +1,9 @@
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent, screen } from '@testing-library/react';
-import { detectNewTokens } from '../../../store/actions';
+
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import { detectNewTokens } from '../../../store/actions';
 import { MultichainImportTokenLink } from './multichain-import-token-link';
 
 const mockPushHistory = jest.fn();

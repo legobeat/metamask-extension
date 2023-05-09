@@ -1,9 +1,10 @@
-import React from 'react';
-import thunk from 'redux-thunk';
-import configureMockStore from 'redux-mock-store';
 import { fireEvent } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import React from 'react';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+
 import TokenCell from '.';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 describe('Token Cell', () => {
   const mockState = {

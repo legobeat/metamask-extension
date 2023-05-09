@@ -3,8 +3,9 @@ import {
   PermissionType,
 } from '@metamask/permission-controller';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import { endowmentCaveatSpecifications as snapsEndowmentCaveatSpecifications } from '@metamask/snaps-controllers';
 import { caveatSpecifications as snapsCaveatsSpecifications } from '@metamask/rpc-methods';
+import { endowmentCaveatSpecifications as snapsEndowmentCaveatSpecifications } from '@metamask/snaps-controllers';
+
 ///: END:ONLY_INCLUDE_IN
 import {
   CaveatTypes,

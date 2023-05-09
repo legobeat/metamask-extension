@@ -1,15 +1,13 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { GAS_FORM_ERRORS } from '../../helpers/constants/gas';
-
-import { useGasFeeErrors } from './useGasFeeErrors';
-
 import {
   FEE_MARKET_ESTIMATE_RETURN_VALUE,
   LEGACY_GAS_ESTIMATE_RETURN_VALUE,
   configureEIP1559,
   configureLegacy,
 } from './test-utils';
+import { useGasFeeErrors } from './useGasFeeErrors';
 
 jest.mock('../useGasFeeEstimates', () => ({
   useGasFeeEstimates: jest.fn(),

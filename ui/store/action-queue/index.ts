@@ -1,4 +1,5 @@
 import pify from 'pify';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
@@ -14,9 +15,9 @@ import { trackMetaMetricsEvent } from '../actions';
 //         return new Promise((resolve, reject) => {
 //           return apiObject[key](
 //             ...args,
-//             (err, result) => {
-//               if (err) {
-//                 reject(err);
+//             (error, result) => {
+//               if (error) {
+//                 reject(error);
 //               } else {
 //                 resolve(result);
 //               }
@@ -44,7 +45,7 @@ interface BackgroundAction {
   actionId: number;
   request: { method: string; args: any };
   resolve: (result: any) => any;
-  reject: (err: Error) => void;
+  reject: (error: Error) => void;
 }
 
 const actionRetryQueue: BackgroundAction[] = [];
@@ -100,7 +101,7 @@ const executeActionOrAddToRetryQueue = (item: BackgroundAction): void => {
  * @param [actionId] - if an action with the === same id is submitted, it'll be ignored if already in queue waiting for a retry.
  * @returns
  */
-export function submitRequestToBackground<R>(
+export async function submitRequestToBackground<R>(
   method: string,
   args?: any[],
   actionId = generateActionId(), // current date is not guaranteed to be unique
@@ -143,7 +144,7 @@ export const callBackgroundMethod = <R>(
 ) => {
   if (isManifestV3) {
     const resolve = (value: R) => callback(undefined, value);
-    const reject = (err: unknown) => callback(err, undefined);
+    const reject = (error: unknown) => callback(error, undefined);
     executeActionOrAddToRetryQueue({
       actionId,
       request: { method, args: args ?? [] },
@@ -169,14 +170,14 @@ async function executeAction({
   } = action;
   try {
     resolve(await promisifiedBackground?.[method](...args));
-  } catch (err: any) {
+  } catch (error: any) {
     if (
       background?.DisconnectError && // necessary to not break compatibility with background stubs or non-default implementations
-      err instanceof background.DisconnectError
+      error instanceof background.DisconnectError
     ) {
       disconnectSideeffect(action);
     } else {
-      reject(err);
+      reject(error);
     }
   }
 }

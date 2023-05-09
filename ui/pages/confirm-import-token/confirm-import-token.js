@@ -1,18 +1,7 @@
 import React, { useCallback, useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import {
-  ASSET_ROUTE,
-  IMPORT_TOKEN_ROUTE,
-} from '../../helpers/constants/routes';
-import Button from '../../components/ui/button';
-import Identicon from '../../components/ui/identicon';
-import TokenBalance from '../../components/ui/token-balance';
-import { I18nContext } from '../../contexts/i18n';
-import { MetaMetricsContext } from '../../contexts/metametrics';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
-import { getPendingTokens } from '../../ducks/metamask/metamask';
-import { addTokens, clearPendingTokens } from '../../store/actions';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
@@ -22,6 +11,18 @@ import {
   AssetType,
   TokenStandard,
 } from '../../../shared/constants/transaction';
+import Button from '../../components/ui/button';
+import Identicon from '../../components/ui/identicon';
+import TokenBalance from '../../components/ui/token-balance';
+import { I18nContext } from '../../contexts/i18n';
+import { MetaMetricsContext } from '../../contexts/metametrics';
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
+import { getPendingTokens } from '../../ducks/metamask/metamask';
+import {
+  ASSET_ROUTE,
+  IMPORT_TOKEN_ROUTE,
+} from '../../helpers/constants/routes';
+import { addTokens, clearPendingTokens } from '../../store/actions';
 
 const getTokenName = (name, symbol) => {
   return name === undefined ? symbol : `${name} (${symbol})`;

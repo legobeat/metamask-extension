@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
-import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
-import Box from '../../../ui/box';
+
 import {
-  Text,
-  Button,
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
-  ButtonIcon,
-  IconName,
-} from '../../../component-library';
+  MetaMetricsEventCategory,
+  MetaMetricsEventKeyType,
+  MetaMetricsEventName,
+} from '../../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../../contexts/metametrics';
 import {
   AlignItems,
   DISPLAY,
@@ -18,15 +15,19 @@ import {
   Size,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import HoldToRevealButton from '../../hold-to-reveal-button';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
 import ZENDESK_URLS from '../../../../helpers/constants/zendesk-url';
-import { MetaMetricsContext } from '../../../../contexts/metametrics';
+import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventKeyType,
-  MetaMetricsEventName,
-} from '../../../../../shared/constants/metametrics';
+  Text,
+  Button,
+  BUTTON_SIZES,
+  BUTTON_VARIANT,
+  ButtonIcon,
+  IconName,
+} from '../../../component-library';
+import Box from '../../../ui/box';
+import HoldToRevealButton from '../../hold-to-reveal-button';
 
 const HoldToRevealModal = ({
   onLongPressed,

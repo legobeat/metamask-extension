@@ -1,21 +1,21 @@
 import { strict as assert } from 'assert';
-import sinon from 'sinon';
-import proxyquire from 'proxyquire';
-import nock from 'nock';
 import { cloneDeep } from 'lodash';
+import nock from 'nock';
+import proxyquire from 'proxyquire';
+import sinon from 'sinon';
 
-import waitUntilCalled from '../../../test/lib/wait-until-called';
 import {
   ETHERSCAN_SUPPORTED_NETWORKS,
   CHAIN_IDS,
   NETWORK_TYPES,
   NETWORK_IDS,
 } from '../../../shared/constants/network';
+import { MILLISECOND } from '../../../shared/constants/time';
 import {
   TransactionType,
   TransactionStatus,
 } from '../../../shared/constants/transaction';
-import { MILLISECOND } from '../../../shared/constants/time';
+import waitUntilCalled from '../../../test/lib/wait-until-called';
 
 const IncomingTransactionsController = proxyquire('./incoming-transactions', {
   '../../../shared/modules/random-id': { default: () => 54321 },

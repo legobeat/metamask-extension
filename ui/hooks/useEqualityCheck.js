@@ -1,6 +1,5 @@
-import { useState, useLayoutEffect } from 'react';
-
 import { isEqual } from 'lodash';
+import { useState, useLayoutEffect } from 'react';
 
 /**
  * Given a value and a function to determine equality, return a

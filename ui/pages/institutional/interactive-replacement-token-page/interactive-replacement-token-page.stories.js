@@ -1,9 +1,10 @@
+import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { action } from '@storybook/addon-actions';
-import configureStore from '../../../store/store';
-import testData from '../../../../.storybook/test-data';
+
 import InteractiveReplacementTokenPage from '.';
+import testData from '../../../../.storybook/test-data';
+import configureStore from '../../../store/store';
 
 const address = '0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F';
 const customData = {

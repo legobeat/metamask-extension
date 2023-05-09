@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ConfirmPageContainerWarning from '.';
 
 export default {

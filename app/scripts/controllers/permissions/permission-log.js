@@ -1,4 +1,5 @@
 import { ObservableStore } from '@metamask/obs-store';
+
 import { CaveatTypes } from '../../../../shared/constants/permissions';
 import {
   LOG_IGNORE_METHODS,

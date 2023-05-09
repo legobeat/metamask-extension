@@ -1,5 +1,6 @@
-import React from 'react';
 import { action } from '@storybook/addon-actions';
+import React from 'react';
+
 import ConnectedAccounts from './connected-accounts.component';
 
 export default {

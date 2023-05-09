@@ -1,8 +1,9 @@
 import nanoid from 'nanoid';
 import { useFakeTimers } from 'sinon';
+
 import { constants, getters, noop } from '../../../../test/mocks/permissions';
-import { PermissionLogController } from './permission-log';
 import { LOG_LIMIT, LOG_METHOD_TYPES } from './enums';
+import { PermissionLogController } from './permission-log';
 
 const { PERMS, RPC_REQUESTS } = getters;
 const {

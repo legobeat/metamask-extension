@@ -1,6 +1,7 @@
-import sinon from 'sinon';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import sinon from 'sinon';
+
 import MetaMaskController from '../../../app/scripts/metamask-controller';
 import { _setBackgroundConnection } from '../action-queue';
 import {
@@ -90,7 +91,9 @@ describe('#InstitutionActions', () => {
 
   beforeEach(async () => {
     background = sinon.createStubInstance(MetaMaskController, {
-      getState: sinon.stub().callsFake((cb) => cb(null, baseMockState)),
+      getState: sinon
+        .stub()
+        .callsFake((callback) => callback(null, baseMockState)),
     });
   });
 
@@ -104,7 +107,7 @@ describe('#InstitutionActions', () => {
     background.getApi.returns({
       setFeatureFlag: sinon
         .stub()
-        .callsFake((_, __, cb) => cb(new Error('error'))),
+        .callsFake((_, __, callback) => callback(new Error('error'))),
     });
 
     _setBackgroundConnection(background.getApi());
@@ -127,7 +130,7 @@ describe('#InstitutionActions', () => {
     background.getApi.returns({
       setFeatureFlag: sinon
         .stub()
-        .callsFake((_, __, cb) => cb(new Error('error'))),
+        .callsFake((_, __, callback) => callback(new Error('error'))),
     });
 
     _setBackgroundConnection(background.getApi());
@@ -168,7 +171,7 @@ describe('#checkForUnapprovedTypedMessages', () => {
 
     expect(
       checkForUnapprovedTypedMessages(messageData, {
-        unapprovedTypedMessages: { msg: 'msg' },
+        unapprovedTypedMessages: { message: 'message' },
       }),
     ).toBe(messageData);
   });
@@ -179,7 +182,9 @@ describe('#updateCustodyState', () => {
 
   beforeEach(async () => {
     background = sinon.createStubInstance(MetaMaskController, {
-      getState: sinon.stub().callsFake((cb) => cb(null, baseMockState)),
+      getState: sinon
+        .stub()
+        .callsFake((callback) => callback(null, baseMockState)),
     });
   });
 
@@ -193,7 +198,7 @@ describe('#updateCustodyState', () => {
     background.getApi.returns({
       setFeatureFlag: sinon
         .stub()
-        .callsFake((_, __, cb) => cb(new Error('error'))),
+        .callsFake((_, __, callback) => callback(new Error('error'))),
     });
 
     _setBackgroundConnection(background.getApi());
@@ -219,7 +224,7 @@ describe('#updateCustodyState', () => {
     background.getApi.returns({
       setFeatureFlag: sinon
         .stub()
-        .callsFake((_, __, cb) => cb(new Error('error'))),
+        .callsFake((_, __, callback) => callback(new Error('error'))),
     });
 
     _setBackgroundConnection(background.getApi());
@@ -274,7 +279,7 @@ describe('#updateCustodyState', () => {
     background.getApi.returns({
       setFeatureFlag: sinon
         .stub()
-        .callsFake((_, __, cb) => cb(new Error('error'))),
+        .callsFake((_, __, callback) => callback(new Error('error'))),
     });
 
     _setBackgroundConnection(background.getApi());

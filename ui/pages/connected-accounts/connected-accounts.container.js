@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
+
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
+import { isExtensionUrl } from '../../helpers/utils/util';
 import {
   getAccountToConnectToActiveTab,
   getOrderedConnectedAccountsForActiveTab,
   getPermissionsForActiveTab,
   getSelectedAddress,
 } from '../../selectors';
-import { isExtensionUrl } from '../../helpers/utils/util';
 import {
   addPermittedAccount,
   removePermittedAccount,
   setSelectedAddress,
 } from '../../store/actions';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
 import ConnectedAccounts from './connected-accounts.component';
 
 const mapStateToProps = (state) => {

@@ -1,26 +1,42 @@
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import { I18nContext } from '../../../contexts/i18n';
-import { useGasFeeContext } from '../../../contexts/gasFee';
-import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import { NETWORK_TO_NAME_MAP } from '../../../../shared/constants/network';
+import { TokenStandard } from '../../../../shared/constants/transaction';
+import {
+  addHexes,
+  hexWEIToDecETH,
+} from '../../../../shared/modules/conversion.utils';
+import { ConfirmGasDisplay } from '../../../components/app/confirm-gas-display';
+import TransactionDetail from '../../../components/app/transaction-detail';
+import TransactionDetailItem from '../../../components/app/transaction-detail-item';
 import UserPreferencedCurrencyDisplay from '../../../components/app/user-preferenced-currency-display';
-import Typography from '../../../components/ui/typography';
-import Button from '../../../components/ui/button';
+import ActionableMessage from '../../../components/ui/actionable-message';
 import Box from '../../../components/ui/box';
+import Button from '../../../components/ui/button';
+import LoadingHeartBeat from '../../../components/ui/loading-heartbeat';
+import Typography from '../../../components/ui/typography';
+import { useGasFeeContext } from '../../../contexts/gasFee';
+import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import {
+  getNativeCurrency,
+  getProviderConfig,
+} from '../../../ducks/metamask/metamask';
+import { getCurrentDraftTransaction } from '../../../ducks/send';
+import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
 import {
   TypographyVariant,
   DISPLAY,
   FLEX_DIRECTION,
   BLOCK_SIZES,
 } from '../../../helpers/constants/design-system';
-import { TokenStandard } from '../../../../shared/constants/transaction';
-import LoadingHeartBeat from '../../../components/ui/loading-heartbeat';
-import TransactionDetailItem from '../../../components/app/transaction-detail-item';
-import { ConfirmGasDisplay } from '../../../components/app/confirm-gas-display';
-import { NETWORK_TO_NAME_MAP } from '../../../../shared/constants/network';
-import TransactionDetail from '../../../components/app/transaction-detail';
-import ActionableMessage from '../../../components/ui/actionable-message';
+import useRamps from '../../../hooks/experiences/useRamps';
 import {
   getPreferences,
   getIsBuyableChain,
@@ -28,24 +44,8 @@ import {
   getIsTestnet,
   getUseCurrencyRateCheck,
 } from '../../../selectors';
-
-import { INSUFFICIENT_TOKENS_ERROR } from '../send.constants';
-import { getCurrentDraftTransaction } from '../../../ducks/send';
-import {
-  getNativeCurrency,
-  getProviderConfig,
-} from '../../../ducks/metamask/metamask';
 import { showModal } from '../../../store/actions';
-import {
-  addHexes,
-  hexWEIToDecETH,
-} from '../../../../shared/modules/conversion.utils';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import useRamps from '../../../hooks/experiences/useRamps';
+import { INSUFFICIENT_TOKENS_ERROR } from '../send.constants';
 
 export default function GasDisplay({ gasError }) {
   const t = useContext(I18nContext);

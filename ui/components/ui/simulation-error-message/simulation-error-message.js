@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { BannerAlert } from '../../component-library';
-import { SEVERITIES } from '../../../helpers/constants/design-system';
+import React, { useContext } from 'react';
 
 import { I18nContext } from '../../../../.storybook/i18n';
+import { SEVERITIES } from '../../../helpers/constants/design-system';
+import { BannerAlert } from '../../component-library';
 
 export default function SimulationErrorMessage({
   userAcknowledgedGasMissing = false,

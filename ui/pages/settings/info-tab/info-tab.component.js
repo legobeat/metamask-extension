@@ -1,9 +1,14 @@
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
-import Button from '../../../components/ui/button';
+import {
+  MetaMetricsContextProp,
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import { SUPPORT_LINK } from '../../../../shared/lib/ui-utils';
 import { Tag } from '../../../components/component-library';
-
+import Button from '../../../components/ui/button';
 import {
   SUPPORT_REQUEST_LINK,
   ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
@@ -15,12 +20,6 @@ import {
   getNumberOfSettingsInSection,
   handleSettingsRefs,
 } from '../../../helpers/utils/settings-search';
-import {
-  MetaMetricsContextProp,
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import { SUPPORT_LINK } from '../../../../shared/lib/ui-utils';
 
 export default class InfoTab extends PureComponent {
   state = {

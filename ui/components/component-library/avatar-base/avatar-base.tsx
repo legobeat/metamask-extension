@@ -1,5 +1,5 @@
-import React, { forwardRef, Ref } from 'react';
 import classnames from 'classnames';
+import React, { forwardRef, Ref } from 'react';
 
 import {
   BackgroundColor,
@@ -12,9 +12,7 @@ import {
   TextVariant,
   TextTransform,
 } from '../../../helpers/constants/design-system';
-
 import { Text, ValidTag } from '../text';
-
 import { AvatarBaseProps, AvatarBaseSize } from './avatar-base.types';
 
 export const AvatarBase = forwardRef(

@@ -1,19 +1,39 @@
-import React, { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { isValidHexAddress } from '@metamask/controller-utils';
-import { useI18nContext } from '../../hooks/useI18nContext';
-import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import React, { useContext, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+import {
+  MetaMetricsEventName,
+  MetaMetricsTokenEventSource,
+} from '../../../shared/constants/metametrics';
+import { AssetType } from '../../../shared/constants/transaction';
+import NftsDetectionNotice from '../../components/app/nfts-detection-notice';
+import {
+  ButtonIcon,
+  IconName,
+  ButtonIconSize,
+} from '../../components/component-library';
+import ActionableMessage from '../../components/ui/actionable-message';
+import Box from '../../components/ui/box';
+import FormField from '../../components/ui/form-field';
+import PageContainer from '../../components/ui/page-container';
+import Typography from '../../components/ui/typography';
+import { MetaMetricsContext } from '../../contexts/metametrics';
+import { getNftsDropdownState } from '../../ducks/metamask/metamask';
 import {
   DISPLAY,
   FONT_WEIGHT,
   TypographyVariant,
 } from '../../helpers/constants/design-system';
-
-import Box from '../../components/ui/box';
-import Typography from '../../components/ui/typography';
-import ActionableMessage from '../../components/ui/actionable-message';
-import PageContainer from '../../components/ui/page-container';
+import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import { useI18nContext } from '../../hooks/useI18nContext';
+import {
+  getCurrentChainId,
+  getIsMainnet,
+  getSelectedAddress,
+  getUseNftDetection,
+} from '../../selectors';
 import {
   addNftVerifyOwnership,
   getTokenStandardAndDetails,
@@ -21,26 +41,6 @@ import {
   setNewNftAddedMessage,
   updateNftDropDownState,
 } from '../../store/actions';
-import FormField from '../../components/ui/form-field';
-import {
-  getCurrentChainId,
-  getIsMainnet,
-  getSelectedAddress,
-  getUseNftDetection,
-} from '../../selectors';
-import { getNftsDropdownState } from '../../ducks/metamask/metamask';
-import NftsDetectionNotice from '../../components/app/nfts-detection-notice';
-import { MetaMetricsContext } from '../../contexts/metametrics';
-import { AssetType } from '../../../shared/constants/transaction';
-import {
-  MetaMetricsEventName,
-  MetaMetricsTokenEventSource,
-} from '../../../shared/constants/metametrics';
-import {
-  ButtonIcon,
-  IconName,
-  ButtonIconSize,
-} from '../../components/component-library';
 
 export default function AddNft() {
   const t = useI18nContext();

@@ -1,12 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Box from '../../ui/box';
-import Button from '../../ui/button';
-import Typography from '../../ui/typography/typography';
-import NftsDetectionNotice from '../nfts-detection-notice';
-import NftsItems from '../nfts-items';
+
 import {
   TypographyVariant,
   TEXT_ALIGN,
@@ -16,15 +12,20 @@ import {
   AlignItems,
   TextColor,
 } from '../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { getIsMainnet, getUseNftDetection } from '../../../selectors';
 import { EXPERIMENTAL_ROUTE } from '../../../helpers/constants/routes';
+import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { useNftsCollections } from '../../../hooks/useNftsCollections';
+import { getIsMainnet, getUseNftDetection } from '../../../selectors';
 import {
   checkAndUpdateAllNftsOwnershipStatus,
   detectNfts,
 } from '../../../store/actions';
-import { useNftsCollections } from '../../../hooks/useNftsCollections';
-import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
+import Box from '../../ui/box';
+import Button from '../../ui/button';
+import Typography from '../../ui/typography/typography';
+import NftsDetectionNotice from '../nfts-detection-notice';
+import NftsItems from '../nfts-items';
 
 export default function NftsTab({ onAddNFT }) {
   const useNftDetection = useSelector(getUseNftDetection);

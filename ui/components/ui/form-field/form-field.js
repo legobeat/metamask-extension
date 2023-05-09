@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import Box from '../box/box';
 import {
   TextAlign,
   DISPLAY,
@@ -10,10 +9,10 @@ import {
   AlignItems,
   TextColor,
 } from '../../../helpers/constants/design-system';
-
-import NumericInput from '../numeric-input/numeric-input.component';
-import InfoTooltip from '../info-tooltip/info-tooltip';
 import { Text } from '../../component-library';
+import Box from '../box/box';
+import InfoTooltip from '../info-tooltip/info-tooltip';
+import NumericInput from '../numeric-input/numeric-input.component';
 
 export default function FormField({
   dataTestId,

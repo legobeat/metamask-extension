@@ -1,25 +1,14 @@
 import log from 'loglevel';
-import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
-import Box from '../../../ui/box';
-import {
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
-  BannerAlert,
-  Button,
-  Text,
-} from '../../../component-library';
-import AccountModalContainer from '../account-modal-container';
-import { toChecksumHexAddress } from '../../../../../shared/modules/hexstring-utils';
+import React, { useContext, useEffect, useState } from 'react';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventKeyType,
   MetaMetricsEventName,
 } from '../../../../../shared/constants/metametrics';
-import HoldToRevealModal from '../hold-to-reveal-modal/hold-to-reveal-modal';
+import { toChecksumHexAddress } from '../../../../../shared/modules/hexstring-utils';
 import { MetaMetricsContext } from '../../../../contexts/metametrics';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
 import {
   BLOCK_SIZES,
   BorderColor,
@@ -31,8 +20,20 @@ import {
   JustifyContent,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import PrivateKeyDisplay from './private-key';
+import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import {
+  BUTTON_SIZES,
+  BUTTON_VARIANT,
+  BannerAlert,
+  Button,
+  Text,
+} from '../../../component-library';
+import Box from '../../../ui/box';
+import AccountModalContainer from '../account-modal-container';
+import HoldToRevealModal from '../hold-to-reveal-modal/hold-to-reveal-modal';
 import PasswordInput from './password-input';
+import PrivateKeyDisplay from './private-key';
 
 const ExportPrivateKeyModal = ({
   clearAccountDetails,

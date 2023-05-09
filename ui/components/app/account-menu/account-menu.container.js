@@ -1,12 +1,7 @@
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import {
-  toggleAccountMenu,
-  setSelectedAccount,
-  lockMetamask,
-  hideWarning,
-} from '../../../store/actions';
+import { compose } from 'redux';
+
 import {
   getAddressConnectedSubjectMap,
   getMetaMaskAccountsOrdered,
@@ -17,6 +12,12 @@ import {
   getUnreadNotificationsCount,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../selectors';
+import {
+  toggleAccountMenu,
+  setSelectedAccount,
+  lockMetamask,
+  hideWarning,
+} from '../../../store/actions';
 import AccountMenu from './account-menu.component';
 
 /**

@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import * as reactRedux from 'react-redux';
 import sinon from 'sinon';
+
 import {
   getCurrentCurrency,
   getPreferences,

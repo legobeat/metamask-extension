@@ -1,11 +1,9 @@
 /* eslint-disable jest/require-top-level-describe */
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import React from 'react';
 
 import { renderWithUserEvent } from '../../../../test/lib/render-helpers';
-
 import { Size } from '../../../helpers/constants/design-system';
-
 import { FormTextField } from './form-text-field';
 
 describe('FormTextField', () => {

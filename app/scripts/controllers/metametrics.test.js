@@ -1,18 +1,19 @@
 import { strict as assert } from 'assert';
 import sinon from 'sinon';
+
 import { ENVIRONMENT_TYPE_BACKGROUND } from '../../../shared/constants/app';
-import { createSegmentMock } from '../lib/segment';
 import {
   METAMETRICS_ANONYMOUS_ID,
   METAMETRICS_BACKGROUND_PAGE_OBJECT,
   MetaMetricsUserTrait,
 } from '../../../shared/constants/metametrics';
-import waitUntilCalled from '../../../test/lib/wait-until-called';
 import {
   CHAIN_IDS,
   CURRENCY_SYMBOLS,
   NETWORK_TYPES,
 } from '../../../shared/constants/network';
+import waitUntilCalled from '../../../test/lib/wait-until-called';
+import { createSegmentMock } from '../lib/segment';
 import * as Utils from '../lib/util';
 import MetaMetricsController from './metametrics';
 

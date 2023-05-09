@@ -1,12 +1,13 @@
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent, screen } from '@testing-library/react';
+
+import SignatureRequestOriginal from '.';
 import { MESSAGE_TYPE } from '../../../../shared/constants/app';
 import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import configureStore from '../../../store/store';
 import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';
-import SignatureRequestOriginal from '.';
 
 const MOCK_SIGN_DATA = JSON.stringify({
   domain: {

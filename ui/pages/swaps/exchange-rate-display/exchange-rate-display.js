@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import BigNumber from 'bignumber.js';
 import classnames from 'classnames';
-import { formatSwapsValueForDisplay } from '../swaps.util';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+
 import { calcTokenAmount } from '../../../../shared/lib/transactions-controller-utils';
+import { formatSwapsValueForDisplay } from '../swaps.util';
 
 export default function ExchangeRateDisplay({
   primaryTokenValue,

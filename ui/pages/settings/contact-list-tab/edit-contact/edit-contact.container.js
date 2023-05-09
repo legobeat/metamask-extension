@@ -1,12 +1,13 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getAddressBookEntry } from '../../../../selectors';
+import { compose } from 'redux';
+
 import { getProviderConfig } from '../../../../ducks/metamask/metamask';
 import {
   CONTACT_VIEW_ROUTE,
   CONTACT_LIST_ROUTE,
 } from '../../../../helpers/constants/routes';
+import { getAddressBookEntry } from '../../../../selectors';
 import {
   addToAddressBook,
   removeFromAddressBook,

@@ -1,10 +1,11 @@
 import { isEqual } from 'lodash';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
 import { getNfts, getTokens } from '../ducks/metamask/metamask';
 import { getAssetDetails } from '../helpers/utils/token-util';
 import { hideLoadingIndication, showLoadingIndication } from '../store/actions';
-import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
 import { usePrevious } from './usePrevious';
 import { useTokenTracker } from './useTokenTracker';
 

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+
 import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
 
 export default class PermissionsConnectFooter extends Component {

@@ -1,16 +1,17 @@
-import React from 'react';
 import { screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithProvider } from '../../../../test/jest';
-import configureStore from '../../../store/store';
-import mockState from '../../../../test/data/mock-state.json';
+import React from 'react';
+
+import { AccountDetails } from '.';
 import { showPrivateKey } from '../../../../app/_locales/en/messages.json';
+import mockState from '../../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../../test/jest';
 import {
   setAccountDetailsAddress,
   exportAccount,
   hideWarning,
 } from '../../../store/actions';
-import { AccountDetails } from '.';
+import configureStore from '../../../store/store';
 
 jest.mock('../../../store/actions.ts');
 

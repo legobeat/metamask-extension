@@ -1,6 +1,7 @@
-import punycode from 'punycode/punycode';
 import { ObservableStore } from '@metamask/obs-store';
 import log from 'loglevel';
+import punycode from 'punycode/punycode';
+
 import { CHAIN_ID_TO_NETWORK_ID_MAP } from '../../../../shared/constants/network';
 import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
 import Ens from './ens';

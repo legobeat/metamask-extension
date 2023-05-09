@@ -1,12 +1,13 @@
-import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useCallback, useState } from 'react';
+
+import { PASSWORD_MIN_LENGTH } from '../../../helpers/constants/common';
 import { useI18nContext } from '../../../hooks/useI18nContext';
-import TextField from '../../ui/text-field';
+import { Text } from '../../component-library';
 import Button from '../../ui/button';
 import CheckBox from '../../ui/check-box';
-import { Text } from '../../component-library';
+import TextField from '../../ui/text-field';
 import SrpInput from '../srp-input';
-import { PASSWORD_MIN_LENGTH } from '../../../helpers/constants/common';
 
 export default function CreateNewVault({
   disabled = false,

@@ -7,7 +7,6 @@ import {
   BorderColor,
   TextColor,
 } from '../../../helpers/constants/design-system';
-
 import { AvatarNetwork } from './avatar-network';
 
 describe('AvatarNetwork', () => {

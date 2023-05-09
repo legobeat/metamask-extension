@@ -1,11 +1,10 @@
-const path = require('path');
+const glob = require('fast-glob');
 const fs = require('fs-extra');
 const watch = require('gulp-watch');
-const glob = require('fast-glob');
+const path = require('path');
 
 const locales = require('../../app/_locales/index.json');
 const { loadBuildTypesConfig } = require('../lib/build-type');
-
 const { TASKS } = require('./constants');
 const { createTask, composeSeries } = require('./task');
 const { getPathInsideNodeModules } = require('./utils');

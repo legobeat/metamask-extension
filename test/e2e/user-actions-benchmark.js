@@ -1,14 +1,15 @@
-const path = require('path');
 const { promises: fs } = require('fs');
-const yargs = require('yargs/yargs');
+const path = require('path');
 const { hideBin } = require('yargs/helpers');
+const yargs = require('yargs/yargs');
+
 const { exitWithError } = require('../../development/lib/exit-with-error');
 const {
   isWritable,
   getFirstParentDirectoryThatExists,
 } = require('../helpers/file');
-const { convertToHexValue, withFixtures } = require('./helpers');
 const FixtureBuilder = require('./fixture-builder');
+const { convertToHexValue, withFixtures } = require('./helpers');
 
 const ganacheOptions = {
   accounts: [

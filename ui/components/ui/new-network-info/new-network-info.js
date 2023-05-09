@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import { NETWORK_TYPES } from '../../../../shared/constants/network';
+import { TOKEN_API_METASWAP_CODEFI_URL } from '../../../../shared/constants/tokens';
+import fetchWithCache from '../../../../shared/lib/fetch-with-cache';
 import { I18nContext } from '../../../contexts/i18n';
-import Popover from '../popover';
-import Button from '../button';
-import Identicon from '../identicon';
-import Box from '../box';
+import { getProviderConfig } from '../../../ducks/metamask/metamask';
 import {
   AlignItems,
   Color,
@@ -14,18 +15,18 @@ import {
   TextAlign,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { TOKEN_API_METASWAP_CODEFI_URL } from '../../../../shared/constants/tokens';
-import fetchWithCache from '../../../../shared/lib/fetch-with-cache';
+import { IMPORT_TOKEN_ROUTE } from '../../../helpers/constants/routes';
 import {
   getNativeCurrencyImage,
   getUseTokenDetection,
 } from '../../../selectors';
-import { getProviderConfig } from '../../../ducks/metamask/metamask';
-import { IMPORT_TOKEN_ROUTE } from '../../../helpers/constants/routes';
-import Chip from '../chip/chip';
 import { setFirstTimeUsedNetwork } from '../../../store/actions';
-import { NETWORK_TYPES } from '../../../../shared/constants/network';
 import { Icon, IconName, Text } from '../../component-library';
+import Box from '../box';
+import Button from '../button';
+import Chip from '../chip/chip';
+import Identicon from '../identicon';
+import Popover from '../popover';
 
 const NewNetworkInfo = () => {
   const t = useContext(I18nContext);

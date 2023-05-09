@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { IconName } from '../../component-library';
+import React, { useState } from 'react';
+
 import { Menu, MenuItem } from '.';
+import { IconName } from '../../component-library';
 
 export default {
   title: 'Components/UI/Menu',

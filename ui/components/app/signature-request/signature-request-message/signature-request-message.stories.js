@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { sanitizeMessage } from '../../../../helpers/utils/util';
 import SignatureRequestMessage from './signature-request-message';
 

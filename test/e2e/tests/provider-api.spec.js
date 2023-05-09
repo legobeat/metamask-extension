@@ -1,7 +1,8 @@
 const { strict: assert } = require('assert');
 const { errorCodes } = require('eth-rpc-errors');
-const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
+
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
 
 describe('MetaMask', function () {
   const ganacheOptions = {

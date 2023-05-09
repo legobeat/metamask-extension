@@ -1,6 +1,7 @@
 const { strict: assert } = require('assert');
-const { convertToHexValue, withFixtures } = require('../helpers');
+
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures } = require('../helpers');
 
 describe('Editing Confirm Transaction', function () {
   it('goes back from confirm page to edit eth value, gas price and gas limit', async function () {

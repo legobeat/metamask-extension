@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import DropdownSearchList from '../dropdown-search-list';
+import PropTypes from 'prop-types';
+import React, { useState, useRef, useEffect } from 'react';
+
 import TextField from '../../../components/ui/text-field';
+import DropdownSearchList from '../dropdown-search-list';
 
 const characterWidthMap = {
   1: 5.86,

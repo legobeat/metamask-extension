@@ -1,9 +1,9 @@
+import { fireEvent, waitFor } from '@testing-library/react';
 import React from 'react';
 import configureMockState from 'redux-mock-store';
-import { fireEvent, waitFor } from '@testing-library/react';
 import thunk from 'redux-thunk';
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
-import mockState from '../../../../../test/data/mock-state.json';
+
+import HoldToRevealModal from '.';
 import {
   holdToRevealContent1,
   holdToRevealContent2,
@@ -17,8 +17,9 @@ import {
   MetaMetricsEventKeyType,
   MetaMetricsEventName,
 } from '../../../../../shared/constants/metametrics';
+import mockState from '../../../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 import { MetaMetricsContext } from '../../../../contexts/metametrics';
-import HoldToRevealModal from '.';
 
 describe('Hold to Reveal Modal', () => {
   const mockStore = configureMockState([thunk])(mockState);

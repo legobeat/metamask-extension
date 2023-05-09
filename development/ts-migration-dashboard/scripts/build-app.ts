@@ -1,29 +1,30 @@
-import path from 'path';
-import fs from 'fs-extra';
-import yargs from 'yargs/yargs';
-import { hideBin } from 'yargs/helpers';
-import chokidar from 'chokidar';
 import browserify from 'browserify';
-import pify from 'pify';
+import chokidar from 'chokidar';
 import endOfStream from 'end-of-stream';
-import pump from 'pump';
-import gulp from 'gulp';
-import gulpSass from 'gulp-sass';
-import sass from 'sass';
-import sourcemaps from 'gulp-sourcemaps';
-import autoprefixer from 'gulp-autoprefixer';
 import fg from 'fast-glob';
+import fs from 'fs-extra';
+import gulp from 'gulp';
+import autoprefixer from 'gulp-autoprefixer';
+import gulpSass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
+import path from 'path';
+import pify from 'pify';
+import pump from 'pump';
+import sass from 'sass';
+import { hideBin } from 'yargs/helpers';
+import yargs from 'yargs/yargs';
+
 import buildModulePartitions from '../common/build-module-partitions';
-import {
-  PARTITIONS_FILE,
-  writePartitionsFile,
-} from '../common/partitions-file';
 import {
   PROJECT_DIRECTORY_PATH,
   COMMON_DIRECTORY_PATH,
   APP_DIRECTORY_PATH,
   FINAL_BUILD_DIRECTORY_PATH,
 } from '../common/constants';
+import {
+  PARTITIONS_FILE,
+  writePartitionsFile,
+} from '../common/partitions-file';
 
 const promisifiedPump = pify(pump);
 

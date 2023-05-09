@@ -1,12 +1,12 @@
-import React, { useRef, useEffect, useMemo, useState } from 'react';
 import classnames from 'classnames';
+import React, { useRef, useEffect, useMemo, useState } from 'react';
+
 import {
   BLOCK_SIZES,
   DISPLAY,
   JustifyContent,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box';
-
 import { HeaderBaseProps } from './header-base.types';
 
 export const HeaderBase: React.FC<HeaderBaseProps> = ({

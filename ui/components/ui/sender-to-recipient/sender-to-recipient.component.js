@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import copyToClipboard from 'copy-to-clipboard';
-import Tooltip from '../tooltip';
-import Identicon from '../identicon';
-import { shortenAddress } from '../../../helpers/utils/util';
-import AccountMismatchWarning from '../account-mismatch-warning/account-mismatch-warning.component';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+
 import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
+import { shortenAddress } from '../../../helpers/utils/util';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import NicknamePopovers from '../../app/modals/nickname-popovers';
 import { Icon, IconName } from '../../component-library';
+import AccountMismatchWarning from '../account-mismatch-warning/account-mismatch-warning.component';
+import Identicon from '../identicon';
+import Tooltip from '../tooltip';
 import {
   DEFAULT_VARIANT,
   CARDS_VARIANT,

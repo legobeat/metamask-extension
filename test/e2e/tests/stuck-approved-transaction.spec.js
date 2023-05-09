@@ -1,6 +1,7 @@
 const { strict: assert } = require('assert');
-const { convertToHexValue, withFixtures } = require('../helpers');
+
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures } = require('../helpers');
 
 describe('Editing Confirm Transaction', function () {
   it('approves a transaction stuck in approved state on boot', async function () {

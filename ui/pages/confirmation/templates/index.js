@@ -1,4 +1,5 @@
 import { omit, pick } from 'lodash';
+
 import { MESSAGE_TYPE } from '../../../../shared/constants/app';
 import {
   rejectPendingApproval,
@@ -7,11 +8,11 @@ import {
   upsertNetworkConfiguration,
 } from '../../../store/actions';
 import addEthereumChain from './add-ethereum-chain';
-import switchEthereumChain from './switch-ethereum-chain';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import snapAlert from './snaps/snap-alert/snap-alert';
 import snapConfirmation from './snaps/snap-confirmation/snap-confirmation';
 import snapPrompt from './snaps/snap-prompt/snap-prompt';
+import switchEthereumChain from './switch-ethereum-chain';
 ///: END:ONLY_INCLUDE_IN
 
 const APPROVAL_TEMPLATES = {

@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
 /* eslint-disable node/shebang */
-const path = require('path');
 const { promises: fs } = require('fs');
-const yargs = require('yargs/yargs');
+const path = require('path');
 const { hideBin } = require('yargs/helpers');
+const yargs = require('yargs/yargs');
+
+const { exitWithError } = require('../../../development/lib/exit-with-error');
 const {
   isWritable,
   getFirstParentDirectoryThatExists,
 } = require('../../helpers/file');
-
-const { exitWithError } = require('../../../development/lib/exit-with-error');
 
 /**
  * The e2e test case is used to capture bundle time statistics for extension.

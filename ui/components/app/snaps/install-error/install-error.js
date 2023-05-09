@@ -1,6 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '../../../ui/box/box';
+import React from 'react';
+
 import {
   AlignItems,
   BLOCK_SIZES,
@@ -9,8 +9,9 @@ import {
   JustifyContent,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import ActionableMessage from '../../../ui/actionable-message/actionable-message';
 import { Text } from '../../../component-library';
+import ActionableMessage from '../../../ui/actionable-message/actionable-message';
+import Box from '../../../ui/box/box';
 
 const InstallError = ({ title, error }) => {
   return (

@@ -1,6 +1,18 @@
 import { SubjectType } from '@metamask/subject-metadata-controller';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { getNativeCurrency } from '../../ducks/metamask/metamask';
+import {
+  CONNECT_ROUTE,
+  CONNECT_CONFIRM_PERMISSIONS_ROUTE,
+  ///: BEGIN:ONLY_INCLUDE_IN(snaps)
+  CONNECT_SNAP_INSTALL_ROUTE,
+  CONNECT_SNAP_UPDATE_ROUTE,
+  CONNECT_SNAP_RESULT_ROUTE,
+  ///: END:ONLY_INCLUDE_IN
+} from '../../helpers/constants/routes';
+import { formatDate, getURLHostName } from '../../helpers/utils/util';
 import {
   getAccountsWithLabels,
   getLastConnectedInfo,
@@ -13,9 +25,6 @@ import {
   getRequestType,
   getTargetSubjectMetadata,
 } from '../../selectors';
-import { getNativeCurrency } from '../../ducks/metamask/metamask';
-
-import { formatDate, getURLHostName } from '../../helpers/utils/util';
 import {
   approvePermissionsRequest,
   rejectPermissionsRequest,
@@ -26,15 +35,6 @@ import {
   rejectPendingApproval,
   ///: END:ONLY_INCLUDE_IN
 } from '../../store/actions';
-import {
-  CONNECT_ROUTE,
-  CONNECT_CONFIRM_PERMISSIONS_ROUTE,
-  ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-  CONNECT_SNAP_INSTALL_ROUTE,
-  CONNECT_SNAP_UPDATE_ROUTE,
-  CONNECT_SNAP_RESULT_ROUTE,
-  ///: END:ONLY_INCLUDE_IN
-} from '../../helpers/constants/routes';
 import PermissionApproval from './permissions-connect.component';
 
 const mapStateToProps = (state, ownProps) => {

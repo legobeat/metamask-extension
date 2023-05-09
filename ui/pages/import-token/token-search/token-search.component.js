@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Fuse from 'fuse.js';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import TextField from '../../../components/ui/text-field';
+import Fuse from 'fuse.js';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
 import SearchIcon from '../../../components/ui/icon/search-icon';
+import TextField from '../../../components/ui/text-field';
 
 export default class TokenSearch extends Component {
   static contextTypes = {

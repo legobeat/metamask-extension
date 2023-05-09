@@ -1,4 +1,5 @@
 import { head, last } from 'lodash';
+
 import { CHAIN_IDS } from '../../shared/constants/network';
 import {
   TransactionStatus,

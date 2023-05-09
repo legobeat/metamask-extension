@@ -1,36 +1,37 @@
 import { createSelector } from 'reselect';
-import txHelper from '../helpers/utils/tx-helper';
-import {
-  roundExponential,
-  getTransactionFee,
-  addFiat,
-  addEth,
-} from '../helpers/utils/confirm-tx.util';
-import { transactionMatchesNetwork } from '../../shared/modules/transaction.utils';
-import {
-  getGasEstimateType,
-  getGasFeeEstimates,
-  getNativeCurrency,
-} from '../ducks/metamask/metamask';
-import { TransactionEnvelopeType } from '../../shared/constants/transaction';
+
+import { checkNetworkAndAccountSupports1559 } from '.';
 import {
   GasEstimateTypes,
   CUSTOM_GAS_ESTIMATE,
 } from '../../shared/constants/gas';
-import {
-  getMaximumGasTotalInHexWei,
-  getMinimumGasTotalInHexWei,
-} from '../../shared/modules/gas.utils';
-import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
+import { TransactionEnvelopeType } from '../../shared/constants/transaction';
 import { calcTokenAmount } from '../../shared/lib/transactions-controller-utils';
 import {
   decGWEIToHexWEI,
   getValueFromWeiHex,
   sumHexes,
 } from '../../shared/modules/conversion.utils';
+import {
+  getMaximumGasTotalInHexWei,
+  getMinimumGasTotalInHexWei,
+} from '../../shared/modules/gas.utils';
+import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
+import { transactionMatchesNetwork } from '../../shared/modules/transaction.utils';
+import {
+  getGasEstimateType,
+  getGasFeeEstimates,
+  getNativeCurrency,
+} from '../ducks/metamask/metamask';
+import {
+  roundExponential,
+  getTransactionFee,
+  addFiat,
+  addEth,
+} from '../helpers/utils/confirm-tx.util';
+import txHelper from '../helpers/utils/tx-helper';
 import { getAveragePriceEstimateInHexWEI } from './custom-gas';
 import { getCurrentChainId, deprecatedGetCurrentNetworkId } from './selectors';
-import { checkNetworkAndAccountSupports1559 } from '.';
 
 const unapprovedTxsSelector = (state) => state.metamask.unapprovedTxs;
 const unapprovedMsgsSelector = (state) => state.metamask.unapprovedMsgs;

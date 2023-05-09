@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SendRowWrapper from '../send-row-wrapper';
+import React, { Component } from 'react';
+
+import { AssetType } from '../../../../../shared/constants/transaction';
 import UserPreferencedCurrencyInput from '../../../../components/app/user-preferenced-currency-input';
 import UserPreferencedTokenInput from '../../../../components/app/user-preferenced-token-input';
-import { AssetType } from '../../../../../shared/constants/transaction';
+import SendRowWrapper from '../send-row-wrapper';
 import AmountMaxButton from './amount-max-button';
 
 export default class SendAmountRow extends Component {

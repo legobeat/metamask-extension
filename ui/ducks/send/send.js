@@ -3,11 +3,46 @@ import BigNumber from 'bignumber.js';
 import { addHexPrefix } from 'ethereumjs-util';
 import { cloneDeep, debounce } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
+
+import { EtherDenomination } from '../../../shared/constants/common';
+import { GasEstimateTypes, GAS_LIMITS } from '../../../shared/constants/gas';
+import {
+  AssetType,
+  TokenStandard,
+  TransactionEnvelopeType,
+  TransactionType,
+} from '../../../shared/constants/transaction';
+import { getTokenValueParam } from '../../../shared/lib/metamask-controller-utils';
+import {
+  calcGasTotal,
+  calcTokenAmount,
+} from '../../../shared/lib/transactions-controller-utils';
 import {
   decimalToHex,
   getValueFromWeiHex,
 } from '../../../shared/modules/conversion.utils';
-import { GasEstimateTypes, GAS_LIMITS } from '../../../shared/constants/gas';
+import {
+  isBurnAddress,
+  isValidHexAddress,
+  toChecksumHexAddress,
+} from '../../../shared/modules/hexstring-utils';
+import { Numeric } from '../../../shared/modules/Numeric';
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
+import { parseStandardTokenTransactionData } from '../../../shared/modules/transaction.utils';
+import { INVALID_ASSET_TYPE } from '../../helpers/constants/error-keys';
+import fetchEstimatedL1Fee from '../../helpers/utils/optimism/fetchEstimatedL1Fee';
+import {
+  getTokenAddressParam,
+  getTokenMetadata,
+  getTokenIdParam,
+} from '../../helpers/utils/token-util';
+import { isSmartContractAddress } from '../../helpers/utils/transactions.util';
+import {
+  checkExistingAddresses,
+  isDefaultMetaMaskChain,
+  isOriginContractAddress,
+  isValidDomainName,
+} from '../../helpers/utils/util';
 import {
   CONTRACT_ADDRESS_ERROR,
   INSUFFICIENT_FUNDS_ERROR,
@@ -19,7 +54,6 @@ import {
   NEGATIVE_ETH_ERROR,
   RECIPIENT_TYPES,
 } from '../../pages/send/send.constants';
-
 import {
   isBalanceSufficient,
   isTokenBalanceSufficient,
@@ -41,6 +75,13 @@ import {
   getSelectedAddress,
 } from '../../selectors';
 import {
+  QR_CODE_DETECTED,
+  SELECTED_ACCOUNT_CHANGED,
+  ACCOUNT_CHANGED,
+  ADDRESS_BOOK_UPDATED,
+  GAS_FEE_ESTIMATES_UPDATED,
+} from '../../store/actionConstants';
+import {
   disconnectGasFeeEstimatePoller,
   displayWarning,
   getGasFeeEstimatesAndStartPolling,
@@ -57,57 +98,14 @@ import {
   updateTransactionSendFlowHistory,
   getCurrentNetworkEIP1559Compatibility,
 } from '../../store/actions';
+import { resetDomainResolution } from '../domains';
 import { setCustomGasLimit } from '../gas/gas.duck';
-import {
-  QR_CODE_DETECTED,
-  SELECTED_ACCOUNT_CHANGED,
-  ACCOUNT_CHANGED,
-  ADDRESS_BOOK_UPDATED,
-  GAS_FEE_ESTIMATES_UPDATED,
-} from '../../store/actionConstants';
-import {
-  getTokenAddressParam,
-  getTokenMetadata,
-  getTokenIdParam,
-} from '../../helpers/utils/token-util';
-import {
-  checkExistingAddresses,
-  isDefaultMetaMaskChain,
-  isOriginContractAddress,
-  isValidDomainName,
-} from '../../helpers/utils/util';
 import {
   getGasEstimateType,
   getProviderConfig,
   getTokens,
   getUnapprovedTxs,
 } from '../metamask/metamask';
-
-import { resetDomainResolution } from '../domains';
-import {
-  isBurnAddress,
-  isValidHexAddress,
-  toChecksumHexAddress,
-} from '../../../shared/modules/hexstring-utils';
-import { isSmartContractAddress } from '../../helpers/utils/transactions.util';
-import fetchEstimatedL1Fee from '../../helpers/utils/optimism/fetchEstimatedL1Fee';
-
-import {
-  AssetType,
-  TokenStandard,
-  TransactionEnvelopeType,
-  TransactionType,
-} from '../../../shared/constants/transaction';
-import { INVALID_ASSET_TYPE } from '../../helpers/constants/error-keys';
-import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
-import { parseStandardTokenTransactionData } from '../../../shared/modules/transaction.utils';
-import { getTokenValueParam } from '../../../shared/lib/metamask-controller-utils';
-import {
-  calcGasTotal,
-  calcTokenAmount,
-} from '../../../shared/lib/transactions-controller-utils';
-import { Numeric } from '../../../shared/modules/Numeric';
-import { EtherDenomination } from '../../../shared/constants/common';
 import {
   estimateGasLimitForSend,
   generateTransactionParams,
@@ -419,7 +417,7 @@ export const draftTransactionInitialState = {
  * @property {string} gasPriceEstimate - Expected price in wei necessary to
  *  pay per gas used for a transaction to be included in a reasonable timeframe.
  *  Comes from the GasFeeController.
- * @property {string} gasTotalForLayer1 -  Layer 1 gas fee total on multi-layer
+ * @property {string} gasTotalForLayer1 - Layer 1 gas fee total on multi-layer
  *  fee networks
  * @property {string} recipientInput - The user input of the recipient
  *  which is updated quickly to avoid delays in the UI reflecting manual entry

@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tabs, Tab } from '../../../ui/tabs';
-import Button from '../../../ui/button';
-import ActionableMessage from '../../../ui/actionable-message/actionable-message';
-import { PageContainerFooter } from '../../../ui/page-container';
-import ErrorMessage from '../../../ui/error-message';
-import { INSUFFICIENT_FUNDS_ERROR_KEY } from '../../../../helpers/constants/error-keys';
-import Typography from '../../../ui/typography';
-import { TypographyVariant } from '../../../../helpers/constants/design-system';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
+import { ConfirmPageContainerSummary, ConfirmPageContainerWarning } from '.';
+import { TypographyVariant } from '../../../../helpers/constants/design-system';
+import { INSUFFICIENT_FUNDS_ERROR_KEY } from '../../../../helpers/constants/error-keys';
+import { getPortfolioUrl } from '../../../../helpers/utils/portfolio';
+import ActionableMessage from '../../../ui/actionable-message/actionable-message';
+import Button from '../../../ui/button';
+import ErrorMessage from '../../../ui/error-message';
+import { PageContainerFooter } from '../../../ui/page-container';
+import { Tabs, Tab } from '../../../ui/tabs';
+import Typography from '../../../ui/typography';
 import SecurityProviderBannerMessage from '../../security-provider-banner-message/security-provider-banner-message';
 import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../../security-provider-banner-message/security-provider-banner-message.constants';
-import { getPortfolioUrl } from '../../../../helpers/utils/portfolio';
-import { ConfirmPageContainerSummary, ConfirmPageContainerWarning } from '.';
 
 export default class ConfirmPageContainerContent extends Component {
   static contextTypes = {

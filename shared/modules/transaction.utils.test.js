@@ -1,4 +1,5 @@
 import EthQuery from 'ethjs-query';
+
 import { createTestProviderTools } from '../../test/stub/provider';
 import { TransactionType } from '../constants/transaction';
 import {

@@ -1,25 +1,26 @@
-import { useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
-import { Text } from '../../component-library';
+import { useSelector } from 'react-redux';
+
 import { EditGasModes, PriorityLevels } from '../../../../shared/constants/gas';
+import { useGasFeeContext } from '../../../contexts/gasFee';
+import { useTransactionModalContext } from '../../../contexts/transaction-modal';
 import {
   AlignItems,
   DISPLAY,
   FLEX_DIRECTION,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { getAppIsLoading } from '../../../selectors';
 import { gasEstimateGreaterThanGasUsedPlusTenPercent } from '../../../helpers/utils/gas';
-import { useGasFeeContext } from '../../../contexts/gasFee';
 import { useI18nContext } from '../../../hooks/useI18nContext';
-import { useTransactionModalContext } from '../../../contexts/transaction-modal';
-import EditGasFeeButton from '../edit-gas-fee-button';
-import GasDetailsItem from '../gas-details-item';
+import { getAppIsLoading } from '../../../selectors';
+import { Text } from '../../component-library';
 import Box from '../../ui/box';
 import Button from '../../ui/button';
 import InfoTooltip from '../../ui/info-tooltip';
 import Popover from '../../ui/popover';
 import AppLoadingSpinner from '../app-loading-spinner';
+import EditGasFeeButton from '../edit-gas-fee-button';
+import GasDetailsItem from '../gas-details-item';
 
 const CancelSpeedupPopover = () => {
   const {

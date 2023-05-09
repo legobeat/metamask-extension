@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 
 import { toChecksumHexAddress } from '../../shared/modules/hexstring-utils';
+import { shortenAddress } from '../helpers/utils/util';
 import {
   getAddressBook,
   getMetaMaskIdentities,
   getTokenList,
 } from '../selectors';
-import { shortenAddress } from '../helpers/utils/util';
 
 const useAddressDetails = (toAddress) => {
   const addressBook = useSelector(getAddressBook);

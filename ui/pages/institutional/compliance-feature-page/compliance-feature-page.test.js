@@ -1,9 +1,10 @@
-import React from 'react';
-import sinon from 'sinon';
-import configureMockStore from 'redux-mock-store';
 import { fireEvent, waitFor } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import React from 'react';
+import configureMockStore from 'redux-mock-store';
+import sinon from 'sinon';
+
 import ComplianceFeaturePage from '.';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 const mockedDeleteComplianceAuthData = jest
   .fn()

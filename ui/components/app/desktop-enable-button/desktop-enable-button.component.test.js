@@ -1,9 +1,11 @@
-import React from 'react';
-import { act, fireEvent, screen, waitFor } from '@testing-library/react';
-import configureMockStore from 'redux-mock-store';
-import reactRouterDom from 'react-router-dom';
-import thunk from 'redux-thunk';
 import { PairingKeyStatus } from '@metamask/desktop/dist/types';
+import { act, fireEvent, screen, waitFor } from '@testing-library/react';
+import React from 'react';
+import reactRouterDom from 'react-router-dom';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+
+import { EXTENSION_ERROR_PAGE_TYPES } from '../../../../shared/constants/desktop';
 import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import {
@@ -11,7 +13,6 @@ import {
   DESKTOP_PAIRING_ROUTE,
 } from '../../../helpers/constants/routes';
 import actions from '../../../store/actions';
-import { EXTENSION_ERROR_PAGE_TYPES } from '../../../../shared/constants/desktop';
 import DesktopEnableButton from './desktop-enable-button.component';
 
 const mockHideLoadingIndication = jest.fn();

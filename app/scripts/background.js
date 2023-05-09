@@ -2,16 +2,16 @@
  * @file The entry point for the web extension singleton process.
  */
 
-import EventEmitter from 'events';
-import endOfStream from 'end-of-stream';
-import pump from 'pump';
-import debounce from 'debounce-stream';
-import log from 'loglevel';
-import browser from 'webextension-polyfill';
 import { storeAsStream } from '@metamask/obs-store';
-import PortStream from 'extension-port-stream';
-
+import debounce from 'debounce-stream';
+import endOfStream from 'end-of-stream';
 import { ethErrors } from 'eth-rpc-errors';
+import EventEmitter from 'events';
+import PortStream from 'extension-port-stream';
+import log from 'loglevel';
+import pump from 'pump';
+import browser from 'webextension-polyfill';
+
 import {
   ENVIRONMENT_TYPE_POPUP,
   ENVIRONMENT_TYPE_NOTIFICATION,
@@ -32,25 +32,24 @@ import {
 import { checkForLastErrorAndLog } from '../../shared/modules/browser-runtime.utils';
 import { isManifestV3 } from '../../shared/modules/mv3.utils';
 import { maskObject } from '../../shared/modules/object.utils';
-import { getEnvironmentType, deferredPromise, getPlatform } from './lib/util';
-import migrations from './migrations';
-import Migrator from './lib/migrator';
-import ExtensionPlatform from './platforms/extension';
-import LocalStore from './lib/local-store';
-import ReadOnlyNetworkStore from './lib/network-store';
-import { SENTRY_STATE } from './lib/setupSentry';
-
+import rawFirstTimeState from './first-time-state';
 import createStreamSink from './lib/createStreamSink';
+import setupEnsIpfsResolver from './lib/ens-ipfs/setup';
+import getFirstPreferredLangCode from './lib/get-first-preferred-lang-code';
+import getObjStructure from './lib/getObjStructure';
+import LocalStore from './lib/local-store';
+import Migrator from './lib/migrator';
+import ReadOnlyNetworkStore from './lib/network-store';
 import NotificationManager, {
   NOTIFICATION_MANAGER_EVENTS,
 } from './lib/notification-manager';
+import { SENTRY_STATE } from './lib/setupSentry';
+import { getEnvironmentType, deferredPromise, getPlatform } from './lib/util';
 import MetamaskController, {
   METAMASK_CONTROLLER_EVENTS,
 } from './metamask-controller';
-import rawFirstTimeState from './first-time-state';
-import getFirstPreferredLangCode from './lib/get-first-preferred-lang-code';
-import getObjStructure from './lib/getObjStructure';
-import setupEnsIpfsResolver from './lib/ens-ipfs/setup';
+import migrations from './migrations';
+import ExtensionPlatform from './platforms/extension';
 
 /* eslint-enable import/first */
 

@@ -1,19 +1,20 @@
-import React, { useMemo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import React, { useMemo, useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+
+import { SWAPS_CHAINID_CONTRACT_ADDRESS_MAP } from '../../../../shared/constants/swaps';
+import { TransactionType } from '../../../../shared/constants/transaction';
+import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
+import { TOKEN_CATEGORY_HASH } from '../../../helpers/constants/transactions';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getCurrentChainId } from '../../../selectors';
 import {
   nonceSortedCompletedTransactionsSelector,
   nonceSortedPendingTransactionsSelector,
 } from '../../../selectors/transactions';
-import { getCurrentChainId } from '../../../selectors';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import Button from '../../ui/button';
 import TransactionListItem from '../transaction-list-item';
 import SmartTransactionListItem from '../transaction-list-item/smart-transaction-list-item.component';
-import Button from '../../ui/button';
-import { TOKEN_CATEGORY_HASH } from '../../../helpers/constants/transactions';
-import { SWAPS_CHAINID_CONTRACT_ADDRESS_MAP } from '../../../../shared/constants/swaps';
-import { TransactionType } from '../../../../shared/constants/transaction';
-import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
 
 const PAGE_INCREMENT = 10;
 

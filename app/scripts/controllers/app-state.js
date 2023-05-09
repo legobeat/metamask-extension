@@ -1,17 +1,18 @@
-import EventEmitter from 'events';
 import { ObservableStore } from '@metamask/obs-store';
-import { v4 as uuid } from 'uuid';
+import EventEmitter from 'events';
 import log from 'loglevel';
-import { METAMASK_CONTROLLER_EVENTS } from '../metamask-controller';
-import { MINUTE } from '../../../shared/constants/time';
+import { v4 as uuid } from 'uuid';
+
 import { AUTO_LOCK_TIMEOUT_ALARM } from '../../../shared/constants/alarms';
-import { isManifestV3 } from '../../../shared/modules/mv3.utils';
-import { isBeta } from '../../../ui/helpers/utils/build-types';
 import {
   ENVIRONMENT_TYPE_BACKGROUND,
   POLLING_TOKEN_ENVIRONMENT_TYPES,
   ORIGIN_METAMASK,
 } from '../../../shared/constants/app';
+import { MINUTE } from '../../../shared/constants/time';
+import { isManifestV3 } from '../../../shared/modules/mv3.utils';
+import { isBeta } from '../../../ui/helpers/utils/build-types';
+import { METAMASK_CONTROLLER_EVENTS } from '../metamask-controller';
 
 const APPROVAL_REQUEST_TYPE = 'unlock';
 

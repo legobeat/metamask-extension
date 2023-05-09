@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import PermissionsConnectHeader from '../../permissions-connect-header';
+
 import Tooltip from '../../../ui/tooltip';
+import PermissionsConnectHeader from '../../permissions-connect-header';
 import PermissionsConnectPermissionList from '../../permissions-connect-permission-list';
 
 export default class PermissionPageContainerContent extends PureComponent {

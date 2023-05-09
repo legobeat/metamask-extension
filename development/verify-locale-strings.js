@@ -22,11 +22,12 @@
 //
 // //////////////////////////////////////////////////////////////////////////////
 
+const glob = require('fast-glob');
 const fs = require('fs');
 const { promisify } = require('util');
 const log = require('loglevel');
-const glob = require('fast-glob');
 const matchAll = require('string.prototype.matchall').getPolyfill();
+
 const localeIndex = require('../app/_locales/index.json');
 const {
   compareLocalesForMissingDescriptions,

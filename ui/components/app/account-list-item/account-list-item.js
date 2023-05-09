@@ -1,8 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Identicon from '../../ui/identicon';
-import AccountMismatchWarning from '../../ui/account-mismatch-warning/account-mismatch-warning.component';
+import React from 'react';
+
 import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
+import AccountMismatchWarning from '../../ui/account-mismatch-warning/account-mismatch-warning.component';
+import Identicon from '../../ui/identicon';
 
 export default function AccountListItem({
   account,

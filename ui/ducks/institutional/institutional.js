@@ -1,6 +1,7 @@
-import { createSelector } from 'reselect';
 import { createSlice } from '@reduxjs/toolkit';
 import { captureException } from '@sentry/browser';
+import { createSelector } from 'reselect';
+
 import { mmiActionsFactory } from '../../store/institutional/institution-background';
 
 const name = 'institutionalFeatures';

@@ -1,7 +1,8 @@
 const { strict: assert } = require('assert');
+
+const FixtureBuilder = require('../fixture-builder');
 const { convertToHexValue, withFixtures } = require('../helpers');
 const { SMART_CONTRACTS } = require('../seeder/smart-contracts');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('Send NFT', function () {
   const smartContract = SMART_CONTRACTS.NFTS;

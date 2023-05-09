@@ -1,40 +1,33 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import {
+  ConfirmPageContainerHeader,
+  ConfirmPageContainerContent,
+  ConfirmPageContainerNavigation,
+} from '.';
 import { EditGasModes } from '../../../../shared/constants/gas';
-import { GasFeeContextProvider } from '../../../contexts/gasFee';
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import { NETWORK_TO_NAME_MAP } from '../../../../shared/constants/network';
 import {
   TokenStandard,
   TransactionType,
 } from '../../../../shared/constants/transaction';
-import { NETWORK_TO_NAME_MAP } from '../../../../shared/constants/network';
-
-import { PageContainerFooter } from '../../ui/page-container';
-///: BEGIN:ONLY_INCLUDE_IN(build-main,build-beta,build-flask)
-import Button from '../../ui/button';
-///: END:ONLY_INCLUDE_IN
-import ActionableMessage from '../../ui/actionable-message/actionable-message';
-import SenderToRecipient from '../../ui/sender-to-recipient';
-
-import AdvancedGasFeePopover from '../advanced-gas-fee-popover';
-import EditGasFeePopover from '../edit-gas-fee-popover/edit-gas-fee-popover';
-import EditGasPopover from '../edit-gas-popover';
-import ErrorMessage from '../../ui/error-message';
-import { INSUFFICIENT_FUNDS_ERROR_KEY } from '../../../helpers/constants/error-keys';
-import { Text } from '../../component-library';
+import { fetchTokenBalance } from '../../../../shared/lib/token-util.ts';
+import { GasFeeContextProvider } from '../../../contexts/gasFee';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   TextVariant,
   TEXT_ALIGN,
 } from '../../../helpers/constants/design-system';
-
-import NetworkAccountBalanceHeader from '../network-account-balance-header/network-account-balance-header';
-import { fetchTokenBalance } from '../../../../shared/lib/token-util.ts';
-import SetApproveForAllWarning from '../set-approval-for-all-warning';
+import { INSUFFICIENT_FUNDS_ERROR_KEY } from '../../../helpers/constants/error-keys';
+import useRamps from '../../../hooks/experiences/useRamps';
 import { useI18nContext } from '../../../hooks/useI18nContext';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import useTransactionInsights from '../../../hooks/useTransactionInsights';
-///: END:ONLY_INCLUDE_IN
 import {
   getAccountName,
   getAddressBookEntry,
@@ -45,17 +38,21 @@ import {
   getNetworkIdentifier,
   getSwapsDefaultToken,
 } from '../../../selectors';
-import useRamps from '../../../hooks/experiences/useRamps';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import {
-  ConfirmPageContainerHeader,
-  ConfirmPageContainerContent,
-  ConfirmPageContainerNavigation,
-} from '.';
+import { Text } from '../../component-library';
+import ActionableMessage from '../../ui/actionable-message/actionable-message';
+import Button from '../../ui/button';
+import ErrorMessage from '../../ui/error-message';
+import { PageContainerFooter } from '../../ui/page-container';
+///: BEGIN:ONLY_INCLUDE_IN(build-main,build-beta,build-flask)
+///: END:ONLY_INCLUDE_IN
+import SenderToRecipient from '../../ui/sender-to-recipient';
+import AdvancedGasFeePopover from '../advanced-gas-fee-popover';
+import EditGasFeePopover from '../edit-gas-fee-popover/edit-gas-fee-popover';
+import EditGasPopover from '../edit-gas-popover';
+import NetworkAccountBalanceHeader from '../network-account-balance-header/network-account-balance-header';
+import SetApproveForAllWarning from '../set-approval-for-all-warning';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
+///: END:ONLY_INCLUDE_IN
 
 const ConfirmPageContainer = (props) => {
   const {

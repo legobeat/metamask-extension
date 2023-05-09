@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
+
 import { NETWORK_TYPES } from '../../../../shared/constants/network';
-import * as actions from '../../../store/actions';
+import { getProviderConfig } from '../../../ducks/metamask/metamask';
 import {
   getAllEnabledNetworks,
   getNetworkIdentifier,
   isNetworkLoading,
 } from '../../../selectors';
-import { getProviderConfig } from '../../../ducks/metamask/metamask';
+import * as actions from '../../../store/actions';
 import LoadingNetworkScreen from './loading-network-screen.component';
 
 const DEPRECATED_TEST_NET_CHAINIDS = ['0x3', '0x2a', '0x4'];

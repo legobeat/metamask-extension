@@ -1,7 +1,8 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import React from 'react';
+
 import NftDefaultImage from '.';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 describe('NFT Default Image', () => {
   it('should render with no props', () => {

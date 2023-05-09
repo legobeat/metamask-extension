@@ -1,9 +1,10 @@
 import { fireEvent, waitFor } from '@testing-library/react';
-import configureMockStore from 'redux-mock-store';
 import React from 'react';
+import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
+
 import ExportPrivateKeyModal from '.';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 
 const mockAddress = '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc';
 const mockPrivateKey = 'mock private key';

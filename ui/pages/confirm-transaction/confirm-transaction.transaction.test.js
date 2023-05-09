@@ -2,14 +2,13 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { renderWithProvider } from '../../../test/lib/render-helpers';
-import { setBackgroundConnection } from '../../../test/jest';
 import mockState from '../../../test/data/mock-state.json';
+import { setBackgroundConnection } from '../../../test/jest';
+import { renderWithProvider } from '../../../test/lib/render-helpers';
 import {
   CONFIRM_SEND_ETHER_PATH,
   CONFIRM_TRANSACTION_ROUTE,
 } from '../../helpers/constants/routes';
-
 import ConfirmTransaction from './confirm-transaction.component';
 
 const middleware = [thunk];

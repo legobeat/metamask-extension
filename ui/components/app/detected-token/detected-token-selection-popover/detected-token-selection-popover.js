@@ -1,22 +1,21 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import { MetaMetricsContext } from '../../../../contexts/metametrics';
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
   MetaMetricsTokenEventSource,
 } from '../../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../../contexts/metametrics';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import {
   getCurrentChainId,
   getDetectedTokensInCurrentNetwork,
 } from '../../../../selectors';
-
-import Popover from '../../../ui/popover';
 import Box from '../../../ui/box';
 import Button from '../../../ui/button';
+import Popover from '../../../ui/popover';
 import DetectedTokenDetails from '../detected-token-details/detected-token-details';
 
 const DetectedTokenSelectionPopover = ({

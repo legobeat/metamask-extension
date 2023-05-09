@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Box from '../box';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+
 import {
   BackgroundColor,
   DISPLAY,
   JustifyContent,
 } from '../../../helpers/constants/design-system';
+import Box from '../box';
 
 const Tabs = ({
   defaultActiveTabKey,

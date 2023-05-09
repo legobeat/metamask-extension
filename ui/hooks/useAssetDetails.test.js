@@ -1,10 +1,10 @@
+import { renderHook } from '@testing-library/react-hooks';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { renderHook } from '@testing-library/react-hooks';
 
-import configureStore from '../store/store';
-import * as Actions from '../store/actions';
 import { TokenStandard } from '../../shared/constants/transaction';
+import * as Actions from '../store/actions';
+import configureStore from '../store/store';
 import { useAssetDetails } from './useAssetDetails';
 
 const renderUseAssetDetails = ({

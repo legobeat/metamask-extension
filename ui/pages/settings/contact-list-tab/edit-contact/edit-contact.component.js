@@ -1,14 +1,15 @@
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 import { Redirect } from 'react-router-dom';
-import Identicon from '../../../../components/ui/identicon';
-import Button from '../../../../components/ui/button/button.component';
-import TextField from '../../../../components/ui/text-field';
-import PageContainerFooter from '../../../../components/ui/page-container/page-container-footer';
+
 import {
   isBurnAddress,
   isValidHexAddress,
 } from '../../../../../shared/modules/hexstring-utils';
+import Button from '../../../../components/ui/button/button.component';
+import Identicon from '../../../../components/ui/identicon';
+import PageContainerFooter from '../../../../components/ui/page-container/page-container-footer';
+import TextField from '../../../../components/ui/text-field';
 
 export default class EditContact extends PureComponent {
   static contextTypes = {

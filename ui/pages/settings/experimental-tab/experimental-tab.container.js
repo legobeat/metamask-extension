@@ -1,16 +1,17 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {
-  setUseNftDetection,
-  setOpenSeaEnabled,
-  setTransactionSecurityCheckEnabled,
-} from '../../../store/actions';
+import { compose } from 'redux';
+
 import {
   getUseNftDetection,
   getOpenSeaEnabled,
   getIsTransactionSecurityCheckEnabled,
 } from '../../../selectors';
+import {
+  setUseNftDetection,
+  setOpenSeaEnabled,
+  setTransactionSecurityCheckEnabled,
+} from '../../../store/actions';
 import ExperimentalTab from './experimental-tab.component';
 
 const mapStateToProps = (state) => {

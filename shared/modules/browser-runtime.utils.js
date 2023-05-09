@@ -2,8 +2,8 @@
  * Utility Functions to support browser.runtime JavaScript API
  */
 
-import browser from 'webextension-polyfill';
 import log from 'loglevel';
+import browser from 'webextension-polyfill';
 
 /**
  * Returns an Error if extension.runtime.lastError is present

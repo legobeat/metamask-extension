@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ConfirmTokenTransactionBaseContainer from '../confirm-token-transaction-base';
+import React, { Component } from 'react';
+
 import { SEND_ROUTE } from '../../helpers/constants/routes';
+import ConfirmTokenTransactionBaseContainer from '../confirm-token-transaction-base';
 
 export default class ConfirmSendToken extends Component {
   static propTypes = {

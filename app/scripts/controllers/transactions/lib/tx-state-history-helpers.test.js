@@ -1,4 +1,5 @@
 import { strict as assert } from 'assert';
+
 import testData from '../../../../../test/data/mock-tx-history.json';
 import {
   snapshotFromTxMeta,

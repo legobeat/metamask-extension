@@ -1,7 +1,13 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { useSelector } from 'react-redux';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   BLOCK_SIZES,
   BorderColor,
@@ -14,6 +20,8 @@ import {
   TextVariant,
   TEXT_ALIGN,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getCurrentChainId, getNativeCurrencyImage } from '../../../selectors';
 import {
   AvatarNetwork,
   AvatarToken,
@@ -21,14 +29,7 @@ import {
   Text,
 } from '../../component-library';
 import Box from '../../ui/box/box';
-import { getCurrentChainId, getNativeCurrencyImage } from '../../../selectors';
 import Tooltip from '../../ui/tooltip';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
 
 export const MultichainTokenListItem = ({
   className,

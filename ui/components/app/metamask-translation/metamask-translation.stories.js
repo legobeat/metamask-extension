@@ -1,8 +1,9 @@
-import React from 'react';
 import { groupBy } from 'lodash';
+import React from 'react';
+
 import en from '../../../../app/_locales/en/messages.json';
-import README from './README.mdx';
 import MetaMaskTranslation from './metamask-translation';
+import README from './README.mdx';
 
 const { keysWithoutSubstitution } = groupBy(Object.keys(en), (key) => {
   if (en[key].message.includes('$1')) {

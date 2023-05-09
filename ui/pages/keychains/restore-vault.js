@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  createNewVaultAndRestore,
-  unMarkPasswordForgotten,
-} from '../../store/actions';
-import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+
+import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
 import CreateNewVault from '../../components/app/create-new-vault';
-import Button from '../../components/ui/button';
 import Box from '../../components/ui/box';
+import Button from '../../components/ui/button';
 import Typography from '../../components/ui/typography';
-import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
 import {
   TextColor,
   TypographyVariant,
 } from '../../helpers/constants/design-system';
-import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
+import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
+import {
+  createNewVaultAndRestore,
+  unMarkPasswordForgotten,
+} from '../../store/actions';
 
 class RestoreVaultPage extends Component {
   static contextTypes = {

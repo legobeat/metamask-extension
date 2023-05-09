@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import { getSnapPrefix } from '@metamask/snaps-utils';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Box from '../../../ui/box';
+
 import {
   BackgroundColor,
   TextColor,
@@ -23,15 +23,15 @@ import {
   getSnapName,
   removeSnapIdPrefix,
 } from '../../../../helpers/utils/util';
-
-import { Text, ButtonLink } from '../../../component-library';
-import { getTargetSubjectMetadata } from '../../../../selectors';
-import SnapAvatar from '../snap-avatar';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
-import Tooltip from '../../../ui/tooltip/tooltip';
-import ToggleButton from '../../../ui/toggle-button';
-import { disableSnap, enableSnap } from '../../../../store/actions';
 import { useOriginMetadata } from '../../../../hooks/useOriginMetadata';
+import { getTargetSubjectMetadata } from '../../../../selectors';
+import { disableSnap, enableSnap } from '../../../../store/actions';
+import { Text, ButtonLink } from '../../../component-library';
+import Box from '../../../ui/box';
+import ToggleButton from '../../../ui/toggle-button';
+import Tooltip from '../../../ui/tooltip/tooltip';
+import SnapAvatar from '../snap-avatar';
 import SnapVersion from '../snap-version/snap-version';
 
 const SnapAuthorship = ({ snapId, className, expanded = false, snap }) => {

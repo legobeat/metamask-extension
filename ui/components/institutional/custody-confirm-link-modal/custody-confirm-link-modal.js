@@ -1,22 +1,12 @@
 import React, { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
+
 import {
   MetaMetricsEventName,
   MetaMetricsEventCategory,
 } from '../../../../shared/constants/metametrics';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import withModalProps from '../../../helpers/higher-order-components/with-modal-props';
 import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
-import { mmiActionsFactory } from '../../../store/institutional/institution-background';
-import { hideModal, setSelectedAddress } from '../../../store/actions';
-import { getMetaMaskAccountsRaw } from '../../../selectors';
-import {
-  getMMIAddressFromModalOrAddress,
-  getCustodyAccountDetails,
-  getMMIConfiguration,
-} from '../../../selectors/institutional/selectors';
-import Box from '../../ui/box/box';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   AlignItems,
   DISPLAY,
@@ -27,7 +17,18 @@ import {
   TextColor,
   TextVariant,
 } from '../../../helpers/constants/design-system';
+import withModalProps from '../../../helpers/higher-order-components/with-modal-props';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getMetaMaskAccountsRaw } from '../../../selectors';
+import {
+  getMMIAddressFromModalOrAddress,
+  getCustodyAccountDetails,
+  getMMIConfiguration,
+} from '../../../selectors/institutional/selectors';
+import { hideModal, setSelectedAddress } from '../../../store/actions';
+import { mmiActionsFactory } from '../../../store/institutional/institution-background';
 import { Text, Button, BUTTON_VARIANT } from '../../component-library';
+import Box from '../../ui/box/box';
 
 const CustodyConfirmLink = () => {
   const t = useI18nContext();

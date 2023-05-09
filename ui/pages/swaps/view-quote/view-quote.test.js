@@ -2,13 +2,13 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
+import ViewQuote from '.';
 import {
   renderWithProvider,
   createSwapsMockStore,
   setBackgroundConnection,
   MOCKS,
 } from '../../../../test/jest';
-import ViewQuote from '.';
 
 jest.mock(
   '../../../components/ui/info-tooltip/info-tooltip-icon',

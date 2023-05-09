@@ -1,12 +1,11 @@
 import React from 'react';
 
+import NetworkDisplay from '.';
 import {
   BUILT_IN_NETWORKS,
   NETWORK_TYPES,
 } from '../../../../shared/constants/network';
 import { Size } from '../../../helpers/constants/design-system';
-
-import NetworkDisplay from '.';
 
 export default {
   title: 'Components/App/NetworkDisplay',

@@ -1,9 +1,9 @@
-import mockState from '../../test/data/mock-state.json';
 import { KeyringType } from '../../shared/constants/keyring';
 import {
   CHAIN_IDS,
   LOCALHOST_DISPLAY_NAME,
 } from '../../shared/constants/network';
+import mockState from '../../test/data/mock-state.json';
 import * as selectors from './selectors';
 
 describe('Selectors', () => {

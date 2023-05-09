@@ -1,9 +1,10 @@
-import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
+import React from 'react';
+
+import ConfirmAddSuggestedToken from '.';
+import { renderWithProvider } from '../../../test/jest/rendering';
 import { acceptWatchAsset, rejectWatchAsset } from '../../store/actions';
 import configureStore from '../../store/store';
-import { renderWithProvider } from '../../../test/jest/rendering';
-import ConfirmAddSuggestedToken from '.';
 
 const MOCK_SUGGESTED_ASSETS = [
   {

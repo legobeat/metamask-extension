@@ -1,9 +1,10 @@
 /* eslint-disable jest/require-top-level-describe */
 import { render } from '@testing-library/react';
 import React from 'react';
+
 import { IconName } from '..';
-import { BUTTON_SIZES, BUTTON_VARIANT } from './button.constants';
 import { Button } from './button';
+import { BUTTON_SIZES, BUTTON_VARIANT } from './button.constants';
 
 describe('Button', () => {
   it('should render button element correctly', () => {

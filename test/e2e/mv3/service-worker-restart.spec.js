@@ -1,13 +1,14 @@
 const { strict: assert } = require('assert');
-const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
-const FixtureBuilder = require('../fixture-builder');
-const {
-  ACTION_QUEUE_METRICS_E2E_TEST,
-} = require('../../../shared/constants/test-flags');
+
 const {
   MetaMetricsEventName,
   MetaMetricsEventCategory,
 } = require('../../../shared/constants/metametrics');
+const {
+  ACTION_QUEUE_METRICS_E2E_TEST,
+} = require('../../../shared/constants/test-flags');
+const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
 
 const PRIVATE_KEY =
   '0x7C9529A67102755B7E6102D6D950AC5D5863C98713805CEC576B945B15B71EAC';

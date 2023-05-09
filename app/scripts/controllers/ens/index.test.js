@@ -1,5 +1,6 @@
 import { strict as assert } from 'assert';
 import sinon from 'sinon';
+
 import EnsController from '.';
 
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';

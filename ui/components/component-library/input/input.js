@@ -1,17 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import {
   TextVariant,
   BackgroundColor,
   BorderStyle,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box';
-
 import { Text } from '../text';
-
 import { INPUT_TYPES } from './input.constants';
 
 export const Input = React.forwardRef(

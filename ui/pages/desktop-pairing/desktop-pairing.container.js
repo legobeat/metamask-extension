@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
+
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
 import {
   generateDesktopOtp,
   hideLoadingIndication,
   showLoadingIndication,
 } from '../../store/actions';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
 import DesktopPairingPage from './desktop-pairing.component';
 
 const mapDispatchToProps = (dispatch) => {

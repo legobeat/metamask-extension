@@ -1,10 +1,10 @@
+const FixtureBuilder = require('../fixture-builder');
 const {
   convertToHexValue,
   withFixtures,
   openDapp,
   DAPP_ONE_URL,
 } = require('../helpers');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('eth_subscribe', function () {
   const ganacheOptions = {

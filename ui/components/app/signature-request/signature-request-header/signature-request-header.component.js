@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import AccountListItem from '../../account-list-item';
 import NetworkDisplay from '../../network-display';
 

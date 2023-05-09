@@ -1,23 +1,10 @@
+import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
-import { getMostRecentOverviewPage } from '../../../ducks/history/history';
-import { getMetaMaskAccounts } from '../../../selectors';
-import Button from '../../../components/ui/button';
-import CustodyLabels from '../../../components/institutional/custody-labels/custody-labels';
-import PulseLoader from '../../../components/ui/pulse-loader';
-import { INSTITUTIONAL_FEATURES_DONE_ROUTE } from '../../../helpers/constants/routes';
-import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
+
 import { CHAIN_IDS } from '../../../../shared/constants/network';
-import { shortenAddress } from '../../../helpers/utils/util';
-import Tooltip from '../../../components/ui/tooltip';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import {
-  mmiActionsFactory,
-  showInteractiveReplacementTokenBanner,
-} from '../../../store/institutional/institution-background';
-import Box from '../../../components/ui/box';
+import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
+import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
 import {
   Text,
   Label,
@@ -26,6 +13,12 @@ import {
   IconName,
   IconSize,
 } from '../../../components/component-library';
+import CustodyLabels from '../../../components/institutional/custody-labels/custody-labels';
+import Box from '../../../components/ui/box';
+import Button from '../../../components/ui/button';
+import PulseLoader from '../../../components/ui/pulse-loader';
+import Tooltip from '../../../components/ui/tooltip';
+import { getMostRecentOverviewPage } from '../../../ducks/history/history';
 import {
   OVERFLOW_WRAP,
   TextColor,
@@ -35,7 +28,15 @@ import {
   FLEX_DIRECTION,
   IconColor,
 } from '../../../helpers/constants/design-system';
+import { INSTITUTIONAL_FEATURES_DONE_ROUTE } from '../../../helpers/constants/routes';
+import { shortenAddress } from '../../../helpers/utils/util';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getMetaMaskAccounts } from '../../../selectors';
+import {
+  mmiActionsFactory,
+  showInteractiveReplacementTokenBanner,
+} from '../../../store/institutional/institution-background';
 
 const getButtonLinkHref = ({ address }) => {
   const url = SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP[CHAIN_IDS.MAINNET];

@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import { ButtonBase } from '../button-base';
 import {
   BackgroundColor,
   TextColor,
 } from '../../../helpers/constants/design-system';
+import { ButtonBase } from '../button-base';
 import { BUTTON_PRIMARY_SIZES } from './button-primary.constants';
 
 export const ButtonPrimary = ({

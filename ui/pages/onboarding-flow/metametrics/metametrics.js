@@ -1,7 +1,21 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import {
+  MetaMetricsEventAccountType,
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import {
+  Icon,
+  IconName,
+  IconSize,
+} from '../../../components/component-library';
+import Box from '../../../components/ui/box/box';
+import Button from '../../../components/ui/button';
 import Typography from '../../../components/ui/typography/typography';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   TypographyVariant,
   FONT_WEIGHT,
@@ -9,28 +23,12 @@ import {
   TextColor,
   IconColor,
 } from '../../../helpers/constants/design-system';
-import Button from '../../../components/ui/button';
 import { useI18nContext } from '../../../hooks/useI18nContext';
-import { setParticipateInMetaMetrics } from '../../../store/actions';
 import {
   getFirstTimeFlowTypeRoute,
   getFirstTimeFlowType,
 } from '../../../selectors';
-
-import {
-  MetaMetricsEventAccountType,
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  Icon,
-  IconName,
-  IconSize,
-} from '../../../components/component-library';
-
-import Box from '../../../components/ui/box/box';
+import { setParticipateInMetaMetrics } from '../../../store/actions';
 
 export default function OnboardingMetametrics() {
   const t = useI18nContext();

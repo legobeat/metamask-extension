@@ -1,8 +1,9 @@
+import { within } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { within } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/jest/rendering';
+
 import TransactionBreakdown from '.';
+import { renderWithProvider } from '../../../../test/jest/rendering';
 
 function getActualDataFrom(transactionBreakdownRows) {
   return transactionBreakdownRows.map((transactionBreakdownRow) => {

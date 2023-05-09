@@ -1,4 +1,5 @@
 import { cloneDeep } from 'lodash';
+
 import { TransactionType } from '../../../shared/constants/transaction';
 
 const version = 53;

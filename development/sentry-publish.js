@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
+const yargs = require('yargs/yargs');
 
-const { runCommand, runInShell } = require('./lib/run-command');
-const { getVersion } = require('./lib/get-version');
 const { loadBuildTypesConfig } = require('./lib/build-type');
+const { getVersion } = require('./lib/get-version');
+const { runCommand, runInShell } = require('./lib/run-command');
 
 start().catch((error) => {
   console.error(error);

@@ -1,6 +1,6 @@
-import { JsonRpcEngine, createScaffoldMiddleware } from 'json-rpc-engine';
 import { providerAsMiddleware } from '@metamask/eth-json-rpc-middleware';
 import Ganache from 'ganache';
+import { JsonRpcEngine, createScaffoldMiddleware } from 'json-rpc-engine';
 
 export function getTestSeed() {
   return 'people carpet cluster attract ankle motor ozone mass dove original primary mask';

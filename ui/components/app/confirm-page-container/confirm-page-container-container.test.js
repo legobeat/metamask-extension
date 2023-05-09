@@ -1,11 +1,12 @@
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import sinon from 'sinon';
-import { fireEvent, screen } from '@testing-library/react';
+
+import ConfirmPageContainer from '.';
 import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import { shortenAddress } from '../../../helpers/utils/util';
-import ConfirmPageContainer from '.';
 
 jest.mock('../../../store/actions', () => ({
   disconnectGasFeeEstimatePoller: jest.fn(),

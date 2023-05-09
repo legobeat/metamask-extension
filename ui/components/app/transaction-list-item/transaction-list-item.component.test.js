@@ -1,7 +1,16 @@
+import { fireEvent } from '@testing-library/react';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { fireEvent } from '@testing-library/react';
+
+import TransactionListItem from '.';
+import { GasEstimateTypes } from '../../../../shared/constants/gas';
 import transactionGroup from '../../../../test/data/mock-pending-transaction-data.json';
+import {
+  renderWithProvider,
+  setBackgroundConnection,
+} from '../../../../test/jest';
+import { getTokens } from '../../../ducks/metamask/metamask';
+import { useGasFeeEstimates } from '../../../hooks/useGasFeeEstimates';
 import {
   getConversionRate,
   getSelectedAccount,
@@ -9,15 +18,6 @@ import {
   getPreferences,
   getShouldShowFiat,
 } from '../../../selectors';
-import {
-  renderWithProvider,
-  setBackgroundConnection,
-} from '../../../../test/jest';
-
-import { useGasFeeEstimates } from '../../../hooks/useGasFeeEstimates';
-import { GasEstimateTypes } from '../../../../shared/constants/gas';
-import { getTokens } from '../../../ducks/metamask/metamask';
-import TransactionListItem from '.';
 
 const FEE_MARKET_ESTIMATE_RETURN_VALUE = {
   gasEstimateType: GasEstimateTypes.feeMarket,

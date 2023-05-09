@@ -1,11 +1,12 @@
-import React from 'react';
-import { Provider } from 'react-redux';
 import { keccak } from 'ethereumjs-util';
 import { cloneDeep } from 'lodash';
+import React from 'react';
+import { Provider } from 'react-redux';
+
+import TransactionAlerts from '.';
+import testData from '../../../../.storybook/test-data';
 import { GasFeeContextProvider } from '../../../contexts/gasFee';
 import configureStore from '../../../store/store';
-import testData from '../../../../.storybook/test-data';
-import TransactionAlerts from '.';
 
 const customTransaction = ({
   estimateUsed,

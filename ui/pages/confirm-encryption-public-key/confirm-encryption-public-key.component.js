@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import log from 'loglevel';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
+import { EtherDenomination } from '../../../shared/constants/common';
+import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
+import { getValueFromWeiHex } from '../../../shared/modules/conversion.utils';
+import { Numeric } from '../../../shared/modules/Numeric';
 import AccountListItem from '../../components/app/account-list-item';
 import Identicon from '../../components/ui/identicon';
 import { PageContainerFooter } from '../../components/ui/page-container';
-
-import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
 import SiteOrigin from '../../components/ui/site-origin';
-import { Numeric } from '../../../shared/modules/Numeric';
-import { EtherDenomination } from '../../../shared/constants/common';
 import { formatCurrency } from '../../helpers/utils/confirm-tx.util';
-import { getValueFromWeiHex } from '../../../shared/modules/conversion.utils';
 
 export default class ConfirmEncryptionPublicKey extends Component {
   static contextTypes = {

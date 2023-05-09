@@ -1,9 +1,10 @@
+import { fireEvent } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent } from '@testing-library/react';
+
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
 import { renderWithProvider } from '../../../test/lib/render-helpers';
 import Identicon from '../../components/ui/identicon';
-import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
 import TokenDetailsPage from './token-details-page';
 
 const testTokenAddress = '0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F';

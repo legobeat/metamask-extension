@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import log from 'loglevel';
 import { BrowserQRCodeReader } from '@zxing/library';
+import log from 'loglevel';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import { getEnvironmentType } from '../../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../../shared/constants/app';
 import { SECOND } from '../../../../../shared/constants/time';
-import Spinner from '../../../ui/spinner';
-import WebcamUtils from '../../../../helpers/utils/webcam-utils';
 import { getURL } from '../../../../helpers/utils/util';
+import WebcamUtils from '../../../../helpers/utils/webcam-utils';
 import PageContainerFooter from '../../../ui/page-container/page-container-footer/page-container-footer.component';
+import Spinner from '../../../ui/spinner';
 
 const READY_STATE = {
   ACCESSING_CAMERA: 'ACCESSING_CAMERA',

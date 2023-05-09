@@ -1,15 +1,16 @@
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Fuse from 'fuse.js';
+import PropTypes from 'prop-types';
 import React, { useState, useContext } from 'react';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { useSelector } from 'react-redux';
 ///: END:ONLY_INCLUDE_IN
-import PropTypes from 'prop-types';
-import Fuse from 'fuse.js';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import TextField from '../../../components/ui/text-field';
-import { I18nContext } from '../../../contexts/i18n';
-import SearchIcon from '../../../components/ui/icon/search-icon';
+
 import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
 import { Icon, IconName } from '../../../components/component-library';
+import SearchIcon from '../../../components/ui/icon/search-icon';
+import TextField from '../../../components/ui/text-field';
+import { I18nContext } from '../../../contexts/i18n';
 import { IconColor } from '../../../helpers/constants/design-system';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { getSnapsRouteObjects } from '../../../selectors';

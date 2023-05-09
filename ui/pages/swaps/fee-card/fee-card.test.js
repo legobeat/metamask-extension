@@ -1,26 +1,24 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import FeeCard from '.';
+import { CHAIN_IDS } from '../../../../shared/constants/network';
 import {
   renderWithProvider,
   setBackgroundConnection,
   MOCKS,
   fireEvent,
 } from '../../../../test/jest';
-import { CHAIN_IDS } from '../../../../shared/constants/network';
-
-import {
-  checkNetworkAndAccountSupports1559,
-  getUseCurrencyRateCheck,
-} from '../../../selectors';
 import {
   getGasEstimateType,
   getGasFeeEstimates,
   getIsGasEstimatesLoading,
 } from '../../../ducks/metamask/metamask';
 import { TRANSACTION_ENVELOPE_TYPE_NAMES } from '../../../helpers/constants/transactions';
-
-import FeeCard from '.';
+import {
+  checkNetworkAndAccountSupports1559,
+  getUseCurrencyRateCheck,
+} from '../../../selectors';
 
 jest.mock('../../../hooks/useGasFeeEstimates', () => ({
   useGasFeeEstimates: jest.fn(),

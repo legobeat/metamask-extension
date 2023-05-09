@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SendHexDataRow from './send-hex-data-row.component';
 
 export default {

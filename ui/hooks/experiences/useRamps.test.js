@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { useSelector } from 'react-redux';
+
 import useRamps from './useRamps';
 
 jest.mock('react-redux');

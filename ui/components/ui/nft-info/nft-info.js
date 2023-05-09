@@ -1,16 +1,17 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+
 import { I18nContext } from '../../../contexts/i18n';
-import Box from '../box';
 import {
   BackgroundColor,
   DISPLAY,
   TextColor,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import Identicon from '../identicon';
-import Button from '../button';
 import { Text } from '../../component-library';
+import Box from '../box';
+import Button from '../button';
+import Identicon from '../identicon';
 
 export default function NftInfo({ assetName, tokenAddress, tokenId }) {
   const t = useContext(I18nContext);

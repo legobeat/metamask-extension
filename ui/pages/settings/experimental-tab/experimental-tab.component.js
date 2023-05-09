@@ -1,20 +1,21 @@
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import ToggleButton from '../../../components/ui/toggle-button';
-import {
-  getNumberOfSettingsInSection,
-  handleSettingsRefs,
-} from '../../../helpers/utils/settings-search';
+import React, { PureComponent } from 'react';
+
 import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-import Typography from '../../../components/ui/typography/typography';
+import DesktopEnableButton from '../../../components/app/desktop-enable-button';
 import { Text } from '../../../components/component-library';
+import ToggleButton from '../../../components/ui/toggle-button';
+import Typography from '../../../components/ui/typography/typography';
 import {
   FONT_WEIGHT,
   TextColor,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
+import {
+  getNumberOfSettingsInSection,
+  handleSettingsRefs,
+} from '../../../helpers/utils/settings-search';
 ///: BEGIN:ONLY_INCLUDE_IN(desktop)
-import DesktopEnableButton from '../../../components/app/desktop-enable-button';
 ///: END:ONLY_INCLUDE_IN
 
 export default class ExperimentalTab extends PureComponent {

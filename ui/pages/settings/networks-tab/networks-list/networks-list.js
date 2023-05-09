@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import CustomContentSearch from '../custom-content-search';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+
+import { Text } from '../../../../components/component-library';
 import {
   Color,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import CustomContentSearch from '../custom-content-search';
 import NetworksListItem from '../networks-list-item';
-import { Text } from '../../../../components/component-library';
 
 const NetworksList = ({
   networkIsSelected,

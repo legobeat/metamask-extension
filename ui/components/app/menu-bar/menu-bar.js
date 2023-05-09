@@ -1,20 +1,21 @@
 import React, { useState, useContext, useRef } from 'react';
-import browser from 'webextension-polyfill';
-import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import SelectedAccount from '../selected-account';
-import ConnectedStatusIndicator from '../connected-status-indicator';
+import { useHistory } from 'react-router-dom';
+import browser from 'webextension-polyfill';
+
 import { getEnvironmentType } from '../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import { CONNECTED_ACCOUNTS_ROUTE } from '../../../helpers/constants/routes';
 import { useI18nContext } from '../../../hooks/useI18nContext';
 import { getOriginOfCurrentTab } from '../../../selectors';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
 import { ButtonIcon, IconName } from '../../component-library';
+import ConnectedStatusIndicator from '../connected-status-indicator';
+import SelectedAccount from '../selected-account';
 import AccountOptionsMenu from './account-options-menu';
 
 export default function MenuBar() {

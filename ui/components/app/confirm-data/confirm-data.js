@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import {
@@ -7,14 +7,13 @@ import {
   TextVariant,
   TextTransform,
 } from '../../../helpers/constants/design-system';
-import { getKnownMethodData } from '../../../selectors';
 import { useI18nContext } from '../../../hooks/useI18nContext';
 import { useTransactionFunctionType } from '../../../hooks/useTransactionFunctionType';
-
+import { getKnownMethodData } from '../../../selectors';
+import { Text } from '../../component-library';
 import Box from '../../ui/box/box';
 import Disclosure from '../../ui/disclosure';
 import TransactionDecoding from '../transaction-decoding';
-import { Text } from '../../component-library';
 
 const ConfirmData = ({ txData, dataComponent }) => {
   const t = useI18nContext();

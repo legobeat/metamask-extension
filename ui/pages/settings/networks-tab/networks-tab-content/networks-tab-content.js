@@ -1,15 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import NetworksForm from '../networks-form';
-import NetworksList from '../networks-list';
-import { getProviderConfig } from '../../../../ducks/metamask/metamask';
 
+import { getProviderConfig } from '../../../../ducks/metamask/metamask';
 import {
   DEFAULT_ROUTE,
   NETWORKS_ROUTE,
 } from '../../../../helpers/constants/routes';
+import NetworksForm from '../networks-form';
+import NetworksList from '../networks-list';
 
 const NetworksTabContent = ({
   networkDefaultedToProvider,

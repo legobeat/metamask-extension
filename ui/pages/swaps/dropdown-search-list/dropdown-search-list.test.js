@@ -1,12 +1,12 @@
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
 
+import DropdownSearchList from '.';
 import {
   renderWithProvider,
   createSwapsMockStore,
   fireEvent,
 } from '../../../../test/jest';
-import DropdownSearchList from '.';
 
 const createProps = (customProps = {}) => {
   return {

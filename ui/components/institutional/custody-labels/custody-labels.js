@@ -1,6 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, Label } from '../../component-library';
+import React from 'react';
+
 import {
   TextTransform,
   BackgroundColor,
@@ -9,6 +9,7 @@ import {
   BorderRadius,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
+import { Text, Label } from '../../component-library';
 
 const CustodyLabels = (props) => {
   const { labels, index, background, hideNetwork } = props;

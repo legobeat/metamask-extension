@@ -1,6 +1,7 @@
 import React from 'react';
-import README from './README.mdx';
+
 import MainQuoteSummary from './main-quote-summary';
+import README from './README.mdx';
 
 export default {
   title: 'Pages/Swaps/MainQuoteSummary',

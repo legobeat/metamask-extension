@@ -1,10 +1,21 @@
-import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
 import { useSelector } from 'react-redux';
-import ImportTokenLink from '../import-token-link';
-import TokenList from '../token-list';
-import AssetListItem from '../asset-list-item';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { getNativeCurrency } from '../../../ducks/metamask/metamask';
 import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
+import {
+  Color,
+  TextVariant,
+  TextAlign,
+} from '../../../helpers/constants/design-system';
+import { useCurrencyDisplay } from '../../../hooks/useCurrencyDisplay';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { useUserPreferencedCurrency } from '../../../hooks/useUserPreferencedCurrency';
 import {
   getSelectedAccountCachedBalance,
@@ -14,27 +25,17 @@ import {
   getIstokenDetectionInactiveOnNonMainnetSupportedNetwork,
   getTokenList,
 } from '../../../selectors';
-import { getNativeCurrency } from '../../../ducks/metamask/metamask';
-import { useCurrencyDisplay } from '../../../hooks/useCurrencyDisplay';
-import Box from '../../ui/box/box';
-import {
-  Color,
-  TextVariant,
-  TextAlign,
-} from '../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import DetectedToken from '../detected-token/detected-token';
+import { Text } from '../../component-library';
 import {
   DetectedTokensBanner,
   MultichainTokenListItem,
   MultichainImportTokenLink,
 } from '../../multichain';
-import { Text } from '../../component-library';
+import Box from '../../ui/box/box';
+import AssetListItem from '../asset-list-item';
+import DetectedToken from '../detected-token/detected-token';
+import ImportTokenLink from '../import-token-link';
+import TokenList from '../token-list';
 import DetectedTokensLink from './detected-tokens-link/detected-tokens-link';
 
 const AssetList = ({ onClickAsset }) => {

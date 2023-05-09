@@ -1,5 +1,5 @@
-import type { BoxProps } from '../../ui/box/box.d';
 import { IconColor } from '../../../helpers/constants/design-system';
+import type { BoxProps } from '../../ui/box/box.d';
 
 export enum IconSize {
   Xs = 'xs',

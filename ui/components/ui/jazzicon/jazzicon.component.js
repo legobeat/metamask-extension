@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import jazzicon from '@metamask/jazzicon';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
+
 import iconFactoryGenerator from '../../../helpers/utils/icon-factory';
 
 const iconFactory = iconFactoryGenerator(jazzicon);

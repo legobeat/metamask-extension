@@ -1,21 +1,30 @@
-import React, { useState, useContext, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 import Fuse from 'fuse.js';
+import PropTypes from 'prop-types';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Box from '../../ui/box/box';
-import { ButtonLink, TextFieldSearch, Text } from '../../component-library';
+import { useHistory } from 'react-router-dom';
+
 // TODO: Replace ICON_NAMES with IconName when ButtonBase/Buttons have been updated
-import { ICON_NAMES } from '../../component-library/icon/deprecated';
 import { AccountListItem } from '..';
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
+import {
+  MetaMetricsEventAccountType,
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   BLOCK_SIZES,
   Size,
   TextColor,
 } from '../../../helpers/constants/design-system';
+import {
+  IMPORT_ACCOUNT_ROUTE,
+  NEW_ACCOUNT_ROUTE,
+  CONNECT_HARDWARE_ROUTE,
+} from '../../../helpers/constants/routes';
 import { useI18nContext } from '../../../hooks/useI18nContext';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import Popover from '../../ui/popover';
 import {
   getSelectedAccount,
   getMetaMaskAccountsOrdered,
@@ -23,18 +32,10 @@ import {
   getOriginOfCurrentTab,
 } from '../../../selectors';
 import { toggleAccountMenu, setSelectedAccount } from '../../../store/actions';
-import {
-  MetaMetricsEventAccountType,
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import {
-  IMPORT_ACCOUNT_ROUTE,
-  NEW_ACCOUNT_ROUTE,
-  CONNECT_HARDWARE_ROUTE,
-} from '../../../helpers/constants/routes';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
-import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
+import { ButtonLink, TextFieldSearch, Text } from '../../component-library';
+import { ICON_NAMES } from '../../component-library/icon/deprecated';
+import Box from '../../ui/box/box';
+import Popover from '../../ui/popover';
 
 export const AccountListMenu = ({ onClose }) => {
   const t = useI18nContext();

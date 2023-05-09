@@ -1,20 +1,21 @@
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import { I18nContext } from '../../../contexts/i18n';
-import InfoTooltip from '../../../components/ui/info-tooltip';
+
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import { CHAIN_IDS } from '../../../../shared/constants/network';
-import TransactionDetail from '../../../components/app/transaction-detail/transaction-detail.component';
 import TransactionDetailItem from '../../../components/app/transaction-detail-item/transaction-detail-item.component';
+import TransactionDetail from '../../../components/app/transaction-detail/transaction-detail.component';
+import { Text } from '../../../components/component-library';
+import InfoTooltip from '../../../components/ui/info-tooltip';
+import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   TextColor,
   TextVariant,
   FontWeight,
 } from '../../../helpers/constants/design-system';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import { getUseCurrencyRateCheck } from '../../../selectors';
-import { Text } from '../../../components/component-library';
 
 const GAS_FEES_LEARN_MORE_URL =
   'https://community.metamask.io/t/what-is-gas-why-do-transactions-take-so-long/3172';

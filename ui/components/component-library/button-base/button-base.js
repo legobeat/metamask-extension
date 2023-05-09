@@ -1,10 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
-import Box from '../../ui/box';
-import { IconName, Icon, IconSize } from '../icon';
-import { Text } from '../text';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import {
   AlignItems,
@@ -16,6 +12,9 @@ import {
   BackgroundColor,
   IconColor,
 } from '../../../helpers/constants/design-system';
+import Box from '../../ui/box';
+import { IconName, Icon, IconSize } from '../icon';
+import { Text } from '../text';
 import { BUTTON_BASE_SIZES } from './button-base.constants';
 
 export const ButtonBase = ({

@@ -1,12 +1,12 @@
 import React from 'react';
-import Box from '../../ui/box/box';
+
 import { AlignItems, DISPLAY } from '../../../helpers/constants/design-system';
+import Box from '../../ui/box/box';
 import { AvatarAccount } from './avatar-account';
 import {
   AvatarAccountVariant,
   AvatarAccountSize,
 } from './avatar-account.types';
-
 import README from './README.mdx';
 
 export default {

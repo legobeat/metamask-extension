@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+
 import { txDataSelector } from '../selectors';
 
 /**

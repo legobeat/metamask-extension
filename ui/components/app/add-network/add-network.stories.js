@@ -1,4 +1,5 @@
 import React from 'react';
+
 import AddNetwork from './add-network';
 
 const MATIC_TOKEN_IMAGE_URL = './images/matic-token.png';

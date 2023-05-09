@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
+
 import testData from '../../../../../.storybook/test-data';
 import { calcGasTotal } from '../../../../../shared/lib/transactions-controller-utils';
 import { GAS_INPUT_MODES } from '../../../../ducks/send';

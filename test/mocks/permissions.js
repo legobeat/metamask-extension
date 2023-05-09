@@ -1,4 +1,5 @@
 import deepFreeze from 'deep-freeze-strict';
+
 import { CaveatTypes } from '../../shared/constants/permissions';
 
 /**

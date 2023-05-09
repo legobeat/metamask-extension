@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import InfoIconInverted from '../icon/info-icon-inverted.component';
-import { SEVERITIES, Color } from '../../../helpers/constants/design-system';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+
 import { MILLISECOND } from '../../../../shared/constants/time';
-import Typography from '../typography';
+import { SEVERITIES, Color } from '../../../helpers/constants/design-system';
 import { ButtonIcon, IconName, IconSize } from '../../component-library';
+import InfoIconInverted from '../icon/info-icon-inverted.component';
+import Typography from '../typography';
 
 export default function Callout({
   severity,

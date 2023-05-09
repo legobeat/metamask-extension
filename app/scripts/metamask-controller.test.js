@@ -1,18 +1,19 @@
+import { wordlist as englishWordlist } from '@metamask/scure-bip39/dist/wordlists/english';
 import { strict as assert } from 'assert';
-import sinon from 'sinon';
+import EthQuery from 'eth-query';
 import { cloneDeep } from 'lodash';
 import nock from 'nock';
-import { obj as createThoughStream } from 'through2';
-import EthQuery from 'eth-query';
 import proxyquire from 'proxyquire';
+import sinon from 'sinon';
+import { obj as createThoughStream } from 'through2';
 import browser from 'webextension-polyfill';
-import { wordlist as englishWordlist } from '@metamask/scure-bip39/dist/wordlists/english';
-import { TransactionStatus } from '../../shared/constants/transaction';
-import createTxMeta from '../../test/lib/createTxMeta';
-import { NETWORK_TYPES } from '../../shared/constants/network';
-import { createTestProviderTools } from '../../test/stub/provider';
+
 import { HardwareDeviceNames } from '../../shared/constants/hardware-wallets';
 import { KeyringType } from '../../shared/constants/keyring';
+import { NETWORK_TYPES } from '../../shared/constants/network';
+import { TransactionStatus } from '../../shared/constants/transaction';
+import createTxMeta from '../../test/lib/createTxMeta';
+import { createTestProviderTools } from '../../test/stub/provider';
 import { deferredPromise } from './lib/util';
 
 const Ganache = require('../../test/e2e/ganache');

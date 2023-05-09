@@ -1,5 +1,5 @@
-const { convertToHexValue, withFixtures } = require('../helpers');
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures } = require('../helpers');
 
 describe('Simple send', function () {
   it('can send a simple transaction from one account to another', async function () {

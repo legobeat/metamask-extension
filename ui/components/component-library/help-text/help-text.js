@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import {
   Color,
@@ -8,7 +8,6 @@ import {
   TextColor,
   SEVERITIES,
 } from '../../../helpers/constants/design-system';
-
 import { Text } from '../text';
 
 export const HelpText = ({

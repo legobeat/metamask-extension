@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '../../../ui/box';
-import Typography from '../../../ui/typography';
+import React from 'react';
+
 import {
   AlignItems,
   BorderRadius,
@@ -15,6 +14,8 @@ import {
 } from '../../../../helpers/constants/design-system';
 import { useCopyToClipboard } from '../../../../hooks/useCopyToClipboard';
 import { Icon, IconName, IconSize } from '../../../component-library';
+import Box from '../../../ui/box';
+import Typography from '../../../ui/typography';
 
 export const Copyable = ({ text }) => {
   const [copied, handleCopy] = useCopyToClipboard();

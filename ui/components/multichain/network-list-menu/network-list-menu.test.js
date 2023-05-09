@@ -1,13 +1,14 @@
 /* eslint-disable jest/require-top-level-describe */
 import React from 'react';
-import { fireEvent, renderWithProvider } from '../../../../test/jest';
-import configureStore from '../../../store/store';
-import mockState from '../../../../test/data/mock-state.json';
+
+import { NetworkListMenu } from '.';
 import {
   MAINNET_DISPLAY_NAME,
   SEPOLIA_DISPLAY_NAME,
 } from '../../../../shared/constants/network';
-import { NetworkListMenu } from '.';
+import mockState from '../../../../test/data/mock-state.json';
+import { fireEvent, renderWithProvider } from '../../../../test/jest';
+import configureStore from '../../../store/store';
 
 const mockSetShowTestNetworks = jest.fn();
 const mockSetProviderType = jest.fn();

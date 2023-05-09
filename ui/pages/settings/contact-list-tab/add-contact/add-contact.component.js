@@ -1,16 +1,17 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
-import Identicon from '../../../../components/ui/identicon';
-import TextField from '../../../../components/ui/text-field';
-import { CONTACT_LIST_ROUTE } from '../../../../helpers/constants/routes';
-import { isValidDomainName } from '../../../../helpers/utils/util';
-import DomainInput from '../../../send/send-content/add-recipient/domain-input';
-import PageContainerFooter from '../../../../components/ui/page-container/page-container-footer';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import {
   isBurnAddress,
   isValidHexAddress,
 } from '../../../../../shared/modules/hexstring-utils';
+import Identicon from '../../../../components/ui/identicon';
+import PageContainerFooter from '../../../../components/ui/page-container/page-container-footer';
+import TextField from '../../../../components/ui/text-field';
+import { CONTACT_LIST_ROUTE } from '../../../../helpers/constants/routes';
+import { isValidDomainName } from '../../../../helpers/utils/util';
+import DomainInput from '../../../send/send-content/add-recipient/domain-input';
 import { INVALID_RECIPIENT_ADDRESS_ERROR } from '../../../send/send.constants';
 
 export default class AddContact extends PureComponent {

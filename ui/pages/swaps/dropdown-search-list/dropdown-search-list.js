@@ -1,3 +1,6 @@
+import classnames from 'classnames';
+import { isEqual } from 'lodash';
+import PropTypes from 'prop-types';
 import React, {
   useState,
   useCallback,
@@ -6,30 +9,28 @@ import React, {
   useRef,
 } from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import { isEqual } from 'lodash';
-import { I18nContext } from '../../../contexts/i18n';
-import SearchableItemList from '../searchable-item-list';
+
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
+import ActionableMessage from '../../../components/ui/actionable-message/actionable-message';
 import PulseLoader from '../../../components/ui/pulse-loader';
 import UrlIcon from '../../../components/ui/url-icon';
-import ActionableMessage from '../../../components/ui/actionable-message/actionable-message';
-import ImportToken from '../import-token';
+import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import {
+  getSmartTransactionsOptInStatus,
+  getSmartTransactionsEnabled,
+  getCurrentSmartTransactionsEnabled,
+} from '../../../ducks/swaps/swaps';
+import { getURLHostName } from '../../../helpers/utils/util';
 import {
   isHardwareWallet,
   getHardwareWalletType,
   getCurrentChainId,
   getRpcPrefsForCurrentProvider,
 } from '../../../selectors/selectors';
-import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
-import { getURLHostName } from '../../../helpers/utils/util';
-import {
-  getSmartTransactionsOptInStatus,
-  getSmartTransactionsEnabled,
-  getCurrentSmartTransactionsEnabled,
-} from '../../../ducks/swaps/swaps';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import ImportToken from '../import-token';
+import SearchableItemList from '../searchable-item-list';
 
 export default function DropdownSearchList({
   searchListClassName,

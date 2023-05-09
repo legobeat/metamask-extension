@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ConfirmPageContainerSummary from '.';
 
 export default {

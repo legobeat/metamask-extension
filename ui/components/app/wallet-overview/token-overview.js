@@ -1,20 +1,30 @@
-import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import Identicon from '../../ui/identicon';
-import CurrencyDisplay from '../../ui/currency-display';
+import {
+  MetaMetricsContextProp,
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+  MetaMetricsSwapsEventSource,
+} from '../../../../shared/constants/metametrics';
+import { AssetType } from '../../../../shared/constants/transaction';
 import { I18nContext } from '../../../contexts/i18n';
-import { isHardwareKeyring } from '../../../helpers/utils/hardware';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { startNewDraftTransaction } from '../../../ducks/send';
+import { setSwapsFromToken } from '../../../ducks/swaps/swaps';
+import { IconColor } from '../../../helpers/constants/design-system';
+import { INVALID_ASSET_TYPE } from '../../../helpers/constants/error-keys';
 import {
   SEND_ROUTE,
   BUILD_QUOTE_ROUTE,
 } from '../../../helpers/constants/routes';
-import { useTokenTracker } from '../../../hooks/useTokenTracker';
+import { isHardwareKeyring } from '../../../helpers/utils/hardware';
+import { getPortfolioUrl } from '../../../helpers/utils/portfolio';
+import useRamps from '../../../hooks/experiences/useRamps';
 import { useTokenFiatAmount } from '../../../hooks/useTokenFiatAmount';
-import { startNewDraftTransaction } from '../../../ducks/send';
-import { setSwapsFromToken } from '../../../ducks/swaps/swaps';
+import { useTokenTracker } from '../../../hooks/useTokenTracker';
 import {
   getCurrentKeyring,
   getIsSwapsChain,
@@ -23,25 +33,12 @@ import {
   getCurrentChainId,
   getMetaMetricsId,
 } from '../../../selectors';
-
-import IconButton from '../../ui/icon-button';
-import { INVALID_ASSET_TYPE } from '../../../helpers/constants/error-keys';
 import { showModal } from '../../../store/actions';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  MetaMetricsContextProp,
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-  MetaMetricsSwapsEventSource,
-} from '../../../../shared/constants/metametrics';
-import { AssetType } from '../../../../shared/constants/transaction';
-import useRamps from '../../../hooks/experiences/useRamps';
-
 import { ButtonIcon, Icon, IconName } from '../../component-library';
-import { IconColor } from '../../../helpers/constants/design-system';
-
 import { BUTTON_ICON_SIZES } from '../../component-library/button-icon/deprecated';
-import { getPortfolioUrl } from '../../../helpers/utils/portfolio';
+import CurrencyDisplay from '../../ui/currency-display';
+import IconButton from '../../ui/icon-button';
+import Identicon from '../../ui/identicon';
 import WalletOverview from './wallet-overview';
 
 const TokenOverview = ({ className, token }) => {

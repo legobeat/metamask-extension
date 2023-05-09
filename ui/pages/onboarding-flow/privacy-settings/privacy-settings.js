@@ -1,18 +1,32 @@
 import React, { useState, useContext } from 'react';
-
-import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import {
+  COINGECKO_LINK,
+  CRYPTOCOMPARE_LINK,
+  PRIVACY_POLICY_LINK,
+} from '../../../../shared/lib/ui-utils';
+import NetworkDropdown from '../../../components/app/dropdowns/network-dropdown';
+import NetworkDisplay from '../../../components/app/network-display/network-display';
+import { TextField } from '../../../components/component-library';
+import { Icon } from '../../../components/component-library/icon/deprecated';
 import Box from '../../../components/ui/box/box';
 import Button from '../../../components/ui/button';
 import Typography from '../../../components/ui/typography';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   FONT_WEIGHT,
   TextColor,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import { ONBOARDING_PIN_EXTENSION_ROUTE } from '../../../helpers/constants/routes';
 import { addUrlProtocolPrefix } from '../../../helpers/utils/ipfs';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   setCompletedOnboarding,
   setFeatureFlag,
@@ -24,22 +38,6 @@ import {
   showNetworkDropdown,
   setUseCurrencyRateCheck,
 } from '../../../store/actions';
-import { ONBOARDING_PIN_EXTENSION_ROUTE } from '../../../helpers/constants/routes';
-import { TextField } from '../../../components/component-library';
-import { Icon } from '../../../components/component-library/icon/deprecated';
-import NetworkDropdown from '../../../components/app/dropdowns/network-dropdown';
-import NetworkDisplay from '../../../components/app/network-display/network-display';
-import {
-  COINGECKO_LINK,
-  CRYPTOCOMPARE_LINK,
-  PRIVACY_POLICY_LINK,
-} from '../../../../shared/lib/ui-utils';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-
 import { Setting } from './setting';
 
 export default function PrivacySettings() {

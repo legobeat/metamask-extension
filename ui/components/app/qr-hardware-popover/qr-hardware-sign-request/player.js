@@ -1,17 +1,18 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import QRCode from 'qrcode.react';
 import { UR, UREncoder } from '@ngraveio/bc-ur';
 import PropTypes from 'prop-types';
-import Box from '../../../ui/box';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
+import QRCode from 'qrcode.react';
+import React, { useEffect, useMemo, useState } from 'react';
+
 import {
   AlignItems,
   DISPLAY,
   FLEX_DIRECTION,
   TextAlign,
 } from '../../../../helpers/constants/design-system';
-import { PageContainerFooter } from '../../../ui/page-container';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { Text } from '../../../component-library';
+import Box from '../../../ui/box';
+import { PageContainerFooter } from '../../../ui/page-container';
 
 const Player = ({ type, cbor, cancelQRHardwareSignRequest, toRead }) => {
   const t = useI18nContext();

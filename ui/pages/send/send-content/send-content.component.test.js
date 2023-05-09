@@ -1,10 +1,10 @@
-import React from 'react';
 import { waitFor } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
 
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
-import mockSendState from '../../../../test/data/mock-send-state.json';
 import SendContent from '.';
+import mockSendState from '../../../../test/data/mock-send-state.json';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 jest.mock('../../../store/actions', () => ({
   disconnectGasFeeEstimatePoller: jest.fn(),

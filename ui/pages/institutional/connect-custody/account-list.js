@@ -1,20 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../../../components/ui/button';
-import CustodyLabels from '../../../components/institutional/custody-labels';
-import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
+import React from 'react';
+
 import { CHAIN_IDS } from '../../../../shared/constants/network';
-import { shortenAddress } from '../../../helpers/utils/util';
-import Tooltip from '../../../components/ui/tooltip';
-import {
-  TextVariant,
-  JustifyContent,
-  BLOCK_SIZES,
-  DISPLAY,
-  IconColor,
-} from '../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import Box from '../../../components/ui/box';
+import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
 import {
   Text,
   Label,
@@ -23,7 +11,20 @@ import {
   IconSize,
   ButtonLink,
 } from '../../../components/component-library';
+import CustodyLabels from '../../../components/institutional/custody-labels';
+import Box from '../../../components/ui/box';
+import Button from '../../../components/ui/button';
+import Tooltip from '../../../components/ui/tooltip';
+import {
+  TextVariant,
+  JustifyContent,
+  BLOCK_SIZES,
+  DISPLAY,
+  IconColor,
+} from '../../../helpers/constants/design-system';
+import { shortenAddress } from '../../../helpers/utils/util';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 
 const getButtonLinkHref = (account) => {
   const url = SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP[CHAIN_IDS.MAINNET];

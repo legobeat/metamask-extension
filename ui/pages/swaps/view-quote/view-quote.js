@@ -1,3 +1,7 @@
+import { captureException } from '@sentry/browser';
+import BigNumber from 'bignumber.js';
+import classnames from 'classnames';
+import { isEqual } from 'lodash';
 import React, {
   useState,
   useContext,
@@ -8,19 +12,34 @@ import React, {
 } from 'react';
 import { shallowEqual, useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import BigNumber from 'bignumber.js';
-import { isEqual } from 'lodash';
-import classnames from 'classnames';
-import { captureException } from '@sentry/browser';
 
+import { addHexPrefix } from '../../../../app/scripts/lib/util';
+import { GasRecommendations } from '../../../../shared/constants/gas';
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import { QUOTES_EXPIRED_ERROR } from '../../../../shared/constants/swaps';
+import { getTokenValueParam } from '../../../../shared/lib/metamask-controller-utils';
+import { calcTokenValue } from '../../../../shared/lib/swaps-utils';
+import {
+  calcGasTotal,
+  calcTokenAmount,
+  toPrecisionWithoutTrailingZeros,
+} from '../../../../shared/lib/transactions-controller-utils';
+import {
+  addHexes,
+  decGWEIToHexWEI,
+  decimalToHex,
+  decWEIToDecETH,
+  hexWEIToDecGWEI,
+  sumHexes,
+} from '../../../../shared/modules/conversion.utils';
+import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
+import { parseStandardTokenTransactionData } from '../../../../shared/modules/transaction.utils';
+import ActionableMessage from '../../../components/ui/actionable-message/actionable-message';
+import Box from '../../../components/ui/box';
+import PulseLoader from '../../../components/ui/pulse-loader'; // TODO: Replace this with a different loading component.
 import { I18nContext } from '../../../contexts/i18n';
-import SelectQuotePopover from '../select-quote-popover';
-import { useEthFiatAmount } from '../../../hooks/useEthFiatAmount';
-import { useEqualityCheck } from '../../../hooks/useEqualityCheck';
-import { usePrevious } from '../../../hooks/usePrevious';
-import { useGasFeeInputs } from '../../../hooks/gasFeeInput/useGasFeeInputs';
 import { MetaMetricsContext } from '../../../contexts/metametrics';
-import FeeCard from '../fee-card';
+import { getNativeCurrency, getTokens } from '../../../ducks/metamask/metamask';
 import {
   FALLBACK_GAS_MULTIPLIER,
   getQuotes,
@@ -54,6 +73,19 @@ import {
   getCurrentSmartTransactionsEnabled,
 } from '../../../ducks/swaps/swaps';
 import {
+  ASSET_ROUTE,
+  BUILD_QUOTE_ROUTE,
+  DEFAULT_ROUTE,
+  SWAPS_ERROR_ROUTE,
+  AWAITING_SWAP_ROUTE,
+} from '../../../helpers/constants/routes';
+import fetchEstimatedL1Fee from '../../../helpers/utils/optimism/fetchEstimatedL1Fee';
+import { useGasFeeInputs } from '../../../hooks/gasFeeInput/useGasFeeInputs';
+import { useEqualityCheck } from '../../../hooks/useEqualityCheck';
+import { useEthFiatAmount } from '../../../hooks/useEthFiatAmount';
+import { usePrevious } from '../../../hooks/usePrevious';
+import { useTokenTracker } from '../../../hooks/useTokenTracker';
+import {
   conversionRateSelector,
   getSelectedAccount,
   getCurrentCurrency,
@@ -66,7 +98,7 @@ import {
   getUSDConversionRate,
   getIsMultiLayerFeeNetwork,
 } from '../../../selectors';
-import { getNativeCurrency, getTokens } from '../../../ducks/metamask/metamask';
+import { SET_SMART_TRANSACTIONS_ERROR } from '../../../store/actionConstants';
 import {
   safeRefetchQuotes,
   setCustomApproveTxData,
@@ -74,49 +106,17 @@ import {
   showModal,
   setSwapsQuotesPollingLimitEnabled,
 } from '../../../store/actions';
-import { SET_SMART_TRANSACTIONS_ERROR } from '../../../store/actionConstants';
-import {
-  ASSET_ROUTE,
-  BUILD_QUOTE_ROUTE,
-  DEFAULT_ROUTE,
-  SWAPS_ERROR_ROUTE,
-  AWAITING_SWAP_ROUTE,
-} from '../../../helpers/constants/routes';
-import MainQuoteSummary from '../main-quote-summary';
 import { getCustomTxParamsData } from '../../confirm-approve/confirm-approve.util';
-import ActionableMessage from '../../../components/ui/actionable-message/actionable-message';
+import CountdownTimer from '../countdown-timer';
+import FeeCard from '../fee-card';
+import MainQuoteSummary from '../main-quote-summary';
+import SelectQuotePopover from '../select-quote-popover';
+import SwapsFooter from '../swaps-footer';
 import {
   quotesToRenderableData,
   getRenderableNetworkFeesForQuote,
   getFeeForSmartTransaction,
 } from '../swaps.util';
-import { useTokenTracker } from '../../../hooks/useTokenTracker';
-import { QUOTES_EXPIRED_ERROR } from '../../../../shared/constants/swaps';
-import { GasRecommendations } from '../../../../shared/constants/gas';
-import CountdownTimer from '../countdown-timer';
-import SwapsFooter from '../swaps-footer';
-import PulseLoader from '../../../components/ui/pulse-loader'; // TODO: Replace this with a different loading component.
-import Box from '../../../components/ui/box';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
-import { parseStandardTokenTransactionData } from '../../../../shared/modules/transaction.utils';
-import { getTokenValueParam } from '../../../../shared/lib/metamask-controller-utils';
-import {
-  calcGasTotal,
-  calcTokenAmount,
-  toPrecisionWithoutTrailingZeros,
-} from '../../../../shared/lib/transactions-controller-utils';
-import { addHexPrefix } from '../../../../app/scripts/lib/util';
-import { calcTokenValue } from '../../../../shared/lib/swaps-utils';
-import fetchEstimatedL1Fee from '../../../helpers/utils/optimism/fetchEstimatedL1Fee';
-import {
-  addHexes,
-  decGWEIToHexWEI,
-  decimalToHex,
-  decWEIToDecETH,
-  hexWEIToDecGWEI,
-  sumHexes,
-} from '../../../../shared/modules/conversion.utils';
 import ViewQuotePriceDifference from './view-quote-price-difference';
 
 let intervalId;

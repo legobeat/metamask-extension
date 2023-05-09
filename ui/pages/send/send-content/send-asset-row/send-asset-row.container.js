@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
+
 import {
   getNftContracts,
   getNfts,
   getNativeCurrency,
 } from '../../../../ducks/metamask/metamask';
+import { updateSendAsset, getSendAsset } from '../../../../ducks/send';
 import {
   getMetaMaskAccounts,
   getNativeCurrencyImage,
 } from '../../../../selectors';
-import { updateSendAsset, getSendAsset } from '../../../../ducks/send';
 import SendAssetRow from './send-asset-row.component';
 
 function mapStateToProps(state) {

@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   TextVariant,
   Size,
@@ -8,8 +9,8 @@ import {
   BackgroundColor,
   TextColor,
 } from '../../../../helpers/constants/design-system';
-import Box from '../../../ui/box';
 import { Text } from '../../../component-library';
+import Box from '../../../ui/box';
 
 const SignatureRequestSIWETag = ({ text }) => {
   return (

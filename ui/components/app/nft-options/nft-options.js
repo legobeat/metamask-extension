@@ -1,10 +1,10 @@
-import React, { useContext, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useRef, useState } from 'react';
 
 import { I18nContext } from '../../../contexts/i18n';
-import { Menu, MenuItem } from '../../ui/menu';
-import { ButtonIcon, IconName } from '../../component-library';
 import { Color } from '../../../helpers/constants/design-system';
+import { ButtonIcon, IconName } from '../../component-library';
+import { Menu, MenuItem } from '../../ui/menu';
 
 const NftOptions = ({ onRemove, onViewOnOpensea }) => {
   const t = useContext(I18nContext);

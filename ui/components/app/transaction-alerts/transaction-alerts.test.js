@@ -1,8 +1,9 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
+import React from 'react';
+
 import { renderWithProvider } from '../../../../test/jest';
-import { submittedPendingTransactionsSelector } from '../../../selectors/transactions';
 import { useGasFeeContext } from '../../../contexts/gasFee';
+import { submittedPendingTransactionsSelector } from '../../../selectors/transactions';
 import configureStore from '../../../store/store';
 import TransactionAlerts from './transaction-alerts';
 

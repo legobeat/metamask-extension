@@ -1,14 +1,21 @@
+import BigNumber from 'bignumber.js';
+import classnames from 'classnames';
+import { addHexPrefix } from 'ethereumjs-util';
+import PropTypes from 'prop-types';
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import BigNumber from 'bignumber.js';
-import { addHexPrefix } from 'ethereumjs-util';
 
+import {
+  MAX_TOKEN_ALLOWANCE_AMOUNT,
+  NUM_W_OPT_DECIMAL_COMMA_OR_DOT_REGEX,
+  DECIMAL_REGEX,
+} from '../../../../shared/constants/tokens';
+import { calcTokenAmount } from '../../../../shared/lib/transactions-controller-utils';
+import { hexToDecimal } from '../../../../shared/modules/conversion.utils';
+import { Numeric } from '../../../../shared/modules/Numeric';
+import { useGasFeeContext } from '../../../contexts/gasFee';
 import { I18nContext } from '../../../contexts/i18n';
-import Box from '../../ui/box';
-import FormField from '../../ui/form-field';
-import { Text, ButtonLink, Icon, IconName } from '../../component-library';
+import { setCustomTokenAmount } from '../../../ducks/app/app';
 import {
   AlignItems,
   DISPLAY,
@@ -21,19 +28,12 @@ import {
   BackgroundColor,
   TextColor,
 } from '../../../helpers/constants/design-system';
-import { getCustomTokenAmount } from '../../../selectors';
-import { setCustomTokenAmount } from '../../../ducks/app/app';
-import { calcTokenAmount } from '../../../../shared/lib/transactions-controller-utils';
-import { hexToDecimal } from '../../../../shared/modules/conversion.utils';
-import {
-  MAX_TOKEN_ALLOWANCE_AMOUNT,
-  NUM_W_OPT_DECIMAL_COMMA_OR_DOT_REGEX,
-  DECIMAL_REGEX,
-} from '../../../../shared/constants/tokens';
-import { Numeric } from '../../../../shared/modules/Numeric';
-import { estimateGas } from '../../../store/actions';
 import { getCustomTxParamsData } from '../../../pages/confirm-approve/confirm-approve.util';
-import { useGasFeeContext } from '../../../contexts/gasFee';
+import { getCustomTokenAmount } from '../../../selectors';
+import { estimateGas } from '../../../store/actions';
+import { Text, ButtonLink, Icon, IconName } from '../../component-library';
+import Box from '../../ui/box';
+import FormField from '../../ui/form-field';
 import { CustomSpendingCapTooltip } from './custom-spending-cap-tooltip';
 
 export default function CustomSpendingCap({

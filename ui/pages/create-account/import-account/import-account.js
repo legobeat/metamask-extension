@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import {
   MetaMetricsEventAccountImportType,
   MetaMetricsEventAccountType,

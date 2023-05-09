@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   BLOCK_SIZES,
   FLEX_DIRECTION,
@@ -8,9 +9,9 @@ import {
   Color,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import Box from '../../../ui/box';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { Label, TEXT_FIELD_TYPES, TextField } from '../../../component-library';
+import Box from '../../../ui/box';
 
 const PasswordInput = ({ setPassword }) => {
   const t = useI18nContext();

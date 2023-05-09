@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { I18nContext } from '../../../contexts/i18n';
 import {
   JustifyContent,
   DISPLAY,
@@ -9,7 +11,6 @@ import {
   BorderStyle,
   BorderColor,
 } from '../../../helpers/constants/design-system';
-import { I18nContext } from '../../../contexts/i18n';
 import { mmiActionsFactory } from '../../../store/institutional/institution-background';
 import {
   Text,

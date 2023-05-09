@@ -1,18 +1,6 @@
-import React, { useState, useRef } from 'react';
 import { useArgs } from '@storybook/client-api';
 import PropTypes from 'prop-types';
-
-import {
-  DISPLAY,
-  FLEX_DIRECTION,
-  AlignItems,
-  TextVariant,
-  IconColor,
-  BackgroundColor,
-  TextColor,
-  Size,
-} from '../../../helpers/constants/design-system';
-import Box from '../../ui/box/box';
+import React, { useState, useRef } from 'react';
 
 import {
   AvatarAccount,
@@ -25,11 +13,20 @@ import {
   Icon,
   IconSize,
 } from '..';
-
-import { TEXT_FIELD_SIZES, TEXT_FIELD_TYPES } from './text-field.constants';
-import { TextField } from './text-field';
-
+import {
+  DISPLAY,
+  FLEX_DIRECTION,
+  AlignItems,
+  TextVariant,
+  IconColor,
+  BackgroundColor,
+  TextColor,
+  Size,
+} from '../../../helpers/constants/design-system';
+import Box from '../../ui/box/box';
 import README from './README.mdx';
+import { TextField } from './text-field';
+import { TEXT_FIELD_SIZES, TEXT_FIELD_TYPES } from './text-field.constants';
 
 const marginSizeControlOptions = [
   undefined,

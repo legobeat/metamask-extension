@@ -1,28 +1,28 @@
-import React, { useCallback, useContext, useState } from 'react';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
-import log from 'loglevel';
 import { isValidSIWEOrigin } from '@metamask/controller-utils';
-import { BannerAlert, Text } from '../../component-library';
-import Popover from '../../ui/popover';
-import Checkbox from '../../ui/check-box';
-import { I18nContext } from '../../../contexts/i18n';
-import { PageContainerFooter } from '../../ui/page-container';
-import { isAddressLedger } from '../../../ducks/metamask/metamask';
-import {
-  accountsWithSendEtherInfoSelector,
-  getSubjectMetadata,
-} from '../../../selectors';
-import { getAccountByAddress } from '../../../helpers/utils/util';
+import log from 'loglevel';
+import PropTypes from 'prop-types';
+import React, { useCallback, useContext, useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import { formatMessageParams } from '../../../../shared/modules/siwe';
+import { I18nContext } from '../../../contexts/i18n';
+import { isAddressLedger } from '../../../ducks/metamask/metamask';
 import {
   SEVERITIES,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-
+import { getAccountByAddress } from '../../../helpers/utils/util';
+import {
+  accountsWithSendEtherInfoSelector,
+  getSubjectMetadata,
+} from '../../../selectors';
+import { BannerAlert, Text } from '../../component-library';
+import Checkbox from '../../ui/check-box';
+import { PageContainerFooter } from '../../ui/page-container';
+import Popover from '../../ui/popover';
+import LedgerInstructionField from '../ledger-instruction-field';
 import SecurityProviderBannerMessage from '../security-provider-banner-message/security-provider-banner-message';
 import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';
-import LedgerInstructionField from '../ledger-instruction-field';
 import Header from './signature-request-siwe-header';
 import Message from './signature-request-siwe-message';
 

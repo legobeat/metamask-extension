@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentQRHardwareState } from '../../../selectors';
-import Popover from '../../ui/popover';
+
+import { MESSAGE_TYPE } from '../../../../shared/constants/app';
 import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getCurrentQRHardwareState } from '../../../selectors';
 import {
   cancelSyncQRHardware as cancelSyncQRHardwareAction,
   cancelQRHardwareSignRequest as cancelQRHardwareSignRequestAction,
@@ -11,9 +12,9 @@ import {
   cancelMsg,
   cancelTypedMsg,
 } from '../../../store/actions';
-import { MESSAGE_TYPE } from '../../../../shared/constants/app';
-import QRHardwareWalletImporter from './qr-hardware-wallet-importer';
+import Popover from '../../ui/popover';
 import QRHardwareSignRequest from './qr-hardware-sign-request';
+import QRHardwareWalletImporter from './qr-hardware-wallet-importer';
 
 const QRHardwarePopover = () => {
   const t = useI18nContext();

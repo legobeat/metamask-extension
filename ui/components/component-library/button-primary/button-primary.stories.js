@@ -1,15 +1,15 @@
 import React from 'react';
+
+import { IconName } from '..';
 import {
   AlignItems,
   DISPLAY,
   Size,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box/box';
-import { IconName } from '..';
 import { ButtonPrimary } from './button-primary';
-
-import README from './README.mdx';
 import { BUTTON_PRIMARY_SIZES } from './button-primary.constants';
+import README from './README.mdx';
 
 const marginSizeControlOptions = [
   undefined,

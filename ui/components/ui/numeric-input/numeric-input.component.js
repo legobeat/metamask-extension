@@ -1,12 +1,13 @@
-import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Typography from '../typography/typography';
+import React from 'react';
+
+import { DECIMAL_REGEX } from '../../../../shared/constants/tokens';
 import {
   TextColor,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
-import { DECIMAL_REGEX } from '../../../../shared/constants/tokens';
+import Typography from '../typography/typography';
 
 export default function NumericInput({
   detailText = '',

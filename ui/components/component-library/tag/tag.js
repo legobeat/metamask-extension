@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Box from '../../ui/box/box';
-import { Text } from '../text';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   AlignItems,
   BackgroundColor,
@@ -12,6 +11,8 @@ import {
   JustifyContent,
   TextVariant,
 } from '../../../helpers/constants/design-system';
+import Box from '../../ui/box/box';
+import { Text } from '../text';
 
 export const Tag = ({ label, className, labelProps, ...props }) => {
   return (

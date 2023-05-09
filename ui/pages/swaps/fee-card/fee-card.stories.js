@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { CHAIN_IDS } from '../../../../shared/constants/network';
 import FeeCard from './fee-card';
 

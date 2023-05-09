@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+
+import { getSelectedIdentity } from '../../../../selectors';
 import {
   exportAccount,
   hideWarning,
@@ -6,7 +8,6 @@ import {
   hideModal,
   clearAccountDetails,
 } from '../../../../store/actions';
-import { getSelectedIdentity } from '../../../../selectors';
 import ExportPrivateKeyModal from './export-private-key-modal.component';
 
 function mapStateToPropsFactory() {

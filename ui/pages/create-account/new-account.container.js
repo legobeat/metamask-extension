@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-import * as actions from '../../store/actions';
+
 import { getMostRecentOverviewPage } from '../../ducks/history/history';
 import { getMetaMaskAccountsOrdered } from '../../selectors';
+import * as actions from '../../store/actions';
 import NewAccountCreateForm from './new-account.component';
 
 const mapStateToProps = (state) => {

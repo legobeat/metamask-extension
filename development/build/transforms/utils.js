@@ -1,4 +1,5 @@
 const { ESLint } = require('eslint');
+
 const eslintrc = require('../../../.eslintrc');
 
 eslintrc.overrides.forEach((override) => {

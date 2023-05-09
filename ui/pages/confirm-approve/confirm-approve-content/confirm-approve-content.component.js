@@ -1,18 +1,32 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { getTokenTrackerLink } from '@metamask/etherscan-link';
 import classnames from 'classnames';
 import copyToClipboard from 'copy-to-clipboard';
-import { getTokenTrackerLink } from '@metamask/etherscan-link';
-import UrlIcon from '../../../components/ui/url-icon';
-import { addressSummary } from '../../../helpers/utils/util';
-import { formatCurrency } from '../../../helpers/utils/confirm-tx.util';
-import Box from '../../../components/ui/box';
-import Button from '../../../components/ui/button';
-import SimulationErrorMessage from '../../../components/ui/simulation-error-message';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+import { CHAIN_IDS, TEST_CHAINS } from '../../../../shared/constants/network';
+import { TokenStandard } from '../../../../shared/constants/transaction';
+import { ConfirmGasDisplay } from '../../../components/app/confirm-gas-display';
+import { ConfirmPageContainerWarning } from '../../../components/app/confirm-page-container/confirm-page-container-content';
 import EditGasFeeButton from '../../../components/app/edit-gas-fee-button';
+import LedgerInstructionField from '../../../components/app/ledger-instruction-field';
+import ContractDetailsModal from '../../../components/app/modals/contract-details-modal/contract-details-modal';
 import MultiLayerFeeMessage from '../../../components/app/multilayer-fee-message';
 import SecurityProviderBannerMessage from '../../../components/app/security-provider-banner-message/security-provider-banner-message';
 import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../../../components/app/security-provider-banner-message/security-provider-banner-message.constants';
+import TransactionDetailItem from '../../../components/app/transaction-detail-item/transaction-detail-item.component';
+import UserPreferencedCurrencyDisplay from '../../../components/app/user-preferenced-currency-display';
+import {
+  ButtonIcon,
+  Icon,
+  IconName,
+  Text,
+} from '../../../components/component-library';
+import Box from '../../../components/ui/box';
+import Button from '../../../components/ui/button';
+import SimulationErrorMessage from '../../../components/ui/simulation-error-message';
+import UrlIcon from '../../../components/ui/url-icon';
+import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
 import {
   BLOCK_SIZES,
   JustifyContent,
@@ -22,21 +36,8 @@ import {
   TextVariant,
   AlignItems,
 } from '../../../helpers/constants/design-system';
-import { ConfirmPageContainerWarning } from '../../../components/app/confirm-page-container/confirm-page-container-content';
-import LedgerInstructionField from '../../../components/app/ledger-instruction-field';
-import { TokenStandard } from '../../../../shared/constants/transaction';
-import { CHAIN_IDS, TEST_CHAINS } from '../../../../shared/constants/network';
-import ContractDetailsModal from '../../../components/app/modals/contract-details-modal/contract-details-modal';
-import {
-  ButtonIcon,
-  Icon,
-  IconName,
-  Text,
-} from '../../../components/component-library';
-import TransactionDetailItem from '../../../components/app/transaction-detail-item/transaction-detail-item.component';
-import UserPreferencedCurrencyDisplay from '../../../components/app/user-preferenced-currency-display';
-import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
-import { ConfirmGasDisplay } from '../../../components/app/confirm-gas-display';
+import { formatCurrency } from '../../../helpers/utils/confirm-tx.util';
+import { addressSummary } from '../../../helpers/utils/util';
 
 export default class ConfirmApproveContent extends Component {
   static contextTypes = {

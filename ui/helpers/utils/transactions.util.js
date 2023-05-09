@@ -8,8 +8,8 @@ import {
   TransactionStatus,
   TransactionEnvelopeType,
 } from '../../../shared/constants/transaction';
-import { readAddressAsContract } from '../../../shared/modules/contract-utils';
 import fetchWithCache from '../../../shared/lib/fetch-with-cache';
+import { readAddressAsContract } from '../../../shared/modules/contract-utils';
 
 /**
  * @typedef EthersContractCall

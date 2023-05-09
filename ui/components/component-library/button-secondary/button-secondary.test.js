@@ -1,6 +1,7 @@
 /* eslint-disable jest/require-top-level-describe */
 import { render } from '@testing-library/react';
 import React from 'react';
+
 import { IconName } from '..';
 import { ButtonSecondary } from './button-secondary';
 import { BUTTON_SECONDARY_SIZES } from './button-secondary.constants';

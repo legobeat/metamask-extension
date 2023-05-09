@@ -1,7 +1,8 @@
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { fireEvent, screen } from '@testing-library/react';
 import thunk from 'redux-thunk';
+
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import ComplianceDetails from './compliance-details';
 

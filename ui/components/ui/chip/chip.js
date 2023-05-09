@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { omit } from 'lodash';
-import Typography from '../typography';
-import UrlIcon from '../url-icon';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   BackgroundColor,
   BorderColor,
   TextColor,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
+import Typography from '../typography';
+import UrlIcon from '../url-icon';
 
 export default function Chip({
   dataTestId,

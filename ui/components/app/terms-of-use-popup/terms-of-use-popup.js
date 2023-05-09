@@ -1,8 +1,13 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
+import PropTypes from 'prop-types';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
 import { I18nContext } from '../../../contexts/i18n';
-import Popover from '../../ui/popover';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   AlignItems,
   FLEX_DIRECTION,
@@ -19,11 +24,7 @@ import {
 } from '../../component-library';
 import Box from '../../ui/box';
 import CheckBox from '../../ui/check-box/check-box.component';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
+import Popover from '../../ui/popover';
 
 export default function TermsOfUsePopup({ onAccept }) {
   const t = useContext(I18nContext);

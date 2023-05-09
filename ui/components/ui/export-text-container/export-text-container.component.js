@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import React from 'react';
+
 import {
   AlignItems,
   BorderColor,
@@ -11,8 +10,10 @@ import {
   JustifyContent,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import Box from '../box/box';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { ButtonSecondary, Text } from '../../component-library';
+import Box from '../box/box';
 
 function ExportTextContainer({ text = '', onClickCopy = null }) {
   const ONE_MINUTE = 1000 * 60;

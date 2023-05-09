@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
 import TokenTracker from '@metamask/eth-token-tracker';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
-import { getCurrentChainId, getSelectedAddress } from '../selectors';
+
 import { SECOND } from '../../shared/constants/time';
 import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
+import { getCurrentChainId, getSelectedAddress } from '../selectors';
 import { useEqualityCheck } from './useEqualityCheck';
 
 export function useTokenTracker(

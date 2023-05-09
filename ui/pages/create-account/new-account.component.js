@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Button from '../../components/ui/button';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import {
   MetaMetricsEventAccountType,
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../shared/constants/metametrics';
+import Button from '../../components/ui/button';
 import { getAccountNameErrorMessage } from '../../helpers/utils/accounts';
 
 export default class NewAccountCreateForm extends Component {

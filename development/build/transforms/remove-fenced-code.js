@@ -1,5 +1,6 @@
 const path = require('path');
 const { PassThrough, Transform } = require('stream');
+
 const { lintTransformedFile } = require('./utils');
 
 const hasKey = (obj, key) => Reflect.hasOwnProperty.call(obj, key);

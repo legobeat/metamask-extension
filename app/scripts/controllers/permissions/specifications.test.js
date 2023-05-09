@@ -1,4 +1,5 @@
 import { SnapCaveatType } from '@metamask/rpc-methods';
+
 import {
   CaveatTypes,
   RestrictedMethods,

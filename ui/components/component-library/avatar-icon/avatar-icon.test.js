@@ -2,12 +2,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
+import { AvatarIcon, AVATAR_ICON_SIZES } from '.';
 import { IconName } from '..';
 import {
   BackgroundColor,
   IconColor,
 } from '../../../helpers/constants/design-system';
-import { AvatarIcon, AVATAR_ICON_SIZES } from '.';
 
 describe('AvatarIcon', () => {
   it('should render correctly', () => {

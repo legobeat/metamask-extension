@@ -1,26 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { TextColor } from '../../../helpers/constants/design-system';
+import { hexWEIToDecGWEI } from '../../../../shared/modules/conversion.utils';
+import { useGasFeeContext } from '../../../contexts/gasFee';
+import { getCurrentDraftTransaction } from '../../../ducks/send';
 import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
+import { TextColor } from '../../../helpers/constants/design-system';
+import { useDraftTransactionGasValues } from '../../../hooks/useDraftTransactionGasValues';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   getPreferences,
   getUseCurrencyRateCheck,
   transactionFeeSelector,
 } from '../../../selectors';
-import { getCurrentDraftTransaction } from '../../../ducks/send';
-import { useGasFeeContext } from '../../../contexts/gasFee';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-
 import Box from '../../ui/box';
 import LoadingHeartBeat from '../../ui/loading-heartbeat';
 import GasTiming from '../gas-timing/gas-timing.component';
 import TransactionDetailItem from '../transaction-detail-item/transaction-detail-item.component';
 import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
-import { hexWEIToDecGWEI } from '../../../../shared/modules/conversion.utils';
-import { useDraftTransactionGasValues } from '../../../hooks/useDraftTransactionGasValues';
 import GasDetailsItemTitle from './gas-details-item-title';
 
 const GasDetailsItem = ({ userAcknowledgedGasMissing = false }) => {

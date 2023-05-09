@@ -1,10 +1,11 @@
 import classnames from 'classnames';
+import { flatten } from 'lodash';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { flatten } from 'lodash';
-import CheckBox from '../../ui/check-box';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+
 import { getPermissionDescription } from '../../../helpers/utils/permission';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import CheckBox from '../../ui/check-box';
 
 const ConnectedAccountsPermissions = ({ permissions }) => {
   const t = useI18nContext();

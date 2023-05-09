@@ -1,6 +1,7 @@
 import React from 'react';
-import README from './README.mdx';
+
 import AccountListItem from './account-list-item';
+import README from './README.mdx';
 
 export default {
   title: 'Components/App/AccountListItem',

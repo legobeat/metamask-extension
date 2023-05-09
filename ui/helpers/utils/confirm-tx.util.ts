@@ -1,11 +1,11 @@
+import { BigNumber } from 'bignumber.js';
 import currencyFormatter from 'currency-formatter';
 import currencies from 'currency-formatter/currencies';
-import { BigNumber } from 'bignumber.js';
 
-import { unconfirmedTransactionsCountSelector } from '../../selectors';
-import { Numeric } from '../../../shared/modules/Numeric';
 import { EtherDenomination } from '../../../shared/constants/common';
 import { TransactionMeta } from '../../../shared/constants/transaction';
+import { Numeric } from '../../../shared/modules/Numeric';
+import { unconfirmedTransactionsCountSelector } from '../../selectors';
 
 export function getHexGasTotal({ gasLimit = '0x0', gasPrice = '0x0' }): string {
   return new Numeric(gasLimit, 16)

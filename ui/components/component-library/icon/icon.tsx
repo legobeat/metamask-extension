@@ -1,10 +1,8 @@
-import React from 'react';
 import classnames from 'classnames';
-
-import Box from '../../ui/box/box';
+import React from 'react';
 
 import { IconColor, DISPLAY } from '../../../helpers/constants/design-system';
-
+import Box from '../../ui/box/box';
 import { IconProps, IconSize } from './icon.types';
 
 export const Icon = ({

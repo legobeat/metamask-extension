@@ -1,5 +1,6 @@
 import { SubjectType } from '@metamask/subject-metadata-controller';
 import { useSelector } from 'react-redux';
+
 import { getTargetSubjectMetadata } from '../selectors';
 
 /**

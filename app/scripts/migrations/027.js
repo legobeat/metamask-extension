@@ -5,6 +5,7 @@ normalizes txParams on unconfirmed txs
 
 */
 import { cloneDeep } from 'lodash';
+
 import { TransactionStatus } from '../../../shared/constants/transaction';
 
 const version = 27;

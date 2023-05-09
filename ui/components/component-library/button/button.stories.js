@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Button, BUTTON_VARIANT } from '.';
+import { IconName } from '..';
 import {
   AlignItems,
   DISPLAY,
@@ -6,12 +9,10 @@ import {
   Size,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { IconName } from '..';
-import { BUTTON_LINK_SIZES } from '../button-link/button-link.constants';
 import Box from '../../ui/box/box';
+import { BUTTON_LINK_SIZES } from '../button-link/button-link.constants';
 import { Text } from '../text';
 import README from './README.mdx';
-import { Button, BUTTON_VARIANT } from '.';
 
 const marginSizeControlOptions = [
   undefined,

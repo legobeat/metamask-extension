@@ -93,8 +93,8 @@ describe('ActionQueue', () => {
         connectionStream: {
           readable: true,
         },
-        backgroundFunction4: (cb) => {
-          return cb(null, 'test');
+        backgroundFunction4: (callback) => {
+          return callback(null, 'test');
         },
       };
       _setBackgroundConnection(background);
@@ -125,15 +125,15 @@ describe('ActionQueue', () => {
         connectionStream: {
           readable: true,
         },
-        first: (cb) => {
+        first: (callback) => {
           setTimeout(() => {
             trace.firstDone = Date.now();
-            cb(null, 'first');
+            callback(null, 'first');
           }, 5);
         },
-        second: (cb) => {
+        second: (callback) => {
           trace.secondStarted = Date.now();
-          setTimeout(() => cb(null, 'second'), 10);
+          setTimeout(() => callback(null, 'second'), 10);
         },
         trackMetaMetricsEvent: sinon.stub().yields(),
       };
@@ -152,15 +152,15 @@ describe('ActionQueue', () => {
         connectionStream: {
           readable: false,
         },
-        first: (cb) => {
+        first: (callback) => {
           setTimeout(() => {
             trace.firstDone = Date.now();
-            cb(null, 'first');
+            callback(null, 'first');
           }, 5);
         },
-        second: (cb) => {
+        second: (callback) => {
           trace.secondStarted = Date.now();
-          setTimeout(() => cb(null, 'second'), 10);
+          setTimeout(() => callback(null, 'second'), 10);
         },
         trackMetaMetricsEvent: sinon.stub().yields(),
       };
@@ -181,17 +181,17 @@ describe('ActionQueue', () => {
         connectionStream: {
           readable: false,
         },
-        first: (cb) => {
+        first: (callback) => {
           trace.calls += 1;
           setTimeout(() => {
             trace.firstDone = Date.now();
-            cb(null, 'first');
+            callback(null, 'first');
           }, 5);
         },
-        second: (cb) => {
+        second: (callback) => {
           trace.calls += 1;
           trace.secondStarted = Date.now();
-          setTimeout(() => cb(null, 'second'), 10);
+          setTimeout(() => callback(null, 'second'), 10);
         },
         trackMetaMetricsEvent: sinon.stub().yields(),
       };
@@ -214,11 +214,11 @@ describe('ActionQueue', () => {
         connectionStream: {
           readable: false,
         },
-        first: (cb) => {
+        first: (callback) => {
           setTimeout(() => {
             trace.firstDone = true;
             background.connectionStream.readable = false;
-            cb(Error('lost connection'));
+            callback(Error('lost connection'));
           }, 5);
         },
         second: sinon.stub().yields(),
@@ -245,16 +245,16 @@ describe('ActionQueue', () => {
         connectionStream: {
           readable: false,
         },
-        first: (cb) => {
+        first: (callback) => {
           trace.first += 1;
           setTimeout(() => {
             flowControl.triggerRaceCondition();
-            cb(null, 'first');
+            callback(null, 'first');
           }, 5);
         },
-        second: (cb) => {
+        second: (callback) => {
           trace.second += 1;
-          setTimeout(() => cb(null, 'second'), 10);
+          setTimeout(() => callback(null, 'second'), 10);
         },
         third: sinon.stub().yields(),
         trackMetaMetricsEvent: sinon.stub().yields(),
@@ -331,13 +331,13 @@ describe('ActionQueue', () => {
         connectionStream: {
           readable: true,
         },
-        backgroundFunction: (cb) => {
-          return cb(null, 'successViaCallback');
+        backgroundFunction: (callback) => {
+          return callback(null, 'successViaCallback');
         },
       };
       _setBackgroundConnection(background);
       const value = await new Promise((resolve) => {
-        callBackgroundMethod('backgroundFunction', [], (_err, result) => {
+        callBackgroundMethod('backgroundFunction', [], (_error, result) => {
           resolve(result);
         });
       });
@@ -349,14 +349,14 @@ describe('ActionQueue', () => {
         connectionStream: {
           readable: true,
         },
-        backgroundFunction: (cb) => {
-          return cb(errorViaCallback);
+        backgroundFunction: (callback) => {
+          return callback(errorViaCallback);
         },
       };
       _setBackgroundConnection(background);
       const value = await new Promise((resolve) => {
-        callBackgroundMethod('backgroundFunction', [], (err) => {
-          resolve(err);
+        callBackgroundMethod('backgroundFunction', [], (error) => {
+          resolve(error);
         });
       });
       expect(value).toStrictEqual(errorViaCallback);

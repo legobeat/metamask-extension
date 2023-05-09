@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ConfirmRemoveAccount from '.';
 
 export default {

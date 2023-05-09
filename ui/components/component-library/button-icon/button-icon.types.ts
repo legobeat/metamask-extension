@@ -1,7 +1,7 @@
+import { IconColor } from '../../../helpers/constants/design-system';
 import type { BoxProps } from '../../ui/box/box.d';
 import { IconName } from '../icon';
 import type { IconProps } from '../icon';
-import { IconColor } from '../../../helpers/constants/design-system';
 
 export enum ButtonIconSize {
   Sm = 'sm',

@@ -1,20 +1,22 @@
-import React, { useCallback, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useCallback, useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useGasFeeInputs } from '../../../hooks/gasFeeInput/useGasFeeInputs';
-import { txParamsAreDappSuggested } from '../../../../shared/modules/transaction.utils';
+
 import {
   EditGasModes,
   GAS_LIMITS,
   CUSTOM_GAS_ESTIMATE,
   GasRecommendations,
 } from '../../../../shared/constants/gas';
-
-import Popover from '../../ui/popover';
-import Button from '../../ui/button';
-import EditGasDisplay from '../edit-gas-display';
-
+import {
+  decGWEIToHexWEI,
+  decimalToHex,
+  hexToDecimal,
+} from '../../../../shared/modules/conversion.utils';
+import { txParamsAreDappSuggested } from '../../../../shared/modules/transaction.utils';
 import { I18nContext } from '../../../contexts/i18n';
+import { useGasFeeInputs } from '../../../hooks/gasFeeInput/useGasFeeInputs';
+import { useIncrementedGasFees } from '../../../hooks/useIncrementedGasFees';
 import {
   createCancelTransaction,
   createSpeedUpTransaction,
@@ -23,13 +25,10 @@ import {
   hideLoadingIndication,
   showLoadingIndication,
 } from '../../../store/actions';
+import Button from '../../ui/button';
 import LoadingHeartBeat from '../../ui/loading-heartbeat';
-import { useIncrementedGasFees } from '../../../hooks/useIncrementedGasFees';
-import {
-  decGWEIToHexWEI,
-  decimalToHex,
-  hexToDecimal,
-} from '../../../../shared/modules/conversion.utils';
+import Popover from '../../ui/popover';
+import EditGasDisplay from '../edit-gas-display';
 
 export default function EditGasPopover({
   popoverTitle = '',

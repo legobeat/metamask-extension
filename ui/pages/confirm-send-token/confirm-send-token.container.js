@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+
+import { AssetType } from '../../../shared/constants/transaction';
 import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
-import { showSendTokenPage } from '../../store/actions';
 import { editExistingTransaction } from '../../ducks/send';
 import { sendTokenTokenAmountAndToAddressSelector } from '../../selectors';
-import { AssetType } from '../../../shared/constants/transaction';
+import { showSendTokenPage } from '../../store/actions';
 import ConfirmSendToken from './confirm-send-token.component';
 
 const mapStateToProps = (state) => {

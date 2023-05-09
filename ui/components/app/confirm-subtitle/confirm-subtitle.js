@@ -1,17 +1,17 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { SECONDARY } from '../../../helpers/constants/common';
-import { Text } from '../../component-library';
 import {
   Color,
   FONT_WEIGHT,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
-import { getShouldShowFiat } from '../../../selectors';
 import { useTransactionInfo } from '../../../hooks/useTransactionInfo';
+import { getShouldShowFiat } from '../../../selectors';
+import { Text } from '../../component-library';
+import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
 
 const ConfirmSubTitle = ({
   txData,

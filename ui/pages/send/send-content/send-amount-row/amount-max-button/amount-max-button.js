@@ -1,14 +1,15 @@
-import React, { useContext } from 'react';
 import classnames from 'classnames';
+import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { MetaMetricsEventCategory } from '../../../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../../../contexts/metametrics';
 import {
   getSendMaxModeState,
   isSendFormInvalid,
   toggleSendMaxMode,
 } from '../../../../../ducks/send';
 import { useI18nContext } from '../../../../../hooks/useI18nContext';
-import { MetaMetricsContext } from '../../../../../contexts/metametrics';
-import { MetaMetricsEventCategory } from '../../../../../../shared/constants/metametrics';
 
 export default function AmountMaxButton() {
   const isDraftTransactionInvalid = useSelector(isSendFormInvalid);

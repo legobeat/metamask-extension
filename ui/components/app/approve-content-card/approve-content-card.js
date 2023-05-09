@@ -1,12 +1,10 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 
-import Box from '../../ui/box/box';
-import Button from '../../ui/button';
-import EditGasFeeButton from '../edit-gas-fee-button/edit-gas-fee-button';
-import { Text } from '../../component-library';
+import { I18nContext } from '../../../contexts/i18n';
+import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
 import {
   AlignItems,
   BLOCK_SIZES,
@@ -18,12 +16,14 @@ import {
   TextColor,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
-import { I18nContext } from '../../../contexts/i18n';
-import { getPreferences } from '../../../selectors';
-import { ConfirmGasDisplay } from '../confirm-gas-display';
-import MultiLayerFeeMessage from '../multilayer-fee-message/multi-layer-fee-message';
 import { formatCurrency } from '../../../helpers/utils/confirm-tx.util';
+import { getPreferences } from '../../../selectors';
+import { Text } from '../../component-library';
+import Box from '../../ui/box/box';
+import Button from '../../ui/button';
+import { ConfirmGasDisplay } from '../confirm-gas-display';
+import EditGasFeeButton from '../edit-gas-fee-button/edit-gas-fee-button';
+import MultiLayerFeeMessage from '../multilayer-fee-message/multi-layer-fee-message';
 import TransactionDetailItem from '../transaction-detail-item/transaction-detail-item.component';
 import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
 

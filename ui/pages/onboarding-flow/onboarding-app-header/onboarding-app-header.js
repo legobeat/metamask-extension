@@ -1,10 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MetaFoxLogo from '../../../components/ui/metafox-logo';
+
+import locales from '../../../../app/_locales/index.json';
 import Dropdown from '../../../components/ui/dropdown';
+import MetaFoxLogo from '../../../components/ui/metafox-logo';
 import { getCurrentLocale } from '../../../ducks/locale/locale';
 import { updateCurrentLocale } from '../../../store/actions';
-import locales from '../../../../app/_locales/index.json';
 
 export default function OnboardingAppHeader() {
   const dispatch = useDispatch();

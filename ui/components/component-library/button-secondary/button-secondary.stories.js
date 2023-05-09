@@ -1,11 +1,12 @@
 import React from 'react';
+
+import { IconName } from '..';
 import {
   AlignItems,
   DISPLAY,
   Size,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box/box';
-import { IconName } from '..';
 import { ButtonSecondary } from './button-secondary';
 import { BUTTON_SECONDARY_SIZES } from './button-secondary.constants';
 import README from './README.mdx';

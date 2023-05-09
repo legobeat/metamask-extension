@@ -1,9 +1,10 @@
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent, screen } from '@testing-library/react';
+
+import NetworksTabContent from '.';
 import { renderWithProvider } from '../../../../../test/jest/rendering';
 import { defaultNetworksData } from '../networks-tab.constants';
-import NetworksTabContent from '.';
 
 const mockState = {
   metamask: {

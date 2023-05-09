@@ -1,8 +1,9 @@
-import React from 'react';
 import { within } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { renderWithProvider } from '../../../../test/jest/rendering';
+
 import ContactList from '.';
+import { renderWithProvider } from '../../../../test/jest/rendering';
 
 describe('Contact List', () => {
   const store = configureMockStore([])({

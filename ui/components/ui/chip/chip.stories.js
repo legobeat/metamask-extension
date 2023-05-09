@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Chip from '.';
 import {
   TypographyVariant,
   SEVERITIES,
@@ -8,15 +9,11 @@ import {
   BackgroundColor,
   TextColor,
 } from '../../../helpers/constants/design-system';
-
 import ApproveIcon from '../icon/approve-icon.component';
 import InfoIcon from '../icon/info-icon.component';
 import Identicon from '../identicon/identicon.component';
 import { ChipWithInput } from './chip-with-input';
-
 import README from './README.mdx';
-
-import Chip from '.';
 
 export default {
   title: 'Components/UI/Chip',

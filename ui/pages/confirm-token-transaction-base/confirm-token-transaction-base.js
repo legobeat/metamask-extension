@@ -1,18 +1,30 @@
-import React, { useContext, useMemo } from 'react';
-import PropTypes from 'prop-types';
-import BigNumber from 'bignumber.js';
-import { useSelector } from 'react-redux';
 import { getTokenTrackerLink } from '@metamask/etherscan-link';
-import { I18nContext } from '../../contexts/i18n';
-import ConfirmTransactionBase from '../confirm-transaction-base';
+import BigNumber from 'bignumber.js';
+import PropTypes from 'prop-types';
+import React, { useContext, useMemo } from 'react';
+import { useSelector } from 'react-redux';
+
+import { EtherDenomination } from '../../../shared/constants/common';
+import { CHAIN_IDS, TEST_CHAINS } from '../../../shared/constants/network';
+import { TokenStandard } from '../../../shared/constants/transaction';
+import {
+  getWeiHexFromDecimalValue,
+  hexWEIToDecETH,
+} from '../../../shared/modules/conversion.utils';
 import UserPreferencedCurrencyDisplay from '../../components/app/user-preferenced-currency-display';
+import { I18nContext } from '../../contexts/i18n';
+import {
+  getConversionRate,
+  getNativeCurrency,
+  getNftContracts,
+} from '../../ducks/metamask/metamask';
+import { PRIMARY } from '../../helpers/constants/common';
 import {
   formatCurrency,
   convertTokenToFiat,
   addFiat,
   roundExponential,
 } from '../../helpers/utils/confirm-tx.util';
-import { PRIMARY } from '../../helpers/constants/common';
 import {
   contractExchangeRateSelector,
   getCurrentChainId,
@@ -20,18 +32,7 @@ import {
   getRpcPrefsForCurrentProvider,
   getSelectedAddress,
 } from '../../selectors';
-import {
-  getConversionRate,
-  getNativeCurrency,
-  getNftContracts,
-} from '../../ducks/metamask/metamask';
-import { TokenStandard } from '../../../shared/constants/transaction';
-import {
-  getWeiHexFromDecimalValue,
-  hexWEIToDecETH,
-} from '../../../shared/modules/conversion.utils';
-import { EtherDenomination } from '../../../shared/constants/common';
-import { CHAIN_IDS, TEST_CHAINS } from '../../../shared/constants/network';
+import ConfirmTransactionBase from '../confirm-transaction-base';
 
 export default function ConfirmTokenTransactionBase({
   image = '',

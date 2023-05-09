@@ -1,24 +1,25 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import ConfirmTokenTransactionBase from '../confirm-token-transaction-base/confirm-token-transaction-base';
-import { SEND_ROUTE } from '../../helpers/constants/routes';
-import { editExistingTransaction } from '../../ducks/send';
-import {
-  contractExchangeRateSelector,
-  getCurrentCurrency,
-} from '../../selectors';
-import {
-  getConversionRate,
-  getNativeCurrency,
-} from '../../ducks/metamask/metamask';
-import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
-import { showSendTokenPage } from '../../store/actions';
+
 import {
   AssetType,
   TokenStandard,
 } from '../../../shared/constants/transaction';
+import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
+import {
+  getConversionRate,
+  getNativeCurrency,
+} from '../../ducks/metamask/metamask';
+import { editExistingTransaction } from '../../ducks/send';
+import { SEND_ROUTE } from '../../helpers/constants/routes';
+import {
+  contractExchangeRateSelector,
+  getCurrentCurrency,
+} from '../../selectors';
+import { showSendTokenPage } from '../../store/actions';
+import ConfirmTokenTransactionBase from '../confirm-token-transaction-base/confirm-token-transaction-base';
 
 export default function ConfirmSendToken({
   assetStandard,

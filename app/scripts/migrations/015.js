@@ -6,6 +6,7 @@ to a 'failed' stated
 */
 
 import { cloneDeep } from 'lodash';
+
 import { TransactionStatus } from '../../../shared/constants/transaction';
 
 const version = 15;

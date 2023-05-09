@@ -1,21 +1,33 @@
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 
-import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
-
+import { addHexPrefix } from '../../../app/scripts/lib/util';
+import { CUSTOM_GAS_ESTIMATE } from '../../../shared/constants/gas';
 import {
-  updateCustomNonce,
-  cancelTx,
-  cancelTxs,
-  updateAndApproveTx,
-  showModal,
-  getNextNonce,
-  tryReverseResolveAddress,
-  setDefaultHomeActiveTabName,
-  addToAddressBook,
-} from '../../store/actions';
-import { isBalanceSufficient } from '../send/send.utils';
+  TransactionStatus,
+  TransactionType,
+} from '../../../shared/constants/transaction';
+import { calcGasTotal } from '../../../shared/lib/transactions-controller-utils';
+import { toChecksumHexAddress } from '../../../shared/modules/hexstring-utils';
+import {
+  parseStandardTokenTransactionData,
+  transactionMatchesNetwork,
+  txParamsAreDappSuggested,
+} from '../../../shared/modules/transaction.utils';
+import { getGasLoadingAnimationIsShowing } from '../../ducks/app/app';
+import { clearConfirmTransaction } from '../../ducks/confirm-transaction/confirm-transaction.duck';
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
+import {
+  isAddressLedger,
+  updateGasFees,
+  getIsGasEstimatesLoading,
+  getNativeCurrency,
+  getSendToAccounts,
+  getProviderConfig,
+} from '../../ducks/metamask/metamask';
+import { getTokenAddressParam } from '../../helpers/utils/token-util';
+import { isLegacyTransaction } from '../../helpers/utils/transactions.util';
 import { shortenAddress, valuesFor } from '../../helpers/utils/util';
 import {
   getAdvancedInlineGasShown,
@@ -39,33 +51,18 @@ import {
   getFullTxData,
   getUseCurrencyRateCheck,
 } from '../../selectors';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
 import {
-  isAddressLedger,
-  updateGasFees,
-  getIsGasEstimatesLoading,
-  getNativeCurrency,
-  getSendToAccounts,
-  getProviderConfig,
-} from '../../ducks/metamask/metamask';
-import { addHexPrefix } from '../../../app/scripts/lib/util';
-
-import {
-  parseStandardTokenTransactionData,
-  transactionMatchesNetwork,
-  txParamsAreDappSuggested,
-} from '../../../shared/modules/transaction.utils';
-import { toChecksumHexAddress } from '../../../shared/modules/hexstring-utils';
-
-import { getGasLoadingAnimationIsShowing } from '../../ducks/app/app';
-import { isLegacyTransaction } from '../../helpers/utils/transactions.util';
-import { CUSTOM_GAS_ESTIMATE } from '../../../shared/constants/gas';
-import {
-  TransactionStatus,
-  TransactionType,
-} from '../../../shared/constants/transaction';
-import { getTokenAddressParam } from '../../helpers/utils/token-util';
-import { calcGasTotal } from '../../../shared/lib/transactions-controller-utils';
+  updateCustomNonce,
+  cancelTx,
+  cancelTxs,
+  updateAndApproveTx,
+  showModal,
+  getNextNonce,
+  tryReverseResolveAddress,
+  setDefaultHomeActiveTabName,
+  addToAddressBook,
+} from '../../store/actions';
+import { isBalanceSufficient } from '../send/send.utils';
 import ConfirmTransactionBase from './confirm-transaction-base.component';
 
 let customNonceValue = '';

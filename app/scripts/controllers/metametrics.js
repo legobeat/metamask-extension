@@ -1,3 +1,5 @@
+import { ObservableStore } from '@metamask/obs-store';
+import { bufferToHex, keccak } from 'ethereumjs-util';
 import {
   isEqual,
   memoize,
@@ -8,9 +10,9 @@ import {
   size,
   sum,
 } from 'lodash';
-import { ObservableStore } from '@metamask/obs-store';
-import { bufferToHex, keccak } from 'ethereumjs-util';
 import { v4 as uuidv4 } from 'uuid';
+
+import { METAMETRICS_FINALIZE_EVENT_FRAGMENT_ALARM } from '../../../shared/constants/alarms';
 import { ENVIRONMENT_TYPE_BACKGROUND } from '../../../shared/constants/app';
 import {
   METAMETRICS_ANONYMOUS_ID,
@@ -19,7 +21,6 @@ import {
 } from '../../../shared/constants/metametrics';
 import { SECOND } from '../../../shared/constants/time';
 import { isManifestV3 } from '../../../shared/modules/mv3.utils';
-import { METAMETRICS_FINALIZE_EVENT_FRAGMENT_ALARM } from '../../../shared/constants/alarms';
 import { checkAlarmExists, generateRandomId, isValidDate } from '../lib/util';
 
 const EXTENSION_UNINSTALL_URL = 'https://metamask.io/uninstalled';

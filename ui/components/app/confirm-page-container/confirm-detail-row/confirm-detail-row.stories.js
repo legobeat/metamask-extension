@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ConfirmDetailRow from '.';
 
 export default {

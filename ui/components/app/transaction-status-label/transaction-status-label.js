@@ -1,20 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import { useSelector } from 'react-redux';
-///: END:ONLY_INCLUDE_IN
-import Tooltip from '../../ui/tooltip';
 
-import { useI18nContext } from '../../../hooks/useI18nContext';
+///: END:ONLY_INCLUDE_IN
+
 import {
   TransactionGroupStatus,
   TransactionStatus,
 } from '../../../../shared/constants/transaction';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
-import { getTransactionStatusMap } from '../../../selectors/institutional/selectors';
 import { getCurrentKeyring } from '../../../selectors';
+import { getTransactionStatusMap } from '../../../selectors/institutional/selectors';
+import Tooltip from '../../ui/tooltip';
 ///: END:ONLY_INCLUDE_IN
 
 const QUEUED_PSEUDO_STATUS = 'queued';

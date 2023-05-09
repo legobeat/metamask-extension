@@ -1,7 +1,7 @@
 const { strict: assert } = require('assert');
 
-const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
 const { SMART_CONTRACTS } = require('../seeder/smart-contracts');
 
 describe('Create token, approve token and approve token without gas', function () {

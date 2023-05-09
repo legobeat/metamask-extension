@@ -1,8 +1,9 @@
 // cross-browser connection to extension i18n API
-import React from 'react';
-import log from 'loglevel';
 import { Json } from '@metamask/utils';
 import * as Sentry from '@sentry/browser';
+import log from 'loglevel';
+import React from 'react';
+
 import getFetchWithTimeout from '../../../shared/modules/fetch-with-timeout';
 
 const fetchWithTimeout = getFetchWithTimeout();

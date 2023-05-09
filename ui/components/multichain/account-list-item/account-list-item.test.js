@@ -1,11 +1,12 @@
 /* eslint-disable jest/require-top-level-describe */
-import React from 'react';
 import { screen, fireEvent } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/jest';
-import configureStore from '../../../store/store';
-import mockState from '../../../../test/data/mock-state.json';
-import { shortenAddress } from '../../../helpers/utils/util';
+import React from 'react';
+
 import { AccountListItem } from '.';
+import mockState from '../../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../../test/jest';
+import { shortenAddress } from '../../../helpers/utils/util';
+import configureStore from '../../../store/store';
 
 const identity = {
   ...mockState.metamask.identities[

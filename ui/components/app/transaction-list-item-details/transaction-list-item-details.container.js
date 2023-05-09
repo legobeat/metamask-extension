@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import { tryReverseResolveAddress } from '../../../store/actions';
+import { compose } from 'redux';
+
+import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
 import {
   getAddressBook,
   getBlockExplorerLinkText,
@@ -12,7 +13,7 @@ import {
   getMetadataContractName,
   getMetaMaskIdentities,
 } from '../../../selectors';
-import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
+import { tryReverseResolveAddress } from '../../../store/actions';
 import TransactionListItemDetails from './transaction-list-item-details.component';
 
 const mapStateToProps = (state, ownProps) => {

@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
-import {
-  getAddressBook,
-  getAddressBookEntry,
-  getMetaMaskAccountsOrdered,
-  currentNetworkTxListSelector,
-} from '../../../../selectors';
 
+import {
+  getDomainResolution,
+  getDomainError,
+  getDomainWarning,
+} from '../../../../ducks/domains';
 import {
   updateRecipient,
   updateRecipientUserInput,
@@ -17,10 +16,11 @@ import {
   addHistoryEntry,
 } from '../../../../ducks/send';
 import {
-  getDomainResolution,
-  getDomainError,
-  getDomainWarning,
-} from '../../../../ducks/domains';
+  getAddressBook,
+  getAddressBookEntry,
+  getMetaMaskAccountsOrdered,
+  currentNetworkTxListSelector,
+} from '../../../../selectors';
 import AddRecipient from './add-recipient.component';
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddRecipient);

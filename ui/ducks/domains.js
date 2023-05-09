@@ -1,16 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit';
-import log from 'loglevel';
-import networkMap from 'ethereum-ens-network-map';
-import { isConfusing } from 'unicode-confusables';
-import { isHexString } from 'ethereumjs-util';
 import { Web3Provider } from '@ethersproject/providers';
+import { createSlice } from '@reduxjs/toolkit';
+import networkMap from 'ethereum-ens-network-map';
+import { isHexString } from 'ethereumjs-util';
+import log from 'loglevel';
+import { isConfusing } from 'unicode-confusables';
 
-import { getCurrentChainId } from '../selectors';
 import {
   CHAIN_ID_TO_NETWORK_ID_MAP,
   NETWORK_IDS,
   NETWORK_ID_TO_ETHERS_NETWORK_NAME_MAP,
 } from '../../shared/constants/network';
+import {
+  BURN_ADDRESS,
+  isBurnAddress,
+  isValidHexAddress,
+} from '../../shared/modules/hexstring-utils';
+import { isValidDomainName } from '../helpers/utils/util';
 import {
   CONFUSING_ENS_ERROR,
   ENS_ILLEGAL_CHARACTER,
@@ -20,13 +25,8 @@ import {
   ENS_REGISTRATION_ERROR,
   ENS_UNKNOWN_ERROR,
 } from '../pages/send/send.constants';
-import { isValidDomainName } from '../helpers/utils/util';
+import { getCurrentChainId } from '../selectors';
 import { CHAIN_CHANGED } from '../store/actionConstants';
-import {
-  BURN_ADDRESS,
-  isBurnAddress,
-  isValidHexAddress,
-} from '../../shared/modules/hexstring-utils';
 
 // Local Constants
 const ZERO_X_ERROR_ADDRESS = '0x';

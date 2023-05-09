@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+
+import { getProviderConfig } from '../../../ducks/metamask/metamask';
 import {
   getSelectedIdentity,
   ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
@@ -10,7 +12,6 @@ import {
   getCustodyAccountDetails,
   getIsCustodianSupportedChain,
 } from '../../../selectors/institutional/selectors';
-import { getProviderConfig } from '../../../ducks/metamask/metamask';
 ///: END:ONLY_INCLUDE_IN
 import SelectedAccount from './selected-account.component';
 

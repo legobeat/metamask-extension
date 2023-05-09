@@ -1,22 +1,23 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import copyToClipboard from 'copy-to-clipboard';
 import { getBlockExplorerLink } from '@metamask/etherscan-link';
+import copyToClipboard from 'copy-to-clipboard';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import { SECOND } from '../../../../shared/constants/time';
+import { TransactionType } from '../../../../shared/constants/transaction';
+import { NETWORKS_ROUTE } from '../../../helpers/constants/routes';
+import { getURLHostName } from '../../../helpers/utils/util';
+import Button from '../../ui/button';
+import Disclosure from '../../ui/disclosure';
+import Popover from '../../ui/popover';
 import SenderToRecipient from '../../ui/sender-to-recipient';
 import { DEFAULT_VARIANT } from '../../ui/sender-to-recipient/sender-to-recipient.constants';
-import Disclosure from '../../ui/disclosure';
-import TransactionActivityLog from '../transaction-activity-log';
-import TransactionBreakdown from '../transaction-breakdown';
-import Button from '../../ui/button';
 import Tooltip from '../../ui/tooltip';
 import CancelButton from '../cancel-button';
-import Popover from '../../ui/popover';
-import { SECOND } from '../../../../shared/constants/time';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-import { TransactionType } from '../../../../shared/constants/transaction';
-import { getURLHostName } from '../../../helpers/utils/util';
+import TransactionActivityLog from '../transaction-activity-log';
+import TransactionBreakdown from '../transaction-breakdown';
 import TransactionDecoding from '../transaction-decoding';
-import { NETWORKS_ROUTE } from '../../../helpers/constants/routes';
 
 export default class TransactionListItemDetails extends PureComponent {
   static contextTypes = {

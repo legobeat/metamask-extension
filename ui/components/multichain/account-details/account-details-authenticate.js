@@ -1,12 +1,15 @@
+import PropTypes from 'prop-types';
 import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
+
 import {
   DISPLAY,
   FontWeight,
   SEVERITIES,
   TextVariant,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { exportAccount, hideWarning } from '../../../store/actions';
 import {
   BannerAlert,
   ButtonPrimary,
@@ -15,8 +18,6 @@ import {
   Text,
 } from '../../component-library';
 import Box from '../../ui/box/box';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { exportAccount, hideWarning } from '../../../store/actions';
 
 export const AccountDetailsAuthenticate = ({ address, onCancel }) => {
   const t = useI18nContext();

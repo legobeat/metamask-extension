@@ -1,32 +1,33 @@
-import punycode from 'punycode/punycode';
-import abi from 'human-standard-token-abi';
-import BigNumber from 'bignumber.js';
-import * as ethUtil from 'ethereumjs-util';
-import { DateTime } from 'luxon';
 import { getFormattedIpfsUrl } from '@metamask/assets-controllers';
 import slip44 from '@metamask/slip44';
-import * as lodash from 'lodash';
-import bowser from 'bowser';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { getSnapPrefix } from '@metamask/snaps-utils';
+import BigNumber from 'bignumber.js';
+import bowser from 'bowser';
+import * as ethUtil from 'ethereumjs-util';
+import abi from 'human-standard-token-abi';
+import * as lodash from 'lodash';
+import { DateTime } from 'luxon';
+import punycode from 'punycode/punycode';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
+
 ///: END:ONLY_INCLUDE_IN
-import { CHAIN_IDS } from '../../../shared/constants/network';
-import {
-  toChecksumHexAddress,
-  stripHexPrefix,
-} from '../../../shared/modules/hexstring-utils';
 import {
   TRUNCATED_ADDRESS_START_CHARS,
   TRUNCATED_NAME_CHAR_LIMIT,
   TRUNCATED_ADDRESS_END_CHARS,
 } from '../../../shared/constants/labels';
-import { Numeric } from '../../../shared/modules/Numeric';
-import { OUTDATED_BROWSER_VERSIONS } from '../constants/common';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
+import { CHAIN_IDS } from '../../../shared/constants/network';
 import {
   SNAPS_DERIVATION_PATHS,
   SNAPS_METADATA,
 } from '../../../shared/constants/snaps';
+import {
+  toChecksumHexAddress,
+  stripHexPrefix,
+} from '../../../shared/modules/hexstring-utils';
+import { Numeric } from '../../../shared/modules/Numeric';
+import { OUTDATED_BROWSER_VERSIONS } from '../constants/common';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 ///: END:ONLY_INCLUDE_IN
 
 // formatData :: ( date: <Unix Timestamp> ) -> String

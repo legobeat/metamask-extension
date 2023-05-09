@@ -1,11 +1,12 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-import Fuse from 'fuse.js';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Fuse from 'fuse.js';
+import PropTypes from 'prop-types';
+import React, { useState, useContext } from 'react';
+
+import { Icon, IconName } from '../../../../components/component-library';
+import SearchIcon from '../../../../components/ui/icon/search-icon';
 import TextField from '../../../../components/ui/text-field';
 import { I18nContext } from '../../../../contexts/i18n';
-import SearchIcon from '../../../../components/ui/icon/search-icon';
-import { Icon, IconName } from '../../../../components/component-library';
 
 export default function CustomContentSearch({
   onSearch,

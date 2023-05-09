@@ -1,8 +1,8 @@
-import React from 'react';
 import { useArgs } from '@storybook/client-api';
+import React from 'react';
 
-import README from './README.mdx';
 import SnapSettingsCard from '.';
+import README from './README.mdx';
 
 export default {
   title: 'Components/App/Snaps/SnapSettingsCard',

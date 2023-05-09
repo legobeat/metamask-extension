@@ -1,9 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import { ADD_POPULAR_CUSTOM_NETWORK } from '../../../../helpers/constants/routes';
+
 import Button from '../../../../components/ui/button';
+import { ADD_POPULAR_CUSTOM_NETWORK } from '../../../../helpers/constants/routes';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 
 const NetworksFormSubheader = ({ addNewNetwork }) => {
   const t = useI18nContext();

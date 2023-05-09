@@ -1,21 +1,12 @@
-import { Web3Provider } from '@ethersproject/providers';
 import { Contract } from '@ethersproject/contracts';
-import log from 'loglevel';
-import BigNumber from 'bignumber.js';
+import { Web3Provider } from '@ethersproject/providers';
 import { ObservableStore } from '@metamask/obs-store';
-import { mapValues, cloneDeep } from 'lodash';
+import BigNumber from 'bignumber.js';
 import abi from 'human-standard-token-abi';
-import {
-  decGWEIToHexWEI,
-  sumHexes,
-} from '../../../shared/modules/conversion.utils';
-import {
-  DEFAULT_ERC20_APPROVE_GAS,
-  QUOTES_EXPIRED_ERROR,
-  QUOTES_NOT_AVAILABLE_ERROR,
-  SWAPS_FETCH_ORDER_CONFLICT,
-  SWAPS_CHAINID_CONTRACT_ADDRESS_MAP,
-} from '../../../shared/constants/swaps';
+import { mapValues, cloneDeep } from 'lodash';
+import log from 'loglevel';
+
+import { EtherDenomination } from '../../../shared/constants/common';
 import { GasEstimateTypes } from '../../../shared/constants/gas';
 import { CHAIN_IDS, NetworkStatus } from '../../../shared/constants/network';
 import {
@@ -23,24 +14,31 @@ import {
   FALLBACK_SMART_TRANSACTIONS_DEADLINE,
   FALLBACK_SMART_TRANSACTIONS_MAX_FEE_MULTIPLIER,
 } from '../../../shared/constants/smartTransactions';
-
-import { isSwapsDefaultTokenAddress } from '../../../shared/modules/swaps.utils';
-
+import {
+  DEFAULT_ERC20_APPROVE_GAS,
+  QUOTES_EXPIRED_ERROR,
+  QUOTES_NOT_AVAILABLE_ERROR,
+  SWAPS_FETCH_ORDER_CONFLICT,
+  SWAPS_CHAINID_CONTRACT_ADDRESS_MAP,
+} from '../../../shared/constants/swaps';
+import { MINUTE, SECOND } from '../../../shared/constants/time';
+import fetchWithCache from '../../../shared/lib/fetch-with-cache';
 import {
   fetchTradesInfo as defaultFetchTradesInfo,
   getBaseApi,
 } from '../../../shared/lib/swaps-utils';
-import fetchWithCache from '../../../shared/lib/fetch-with-cache';
-import { MINUTE, SECOND } from '../../../shared/constants/time';
-import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
 import {
   calcGasTotal,
   calcTokenAmount,
 } from '../../../shared/lib/transactions-controller-utils';
-import fetchEstimatedL1Fee from '../../../ui/helpers/utils/optimism/fetchEstimatedL1Fee';
-
+import {
+  decGWEIToHexWEI,
+  sumHexes,
+} from '../../../shared/modules/conversion.utils';
 import { Numeric } from '../../../shared/modules/Numeric';
-import { EtherDenomination } from '../../../shared/constants/common';
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
+import { isSwapsDefaultTokenAddress } from '../../../shared/modules/swaps.utils';
+import fetchEstimatedL1Fee from '../../../ui/helpers/utils/optimism/fetchEstimatedL1Fee';
 
 // The MAX_GAS_LIMIT is a number that is higher than the maximum gas costs we have observed on any aggregator
 const MAX_GAS_LIMIT = 2500000;

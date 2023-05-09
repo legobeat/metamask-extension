@@ -1,5 +1,6 @@
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { DialogType } from '@metamask/rpc-methods';
+
 ///: END:ONLY_INCLUDE_IN
 import { RestrictedMethods } from './permissions';
 

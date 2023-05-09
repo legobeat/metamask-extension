@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { DetectedTokensBanner } from './detected-token-banner';
 
 export default {

@@ -1,5 +1,7 @@
 const { strict: assert } = require('assert');
 const { By } = require('selenium-webdriver');
+
+const FixtureBuilder = require('../fixture-builder');
 const {
   convertToHexValue,
   withFixtures,
@@ -9,7 +11,6 @@ const {
   importWrongSRPOnboardingFlow,
   testSRPDropdownIterations,
 } = require('../helpers');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('MetaMask onboarding', function () {
   const testSeedPhrase =

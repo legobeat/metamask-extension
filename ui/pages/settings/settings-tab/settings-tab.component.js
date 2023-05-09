@@ -1,24 +1,24 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
+import locales from '../../../../app/_locales/index.json';
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import { ThemeType } from '../../../../shared/constants/preferences';
+import { Text } from '../../../components/component-library';
+import Dropdown from '../../../components/ui/dropdown';
+import BlockieIdenticon from '../../../components/ui/identicon/blockieIdenticon';
+import Jazzicon from '../../../components/ui/jazzicon';
+import ToggleButton from '../../../components/ui/toggle-button';
 import availableCurrencies from '../../../helpers/constants/available-conversions.json';
 import {
   TextVariant,
   TextColor,
 } from '../../../helpers/constants/design-system';
-import Dropdown from '../../../components/ui/dropdown';
-import ToggleButton from '../../../components/ui/toggle-button';
-import locales from '../../../../app/_locales/index.json';
-import Jazzicon from '../../../components/ui/jazzicon';
-import BlockieIdenticon from '../../../components/ui/identicon/blockieIdenticon';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-
 import {
   getNumberOfSettingsInSection,
   handleSettingsRefs,
 } from '../../../helpers/utils/settings-search';
-import { ThemeType } from '../../../../shared/constants/preferences';
-import { Text } from '../../../components/component-library';
 
 const sortedCurrencies = availableCurrencies.sort((a, b) => {
   return a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase());

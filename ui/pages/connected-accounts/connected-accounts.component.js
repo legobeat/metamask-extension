@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import Popover from '../../components/ui/popover';
+
 import ConnectedAccountsList from '../../components/app/connected-accounts-list';
 import ConnectedAccountsPermissions from '../../components/app/connected-accounts-permissions';
+import Popover from '../../components/ui/popover';
 import { getURLHost } from '../../helpers/utils/util';
 
 export default class ConnectedAccounts extends PureComponent {

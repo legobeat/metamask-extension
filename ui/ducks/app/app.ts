@@ -1,5 +1,6 @@
-import { AnyAction, Action } from 'redux';
 import { PayloadAction } from '@reduxjs/toolkit';
+import { AnyAction, Action } from 'redux';
+
 import {
   WebHIDConnectedStatuses,
   HardwareTransportStates,

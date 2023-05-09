@@ -1,17 +1,14 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { useSelector } from 'react-redux';
-import { TransactionEnvelopeType } from '../../../shared/constants/transaction';
+
 import {
   GasRecommendations,
   EditGasModes,
 } from '../../../shared/constants/gas';
-
+import { TransactionEnvelopeType } from '../../../shared/constants/transaction';
 import { ETH, PRIMARY } from '../../helpers/constants/common';
-
-import { useUserPreferencedCurrency } from '../useUserPreferencedCurrency';
 import { useGasFeeEstimates } from '../useGasFeeEstimates';
-import { useGasFeeInputs } from './useGasFeeInputs';
-
+import { useUserPreferencedCurrency } from '../useUserPreferencedCurrency';
 import {
   LEGACY_GAS_ESTIMATE_RETURN_VALUE,
   FEE_MARKET_ESTIMATE_RETURN_VALUE,
@@ -20,6 +17,7 @@ import {
   configureLegacy,
   generateUseSelectorRouter,
 } from './test-utils';
+import { useGasFeeInputs } from './useGasFeeInputs';
 
 jest.mock('../useUserPreferencedCurrency', () => ({
   useUserPreferencedCurrency: jest.fn(),

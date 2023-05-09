@@ -1,9 +1,10 @@
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { fireEvent, screen, waitFor } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
-import { CHAIN_IDS } from '../../../../shared/constants/network';
+
 import { KeyringType } from '../../../../shared/constants/keyring';
+import { CHAIN_IDS } from '../../../../shared/constants/network';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import MenuBar from './menu-bar';
 
 const initState = {

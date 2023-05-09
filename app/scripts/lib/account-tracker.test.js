@@ -1,8 +1,7 @@
 import EventEmitter from 'events';
 
-import { SINGLE_CALL_BALANCES_ADDRESS } from '../constants/contracts';
-
 import { createTestProviderTools } from '../../../test/stub/provider';
+import { SINGLE_CALL_BALANCES_ADDRESS } from '../constants/contracts';
 import AccountTracker from './account-tracker';
 
 const noop = () => true;

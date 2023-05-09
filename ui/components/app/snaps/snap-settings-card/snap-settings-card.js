@@ -1,7 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
-import Box from '../../../ui/box';
+import React from 'react';
 
 import {
   Color,
@@ -13,6 +11,7 @@ import {
   TextVariant,
 } from '../../../../helpers/constants/design-system';
 import { Icon, IconName, IconSize, Text } from '../../../component-library';
+import Box from '../../../ui/box';
 import SnapAvatar from '../snap-avatar';
 
 const SnapSettingsCard = ({ name, packageName, onClick, snapId }) => {

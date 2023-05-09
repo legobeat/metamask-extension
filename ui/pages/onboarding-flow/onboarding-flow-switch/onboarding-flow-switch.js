@@ -1,6 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+
+import {
+  getCompletedOnboarding,
+  getIsInitialized,
+  getIsUnlocked,
+  getSeedPhraseBackedUp,
+} from '../../../ducks/metamask/metamask';
 import {
   DEFAULT_ROUTE,
   ONBOARDING_COMPLETION_ROUTE,
@@ -13,12 +20,6 @@ import {
   ONBOARDING_WELCOME_ROUTE, // eslint-disable-line no-unused-vars
   ///: END:ONLY_INCLUDE_IN
 } from '../../../helpers/constants/routes';
-import {
-  getCompletedOnboarding,
-  getIsInitialized,
-  getIsUnlocked,
-  getSeedPhraseBackedUp,
-} from '../../../ducks/metamask/metamask';
 
 export default function OnboardingFlowSwitch() {
   /* eslint-disable prefer-const */

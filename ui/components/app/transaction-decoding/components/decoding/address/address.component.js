@@ -1,14 +1,15 @@
+import copyToClipboard from 'copy-to-clipboard';
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import copyToClipboard from 'copy-to-clipboard';
+
 import { shortenAddress } from '../../../../../../helpers/utils/util';
-import Identicon from '../../../../../ui/identicon';
 import { useI18nContext } from '../../../../../../hooks/useI18nContext';
 import {
   getMemoizedMetadataContractName,
   getMemoizedAddressBook,
 } from '../../../../../../selectors';
+import Identicon from '../../../../../ui/identicon';
 import NicknamePopovers from '../../../../modals/nickname-popovers';
 
 const Address = ({

@@ -1,23 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { ObjectInspector } from 'react-inspector';
-import LedgerInstructionField from '../ledger-instruction-field';
 
 import { MESSAGE_TYPE } from '../../../../shared/constants/app';
-import {
-  getURLHostName,
-  sanitizeString,
-  ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
-  shortenAddress,
-  ///: END:ONLY_INCLUDE_IN
-} from '../../../helpers/utils/util';
+import { EtherDenomination } from '../../../../shared/constants/common';
+import { NETWORK_TYPES } from '../../../../shared/constants/network';
+import { getValueFromWeiHex } from '../../../../shared/modules/conversion.utils';
 import { stripHexPrefix } from '../../../../shared/modules/hexstring-utils';
-import Button from '../../ui/button';
-import SiteOrigin from '../../ui/site-origin';
-import NetworkAccountBalanceHeader from '../network-account-balance-header';
-import Typography from '../../ui/typography/typography';
-import { PageContainerFooter } from '../../ui/page-container';
+import { Numeric } from '../../../../shared/modules/Numeric';
 import {
   TypographyVariant,
   FONT_WEIGHT,
@@ -31,18 +22,27 @@ import {
   BackgroundColor,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../helpers/constants/design-system';
-import { NETWORK_TYPES } from '../../../../shared/constants/network';
-import { Numeric } from '../../../../shared/modules/Numeric';
-import { EtherDenomination } from '../../../../shared/constants/common';
-import ConfirmPageContainerNavigation from '../confirm-page-container/confirm-page-container-navigation';
-import SecurityProviderBannerMessage from '../security-provider-banner-message/security-provider-banner-message';
-import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';
 import { formatCurrency } from '../../../helpers/utils/confirm-tx.util';
-import { getValueFromWeiHex } from '../../../../shared/modules/conversion.utils';
-
-///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
+import {
+  getURLHostName,
+  sanitizeString,
+  ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
+  shortenAddress,
+  ///: END:ONLY_INCLUDE_IN
+} from '../../../helpers/utils/util';
 import { Icon, IconName, Text } from '../../component-library';
 import Box from '../../ui/box/box';
+import Button from '../../ui/button';
+import { PageContainerFooter } from '../../ui/page-container';
+import SiteOrigin from '../../ui/site-origin';
+import Typography from '../../ui/typography/typography';
+import ConfirmPageContainerNavigation from '../confirm-page-container/confirm-page-container-navigation';
+import LedgerInstructionField from '../ledger-instruction-field';
+import NetworkAccountBalanceHeader from '../network-account-balance-header';
+import SecurityProviderBannerMessage from '../security-provider-banner-message/security-provider-banner-message';
+import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';
+
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 ///: END:ONLY_INCLUDE_IN
 import SignatureRequestOriginalWarning from './signature-request-original-warning';
 

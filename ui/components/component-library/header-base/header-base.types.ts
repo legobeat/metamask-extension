@@ -1,4 +1,5 @@
 import React from 'react';
+
 import type { BoxProps } from '../../ui/box/box.d';
 
 export interface HeaderBaseProps extends BoxProps {

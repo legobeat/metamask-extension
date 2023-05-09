@@ -1,12 +1,9 @@
+import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import { getCurrentKeyring, getSelectedAddress } from '../../../selectors';
-import { getInteractiveReplacementToken } from '../../../selectors/institutional/selectors';
-import { getIsUnlocked } from '../../../ducks/metamask/metamask';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { mmiActionsFactory } from '../../../store/institutional/institution-background';
+
 import { sha256 } from '../../../../shared/modules/hash.utils';
+import { getIsUnlocked } from '../../../ducks/metamask/metamask';
 import {
   Size,
   IconColor,
@@ -18,6 +15,10 @@ import {
   TextVariant,
   BackgroundColor,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { getCurrentKeyring, getSelectedAddress } from '../../../selectors';
+import { getInteractiveReplacementToken } from '../../../selectors/institutional/selectors';
+import { mmiActionsFactory } from '../../../store/institutional/institution-background';
 import {
   Icon,
   IconName,
@@ -25,7 +26,6 @@ import {
   ButtonLink,
   Text,
 } from '../../component-library';
-
 import Box from '../../ui/box';
 
 const InteractiveReplacementTokenNotification = ({ isVisible }) => {

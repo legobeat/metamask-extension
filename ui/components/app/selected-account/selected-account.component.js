@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import copyToClipboard from 'copy-to-clipboard';
-import { shortenAddress } from '../../../helpers/utils/util';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-import Tooltip from '../../ui/tooltip';
-import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
-import { SECOND } from '../../../../shared/constants/time';
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import { getEnvironmentType } from '../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
-import CustodyLabels from '../../institutional/custody-labels/custody-labels';
+import { SECOND } from '../../../../shared/constants/time';
+import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
 ///: END:ONLY_INCLUDE_IN
-import { Icon, IconName, IconSize } from '../../component-library';
 import { IconColor } from '../../../helpers/constants/design-system';
+import { shortenAddress } from '../../../helpers/utils/util';
+import { Icon, IconName, IconSize } from '../../component-library';
+import CustodyLabels from '../../institutional/custody-labels/custody-labels';
+import Tooltip from '../../ui/tooltip';
 
 class SelectedAccount extends Component {
   state = {

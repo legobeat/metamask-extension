@@ -1,19 +1,12 @@
-import React, { PureComponent } from 'react';
 import { memoize } from 'lodash';
 import PropTypes from 'prop-types';
-import LedgerInstructionField from '../ledger-instruction-field';
-import {
-  sanitizeMessage,
-  getURLHostName,
-  ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
-  shortenAddress,
-  ///: END:ONLY_INCLUDE_IN
-} from '../../../helpers/utils/util';
+import React, { PureComponent } from 'react';
+
+import { EtherDenomination } from '../../../../shared/constants/common';
 import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-import SiteOrigin from '../../ui/site-origin';
-import Button from '../../ui/button';
-import Typography from '../../ui/typography/typography';
-import ContractDetailsModal from '../modals/contract-details-modal/contract-details-modal';
+import { NETWORK_TYPES } from '../../../../shared/constants/network';
+import { getValueFromWeiHex } from '../../../../shared/modules/conversion.utils';
+import { Numeric } from '../../../../shared/modules/Numeric';
 import {
   TypographyVariant,
   FONT_WEIGHT,
@@ -27,18 +20,26 @@ import {
   BackgroundColor,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../helpers/constants/design-system';
-import NetworkAccountBalanceHeader from '../network-account-balance-header';
-import { NETWORK_TYPES } from '../../../../shared/constants/network';
-import { Numeric } from '../../../../shared/modules/Numeric';
-import { EtherDenomination } from '../../../../shared/constants/common';
-import ConfirmPageContainerNavigation from '../confirm-page-container/confirm-page-container-navigation';
-import SecurityProviderBannerMessage from '../security-provider-banner-message/security-provider-banner-message';
-import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';
 import { formatCurrency } from '../../../helpers/utils/confirm-tx.util';
-import { getValueFromWeiHex } from '../../../../shared/modules/conversion.utils';
-///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
+import {
+  sanitizeMessage,
+  getURLHostName,
+  ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
+  shortenAddress,
+  ///: END:ONLY_INCLUDE_IN
+} from '../../../helpers/utils/util';
 import { Icon, IconName, Text } from '../../component-library';
 import Box from '../../ui/box/box';
+import Button from '../../ui/button';
+import SiteOrigin from '../../ui/site-origin';
+import Typography from '../../ui/typography/typography';
+import ConfirmPageContainerNavigation from '../confirm-page-container/confirm-page-container-navigation';
+import LedgerInstructionField from '../ledger-instruction-field';
+import ContractDetailsModal from '../modals/contract-details-modal/contract-details-modal';
+import NetworkAccountBalanceHeader from '../network-account-balance-header';
+import SecurityProviderBannerMessage from '../security-provider-banner-message/security-provider-banner-message';
+import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 ///: END:ONLY_INCLUDE_IN
 
 import Footer from './signature-request-footer';

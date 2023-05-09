@@ -1,10 +1,9 @@
 import React from 'react';
-import InfoTooltip from '../../ui/info-tooltip/info-tooltip';
 
-import { TextColor } from '../../../helpers/constants/design-system';
-
-import README from './README.mdx';
 import TransactionDetailItem from '.';
+import { TextColor } from '../../../helpers/constants/design-system';
+import InfoTooltip from '../../ui/info-tooltip/info-tooltip';
+import README from './README.mdx';
 
 export default {
   title: 'Components/App/TransactionDetailItem',

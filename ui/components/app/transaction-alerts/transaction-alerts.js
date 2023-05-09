@@ -1,15 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { PriorityLevels } from '../../../../shared/constants/gas';
-import { submittedPendingTransactionsSelector } from '../../../selectors';
 import { useGasFeeContext } from '../../../contexts/gasFee';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { BannerAlert, ButtonLink, Text } from '../../component-library';
-import SimulationErrorMessage from '../../ui/simulation-error-message';
 import { SEVERITIES } from '../../../helpers/constants/design-system';
 import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { submittedPendingTransactionsSelector } from '../../../selectors';
+import { BannerAlert, ButtonLink, Text } from '../../component-library';
+import SimulationErrorMessage from '../../ui/simulation-error-message';
 
 const TransactionAlerts = ({
   userAcknowledgedGasMissing,

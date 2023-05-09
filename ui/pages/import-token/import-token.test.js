@@ -1,12 +1,13 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
+import React from 'react';
+
 import { renderWithProvider } from '../../../test/lib/render-helpers';
-import configureStore from '../../store/store';
 import {
   setPendingTokens,
   clearPendingTokens,
   getTokenStandardAndDetails,
 } from '../../store/actions';
+import configureStore from '../../store/store';
 import ImportToken from './import-token.container';
 
 jest.mock('../../store/actions', () => ({

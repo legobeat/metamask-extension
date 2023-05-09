@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SendRowWrapper from '../send-row-wrapper';
+import React, { Component } from 'react';
+
 import AdvancedGasInputs from '../../../../components/app/advanced-gas-inputs';
 import { GAS_INPUT_MODES } from '../../../../ducks/send';
+import SendRowWrapper from '../send-row-wrapper';
 
 export default class SendGasRow extends Component {
   static propTypes = {

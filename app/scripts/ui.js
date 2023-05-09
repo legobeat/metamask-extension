@@ -4,32 +4,32 @@ import '@formatjs/intl-relativetimeformat/polyfill';
 // dev only, "react-devtools" import is skipped in prod builds
 import 'react-devtools';
 
+import EthQuery from 'eth-query';
+import Eth from 'ethjs';
 import PortStream from 'extension-port-stream';
+import log from 'loglevel';
+import StreamProvider from 'web3-stream-provider';
 import browser from 'webextension-polyfill';
 
-import Eth from 'ethjs';
-import EthQuery from 'eth-query';
-import StreamProvider from 'web3-stream-provider';
-import log from 'loglevel';
-import launchMetaMaskUi, { updateBackgroundConnection } from '../../ui';
 import {
   ENVIRONMENT_TYPE_FULLSCREEN,
   ENVIRONMENT_TYPE_POPUP,
   PLATFORM_FIREFOX,
 } from '../../shared/constants/app';
-import { isManifestV3 } from '../../shared/modules/mv3.utils';
-import { checkForLastErrorAndLog } from '../../shared/modules/browser-runtime.utils';
-import { SUPPORT_LINK } from '../../shared/lib/ui-utils';
 import {
   getErrorHtml,
   ///: BEGIN:ONLY_INCLUDE_IN(desktop)
   registerDesktopErrorActions,
   ///: END:ONLY_INCLUDE_IN
 } from '../../shared/lib/error-utils';
-import ExtensionPlatform from './platforms/extension';
+import { SUPPORT_LINK } from '../../shared/lib/ui-utils';
+import { checkForLastErrorAndLog } from '../../shared/modules/browser-runtime.utils';
+import { isManifestV3 } from '../../shared/modules/mv3.utils';
+import launchMetaMaskUi, { updateBackgroundConnection } from '../../ui';
+import metaRPCClientFactory from './lib/metaRPCClientFactory';
 import { setupMultiplex } from './lib/stream-utils';
 import { getEnvironmentType, getPlatform } from './lib/util';
-import metaRPCClientFactory from './lib/metaRPCClientFactory';
+import ExtensionPlatform from './platforms/extension';
 
 const container = document.getElementById('app-content');
 

@@ -1,16 +1,14 @@
-import React from 'react';
 import { useArgs } from '@storybook/client-api';
+import React from 'react';
 
 import {
   Size,
   Color,
   BorderRadius,
 } from '../../../helpers/constants/design-system';
-
 import { TEXT_FIELD_SIZES, TEXT_FIELD_TYPES } from '../text-field';
-
-import { TextFieldSearch } from './text-field-search';
 import README from './README.mdx';
+import { TextFieldSearch } from './text-field-search';
 
 const marginSizeControlOptions = [
   undefined,

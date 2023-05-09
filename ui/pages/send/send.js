@@ -1,6 +1,11 @@
 import React, { useEffect, useCallback, useContext, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
+
+import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
+import { AssetType } from '../../../shared/constants/transaction';
+import { MetaMetricsContext } from '../../contexts/metametrics';
+import { getSendHexDataFeatureFlagState } from '../../ducks/metamask/metamask';
 import {
   addHistoryEntry,
   getDraftTransactionExists,
@@ -16,16 +21,12 @@ import {
   updateRecipientUserInput,
 } from '../../ducks/send';
 import { isCustomPriceExcessive } from '../../selectors';
-import { getSendHexDataFeatureFlagState } from '../../ducks/metamask/metamask';
 import { showQrScanner } from '../../store/actions';
-import { MetaMetricsContext } from '../../contexts/metametrics';
-import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
-import { AssetType } from '../../../shared/constants/transaction';
-import SendHeader from './send-header';
-import AddRecipient from './send-content/add-recipient';
 import SendContent from './send-content';
-import SendFooter from './send-footer';
+import AddRecipient from './send-content/add-recipient';
 import DomainInput from './send-content/add-recipient/domain-input';
+import SendFooter from './send-footer';
+import SendHeader from './send-header';
 
 const sendSliceIsCustomPriceExcessive = (state) =>
   isCustomPriceExcessive(state, true);

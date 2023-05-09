@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   BorderColor,
   Size,
@@ -11,12 +12,9 @@ import {
   IconColor,
   TextColor,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box/box';
-
-import { IconName, Icon } from '../icon';
 import { AvatarBase } from '../avatar-base';
-
+import { IconName, Icon } from '../icon';
 import { AVATAR_ICON_SIZES } from './avatar-icon.constants';
 
 export const AvatarIcon = React.forwardRef(

@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
+import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
+
 import { I18nContext } from '../../../../contexts/i18n';
-import Box from '../../../ui/box';
-import Typography from '../../../ui/typography';
 import {
   DISPLAY,
   FONT_WEIGHT,
@@ -16,6 +15,8 @@ import {
   BorderRadius,
   TextColor,
 } from '../../../../helpers/constants/design-system';
+import Box from '../../../ui/box';
+import Typography from '../../../ui/typography';
 import SignatureRequestData from '../signature-request-data';
 
 export default function SignatureRequestMessage({

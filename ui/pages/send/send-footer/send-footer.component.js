@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { isEqual } from 'lodash';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import PageContainerFooter from '../../../components/ui/page-container/page-container-footer';
+import { SEND_STAGES } from '../../../ducks/send';
 import {
   CONFIRM_TRANSACTION_ROUTE,
   DEFAULT_ROUTE,
 } from '../../../helpers/constants/routes';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-import { SEND_STAGES } from '../../../ducks/send';
 import { INSUFFICIENT_FUNDS_ERROR } from '../send.constants';
 
 export default class SendFooter extends Component {

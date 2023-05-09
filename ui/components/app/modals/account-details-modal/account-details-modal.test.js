@@ -1,14 +1,15 @@
+import { fireEvent } from '@testing-library/react';
 import React from 'react';
 import configureMockState from 'redux-mock-store';
-import { fireEvent } from '@testing-library/react';
 import thunk from 'redux-thunk';
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
-import mockState from '../../../../../test/data/mock-state.json';
+
+import AccountDetailsModal from '.';
 import {
   etherscanViewOn,
   exportPrivateKey,
 } from '../../../../../app/_locales/en/messages.json';
-import AccountDetailsModal from '.';
+import mockState from '../../../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 
 const mockShowModal = jest.fn();
 

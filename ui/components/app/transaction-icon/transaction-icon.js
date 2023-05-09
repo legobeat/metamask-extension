@@ -1,18 +1,19 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import Approve from '../../ui/icon/approve-icon.component';
-import Interaction from '../../ui/icon/interaction-icon.component';
-import Receive from '../../ui/icon/receive-icon.component';
-import Send from '../../ui/icon/send-icon.component';
-import Sign from '../../ui/icon/sign-icon.component';
-import Swap from '../../ui/icon/swap-icon-for-list.component';
+
 import {
   TransactionGroupCategory,
   TransactionGroupStatus,
   TransactionStatus,
 } from '../../../../shared/constants/transaction';
 import { captureSingleException } from '../../../store/actions';
+import Approve from '../../ui/icon/approve-icon.component';
+import Interaction from '../../ui/icon/interaction-icon.component';
+import Receive from '../../ui/icon/receive-icon.component';
+import Send from '../../ui/icon/send-icon.component';
+import Sign from '../../ui/icon/sign-icon.component';
+import Swap from '../../ui/icon/swap-icon-for-list.component';
 
 const ICON_MAP = {
   [TransactionGroupCategory.approval]: Approve,

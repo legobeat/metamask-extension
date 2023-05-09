@@ -2,14 +2,13 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { renderWithProvider } from '../../../test/lib/render-helpers';
-import { setBackgroundConnection } from '../../../test/jest';
-import { INITIAL_SEND_STATE_FOR_EXISTING_DRAFT } from '../../../test/jest/mocks';
 import { GasEstimateTypes } from '../../../shared/constants/gas';
 import { KeyringType } from '../../../shared/constants/keyring';
 import { CHAIN_IDS } from '../../../shared/constants/network';
+import { setBackgroundConnection } from '../../../test/jest';
+import { INITIAL_SEND_STATE_FOR_EXISTING_DRAFT } from '../../../test/jest/mocks';
+import { renderWithProvider } from '../../../test/lib/render-helpers';
 import { domainInitialState } from '../../ducks/domains';
-
 import ConfirmTransactionBase from './confirm-transaction-base.container';
 
 const middleware = [thunk];

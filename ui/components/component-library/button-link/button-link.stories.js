@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { IconName } from '..';
 import {
   AlignItems,
   BorderColor,
@@ -9,7 +11,6 @@ import {
   TextColor,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box/box';
-import { IconName } from '..';
 import { Text } from '../text';
 import { ButtonLink } from './button-link';
 import { BUTTON_LINK_SIZES } from './button-link.constants';

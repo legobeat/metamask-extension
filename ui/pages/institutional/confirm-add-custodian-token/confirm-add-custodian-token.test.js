@@ -1,6 +1,7 @@
-import React from 'react';
 import { screen, fireEvent } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
+
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import ConfirmAddCustodianToken from './confirm-add-custodian-token';
 

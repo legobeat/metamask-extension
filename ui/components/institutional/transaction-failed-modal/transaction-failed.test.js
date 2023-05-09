@@ -1,9 +1,10 @@
-import React from 'react';
 import { screen, fireEvent } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
-import testData from '../../../../.storybook/test-data';
+
 import TransactionFailed from '.';
+import testData from '../../../../.storybook/test-data';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 const mockErrorMessage = 'Something went wrong';
 

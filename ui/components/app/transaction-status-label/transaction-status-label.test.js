@@ -1,8 +1,9 @@
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+
 import TransactionStatusLabel from '.';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 describe('TransactionStatusLabel Component', () => {
   const createMockStore = configureMockStore([thunk]);

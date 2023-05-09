@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
+
+import { TextField, Icon, IconName, IconSize } from '..';
 import {
   DISPLAY,
   FLEX_DIRECTION,
   AlignItems,
   IconColor,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box';
-
-import { TextField, Icon, IconName, IconSize } from '..';
-
 import { Label } from './label';
-
 import README from './README.mdx';
 
 export default {

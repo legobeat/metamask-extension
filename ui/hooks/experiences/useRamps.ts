@@ -1,6 +1,7 @@
+import type { Hex } from '@metamask/utils';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import type { Hex } from '@metamask/utils';
+
 import { ChainId, CHAIN_IDS } from '../../../shared/constants/network';
 import { getCurrentChainId } from '../../selectors';
 

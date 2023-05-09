@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import { unconfirmedTransactionsListSelector } from '../../selectors';
 import ConfirmTransactionSwitch from './confirm-transaction-switch.component';
 

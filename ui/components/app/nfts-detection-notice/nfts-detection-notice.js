@@ -1,8 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Box from '../../ui/box';
-import Dialog from '../../ui/dialog';
-import Typography from '../../ui/typography/typography';
+
 import {
   TypographyVariant,
   TEXT_ALIGN,
@@ -10,9 +8,12 @@ import {
   DISPLAY,
   TextColor,
 } from '../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import Button from '../../ui/button';
 import { EXPERIMENTAL_ROUTE } from '../../../helpers/constants/routes';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import Box from '../../ui/box';
+import Button from '../../ui/button';
+import Dialog from '../../ui/dialog';
+import Typography from '../../ui/typography/typography';
 
 export default function NftsDetectionNotice() {
   const t = useI18nContext();

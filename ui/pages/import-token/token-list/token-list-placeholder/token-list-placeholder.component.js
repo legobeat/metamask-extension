@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import Button from '../../../../components/ui/button';
 import IconTokenSearch from '../../../../components/ui/icon/icon-token-search';
 import ZENDESK_URLS from '../../../../helpers/constants/zendesk-url';

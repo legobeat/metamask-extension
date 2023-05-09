@@ -1,3 +1,6 @@
+import { produce } from 'immer';
+import { isEqual } from 'lodash';
+import PropTypes from 'prop-types';
 import React, {
   useCallback,
   useEffect,
@@ -5,23 +8,26 @@ import React, {
   useReducer,
   useState,
 } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { isEqual } from 'lodash';
-import { produce } from 'immer';
 
 import { MESSAGE_TYPE } from '../../../shared/constants/app';
-import Box from '../../components/ui/box';
-import MetaMaskTemplateRenderer from '../../components/app/metamask-template-renderer';
 import ConfirmationWarningModal from '../../components/app/confirmation-warning-modal';
-import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import MetaMaskTemplateRenderer from '../../components/app/metamask-template-renderer';
+import NetworkDisplay from '../../components/app/network-display/network-display';
+import SnapAuthorship from '../../components/app/snaps/snap-authorship';
+import { Icon, IconName } from '../../components/component-library';
+import Box from '../../components/ui/box';
+import Callout from '../../components/ui/callout';
+import SiteOrigin from '../../components/ui/site-origin';
 import {
   AlignItems,
   FLEX_DIRECTION,
   Size,
   TextColor,
 } from '../../helpers/constants/design-system';
+import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import { getSnapName } from '../../helpers/utils/util';
 import { useI18nContext } from '../../hooks/useI18nContext';
 import { useOriginMetadata } from '../../hooks/useOriginMetadata';
 import {
@@ -31,13 +37,7 @@ import {
   getUnapprovedTemplatedConfirmations,
   getUnapprovedTxCount,
 } from '../../selectors';
-import NetworkDisplay from '../../components/app/network-display/network-display';
-import Callout from '../../components/ui/callout';
-import SiteOrigin from '../../components/ui/site-origin';
-import { Icon, IconName } from '../../components/component-library';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import SnapAuthorship from '../../components/app/snaps/snap-authorship';
-import { getSnapName } from '../../helpers/utils/util';
 ///: END:ONLY_INCLUDE_IN
 import ConfirmationFooter from './components/confirmation-footer';
 import {

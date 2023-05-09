@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { MultichainImportTokenLink } from './multichain-import-token-link';
 
 export default {

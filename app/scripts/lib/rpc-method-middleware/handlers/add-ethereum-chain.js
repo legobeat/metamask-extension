@@ -1,15 +1,16 @@
 import { ethErrors, errorCodes } from 'eth-rpc-errors';
-import validUrl from 'valid-url';
 import { omit } from 'lodash';
+import validUrl from 'valid-url';
+
 import {
   MESSAGE_TYPE,
   UNKNOWN_TICKER_SYMBOL,
 } from '../../../../../shared/constants/app';
+import { MetaMetricsNetworkEventSource } from '../../../../../shared/constants/metametrics';
 import {
   isPrefixedFormattedHexString,
   isSafeChainId,
 } from '../../../../../shared/modules/network.utils';
-import { MetaMetricsNetworkEventSource } from '../../../../../shared/constants/metametrics';
 
 const addEthereumChain = {
   methodNames: [MESSAGE_TYPE.ADD_ETHEREUM_CHAIN],

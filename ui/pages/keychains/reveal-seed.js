@@ -1,26 +1,13 @@
+import qrCode from 'qrcode-generator';
 import React, { useContext, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import qrCode from 'qrcode-generator';
-import { requestRevealSeedWords, showModal } from '../../store/actions';
-import ExportTextContainer from '../../components/ui/export-text-container';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventKeyType,
   MetaMetricsEventName,
 } from '../../../shared/constants/metametrics';
-import {
-  TextVariant,
-  SEVERITIES,
-  Size,
-  BLOCK_SIZES,
-  JustifyContent,
-  AlignItems,
-  DISPLAY,
-} from '../../helpers/constants/design-system';
-
-import Box from '../../components/ui/box';
 import {
   Text,
   Label,
@@ -33,10 +20,23 @@ import {
   TEXT_FIELD_TYPES,
   BUTTON_SIZES,
 } from '../../components/component-library';
-import { useI18nContext } from '../../hooks/useI18nContext';
-import { MetaMetricsContext } from '../../contexts/metametrics';
-import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
+import Box from '../../components/ui/box';
+import ExportTextContainer from '../../components/ui/export-text-container';
 import { Tabs, Tab } from '../../components/ui/tabs';
+import { MetaMetricsContext } from '../../contexts/metametrics';
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
+import {
+  TextVariant,
+  SEVERITIES,
+  Size,
+  BLOCK_SIZES,
+  JustifyContent,
+  AlignItems,
+  DISPLAY,
+} from '../../helpers/constants/design-system';
+import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
+import { useI18nContext } from '../../hooks/useI18nContext';
+import { requestRevealSeedWords, showModal } from '../../store/actions';
 
 const PASSWORD_PROMPT_SCREEN = 'PASSWORD_PROMPT_SCREEN';
 const REVEAL_SEED_SCREEN = 'REVEAL_SEED_SCREEN';

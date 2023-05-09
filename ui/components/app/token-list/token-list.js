@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { isEqual } from 'lodash';
-
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import TokenCell from '../token-cell';
+
+import { getTokens } from '../../../ducks/metamask/metamask';
 import { useI18nContext } from '../../../hooks/useI18nContext';
 import { useTokenTracker } from '../../../hooks/useTokenTracker';
 import { getShouldHideZeroBalanceTokens } from '../../../selectors';
-import { getTokens } from '../../../ducks/metamask/metamask';
+import TokenCell from '../token-cell';
 
 export default function TokenList({ onTokenClick }) {
   const t = useI18nContext();

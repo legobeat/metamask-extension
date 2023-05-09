@@ -1,7 +1,8 @@
 import { strict as assert } from 'assert';
+
+import { GasRecommendations } from '../../../../../shared/constants/gas';
 import { TransactionEnvelopeType } from '../../../../../shared/constants/transaction';
 import { BURN_ADDRESS } from '../../../../../shared/modules/hexstring-utils';
-import { GasRecommendations } from '../../../../../shared/constants/gas';
 import * as txUtils from './util';
 
 describe('txUtils', function () {

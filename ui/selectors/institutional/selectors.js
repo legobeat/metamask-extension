@@ -1,6 +1,7 @@
 import { toChecksumAddress } from 'ethereumjs-util';
-import { getSelectedIdentity, getAccountType } from '../selectors';
+
 import { getProviderConfig } from '../../ducks/metamask/metamask';
+import { getSelectedIdentity, getAccountType } from '../selectors';
 
 export function getWaitForConfirmDeepLinkDialog(state) {
   return state.metamask.waitForConfirmDeepLinkDialog;

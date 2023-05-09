@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
+
 import {
   TextColor,
   IconColor,
@@ -11,6 +12,7 @@ import {
   Size,
 } from '../../../../helpers/constants/design-system';
 import { getSnapName } from '../../../../helpers/utils/util';
+import { getTargetSubjectMetadata } from '../../../../selectors';
 import {
   AvatarFavicon,
   BadgeWrapper,
@@ -20,7 +22,6 @@ import {
   IconName,
   IconSize,
 } from '../../../component-library';
-import { getTargetSubjectMetadata } from '../../../../selectors';
 
 const SnapAvatar = ({ snapId, className }) => {
   const subjectMetadata = useSelector((state) =>

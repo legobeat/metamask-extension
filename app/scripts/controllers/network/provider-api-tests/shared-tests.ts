@@ -277,7 +277,7 @@ export function testsForProviderType(providerType: ProviderType) {
         it('does not hit the RPC endpoint, instead returning the configured chain id', async () => {
           const networkId = await withNetworkClient(
             { providerType: 'custom', customChainId: '0x1' },
-            ({ makeRpcCall }) => {
+            async ({ makeRpcCall }) => {
               return makeRpcCall({ method: 'eth_chainId' });
             },
           );
@@ -335,7 +335,7 @@ export function testsForProviderType(providerType: ProviderType) {
           it('does not hit Infura, instead returning the network ID that maps to the Infura network, as a decimal string', async () => {
             const networkId = await withNetworkClient(
               { providerType: 'infura', infuraNetwork: 'goerli' },
-              ({ makeRpcCall }) => {
+              async ({ makeRpcCall }) => {
                 return makeRpcCall({
                   method: 'net_version',
                 });
@@ -355,7 +355,7 @@ export function testsForProviderType(providerType: ProviderType) {
 
                 const networkId = await withNetworkClient(
                   { providerType: 'custom' },
-                  ({ makeRpcCall }) => {
+                  async ({ makeRpcCall }) => {
                     return makeRpcCall({
                       method: 'net_version',
                     });

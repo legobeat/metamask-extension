@@ -2,13 +2,14 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import AssetListItem from '../asset-list-item';
-import { getSelectedAddress, getTokenList } from '../../../selectors';
+
+import { TextColor } from '../../../helpers/constants/design-system';
 import { useI18nContext } from '../../../hooks/useI18nContext';
 import { useTokenFiatAmount } from '../../../hooks/useTokenFiatAmount';
-import { MultichainTokenListItem } from '../../multichain';
+import { getSelectedAddress, getTokenList } from '../../../selectors';
 import { ButtonLink, Text } from '../../component-library';
-import { TextColor } from '../../../helpers/constants/design-system';
+import { MultichainTokenListItem } from '../../multichain';
+import AssetListItem from '../asset-list-item';
 
 export default function TokenCell({
   address,

@@ -1,11 +1,10 @@
-import React from 'react';
 import { screen, waitFor } from '@testing-library/react';
+import React from 'react';
 
 import { CHAIN_IDS } from '../../../../../shared/constants/network';
-import { GasFeeContextProvider } from '../../../../contexts/gasFee';
 import { renderWithProvider } from '../../../../../test/jest';
+import { GasFeeContextProvider } from '../../../../contexts/gasFee';
 import configureStore from '../../../../store/store';
-
 import GasDetailsItemTitle from './gas-details-item-title';
 
 jest.mock('../../../../store/actions', () => ({

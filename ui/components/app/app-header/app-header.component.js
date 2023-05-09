@@ -1,17 +1,18 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Identicon from '../../ui/identicon';
-import MetaFoxLogo from '../../ui/metafox-logo';
-import { DEFAULT_ROUTE } from '../../../helpers/constants/routes';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
+import { DEFAULT_ROUTE } from '../../../helpers/constants/routes';
+import Identicon from '../../ui/identicon';
+import MetaFoxLogo from '../../ui/metafox-logo';
+import BetaHeader from '../beta-header';
 import NetworkDisplay from '../network-display';
 
 ///: BEGIN:ONLY_INCLUDE_IN(build-beta)
-import BetaHeader from '../beta-header';
 ///: END:ONLY_INCLUDE_IN
 
 export default class AppHeader extends PureComponent {

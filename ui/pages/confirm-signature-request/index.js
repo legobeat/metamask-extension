@@ -1,14 +1,18 @@
+import log from 'loglevel';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import log from 'loglevel';
-import * as actions from '../../store/actions';
-import txHelper from '../../helpers/utils/tx-helper';
+
+import { MESSAGE_TYPE } from '../../../shared/constants/app';
+import { TransactionStatus } from '../../../shared/constants/transaction';
 import SignatureRequest from '../../components/app/signature-request';
-import SignatureRequestSIWE from '../../components/app/signature-request-siwe';
 import SignatureRequestOriginal from '../../components/app/signature-request-original';
+import SignatureRequestSIWE from '../../components/app/signature-request-siwe';
 import Loading from '../../components/ui/loading-screen';
+import { getProviderConfig } from '../../ducks/metamask/metamask';
+import { getSendTo } from '../../ducks/send';
+import txHelper from '../../helpers/utils/tx-helper';
 import { useRouting } from '../../hooks/useRouting';
 import {
   getTotalUnapprovedSignatureRequestCount,
@@ -16,10 +20,7 @@ import {
   getSelectedAccount,
   ///: END:ONLY_INCLUDE_IN
 } from '../../selectors';
-import { MESSAGE_TYPE } from '../../../shared/constants/app';
-import { TransactionStatus } from '../../../shared/constants/transaction';
-import { getSendTo } from '../../ducks/send';
-import { getProviderConfig } from '../../ducks/metamask/metamask';
+import * as actions from '../../store/actions';
 
 const SIGN_MESSAGE_TYPE = {
   MESSAGE: 'message',

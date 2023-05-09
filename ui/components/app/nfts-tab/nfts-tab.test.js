@@ -1,12 +1,13 @@
-import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
+import React from 'react';
 import reactRouterDom from 'react-router-dom';
-import configureStore from '../../../store/store';
+
+import NftsTab from '.';
+import { hexToDecimal } from '../../../../shared/modules/conversion.utils';
+import { setBackgroundConnection } from '../../../../test/jest';
 import { renderWithProvider } from '../../../../test/jest/rendering';
 import { EXPERIMENTAL_ROUTE } from '../../../helpers/constants/routes';
-import { setBackgroundConnection } from '../../../../test/jest';
-import { hexToDecimal } from '../../../../shared/modules/conversion.utils';
-import NftsTab from '.';
+import configureStore from '../../../store/store';
 
 const NFTS = [
   {

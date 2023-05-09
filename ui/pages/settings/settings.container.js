@@ -1,15 +1,14 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getAddressBookEntryOrAccountName } from '../../selectors';
-import { ENVIRONMENT_TYPE_POPUP } from '../../../shared/constants/app';
+import { compose } from 'redux';
+
 import { getEnvironmentType } from '../../../app/scripts/lib/util';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
+import { ENVIRONMENT_TYPE_POPUP } from '../../../shared/constants/app';
 import {
   isValidHexAddress,
   isBurnAddress,
 } from '../../../shared/modules/hexstring-utils';
-
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
 import {
   ABOUT_US_ROUTE,
   ADVANCED_ROUTE,
@@ -29,6 +28,7 @@ import {
   SNAPS_VIEW_ROUTE,
   ADD_POPULAR_CUSTOM_NETWORK,
 } from '../../helpers/constants/routes';
+import { getAddressBookEntryOrAccountName } from '../../selectors';
 import Settings from './settings.component';
 
 const ROUTES_TO_I18N_KEYS = {

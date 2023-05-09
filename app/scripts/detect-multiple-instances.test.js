@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
-import browser from 'webextension-polyfill';
 import sinon from 'sinon';
+import browser from 'webextension-polyfill';
+
 import {
   PLATFORM_CHROME,
   PLATFORM_EDGE,

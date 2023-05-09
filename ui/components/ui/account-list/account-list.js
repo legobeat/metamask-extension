@@ -1,12 +1,13 @@
-import React, { memo, useLayoutEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { isEqual } from 'lodash';
+import PropTypes from 'prop-types';
+import React, { memo, useLayoutEffect, useRef } from 'react';
+
+import { PRIMARY } from '../../../helpers/constants/common';
 import { useI18nContext } from '../../../hooks/useI18nContext';
+import UserPreferencedCurrencyDisplay from '../../app/user-preferenced-currency-display';
 import CheckBox, { CHECKED, INDETERMINATE, UNCHECKED } from '../check-box';
 import Identicon from '../identicon';
-import UserPreferencedCurrencyDisplay from '../../app/user-preferenced-currency-display';
-import { PRIMARY } from '../../../helpers/constants/common';
 import Tooltip from '../tooltip';
 
 const AccountList = ({

@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import { isEqual } from 'lodash';
 import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { isEqual } from 'lodash';
-import Box from '../../ui/box';
-import Typography from '../../ui/typography/typography';
-import Card from '../../ui/card';
+
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
+import { getNftsDropdownState } from '../../../ducks/metamask/metamask';
 import {
   Color,
   TypographyVariant,
@@ -16,21 +17,21 @@ import {
   BLOCK_SIZES,
   FLEX_WRAP,
 } from '../../../helpers/constants/design-system';
-import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { ASSET_ROUTE } from '../../../helpers/constants/routes';
+import { getNftImageAlt } from '../../../helpers/utils/nfts';
+import { getAssetImageURL } from '../../../helpers/utils/util';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { usePrevious } from '../../../hooks/usePrevious';
 import {
   getCurrentChainId,
   getIpfsGateway,
   getSelectedAddress,
 } from '../../../selectors';
-import { ASSET_ROUTE } from '../../../helpers/constants/routes';
-import { getAssetImageURL } from '../../../helpers/utils/util';
-import { getNftImageAlt } from '../../../helpers/utils/nfts';
 import { updateNftDropDownState } from '../../../store/actions';
-import { usePrevious } from '../../../hooks/usePrevious';
-import { getNftsDropdownState } from '../../../ducks/metamask/metamask';
-import { useI18nContext } from '../../../hooks/useI18nContext';
 import { Icon, IconName } from '../../component-library';
+import Box from '../../ui/box';
+import Card from '../../ui/card';
+import Typography from '../../ui/typography/typography';
 import NftDefaultImage from '../nft-default-image';
 
 const width =

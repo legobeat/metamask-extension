@@ -1,9 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
+
+import {
+  CHAIN_ID_TO_NETWORK_IMAGE_URL_MAP,
+  NETWORK_TO_NAME_MAP,
+} from '../../../../../shared/constants/network';
 import Box from '../../../../components/ui/box';
 import SiteIcon from '../../../../components/ui/site-icon';
 import Typography from '../../../../components/ui/typography/typography';
+import { getProviderConfig } from '../../../../ducks/metamask/metamask';
 import {
   TypographyVariant,
   FONT_WEIGHT,
@@ -14,11 +20,6 @@ import {
   TEXT_ALIGN,
   TextColor,
 } from '../../../../helpers/constants/design-system';
-import {
-  CHAIN_ID_TO_NETWORK_IMAGE_URL_MAP,
-  NETWORK_TO_NAME_MAP,
-} from '../../../../../shared/constants/network';
-import { getProviderConfig } from '../../../../ducks/metamask/metamask';
 
 export default function ConfirmationNetworkSwitch({ newNetwork }) {
   const { chainId, nickname, type } = useSelector(getProviderConfig);

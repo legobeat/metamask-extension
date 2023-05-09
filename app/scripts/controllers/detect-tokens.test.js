@@ -1,15 +1,16 @@
-import { strict as assert } from 'assert';
-import sinon from 'sinon';
-import nock from 'nock';
-import { ObservableStore } from '@metamask/obs-store';
-import BigNumber from 'bignumber.js';
-import { ControllerMessenger } from '@metamask/base-controller';
 import {
   TokenListController,
   TokensController,
   AssetsContractController,
 } from '@metamask/assets-controllers';
+import { ControllerMessenger } from '@metamask/base-controller';
 import { convertHexToDecimal } from '@metamask/controller-utils';
+import { ObservableStore } from '@metamask/obs-store';
+import { strict as assert } from 'assert';
+import BigNumber from 'bignumber.js';
+import nock from 'nock';
+import sinon from 'sinon';
+
 import { NETWORK_TYPES } from '../../../shared/constants/network';
 import { toChecksumHexAddress } from '../../../shared/modules/hexstring-utils';
 import DetectTokensController from './detect-tokens';

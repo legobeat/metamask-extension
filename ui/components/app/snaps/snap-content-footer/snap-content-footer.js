@@ -1,11 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import Typography from '../../../ui/typography/typography';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import { SNAPS_VIEW_ROUTE } from '../../../../helpers/constants/routes';
 import {
   TypographyVariant,
   JustifyContent,
@@ -14,9 +10,12 @@ import {
   Size,
   IconColor,
 } from '../../../../helpers/constants/design-system';
-import Button from '../../../ui/button';
-import Box from '../../../ui/box/box';
+import { SNAPS_VIEW_ROUTE } from '../../../../helpers/constants/routes';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { Icon, IconName } from '../../../component-library';
+import Box from '../../../ui/box/box';
+import Button from '../../../ui/button';
+import Typography from '../../../ui/typography/typography';
 
 export default function SnapContentFooter({ snapName, snapId }) {
   const t = useI18nContext();

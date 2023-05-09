@@ -1,6 +1,7 @@
+import log from 'loglevel';
 import sinon from 'sinon';
 import browser from 'webextension-polyfill';
-import log from 'loglevel';
+
 import * as BrowserRuntimeUtil from './browser-runtime.utils';
 
 const mockLastError = { message: 'error', stack: [] };

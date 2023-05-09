@@ -1,12 +1,23 @@
-import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import Button from '../../../components/ui/button';
-import Popover from '../../../components/ui/popover';
+import { useHistory } from 'react-router-dom';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import {
+  Icon,
+  IconName,
+  IconSize,
+} from '../../../components/component-library';
 import Box from '../../../components/ui/box';
+import Button from '../../../components/ui/button';
+import Checkbox from '../../../components/ui/check-box';
+import Popover from '../../../components/ui/popover';
 import Typography from '../../../components/ui/typography';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   AlignItems,
   IconColor,
@@ -15,19 +26,9 @@ import {
   JustifyContent,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
-import { setSeedPhraseBackedUp } from '../../../store/actions';
-import Checkbox from '../../../components/ui/check-box';
 import { ONBOARDING_COMPLETION_ROUTE } from '../../../helpers/constants/routes';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  Icon,
-  IconName,
-  IconSize,
-} from '../../../components/component-library';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { setSeedPhraseBackedUp } from '../../../store/actions';
 
 export default function SkipSRPBackup({ handleClose }) {
   const [checked, setChecked] = useState(false);

@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import UserPreferencedCurrencyDisplay from '../../user-preferenced-currency-display';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { PRIMARY, SECONDARY } from '../../../../helpers/constants/common';
+import UserPreferencedCurrencyDisplay from '../../user-preferenced-currency-display';
 
 const ConfirmDetailRow = (props) => {
   const {

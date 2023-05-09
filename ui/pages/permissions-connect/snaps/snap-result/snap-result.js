@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { useCallback } from 'react';
-import { PageContainerFooter } from '../../../../components/ui/page-container';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
 
+import InstallError from '../../../../components/app/snaps/install-error/install-error';
+import SnapAuthorship from '../../../../components/app/snaps/snap-authorship';
+import { Text } from '../../../../components/component-library';
 import Box from '../../../../components/ui/box/box';
+import { PageContainerFooter } from '../../../../components/ui/page-container';
+import PulseLoader from '../../../../components/ui/pulse-loader/pulse-loader';
 import {
   AlignItems,
   BLOCK_SIZES,
@@ -14,11 +17,8 @@ import {
   TextVariant,
   TEXT_ALIGN,
 } from '../../../../helpers/constants/design-system';
-import { Text } from '../../../../components/component-library';
-import PulseLoader from '../../../../components/ui/pulse-loader/pulse-loader';
-import InstallError from '../../../../components/app/snaps/install-error/install-error';
-import SnapAuthorship from '../../../../components/app/snaps/snap-authorship';
 import { getSnapName } from '../../../../helpers/utils/util';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 
 export default function SnapResult({
   request,

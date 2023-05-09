@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { useState, useRef, useEffect } from 'react';
 
 import {
   DISPLAY,
@@ -9,11 +9,8 @@ import {
   BorderRadius,
   BackgroundColor,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box';
-
 import { Input } from '../input';
-
 import { TEXT_FIELD_SIZES, TEXT_FIELD_TYPES } from './text-field.constants';
 
 export const TextField = ({

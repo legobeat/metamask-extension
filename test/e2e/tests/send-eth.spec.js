@@ -1,7 +1,8 @@
 const { strict: assert } = require('assert');
-const { SMART_CONTRACTS } = require('../seeder/smart-contracts');
-const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
+
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures, openDapp } = require('../helpers');
+const { SMART_CONTRACTS } = require('../seeder/smart-contracts');
 
 describe('Send ETH from inside MetaMask using default gas', function () {
   const ganacheOptions = {

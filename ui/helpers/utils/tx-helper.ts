@@ -1,4 +1,5 @@
 import log from 'loglevel';
+
 import { transactionMatchesNetwork } from '../../../shared/modules/transaction.utils';
 import { valuesFor } from './util';
 

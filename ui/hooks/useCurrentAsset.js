@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
-import { getTokens } from '../ducks/metamask/metamask';
-import { getCurrentChainId } from '../selectors';
-import { ASSET_ROUTE } from '../helpers/constants/routes';
+
 import {
   SWAPS_CHAINID_DEFAULT_TOKEN_MAP,
   ETH_SWAPS_TOKEN_OBJECT,
 } from '../../shared/constants/swaps';
 import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
+import { getTokens } from '../ducks/metamask/metamask';
+import { ASSET_ROUTE } from '../helpers/constants/routes';
+import { getCurrentChainId } from '../selectors';
 
 /**
  * Returns a token object for the asset that is currently being viewed.

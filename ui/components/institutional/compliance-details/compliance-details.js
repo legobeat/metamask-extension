@@ -1,18 +1,14 @@
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+
 import { I18nContext } from '../../../contexts/i18n';
-import InfoTooltip from '../../ui/info-tooltip';
-import SwapsFooter from '../../../pages/swaps/swaps-footer';
 import {
   fetchHistoricalReports,
   getComplianceHistoricalReportsByAddress,
   getComplianceTenantSubdomain,
 } from '../../../ducks/institutional/institutional';
-import { formatDate } from '../../../helpers/utils/util';
-import Box from '../../ui/box';
-import { Text } from '../../component-library';
 import {
   TextColor,
   TextVariant,
@@ -22,6 +18,11 @@ import {
   DISPLAY,
   FLEX_DIRECTION,
 } from '../../../helpers/constants/design-system';
+import { formatDate } from '../../../helpers/utils/util';
+import SwapsFooter from '../../../pages/swaps/swaps-footer';
+import { Text } from '../../component-library';
+import Box from '../../ui/box';
+import InfoTooltip from '../../ui/info-tooltip';
 
 const ComplianceDetails = ({ address, onClose, onGenerate }) => {
   const t = useContext(I18nContext);

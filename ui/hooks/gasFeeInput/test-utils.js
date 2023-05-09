@@ -1,10 +1,16 @@
 import { useSelector } from 'react-redux';
 
+import { EtherDenomination } from '../../../shared/constants/common';
 import { GasEstimateTypes } from '../../../shared/constants/gas';
+import { Numeric } from '../../../shared/modules/Numeric';
 import {
   getConversionRate,
   getNativeCurrency,
 } from '../../ducks/metamask/metamask';
+import {
+  getCustomMaxFeePerGas,
+  getCustomMaxPriorityFeePerGas,
+} from '../../ducks/swaps/swaps';
 import {
   checkNetworkAndAccountSupports1559,
   getCurrentCurrency,
@@ -15,14 +21,7 @@ import {
   getCurrentKeyring,
   getTokenExchangeRates,
 } from '../../selectors';
-
 import { useGasFeeEstimates } from '../useGasFeeEstimates';
-import {
-  getCustomMaxFeePerGas,
-  getCustomMaxPriorityFeePerGas,
-} from '../../ducks/swaps/swaps';
-import { Numeric } from '../../../shared/modules/Numeric';
-import { EtherDenomination } from '../../../shared/constants/common';
 
 // Why this number?
 // 20 gwei * 21000 gasLimit = 420,000 gwei

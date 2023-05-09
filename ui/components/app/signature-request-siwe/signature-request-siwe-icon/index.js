@@ -1,12 +1,13 @@
 import React from 'react';
+
 import {
   DISPLAY,
   AlignItems,
   Color,
   JustifyContent,
 } from '../../../../helpers/constants/design-system';
-import Box from '../../../ui/box';
 import { Icon, IconName } from '../../../component-library';
+import Box from '../../../ui/box';
 
 const SignatureRequestSIWEIcon = () => {
   return (

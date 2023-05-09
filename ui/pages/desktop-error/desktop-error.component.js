@@ -1,13 +1,14 @@
-import { useParams, useHistory } from 'react-router-dom';
 import { useContext } from 'react';
-import { useI18nContext } from '../../hooks/useI18nContext';
+import { useParams, useHistory } from 'react-router-dom';
+
 import {
   downloadDesktopApp,
   downloadExtension,
   restartExtension,
 } from '../../../shared/lib/error-utils';
-import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
 import { MetaMetricsContext } from '../../contexts/metametrics';
+import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import { useI18nContext } from '../../hooks/useI18nContext';
 import { renderDesktopError } from './render-desktop-error';
 
 export default function DesktopError({ forceDisableDesktop }) {

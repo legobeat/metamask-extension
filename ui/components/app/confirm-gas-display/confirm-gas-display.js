@@ -1,15 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { TransactionEnvelopeType } from '../../../../shared/constants/transaction';
+import { getCurrentDraftTransaction } from '../../../ducks/send';
+import { isLegacyTransaction } from '../../../helpers/utils/transactions.util';
 import {
   checkNetworkAndAccountSupports1559,
   txDataSelector,
 } from '../../../selectors';
-import { isLegacyTransaction } from '../../../helpers/utils/transactions.util';
 import GasDetailsItem from '../gas-details-item';
-import { getCurrentDraftTransaction } from '../../../ducks/send';
-import { TransactionEnvelopeType } from '../../../../shared/constants/transaction';
 import { ConfirmLegacyGasDisplay } from './confirm-legacy-gas-display';
 
 const ConfirmGasDisplay = ({ userAcknowledgedGasMissing = false }) => {

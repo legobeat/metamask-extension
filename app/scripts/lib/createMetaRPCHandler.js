@@ -1,4 +1,5 @@
 import { ethErrors, serializeError } from 'eth-rpc-errors';
+
 import { isManifestV3 } from '../../../shared/modules/mv3.utils';
 
 const createMetaRPCHandler = (api, outStream, store, localStoreApiWrapper) => {

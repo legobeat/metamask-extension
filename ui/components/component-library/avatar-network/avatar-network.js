@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { AvatarBase } from '../avatar-base';
-import Box from '../../ui/box/box';
+import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+
 import {
   Size,
   DISPLAY,
@@ -12,6 +11,8 @@ import {
   BackgroundColor,
   BorderColor,
 } from '../../../helpers/constants/design-system';
+import Box from '../../ui/box/box';
+import { AvatarBase } from '../avatar-base';
 import { AVATAR_NETWORK_SIZES } from './avatar-network.constants';
 
 export const AvatarNetwork = React.forwardRef(

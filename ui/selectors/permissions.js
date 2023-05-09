@@ -1,7 +1,7 @@
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { WALLET_SNAP_PERMISSION_KEY } from '@metamask/rpc-methods';
+
 ///: END:ONLY_INCLUDE_IN
-import { CaveatTypes } from '../../shared/constants/permissions';
 import {
   getMetaMaskAccountsOrdered,
   getOriginOfCurrentTab,
@@ -9,6 +9,7 @@ import {
   getSubjectMetadata,
   getTargetSubjectMetadata,
 } from '.';
+import { CaveatTypes } from '../../shared/constants/permissions';
 
 // selectors
 

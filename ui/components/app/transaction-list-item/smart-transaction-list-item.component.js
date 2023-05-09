@@ -1,22 +1,22 @@
-import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import ListItem from '../../ui/list-item';
-import TransactionStatusLabel from '../transaction-status-label/transaction-status-label';
-import TransactionIcon from '../transaction-icon';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { useTransactionDisplayData } from '../../../hooks/useTransactionDisplayData';
-import { formatDateWithYearContext } from '../../../helpers/utils/util';
+
 import {
   TransactionGroupCategory,
   TransactionGroupStatus,
   SmartTransactionStatus,
 } from '../../../../shared/constants/transaction';
-
-import CancelButton from '../cancel-button';
 import { cancelSwapsSmartTransaction } from '../../../ducks/swaps/swaps';
+import { formatDateWithYearContext } from '../../../helpers/utils/util';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { useTransactionDisplayData } from '../../../hooks/useTransactionDisplayData';
+import ListItem from '../../ui/list-item';
 import SiteOrigin from '../../ui/site-origin';
+import CancelButton from '../cancel-button';
+import TransactionIcon from '../transaction-icon';
 import TransactionListItemDetails from '../transaction-list-item-details';
+import TransactionStatusLabel from '../transaction-status-label/transaction-status-label';
 
 export default function SmartTransactionListItem({
   smartTransaction,

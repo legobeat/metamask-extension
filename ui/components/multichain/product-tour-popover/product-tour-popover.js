@@ -1,7 +1,7 @@
-import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Box from '../../ui/box/box';
+import React from 'react';
+
 import {
   AlignItems,
   BLOCK_SIZES,
@@ -15,13 +15,14 @@ import {
   TextVariant,
   TextAlign,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   ButtonBase,
   ButtonIcon,
   IconName,
   Text,
 } from '../../component-library';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import Box from '../../ui/box/box';
 import { Menu } from '../../ui/menu';
 
 export const ProductTour = ({

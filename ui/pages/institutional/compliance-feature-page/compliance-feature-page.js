@@ -1,8 +1,16 @@
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import {
+  ButtonIcon,
+  ButtonIconSize,
+  IconName,
+  Text,
+} from '../../../components/component-library';
+import ComplianceSettings from '../../../components/institutional/compliance-settings';
+import Box from '../../../components/ui/box';
 import { I18nContext } from '../../../contexts/i18n';
-import { DEFAULT_ROUTE } from '../../../helpers/constants/routes';
 import {
   JustifyContent,
   DISPLAY,
@@ -13,14 +21,7 @@ import {
   Color,
   FLEX_DIRECTION,
 } from '../../../helpers/constants/design-system';
-import {
-  ButtonIcon,
-  ButtonIconSize,
-  IconName,
-  Text,
-} from '../../../components/component-library';
-import Box from '../../../components/ui/box';
-import ComplianceSettings from '../../../components/institutional/compliance-settings';
+import { DEFAULT_ROUTE } from '../../../helpers/constants/routes';
 
 const ComplianceFeaturePage = () => {
   const t = useContext(I18nContext);

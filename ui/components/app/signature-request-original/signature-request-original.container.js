@@ -1,9 +1,16 @@
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 
 import { MESSAGE_TYPE } from '../../../../shared/constants/app';
-import { goHome, cancelMsgs, showModal } from '../../../store/actions';
+import { clearConfirmTransaction } from '../../../ducks/confirm-transaction/confirm-transaction.duck';
+import { getMostRecentOverviewPage } from '../../../ducks/history/history';
+import {
+  isAddressLedger,
+  getNativeCurrency,
+  getProviderConfig,
+} from '../../../ducks/metamask/metamask';
+import { getAccountByAddress, valuesFor } from '../../../helpers/utils/util';
 import {
   accountsWithSendEtherInfoSelector,
   conversionRateSelector,
@@ -17,14 +24,7 @@ import {
   getSelectedAccount,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../selectors';
-import { getAccountByAddress, valuesFor } from '../../../helpers/utils/util';
-import { clearConfirmTransaction } from '../../../ducks/confirm-transaction/confirm-transaction.duck';
-import { getMostRecentOverviewPage } from '../../../ducks/history/history';
-import {
-  isAddressLedger,
-  getNativeCurrency,
-  getProviderConfig,
-} from '../../../ducks/metamask/metamask';
+import { goHome, cancelMsgs, showModal } from '../../../store/actions';
 import SignatureRequestOriginal from './signature-request-original.component';
 
 function mapStateToProps(state, ownProps) {

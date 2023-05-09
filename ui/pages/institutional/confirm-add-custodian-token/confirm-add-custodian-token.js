@@ -1,21 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import PulseLoader from '../../../components/ui/pulse-loader';
-import { CUSTODY_ACCOUNT_ROUTE } from '../../../helpers/constants/routes';
-import {
-  AlignItems,
-  DISPLAY,
-  TextColor,
-  TEXT_ALIGN,
-  FLEX_DIRECTION,
-} from '../../../helpers/constants/design-system';
+
 import { BUILT_IN_NETWORKS } from '../../../../shared/constants/network';
-import { I18nContext } from '../../../contexts/i18n';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { getMostRecentOverviewPage } from '../../../ducks/history/history';
-import { setProviderType } from '../../../store/actions';
-import { mmiActionsFactory } from '../../../store/institutional/institution-background';
 import {
   Label,
   Text,
@@ -25,6 +12,20 @@ import {
   BUTTON_VARIANT,
 } from '../../../components/component-library';
 import Box from '../../../components/ui/box';
+import PulseLoader from '../../../components/ui/pulse-loader';
+import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { getMostRecentOverviewPage } from '../../../ducks/history/history';
+import {
+  AlignItems,
+  DISPLAY,
+  TextColor,
+  TEXT_ALIGN,
+  FLEX_DIRECTION,
+} from '../../../helpers/constants/design-system';
+import { CUSTODY_ACCOUNT_ROUTE } from '../../../helpers/constants/routes';
+import { setProviderType } from '../../../store/actions';
+import { mmiActionsFactory } from '../../../store/institutional/institution-background';
 
 const ConfirmAddCustodianToken = () => {
   const t = useContext(I18nContext);

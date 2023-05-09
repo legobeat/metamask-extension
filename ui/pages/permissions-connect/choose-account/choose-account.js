@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import Button from '../../../components/ui/button';
-import PermissionsConnectHeader from '../../../components/app/permissions-connect-header';
+
 import PermissionsConnectFooter from '../../../components/app/permissions-connect-footer';
+import PermissionsConnectHeader from '../../../components/app/permissions-connect-header';
 import AccountList from '../../../components/ui/account-list';
+import Button from '../../../components/ui/button';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 
 const ChooseAccount = ({
   selectedAccountAddresses,

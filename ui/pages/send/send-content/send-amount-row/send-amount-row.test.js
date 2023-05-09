@@ -1,11 +1,12 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+
+import SendAmountRow from '.';
+import { AssetType } from '../../../../../shared/constants/transaction';
 import mockSendState from '../../../../../test/data/mock-send-state.json';
 import { renderWithProvider } from '../../../../../test/lib/render-helpers';
-import { AssetType } from '../../../../../shared/constants/transaction';
-import SendAmountRow from '.';
 
 const mockUpdateSendAmount = jest.fn();
 

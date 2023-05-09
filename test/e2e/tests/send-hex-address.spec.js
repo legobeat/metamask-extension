@@ -1,7 +1,8 @@
 const { strict: assert } = require('assert');
+
+const FixtureBuilder = require('../fixture-builder');
 const { convertToHexValue, withFixtures } = require('../helpers');
 const { SMART_CONTRACTS } = require('../seeder/smart-contracts');
-const FixtureBuilder = require('../fixture-builder');
 
 const hexPrefixedAddress = '0x2f318C334780961FB129D2a6c30D0763d9a5C970';
 const nonHexPrefixedAddress = hexPrefixedAddress.substring(2);

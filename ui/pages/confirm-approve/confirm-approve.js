@@ -1,22 +1,25 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ConfirmTransactionBase from '../confirm-transaction-base';
+
 import { EditGasModes } from '../../../shared/constants/gas';
-import {
-  showModal,
-  updateCustomNonce,
-  getNextNonce,
-} from '../../store/actions';
-import { getTokenApprovedParam } from '../../helpers/utils/token-util';
+import { TokenStandard } from '../../../shared/constants/transaction';
+import { calcTokenAmount } from '../../../shared/lib/transactions-controller-utils';
 import { readAddressAsContract } from '../../../shared/modules/contract-utils';
+import { parseStandardTokenTransactionData } from '../../../shared/modules/transaction.utils';
+import AdvancedGasFeePopover from '../../components/app/advanced-gas-fee-popover';
+import EditGasFeePopover from '../../components/app/edit-gas-fee-popover';
+import EditGasPopover from '../../components/app/edit-gas-popover/edit-gas-popover.component';
+import Loading from '../../components/ui/loading-screen';
 import { GasFeeContextProvider } from '../../contexts/gasFee';
 import { TransactionModalContextProvider } from '../../contexts/transaction-modal';
 import {
   getNativeCurrency,
   isAddressLedger,
 } from '../../ducks/metamask/metamask';
-import ConfirmContractInteraction from '../confirm-contract-interaction';
+import { getTokenApprovedParam } from '../../helpers/utils/token-util';
+import { useApproveTransaction } from '../../hooks/useApproveTransaction';
+import { useSimulationFailureWarning } from '../../hooks/useSimulationFailureWarning';
 import {
   getCurrentCurrency,
   getSubjectMetadata,
@@ -30,18 +33,16 @@ import {
   getUseCurrencyRateCheck,
   getPreferences,
 } from '../../selectors';
-import { useApproveTransaction } from '../../hooks/useApproveTransaction';
-import { useSimulationFailureWarning } from '../../hooks/useSimulationFailureWarning';
-import AdvancedGasFeePopover from '../../components/app/advanced-gas-fee-popover';
-import EditGasFeePopover from '../../components/app/edit-gas-fee-popover';
-import EditGasPopover from '../../components/app/edit-gas-popover/edit-gas-popover.component';
-import Loading from '../../components/ui/loading-screen';
-import { parseStandardTokenTransactionData } from '../../../shared/modules/transaction.utils';
-import { TokenStandard } from '../../../shared/constants/transaction';
-import { calcTokenAmount } from '../../../shared/lib/transactions-controller-utils';
+import {
+  showModal,
+  updateCustomNonce,
+  getNextNonce,
+} from '../../store/actions';
+import ConfirmContractInteraction from '../confirm-contract-interaction';
+import ConfirmTransactionBase from '../confirm-transaction-base';
 import TokenAllowance from '../token-allowance/token-allowance';
-import { getCustomTxParamsData } from './confirm-approve.util';
 import ConfirmApproveContent from './confirm-approve-content';
+import { getCustomTxParamsData } from './confirm-approve.util';
 
 const isAddressLedgerByFromAddress = (address) => (state) => {
   return isAddressLedger(state, address);

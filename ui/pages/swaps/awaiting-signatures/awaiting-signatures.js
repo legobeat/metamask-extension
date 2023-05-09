@@ -1,9 +1,14 @@
+import isEqual from 'lodash/isEqual';
 import React, { useContext, useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import isEqual from 'lodash/isEqual';
 
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import { Text } from '../../../components/component-library';
+import Box from '../../../components/ui/box';
+import PulseLoader from '../../../components/ui/pulse-loader';
 import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   getFetchParams,
   getApproveTxParams,
@@ -13,26 +18,21 @@ import {
   getCurrentSmartTransactionsEnabled,
 } from '../../../ducks/swaps/swaps';
 import {
-  isHardwareWallet,
-  getHardwareWalletType,
-} from '../../../selectors/selectors';
-import {
-  DEFAULT_ROUTE,
-  BUILD_QUOTE_ROUTE,
-} from '../../../helpers/constants/routes';
-import PulseLoader from '../../../components/ui/pulse-loader';
-import Box from '../../../components/ui/box';
-import {
   BLOCK_SIZES,
   TextVariant,
   JustifyContent,
   DISPLAY,
   TextColor,
 } from '../../../helpers/constants/design-system';
+import {
+  DEFAULT_ROUTE,
+  BUILD_QUOTE_ROUTE,
+} from '../../../helpers/constants/routes';
+import {
+  isHardwareWallet,
+  getHardwareWalletType,
+} from '../../../selectors/selectors';
 import SwapsFooter from '../swaps-footer';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-import { Text } from '../../../components/component-library';
 import SwapStepIcon from './swap-step-icon';
 
 export default function AwaitingSignatures() {

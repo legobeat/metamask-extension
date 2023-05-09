@@ -1,4 +1,5 @@
 import React from 'react';
+
 import EthSignModal from './eth-sign-modal';
 
 export default {

@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SendRowWrapper from '../send-row-wrapper';
-import Identicon from '../../../../components/ui/identicon';
-import TokenBalance from '../../../../components/ui/token-balance';
-import TokenListDisplay from '../../../../components/app/token-list-display';
-import UserPreferencedCurrencyDisplay from '../../../../components/app/user-preferenced-currency-display';
-import { PRIMARY } from '../../../../helpers/constants/common';
-import { isEqualCaseInsensitive } from '../../../../../shared/modules/string-utils';
+import React, { Component } from 'react';
+
 import { MetaMetricsEventCategory } from '../../../../../shared/constants/metametrics';
 import {
   AssetType,
   TokenStandard,
 } from '../../../../../shared/constants/transaction';
+import { isEqualCaseInsensitive } from '../../../../../shared/modules/string-utils';
+import TokenListDisplay from '../../../../components/app/token-list-display';
+import UserPreferencedCurrencyDisplay from '../../../../components/app/user-preferenced-currency-display';
+import Identicon from '../../../../components/ui/identicon';
+import TokenBalance from '../../../../components/ui/token-balance';
+import { PRIMARY } from '../../../../helpers/constants/common';
+import SendRowWrapper from '../send-row-wrapper';
 
 export default class SendAssetRow extends Component {
   static propTypes = {

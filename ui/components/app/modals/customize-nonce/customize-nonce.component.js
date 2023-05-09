@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Modal from '../../modal';
-import TextField from '../../../ui/text-field';
-import Button from '../../../ui/button';
+import React, { useState } from 'react';
+
 import {
   TextVariant,
   FontWeight,
@@ -10,16 +8,19 @@ import {
   BLOCK_SIZES,
   DISPLAY,
 } from '../../../../helpers/constants/design-system';
-import Box from '../../../ui/box';
+import ZENDESK_URLS from '../../../../helpers/constants/zendesk-url';
 import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
-import ZENDESK_URLS from '../../../../helpers/constants/zendesk-url';
 import {
   ButtonIcon,
   ButtonIconSize,
   IconName,
   Text,
 } from '../../../component-library';
+import Box from '../../../ui/box';
+import Button from '../../../ui/button';
+import TextField from '../../../ui/text-field';
+import Modal from '../../modal';
 
 const CustomizeNonce = ({
   hideModal,

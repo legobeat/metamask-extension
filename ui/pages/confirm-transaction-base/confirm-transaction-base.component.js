@@ -1,55 +1,52 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
+import { NETWORK_TO_NAME_MAP } from '../../../shared/constants/network';
+import {
+  TransactionType,
+  TransactionStatus,
+} from '../../../shared/constants/transaction';
+import {
+  addHexes,
+  hexToDecimal,
+} from '../../../shared/modules/conversion.utils';
+import { ConfirmData } from '../../components/app/confirm-data';
+import { ConfirmGasDisplay } from '../../components/app/confirm-gas-display';
+import { ConfirmHexData } from '../../components/app/confirm-hexdata';
 import ConfirmPageContainer from '../../components/app/confirm-page-container';
-import { isBalanceSufficient } from '../send/send.utils';
-import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+import { ConfirmSubTitle } from '../../components/app/confirm-subtitle';
+import { ConfirmTitle } from '../../components/app/confirm-title';
+import LedgerInstructionField from '../../components/app/ledger-instruction-field';
+import TransactionAlerts from '../../components/app/transaction-alerts';
+import TransactionDetailItem from '../../components/app/transaction-detail-item/transaction-detail-item.component';
+import TransactionDetail from '../../components/app/transaction-detail/transaction-detail.component';
+import UserPreferencedCurrencyDisplay from '../../components/app/user-preferenced-currency-display';
+import LoadingHeartBeat from '../../components/ui/loading-heartbeat';
+import SimulationErrorMessage from '../../components/ui/simulation-error-message';
+import TextField from '../../components/ui/text-field';
+import { TransactionModalContextProvider } from '../../contexts/transaction-modal';
+import { PRIMARY, SECONDARY } from '../../helpers/constants/common';
 import {
   INSUFFICIENT_FUNDS_ERROR_KEY,
   GAS_LIMIT_TOO_LOW_ERROR_KEY,
   ETH_GAS_PRICE_FETCH_WARNING_KEY,
   GAS_PRICE_FETCH_FAILURE_ERROR_KEY,
 } from '../../helpers/constants/error-keys';
-import UserPreferencedCurrencyDisplay from '../../components/app/user-preferenced-currency-display';
-
-import { PRIMARY, SECONDARY } from '../../helpers/constants/common';
-import TextField from '../../components/ui/text-field';
-import SimulationErrorMessage from '../../components/ui/simulation-error-message';
-import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
-import {
-  TransactionType,
-  TransactionStatus,
-} from '../../../shared/constants/transaction';
+import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
 import { getMethodName } from '../../helpers/utils/metrics';
 import {
   getTransactionTypeTitle,
   isLegacyTransaction,
 } from '../../helpers/utils/transactions.util';
-
-import { TransactionModalContextProvider } from '../../contexts/transaction-modal';
-import TransactionDetail from '../../components/app/transaction-detail/transaction-detail.component';
-import TransactionDetailItem from '../../components/app/transaction-detail-item/transaction-detail-item.component';
-import LoadingHeartBeat from '../../components/ui/loading-heartbeat';
-import LedgerInstructionField from '../../components/app/ledger-instruction-field';
 import {
   disconnectGasFeeEstimatePoller,
   getGasFeeEstimatesAndStartPolling,
   addPollingTokenToAppState,
   removePollingTokenFromAppState,
 } from '../../store/actions';
-
 import { MIN_GAS_LIMIT_DEC } from '../send/send.constants';
-
-import { NETWORK_TO_NAME_MAP } from '../../../shared/constants/network';
-import {
-  addHexes,
-  hexToDecimal,
-} from '../../../shared/modules/conversion.utils';
-import TransactionAlerts from '../../components/app/transaction-alerts';
-import { ConfirmHexData } from '../../components/app/confirm-hexdata';
-import { ConfirmData } from '../../components/app/confirm-data';
-import { ConfirmTitle } from '../../components/app/confirm-title';
-import { ConfirmSubTitle } from '../../components/app/confirm-subtitle';
-import { ConfirmGasDisplay } from '../../components/app/confirm-gas-display';
+import { isBalanceSufficient } from '../send/send.utils';
 
 export default class ConfirmTransactionBase extends Component {
   static contextTypes = {

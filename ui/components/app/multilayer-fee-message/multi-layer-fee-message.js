@@ -1,16 +1,17 @@
+import { captureException } from '@sentry/browser';
+import PropTypes from 'prop-types';
 import React, { useContext, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import { captureException } from '@sentry/browser';
+
+import { EtherDenomination } from '../../../../shared/constants/common';
+import { sumHexes } from '../../../../shared/modules/conversion.utils';
+import { Numeric } from '../../../../shared/modules/Numeric';
+import { I18nContext } from '../../../contexts/i18n';
+import { SECONDARY } from '../../../helpers/constants/common';
+import fetchEstimatedL1Fee from '../../../helpers/utils/optimism/fetchEstimatedL1Fee';
+import { getUseCurrencyRateCheck } from '../../../selectors';
 import TransactionDetailItem from '../transaction-detail-item/transaction-detail-item.component';
 import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
-import fetchEstimatedL1Fee from '../../../helpers/utils/optimism/fetchEstimatedL1Fee';
-import { SECONDARY } from '../../../helpers/constants/common';
-import { I18nContext } from '../../../contexts/i18n';
-import { sumHexes } from '../../../../shared/modules/conversion.utils';
-import { EtherDenomination } from '../../../../shared/constants/common';
-import { Numeric } from '../../../../shared/modules/Numeric';
-import { getUseCurrencyRateCheck } from '../../../selectors';
 
 export default function MultilayerFeeMessage({
   transaction,

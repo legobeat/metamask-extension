@@ -1,5 +1,6 @@
-import React from 'react';
 import { shuffle } from 'lodash';
+import React from 'react';
+
 import testData from '../../../../.storybook/test-data';
 import BuildQuote from './build-quote';
 

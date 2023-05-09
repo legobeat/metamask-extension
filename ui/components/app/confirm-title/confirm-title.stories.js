@@ -1,6 +1,7 @@
 import React from 'react';
-import README from './README.mdx';
+
 import ConfirmTitle from './confirm-title';
+import README from './README.mdx';
 
 export default {
   title: 'Components/App/ConfirmTitle',

@@ -1,12 +1,11 @@
-import React from 'react';
 import { screen } from '@testing-library/react';
+import React from 'react';
 
 import { EditGasModes } from '../../../../shared/constants/gas';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import { GasFeeContextProvider } from '../../../contexts/gasFee';
 import { ETH } from '../../../helpers/constants/common';
 import configureStore from '../../../store/store';
-import { GasFeeContextProvider } from '../../../contexts/gasFee';
-
 import EditGasFeePopover from './edit-gas-fee-popover';
 
 jest.mock('../../../store/actions', () => ({

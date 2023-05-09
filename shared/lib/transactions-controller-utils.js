@@ -1,4 +1,5 @@
 import BigNumber from 'bignumber.js';
+
 import { EtherDenomination } from '../constants/common';
 import { TransactionEnvelopeType } from '../constants/transaction';
 import { Numeric } from '../modules/Numeric';

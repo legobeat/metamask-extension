@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Size,
   DISPLAY,
@@ -8,13 +9,10 @@ import {
   Color,
   AlignItems,
 } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box/box';
-
-import README from './README.mdx';
-
 import { AvatarNetwork } from './avatar-network';
 import { AVATAR_NETWORK_SIZES } from './avatar-network.constants';
+import README from './README.mdx';
 
 export default {
   title: 'Components/ComponentLibrary/AvatarNetwork',

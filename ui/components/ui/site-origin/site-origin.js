@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+
+import { BorderColor } from '../../../helpers/constants/design-system';
 import Chip from '../chip';
 import IconWithFallback from '../icon-with-fallback';
-import { BorderColor } from '../../../helpers/constants/design-system';
 
 export default function SiteOrigin({
   siteOrigin,

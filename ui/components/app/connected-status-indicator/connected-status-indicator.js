@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import { findKey } from 'lodash';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useSelector } from 'react-redux';
+
 import {
   STATUS_CONNECTED,
   STATUS_CONNECTED_TO_ANOTHER_ACCOUNT,
   STATUS_NOT_CONNECTED,
 } from '../../../helpers/constants/connected-sites';
-import ColorIndicator from '../../ui/color-indicator';
 import {
   BackgroundColor,
   Color,
@@ -19,6 +19,7 @@ import {
   getSelectedAddress,
 } from '../../../selectors';
 import { MultichainConnectedSiteMenu } from '../../multichain';
+import ColorIndicator from '../../ui/color-indicator';
 
 export default function ConnectedStatusIndicator({ onClick }) {
   const t = useI18nContext();

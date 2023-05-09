@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { combineReducers, createStore } from 'redux';
 
 import {
   updateSendStage,
   updateSendAsset,
 } from '../../../../.storybook/actions/sb-send-action';
-
-import sendSBReducer from '../../../../.storybook/reducers/sb-send-reducer';
 import historySBReducer from '../../../../.storybook/reducers/sb-history-reducer';
+import sendSBReducer from '../../../../.storybook/reducers/sb-send-reducer';
 import SendHeader from './send-header.component';
 
 export default {

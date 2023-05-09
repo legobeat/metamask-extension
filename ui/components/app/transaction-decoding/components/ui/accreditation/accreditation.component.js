@@ -1,15 +1,14 @@
+import { getAccountLink } from '@metamask/etherscan-link';
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import { getAccountLink } from '@metamask/etherscan-link';
+
+import { I18nContext } from '../../../../../../contexts/i18n';
+import { TypographyVariant } from '../../../../../../helpers/constants/design-system';
 import {
   getCurrentChainId,
   getRpcPrefsForCurrentProvider,
 } from '../../../../../../selectors';
-import { I18nContext } from '../../../../../../contexts/i18n';
-
-import { TypographyVariant } from '../../../../../../helpers/constants/design-system';
-
 import Button from '../../../../../ui/button';
 import Typography from '../../../../../ui/typography';
 

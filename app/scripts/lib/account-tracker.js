@@ -7,19 +7,18 @@
  * on each new block.
  */
 
-import EthQuery from 'eth-query';
-
+import { Contract } from '@ethersproject/contracts';
+import { Web3Provider } from '@ethersproject/providers';
 import { ObservableStore } from '@metamask/obs-store';
+import EthQuery from 'eth-query';
 import log from 'loglevel';
 import pify from 'pify';
-import { Web3Provider } from '@ethersproject/providers';
-import { Contract } from '@ethersproject/contracts';
 import SINGLE_CALL_BALANCES_ABI from 'single-call-balance-checker-abi';
+
 import {
   CHAIN_IDS,
   LOCALHOST_RPC_URL,
 } from '../../../shared/constants/network';
-
 import {
   SINGLE_CALL_BALANCES_ADDRESS,
   SINGLE_CALL_BALANCES_ADDRESS_GOERLI,

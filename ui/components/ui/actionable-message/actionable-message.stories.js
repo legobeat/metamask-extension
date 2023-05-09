@@ -1,15 +1,15 @@
 import React from 'react';
 
-import Box from '../box';
-import Typography from '../typography';
+import ActionableMessage from '.';
 import {
   Color,
   DISPLAY,
   FLEX_WRAP,
 } from '../../../helpers/constants/design-system';
-import README from './README.mdx';
+import Box from '../box';
+import Typography from '../typography';
 import { typeHash } from './actionable-message';
-import ActionableMessage from '.';
+import README from './README.mdx';
 
 export default {
   title: 'Components/UI/ActionableMessage',

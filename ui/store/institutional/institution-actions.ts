@@ -1,5 +1,7 @@
-import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
+import { ThunkAction, ThunkDispatch } from 'redux-thunk';
+
+import { toChecksumHexAddress } from '../../../shared/modules/hexstring-utils';
 import {
   closeCurrentNotificationWindow,
   hideModal,
@@ -10,7 +12,6 @@ import {
   MetaMaskReduxState,
   TemporaryMessageDataType,
 } from '../store';
-import { toChecksumHexAddress } from '../../../shared/modules/hexstring-utils';
 
 export function showInteractiveReplacementTokenModal(): ThunkAction<
   void,

@@ -1,13 +1,14 @@
+import { getAccountLink } from '@metamask/etherscan-link';
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import { getAccountLink } from '@metamask/etherscan-link';
-import { addToAddressBook } from '../../../../store/actions';
+
 import {
   getRpcPrefsForCurrentProvider,
   getCurrentChainId,
   getAddressBook,
 } from '../../../../selectors';
+import { addToAddressBook } from '../../../../store/actions';
 import NicknamePopover from '../../../ui/nickname-popover';
 import UpdateNicknamePopover from '../../../ui/update-nickname-popover/update-nickname-popover';
 

@@ -1,17 +1,17 @@
+import PropTypes from 'prop-types';
 import React, { useState, useContext, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import Button from '../../../components/ui/button';
-import PulseLoader from '../../../components/ui/pulse-loader';
-import { INSTITUTIONAL_FEATURES_DONE_ROUTE } from '../../../helpers/constants/routes';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { getMostRecentOverviewPage } from '../../../ducks/history/history';
+
 import {
   Text,
   BUTTON_SIZES,
   BUTTON_VARIANT,
 } from '../../../components/component-library';
+import Box from '../../../components/ui/box';
+import Button from '../../../components/ui/button';
+import PulseLoader from '../../../components/ui/pulse-loader';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { getMostRecentOverviewPage } from '../../../ducks/history/history';
 import {
   TextColor,
   TextVariant,
@@ -19,7 +19,8 @@ import {
   TEXT_ALIGN,
   DISPLAY,
 } from '../../../helpers/constants/design-system';
-import Box from '../../../components/ui/box';
+import { INSTITUTIONAL_FEATURES_DONE_ROUTE } from '../../../helpers/constants/routes';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { mmiActionsFactory } from '../../../store/institutional/institution-background';
 
 export default function ConfirmAddInstitutionalFeature({ history }) {

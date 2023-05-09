@@ -1,31 +1,30 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import {
   BackgroundColor,
   SEVERITIES,
   TextColor,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
+import Box from '../box';
 import Card from '../card';
 import Typography from '../typography';
-import Box from '../box';
-
-import README from './README.mdx';
-
 import Approve from './approve-icon.component';
-import InfoIcon from './info-icon.component';
+import IconEye from './icon-eye';
+import IconEyeSlash from './icon-eye-slash';
+import IconTokenSearch from './icon-token-search';
 import InfoIconInverted from './info-icon-inverted.component';
+import InfoIcon from './info-icon.component';
 import Interaction from './interaction-icon.component';
 import Preloader from './preloader';
+import README from './README.mdx';
 import ReceiveIcon from './receive-icon.component';
+import SearchIcon from './search-icon';
 import SendIcon from './send-icon.component';
 import Sign from './sign-icon.component';
 import SunCheck from './sun-check-icon.component';
 import Swap from './swap-icon-for-list.component';
-import IconEye from './icon-eye';
-import IconEyeSlash from './icon-eye-slash';
-import IconTokenSearch from './icon-token-search';
-import SearchIcon from './search-icon';
 
 const validColors = [
   'var(--color-icon-default)',

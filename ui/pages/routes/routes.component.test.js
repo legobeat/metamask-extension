@@ -1,11 +1,11 @@
+import { fireEvent } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent } from '@testing-library/react';
 
-import { SEND_STAGES } from '../../ducks/send';
-import { renderWithProvider } from '../../../test/jest';
-import mockSendState from '../../../test/data/mock-send-state.json';
 import Routes from '.';
+import mockSendState from '../../../test/data/mock-send-state.json';
+import { renderWithProvider } from '../../../test/jest';
+import { SEND_STAGES } from '../../ducks/send';
 
 const mockShowNetworkDropdown = jest.fn();
 const mockHideNetworkDropdown = jest.fn();

@@ -1,13 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Text } from '../text';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   FONT_WEIGHT,
   TextVariant,
   DISPLAY,
   AlignItems,
 } from '../../../helpers/constants/design-system';
+import { Text } from '../text';
 
 export const Label = ({ htmlFor, className, children, ...props }) => (
   <Text

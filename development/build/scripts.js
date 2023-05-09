@@ -1,25 +1,25 @@
 // TODO(ritave): Remove switches on hardcoded build types
 
-const { callbackify } = require('util');
-const path = require('path');
-const { writeFileSync, readFileSync } = require('fs');
-const EventEmitter = require('events');
 const assert = require('assert');
-const gulp = require('gulp');
-const watch = require('gulp-watch');
-const Vinyl = require('vinyl');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const log = require('fancy-log');
-const browserify = require('browserify');
-const watchify = require('watchify');
 const babelify = require('babelify');
 const brfs = require('brfs');
-const envify = require('loose-envify/custom');
+const browserify = require('browserify');
+const EventEmitter = require('events');
+const log = require('fancy-log');
+const { writeFileSync, readFileSync } = require('fs');
+const gulp = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
-const applySourceMap = require('vinyl-sourcemaps-apply');
+const watch = require('gulp-watch');
+const envify = require('loose-envify/custom');
+const path = require('path');
 const pify = require('pify');
 const through = require('through2');
+const { callbackify } = require('util');
+const Vinyl = require('vinyl');
+const buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
+const applySourceMap = require('vinyl-sourcemaps-apply');
+const watchify = require('watchify');
 const endOfStream = pify(require('end-of-stream'));
 const labeledStreamSplicer = require('labeled-stream-splicer').obj;
 const wrapInStream = require('pumpify').obj;
@@ -28,22 +28,13 @@ const lavapack = require('@lavamoat/lavapack');
 const lavamoatBrowserify = require('lavamoat-browserify');
 const terser = require('terser');
 const moduleResolver = require('babel-plugin-module-resolver');
-
 const bifyModuleGroups = require('bify-module-groups');
-
 const phishingWarningManifest = require('@metamask/phishing-warning/package.json');
-const { streamFlatMap } = require('../stream-flat-map');
-const { generateIconNames } = require('../generate-icon-names');
-const { BUILD_TARGETS, ENVIRONMENT } = require('./constants');
-const { getConfig } = require('./config');
-const {
-  isDevBuild,
-  isTestBuild,
-  getEnvironment,
-  logError,
-  wrapAgainstScuttling,
-} = require('./utils');
 
+const { generateIconNames } = require('../generate-icon-names');
+const { streamFlatMap } = require('../stream-flat-map');
+const { getConfig } = require('./config');
+const { BUILD_TARGETS, ENVIRONMENT } = require('./constants');
 const {
   createTask,
   composeParallel,
@@ -53,6 +44,13 @@ const {
 const {
   createRemoveFencedCodeTransform,
 } = require('./transforms/remove-fenced-code');
+const {
+  isDevBuild,
+  isTestBuild,
+  getEnvironment,
+  logError,
+  wrapAgainstScuttling,
+} = require('./utils');
 
 // map dist files to bag of needed native APIs against LM scuttling
 const scuttlingConfigBase = {

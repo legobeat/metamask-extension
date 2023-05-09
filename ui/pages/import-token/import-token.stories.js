@@ -1,10 +1,10 @@
-import React from 'react';
-
-import { Provider } from 'react-redux';
 import { action } from '@storybook/addon-actions';
+import React from 'react';
+import { Provider } from 'react-redux';
+
+import testData from '../../../.storybook/test-data';
 import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
 import configureStore from '../../store/store';
-import testData from '../../../.storybook/test-data';
 import ImportToken from './import-token.component';
 import README from './README.mdx';
 

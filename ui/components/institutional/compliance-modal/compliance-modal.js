@@ -1,16 +1,17 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { hideModal } from '../../../store/actions';
-import Modal from '../../app/modal';
-import Box from '../../ui/box';
-import { Text, ButtonIcon, IconSize, IconName } from '../../component-library';
+
 import {
   AlignItems,
   JustifyContent,
   TextColor,
   DISPLAY,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import { hideModal } from '../../../store/actions';
+import Modal from '../../app/modal';
+import { Text, ButtonIcon, IconSize, IconName } from '../../component-library';
+import Box from '../../ui/box';
 
 const ComplianceModal = () => {
   const dispatch = useDispatch();

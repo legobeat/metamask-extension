@@ -543,7 +543,7 @@
     "squirrelly": "^8.0.8",
     "storybook-dark-mode": "^2.1.1",
     "stream-browserify": "^3.0.0",
-    "string.prototype.matchall": "^4.0.2",
+    "string.prototype.matchall": "^4.0.8",
     "style-loader": "^0.21.0",
     "stylelint": "^13.6.1",
     "superstruct": "^1.0.3",

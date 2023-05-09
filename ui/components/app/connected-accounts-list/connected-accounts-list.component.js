@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+
 import { IconName } from '../../component-library';
 import { MenuItem } from '../../ui/menu';
 import ConnectedAccountsListItem from './connected-accounts-list-item';

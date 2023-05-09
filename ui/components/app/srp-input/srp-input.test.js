@@ -1,9 +1,10 @@
-import React from 'react';
 import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
+
+import SrpInput from '.';
 import enLocale from '../../../../app/_locales/en/messages.json';
 import { renderWithLocalization } from '../../../../test/lib/render-helpers';
-import SrpInput from '.';
 
 const tooFewWords = new Array(11).fill('test').join(' ');
 const tooManyWords = new Array(25).fill('test').join(' ');

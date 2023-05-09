@@ -1,14 +1,15 @@
-import React from 'react';
-import configureMockStore from 'redux-mock-store';
 import { fireEvent, screen } from '@testing-library/react';
 import nock from 'nock';
-import { renderWithProvider } from '../../../../../test/jest/rendering';
-import { defaultNetworksData } from '../networks-tab.constants';
+import React from 'react';
+import configureMockStore from 'redux-mock-store';
+
+import NetworksForm from '.';
 import {
   NETWORK_TYPES,
   getRpcUrl,
 } from '../../../../../shared/constants/network';
-import NetworksForm from '.';
+import { renderWithProvider } from '../../../../../test/jest/rendering';
+import { defaultNetworksData } from '../networks-tab.constants';
 
 const renderComponent = (props) => {
   const store = configureMockStore([])({ metamask: {} });

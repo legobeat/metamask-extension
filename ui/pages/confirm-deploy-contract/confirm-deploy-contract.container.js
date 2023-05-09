@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import ConfirmDeployContract from './confirm-deploy-contract.component';
 
 const mapStateToProps = (state) => {

@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-import {
-  getShouldShowFiat,
-  getIsMultiLayerFeeNetwork,
-} from '../../../selectors';
-import { getNativeCurrency } from '../../../ducks/metamask/metamask';
-import { getHexGasTotal } from '../../../helpers/utils/confirm-tx.util';
-import { isEIP1559Transaction } from '../../../../shared/modules/transaction.utils';
 
 import {
   subtractHexes,
   sumHexes,
 } from '../../../../shared/modules/conversion.utils';
+import { isEIP1559Transaction } from '../../../../shared/modules/transaction.utils';
+import { getNativeCurrency } from '../../../ducks/metamask/metamask';
+import { getHexGasTotal } from '../../../helpers/utils/confirm-tx.util';
+import {
+  getShouldShowFiat,
+  getIsMultiLayerFeeNetwork,
+} from '../../../selectors';
 import TransactionBreakdown from './transaction-breakdown.component';
 
 const mapStateToProps = (state, ownProps) => {

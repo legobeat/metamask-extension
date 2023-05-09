@@ -1,19 +1,19 @@
+import { isNonEmptyArray } from '@metamask/controller-utils';
+import { getRpcCaveatOrigins } from '@metamask/snaps-controllers/dist/snaps/endowments/rpc';
+import { SnapCaveatType } from '@metamask/snaps-utils';
+import classnames from 'classnames';
 import deepFreeze from 'deep-freeze-strict';
 import React from 'react';
 
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import { getRpcCaveatOrigins } from '@metamask/snaps-controllers/dist/snaps/endowments/rpc';
-import { SnapCaveatType } from '@metamask/snaps-utils';
-import { isNonEmptyArray } from '@metamask/controller-utils';
 ///: END:ONLY_INCLUDE_IN
-import classnames from 'classnames';
+
 import {
   RestrictedMethods,
   ///: BEGIN:ONLY_INCLUDE_IN(snaps)
   EndowmentPermissions,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../shared/constants/permissions';
-import Tooltip from '../../components/ui/tooltip';
 import {
   AvatarIcon,
   ///: BEGIN:ONLY_INCLUDE_IN(snaps)
@@ -23,6 +23,7 @@ import {
   IconName,
   IconSize,
 } from '../../components/component-library';
+import Tooltip from '../../components/ui/tooltip';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import {
   Color,

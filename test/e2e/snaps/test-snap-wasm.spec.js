@@ -1,5 +1,5 @@
-const { withFixtures } = require('../helpers');
 const FixtureBuilder = require('../fixture-builder');
+const { withFixtures } = require('../helpers');
 const { TEST_SNAPS_WEBSITE_URL } = require('./enums');
 
 describe('Test Snap WASM', function () {

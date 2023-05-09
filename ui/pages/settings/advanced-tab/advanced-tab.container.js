@@ -1,6 +1,9 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+
+import { doesUserHaveALedgerAccount } from '../../../ducks/metamask/metamask';
+import { getPreferences } from '../../../selectors';
 import {
   displayWarning,
   setFeatureFlag,
@@ -15,8 +18,6 @@ import {
   backupUserData,
   restoreUserData,
 } from '../../../store/actions';
-import { getPreferences } from '../../../selectors';
-import { doesUserHaveALedgerAccount } from '../../../ducks/metamask/metamask';
 import AdvancedTab from './advanced-tab.component';
 
 export const mapStateToProps = (state) => {

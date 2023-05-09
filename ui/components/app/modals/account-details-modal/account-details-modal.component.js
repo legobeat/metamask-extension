@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { getAccountLink } from '@metamask/etherscan-link';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-import AccountModalContainer from '../account-modal-container';
-import QrView from '../../../ui/qr-code';
-import EditableLabel from '../../../ui/editable-label';
-import Button from '../../../ui/button';
-import { getURLHostName } from '../../../../helpers/utils/util';
-import { isHardwareKeyring } from '../../../../helpers/utils/hardware';
-///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
-import CustodyLabels from '../../../institutional/custody-labels/custody-labels';
-import { toChecksumHexAddress } from '../../../../../shared/modules/hexstring-utils';
-///: END:ONLY_INCLUDE_IN
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventLinkType,
   MetaMetricsEventKeyType,
   MetaMetricsEventName,
 } from '../../../../../shared/constants/metametrics';
+import { toChecksumHexAddress } from '../../../../../shared/modules/hexstring-utils';
 import { NETWORKS_ROUTE } from '../../../../helpers/constants/routes';
+import { isHardwareKeyring } from '../../../../helpers/utils/hardware';
+import { getURLHostName } from '../../../../helpers/utils/util';
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
+import CustodyLabels from '../../../institutional/custody-labels/custody-labels';
+///: END:ONLY_INCLUDE_IN
+import Button from '../../../ui/button';
+import EditableLabel from '../../../ui/editable-label';
+import QrView from '../../../ui/qr-code';
+import AccountModalContainer from '../account-modal-container';
 
 export default class AccountDetailsModal extends Component {
   static propTypes = {

@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+
 import Identicon from '../../../ui/identicon';
 
 export default class ConnectedAccountsListItem extends PureComponent {

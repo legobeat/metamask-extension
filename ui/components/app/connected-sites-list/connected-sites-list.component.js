@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+import { stripHttpsSchemeWithoutPort } from '../../../helpers/utils/util';
 import Button from '../../ui/button';
 import SiteIcon from '../../ui/site-icon';
-import { stripHttpsSchemeWithoutPort } from '../../../helpers/utils/util';
 import SiteOrigin from '../../ui/site-origin';
 
 export default class ConnectedSitesList extends Component {

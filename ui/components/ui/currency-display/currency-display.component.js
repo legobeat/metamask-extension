@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { useCurrencyDisplay } from '../../../hooks/useCurrencyDisplay';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { EtherDenomination } from '../../../../shared/constants/common';
+import { useCurrencyDisplay } from '../../../hooks/useCurrencyDisplay';
 
 export default function CurrencyDisplay({
   value,

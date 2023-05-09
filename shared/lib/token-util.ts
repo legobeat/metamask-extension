@@ -1,6 +1,6 @@
-import { abiERC20 } from '@metamask/metamask-eth-abis';
 import { Contract } from '@ethersproject/contracts';
 import { Web3Provider } from '@ethersproject/providers';
+import { abiERC20 } from '@metamask/metamask-eth-abis';
 
 /**
  * Gets the '_value' parameter of the given token transaction data

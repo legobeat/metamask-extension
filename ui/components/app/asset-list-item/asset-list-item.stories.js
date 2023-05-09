@@ -1,4 +1,5 @@
 import React from 'react';
+
 import AssetListItem from '.';
 
 export default {

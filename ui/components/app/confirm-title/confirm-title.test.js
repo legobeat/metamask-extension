@@ -1,9 +1,8 @@
 import React from 'react';
-import { TransactionType } from '../../../../shared/constants/transaction';
 
+import { TransactionType } from '../../../../shared/constants/transaction';
 import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
-
 import configureStore from '../../../store/store';
 import ConfirmTitle from './confirm-title';
 

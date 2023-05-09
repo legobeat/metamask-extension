@@ -1,9 +1,9 @@
 /* eslint-disable jest/require-top-level-describe */
 import { render } from '@testing-library/react';
 import React from 'react';
-import { Color, SEVERITIES } from '../../../helpers/constants/design-system';
-import { Icon, IconName } from '..';
 
+import { Icon, IconName } from '..';
+import { Color, SEVERITIES } from '../../../helpers/constants/design-system';
 import { HelpText } from './help-text';
 
 describe('HelpText', () => {

@@ -1,19 +1,25 @@
-import { strict as assert } from 'assert';
-import EventEmitter from 'events';
-import { toBuffer } from 'ethereumjs-util';
 import { TransactionFactory } from '@ethereumjs/tx';
 import { ObservableStore } from '@metamask/obs-store';
+import { strict as assert } from 'assert';
+import { toBuffer } from 'ethereumjs-util';
+import EventEmitter from 'events';
 import sinon from 'sinon';
 
+import TransactionController from '.';
 import {
-  createTestProviderTools,
-  getTestAccounts,
-} from '../../../../test/stub/provider';
-import mockEstimates from '../../../../test/data/mock-estimates.json';
+  MESSAGE_TYPE,
+  ORIGIN_METAMASK,
+} from '../../../../shared/constants/app';
+import {
+  GasEstimateTypes,
+  GasRecommendations,
+} from '../../../../shared/constants/gas';
 import {
   MetaMetricsEventCategory,
   MetaMetricsTransactionEventSource,
 } from '../../../../shared/constants/metametrics';
+import { NetworkStatus } from '../../../../shared/constants/network';
+import { SECOND } from '../../../../shared/constants/time';
 import {
   TransactionStatus,
   TransactionType,
@@ -22,20 +28,13 @@ import {
   AssetType,
   TokenStandard,
 } from '../../../../shared/constants/transaction';
-
-import { SECOND } from '../../../../shared/constants/time';
-import {
-  GasEstimateTypes,
-  GasRecommendations,
-} from '../../../../shared/constants/gas';
-import { METAMASK_CONTROLLER_EVENTS } from '../../metamask-controller';
-import {
-  MESSAGE_TYPE,
-  ORIGIN_METAMASK,
-} from '../../../../shared/constants/app';
-import { NetworkStatus } from '../../../../shared/constants/network';
 import { TRANSACTION_ENVELOPE_TYPE_NAMES } from '../../../../shared/lib/transactions-controller-utils';
-import TransactionController from '.';
+import mockEstimates from '../../../../test/data/mock-estimates.json';
+import {
+  createTestProviderTools,
+  getTestAccounts,
+} from '../../../../test/stub/provider';
+import { METAMASK_CONTROLLER_EVENTS } from '../../metamask-controller';
 
 const noop = () => true;
 const currentNetworkId = '5';

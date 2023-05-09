@@ -1,39 +1,43 @@
-import React, { useContext, useEffect, useState, useCallback } from 'react';
+import { getTokenTrackerLink } from '@metamask/etherscan-link';
 import BigNumber from 'bignumber.js';
-import PropTypes from 'prop-types';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import classnames from 'classnames';
 import { uniqBy, isEqual } from 'lodash';
+import PropTypes from 'prop-types';
+import React, { useContext, useEffect, useState, useCallback } from 'react';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { getTokenTrackerLink } from '@metamask/etherscan-link';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
+
 import {
-  useTokensToSearch,
-  getRenderableTokenData,
-} from '../../../hooks/useTokensToSearch';
-import { useEqualityCheck } from '../../../hooks/useEqualityCheck';
-import { I18nContext } from '../../../contexts/i18n';
-import DropdownInputPair from '../dropdown-input-pair';
-import DropdownSearchList from '../dropdown-search-list';
-import SlippageButtons from '../slippage-buttons';
-import { getTokens, getConversionRate } from '../../../ducks/metamask/metamask';
-import InfoTooltip from '../../../components/ui/info-tooltip';
-import Popover from '../../../components/ui/popover';
-import Button from '../../../components/ui/button';
+  MetaMetricsEventCategory,
+  MetaMetricsEventLinkType,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
+import {
+  SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP,
+  SWAPS_CHAINID_DEFAULT_TOKEN_MAP,
+  TokenBucketPriority,
+} from '../../../../shared/constants/swaps';
+import { shouldEnableDirectWrapping } from '../../../../shared/lib/swaps-utils';
+import { fetchTokenBalance } from '../../../../shared/lib/token-util.ts';
+import { calcTokenAmount } from '../../../../shared/lib/transactions-controller-utils';
+import {
+  getValueFromWeiHex,
+  hexToDecimal,
+} from '../../../../shared/modules/conversion.utils';
+import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
+import {
+  isSwapsDefaultTokenAddress,
+  isSwapsDefaultTokenSymbol,
+} from '../../../../shared/modules/swaps.utils';
+import { Text } from '../../../components/component-library';
 import ActionableMessage from '../../../components/ui/actionable-message/actionable-message';
 import Box from '../../../components/ui/box';
-import {
-  TextVariant,
-  DISPLAY,
-  FLEX_DIRECTION,
-  FontWeight,
-  TextColor,
-} from '../../../helpers/constants/design-system';
-import {
-  VIEW_QUOTE_ROUTE,
-  LOADING_QUOTES_ROUTE,
-} from '../../../helpers/constants/routes';
-
+import Button from '../../../components/ui/button';
+import InfoTooltip from '../../../components/ui/info-tooltip';
+import Popover from '../../../components/ui/popover';
+import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { getTokens, getConversionRate } from '../../../ducks/metamask/metamask';
 import {
   fetchQuotesAndSetQuoteState,
   setSwapsFromToken,
@@ -60,6 +64,27 @@ import {
   getSmartTransactionFees,
 } from '../../../ducks/swaps/swaps';
 import {
+  TextVariant,
+  DISPLAY,
+  FLEX_DIRECTION,
+  FontWeight,
+  TextColor,
+} from '../../../helpers/constants/design-system';
+import {
+  VIEW_QUOTE_ROUTE,
+  LOADING_QUOTES_ROUTE,
+} from '../../../helpers/constants/routes';
+import { getURLHostName } from '../../../helpers/utils/util';
+import { useEqualityCheck } from '../../../hooks/useEqualityCheck';
+import { useEthFiatAmount } from '../../../hooks/useEthFiatAmount';
+import { usePrevious } from '../../../hooks/usePrevious';
+import { useTokenFiatAmount } from '../../../hooks/useTokenFiatAmount';
+import {
+  useTokensToSearch,
+  getRenderableTokenData,
+} from '../../../hooks/useTokensToSearch';
+import { useTokenTracker } from '../../../hooks/useTokenTracker';
+import {
   getSwapsDefaultToken,
   getTokenExchangeRates,
   getCurrentCurrency,
@@ -70,28 +95,6 @@ import {
   getHardwareWalletType,
   getUseCurrencyRateCheck,
 } from '../../../selectors';
-
-import { getURLHostName } from '../../../helpers/utils/util';
-import { usePrevious } from '../../../hooks/usePrevious';
-import { useTokenTracker } from '../../../hooks/useTokenTracker';
-import { useTokenFiatAmount } from '../../../hooks/useTokenFiatAmount';
-import { useEthFiatAmount } from '../../../hooks/useEthFiatAmount';
-
-import {
-  isSwapsDefaultTokenAddress,
-  isSwapsDefaultTokenSymbol,
-} from '../../../../shared/modules/swaps.utils';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventLinkType,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import {
-  SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP,
-  SWAPS_CHAINID_DEFAULT_TOKEN_MAP,
-  TokenBucketPriority,
-} from '../../../../shared/constants/swaps';
-
 import {
   resetSwapsPostFetchState,
   ignoreTokens,
@@ -101,17 +104,11 @@ import {
   setSmartTransactionsOptInStatus,
   clearSmartTransactionFees,
 } from '../../../store/actions';
-import { countDecimals, fetchTokenPrice } from '../swaps.util';
+import DropdownInputPair from '../dropdown-input-pair';
+import DropdownSearchList from '../dropdown-search-list';
+import SlippageButtons from '../slippage-buttons';
 import SwapsFooter from '../swaps-footer';
-import { isEqualCaseInsensitive } from '../../../../shared/modules/string-utils';
-import { calcTokenAmount } from '../../../../shared/lib/transactions-controller-utils';
-import { fetchTokenBalance } from '../../../../shared/lib/token-util.ts';
-import { shouldEnableDirectWrapping } from '../../../../shared/lib/swaps-utils';
-import {
-  getValueFromWeiHex,
-  hexToDecimal,
-} from '../../../../shared/modules/conversion.utils';
-import { Text } from '../../../components/component-library';
+import { countDecimals, fetchTokenPrice } from '../swaps.util';
 
 const fuseSearchKeys = [
   { name: 'name', weight: 0.499 },

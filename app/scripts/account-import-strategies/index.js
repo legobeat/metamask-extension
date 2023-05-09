@@ -8,6 +8,7 @@ import {
 import Wallet from 'ethereumjs-wallet';
 import importers from 'ethereumjs-wallet/thirdparty';
 import log from 'loglevel';
+
 import { stripHexPrefix } from '../../../shared/modules/hexstring-utils';
 import { addHexPrefix } from '../lib/util';
 

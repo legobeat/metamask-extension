@@ -1,9 +1,8 @@
 import copyToClipboard from 'copy-to-clipboard';
 import { stripHexPrefix } from 'ethereumjs-util';
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import Box from '../../../ui/box';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
+import React, { useContext } from 'react';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
@@ -21,7 +20,9 @@ import {
   FLEX_DIRECTION,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { Label } from '../../../component-library';
+import Box from '../../../ui/box';
 
 const PrivateKeyDisplay = ({ privateKey }) => {
   const trackEvent = useContext(MetaMetricsContext);

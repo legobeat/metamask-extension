@@ -1,7 +1,8 @@
-import { isHexString } from 'ethereumjs-util';
 import { Interface } from '@ethersproject/abi';
 import { abiERC721, abiERC20, abiERC1155 } from '@metamask/metamask-eth-abis';
+import { isHexString } from 'ethereumjs-util';
 import log from 'loglevel';
+
 import {
   AssetType,
   TokenStandard,

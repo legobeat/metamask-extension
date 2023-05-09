@@ -1,8 +1,9 @@
+import { fireEvent, waitFor } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent, waitFor } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+
 import CurrencyInput from '.';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 describe('CurrencyInput Component', () => {
   const mockStore = {

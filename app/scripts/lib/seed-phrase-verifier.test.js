@@ -2,11 +2,12 @@
  * @jest-environment node
  * https://github.com/facebook/jest/issues/7780
  */
-import { cloneDeep } from 'lodash';
 import { KeyringController } from '@metamask/eth-keyring-controller';
-import firstTimeState from '../first-time-state';
-import mockEncryptor from '../../../test/lib/mock-encryptor';
+import { cloneDeep } from 'lodash';
+
 import { KeyringType } from '../../../shared/constants/keyring';
+import mockEncryptor from '../../../test/lib/mock-encryptor';
+import firstTimeState from '../first-time-state';
 import seedPhraseVerifier from './seed-phrase-verifier';
 
 describe('SeedPhraseVerifier', () => {

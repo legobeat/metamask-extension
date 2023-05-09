@@ -1,9 +1,20 @@
+import { getAccountLink } from '@metamask/etherscan-link';
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { getAccountLink } from '@metamask/etherscan-link';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventLinkType,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
 import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { findKeyringForAddress } from '../../../ducks/metamask/metamask';
+import { TextVariant } from '../../../helpers/constants/design-system';
+import { NETWORKS_ROUTE } from '../../../helpers/constants/routes';
+import { formatAccountType } from '../../../helpers/utils/metrics';
+import { getURLHostName } from '../../../helpers/utils/util';
 import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   getRpcPrefsForCurrentProvider,
@@ -12,19 +23,9 @@ import {
   getHardwareWalletType,
   getAccountTypeForKeyring,
 } from '../../../selectors';
-import { findKeyringForAddress } from '../../../ducks/metamask/metamask';
-import { NETWORKS_ROUTE } from '../../../helpers/constants/routes';
-import { Menu, MenuItem } from '../../ui/menu';
-import { Text, IconName } from '../../component-library';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventLinkType,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
-import { getURLHostName } from '../../../helpers/utils/util';
 import { setAccountDetailsAddress, showModal } from '../../../store/actions';
-import { TextVariant } from '../../../helpers/constants/design-system';
-import { formatAccountType } from '../../../helpers/utils/metrics';
+import { Text, IconName } from '../../component-library';
+import { Menu, MenuItem } from '../../ui/menu';
 
 export const AccountListItemMenu = ({
   anchorElement,

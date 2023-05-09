@@ -1,10 +1,11 @@
+import { fireEvent, waitFor } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { fireEvent, waitFor } from '@testing-library/react';
+
+import { KeyringType } from '../../../../shared/constants/keyring';
 import { CHAIN_IDS } from '../../../../shared/constants/network';
 import { renderWithProvider } from '../../../../test/jest/rendering';
-import { KeyringType } from '../../../../shared/constants/keyring';
 import EthOverview from './eth-overview';
 
 // Mock BUYABLE_CHAINS_MAP

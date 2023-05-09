@@ -1,5 +1,6 @@
 import { strict as assert } from 'assert';
 import sinon from 'sinon';
+
 import BackupController from './backup';
 
 function getMockPreferencesController() {

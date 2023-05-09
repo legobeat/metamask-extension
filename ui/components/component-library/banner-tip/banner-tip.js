@@ -1,13 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+
+import { BannerBase } from '..';
 import {
   AlignItems,
   BorderColor,
   DISPLAY,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box';
-import { BannerBase } from '..';
 import { BannerTipLogoType } from './banner-tip.constants';
 
 export const BannerTip = ({

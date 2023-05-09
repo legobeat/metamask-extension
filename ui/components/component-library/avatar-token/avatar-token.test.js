@@ -7,7 +7,6 @@ import {
   BorderColor,
   TextColor,
 } from '../../../helpers/constants/design-system';
-
 import { AvatarToken } from './avatar-token';
 
 describe('AvatarToken', () => {

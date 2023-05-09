@@ -1,63 +1,40 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { matchPath, Route, Switch } from 'react-router-dom';
 import IdleTimer from 'react-idle-timer';
+import { matchPath, Route, Switch } from 'react-router-dom';
 
 ///: BEGIN:ONLY_INCLUDE_IN(desktop)
 import browserAPI from 'webextension-polyfill';
+
 ///: END:ONLY_INCLUDE_IN
-import SendTransactionScreen from '../send';
-import Swaps from '../swaps';
-import ConfirmTransaction from '../confirm-transaction';
-import Home from '../home';
-import Settings from '../settings';
-import Authenticated from '../../helpers/higher-order-components/authenticated';
-import Initialized from '../../helpers/higher-order-components/initialized';
-import Lock from '../lock';
-import PermissionsConnect from '../permissions-connect';
-import RestoreVaultPage from '../keychains/restore-vault';
-import RevealSeedConfirmation from '../keychains/reveal-seed';
-import ImportTokenPage from '../import-token';
-import AddNftPage from '../add-nft';
-import ConfirmImportTokenPage from '../confirm-import-token';
-import ConfirmAddSuggestedTokenPage from '../confirm-add-suggested-token';
-import CreateAccountPage from '../create-account';
-import Loading from '../../components/ui/loading-screen';
-import LoadingNetwork from '../../components/app/loading-network-screen';
-import NetworkDropdown from '../../components/app/dropdowns/network-dropdown';
+import { getEnvironmentType } from '../../../app/scripts/lib/util';
+import {
+  ENVIRONMENT_TYPE_NOTIFICATION,
+  ENVIRONMENT_TYPE_POPUP,
+} from '../../../shared/constants/app';
+import { EXTENSION_ERROR_PAGE_TYPES } from '../../../shared/constants/desktop';
+import { NETWORK_TYPES } from '../../../shared/constants/network';
+import { ThemeType } from '../../../shared/constants/preferences';
 import AccountMenu from '../../components/app/account-menu';
-import { Modal } from '../../components/app/modals';
-import Alert from '../../components/ui/alert';
+import Alerts from '../../components/app/alerts';
 import AppHeader from '../../components/app/app-header';
+import NetworkDropdown from '../../components/app/dropdowns/network-dropdown';
+import LoadingNetwork from '../../components/app/loading-network-screen';
+import { Modal } from '../../components/app/modals';
+import QRHardwarePopover from '../../components/app/qr-hardware-popover';
+import InteractiveReplacementTokenNotification from '../../components/institutional/interactive-replacement-token-notification';
 import {
   AppHeader as MultichainAppHeader,
   AccountListMenu,
   NetworkListMenu,
   AccountDetails,
 } from '../../components/multichain';
-import UnlockPage from '../unlock-page';
-import Alerts from '../../components/app/alerts';
-import Asset from '../asset';
-import OnboardingAppHeader from '../onboarding-flow/onboarding-app-header/onboarding-app-header';
-import TokenDetailsPage from '../token-details';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import Notifications from '../notifications';
-///: END:ONLY_INCLUDE_IN
-///: BEGIN:ONLY_INCLUDE_IN(desktop)
-import { registerOnDesktopDisconnect } from '../../hooks/desktopHooks';
-import DesktopErrorPage from '../desktop-error';
-import DesktopPairingPage from '../desktop-pairing';
-///: END:ONLY_INCLUDE_IN
-///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
-import ComplianceFeaturePage from '../institutional/compliance-feature-page';
-import InstitutionalEntityDonePage from '../institutional/institutional-entity-done-page';
-import InteractiveReplacementTokenNotification from '../../components/institutional/interactive-replacement-token-notification';
-import ConfirmAddInstitutionalFeature from '../institutional/confirm-add-institutional-feature';
-import ConfirmAddCustodianToken from '../institutional/confirm-add-custodian-token';
-import InteractiveReplacementTokenPage from '../institutional/interactive-replacement-token-page';
-///: END:ONLY_INCLUDE_IN
-
+import Alert from '../../components/ui/alert';
+import DeprecatedTestNetworks from '../../components/ui/deprecated-test-networks/deprecated-test-networks';
+import Loading from '../../components/ui/loading-screen';
+import NewNetworkInfo from '../../components/ui/new-network-info/new-network-info';
+import { SEND_STAGES } from '../../ducks/send';
 import {
   IMPORT_TOKEN_ROUTE,
   ASSET_ROUTE,
@@ -96,24 +73,47 @@ import {
   DESKTOP_ERROR_ROUTE,
   ///: END:ONLY_INCLUDE_IN
 } from '../../helpers/constants/routes';
-
+import Authenticated from '../../helpers/higher-order-components/authenticated';
+import Initialized from '../../helpers/higher-order-components/initialized';
+import { registerOnDesktopDisconnect } from '../../hooks/desktopHooks';
+import AddNftPage from '../add-nft';
+import Asset from '../asset';
+import ConfirmAddSuggestedTokenPage from '../confirm-add-suggested-token';
+import ConfirmImportTokenPage from '../confirm-import-token';
+import ConfirmTransaction from '../confirm-transaction';
+import CreateAccountPage from '../create-account';
+import Home from '../home';
+import SendTransactionScreen from '../send';
+import Swaps from '../swaps';
+import Settings from '../settings';
+import Lock from '../lock';
+import PermissionsConnect from '../permissions-connect';
+import RestoreVaultPage from '../keychains/restore-vault';
+import RevealSeedConfirmation from '../keychains/reveal-seed';
+import ImportTokenPage from '../import-token';
+import TokenDetailsPage from '../token-details';
+import UnlockPage from '../unlock-page';
+import OnboardingAppHeader from '../onboarding-flow/onboarding-app-header/onboarding-app-header';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
+import Notifications from '../notifications';
+///: END:ONLY_INCLUDE_IN
 ///: BEGIN:ONLY_INCLUDE_IN(desktop)
-import { EXTENSION_ERROR_PAGE_TYPES } from '../../../shared/constants/desktop';
+import DesktopErrorPage from '../desktop-error';
+import DesktopPairingPage from '../desktop-pairing';
+///: END:ONLY_INCLUDE_IN
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
+import ComplianceFeaturePage from '../institutional/compliance-feature-page';
+import InstitutionalEntityDonePage from '../institutional/institutional-entity-done-page';
+import ConfirmAddInstitutionalFeature from '../institutional/confirm-add-institutional-feature';
+import ConfirmAddCustodianToken from '../institutional/confirm-add-custodian-token';
+import InteractiveReplacementTokenPage from '../institutional/interactive-replacement-token-page';
 ///: END:ONLY_INCLUDE_IN
 
-import {
-  ENVIRONMENT_TYPE_NOTIFICATION,
-  ENVIRONMENT_TYPE_POPUP,
-} from '../../../shared/constants/app';
-import { NETWORK_TYPES } from '../../../shared/constants/network';
-import { getEnvironmentType } from '../../../app/scripts/lib/util';
+///: BEGIN:ONLY_INCLUDE_IN(desktop)
+///: END:ONLY_INCLUDE_IN
+
 import ConfirmationPage from '../confirmation';
 import OnboardingFlow from '../onboarding-flow/onboarding-flow';
-import QRHardwarePopover from '../../components/app/qr-hardware-popover';
-import { SEND_STAGES } from '../../ducks/send';
-import DeprecatedTestNetworks from '../../components/ui/deprecated-test-networks/deprecated-test-networks';
-import NewNetworkInfo from '../../components/ui/new-network-info/new-network-info';
-import { ThemeType } from '../../../shared/constants/preferences';
 
 export default class Routes extends Component {
   static propTypes = {

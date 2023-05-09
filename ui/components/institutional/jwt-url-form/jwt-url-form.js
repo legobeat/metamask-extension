@@ -1,16 +1,17 @@
-import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import React, { useState, useRef } from 'react';
+
 import {
   AlignItems,
   DISPLAY,
   BLOCK_SIZES,
   FLEX_DIRECTION,
 } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { Text } from '../../component-library';
-import JwtDropdown from '../jwt-dropdown';
-import Button from '../../ui/button';
 import Box from '../../ui/box';
+import Button from '../../ui/button';
+import JwtDropdown from '../jwt-dropdown';
 
 const JwtUrlForm = (props) => {
   const t = useI18nContext();

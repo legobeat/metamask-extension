@@ -1,10 +1,10 @@
-import { inspect, isDeepStrictEqual } from 'util';
+import { SafeEventEmitterProvider } from '@metamask/eth-json-rpc-provider/dist/safe-event-emitter-provider';
 import {
   JsonRpcEngine,
   JsonRpcRequest,
   JsonRpcResponse,
 } from 'json-rpc-engine';
-import { SafeEventEmitterProvider } from '@metamask/eth-json-rpc-provider/dist/safe-event-emitter-provider';
+import { inspect, isDeepStrictEqual } from 'util';
 
 // Store this in case it gets stubbed later
 const originalSetTimeout = global.setTimeout;

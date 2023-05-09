@@ -1,13 +1,17 @@
+import { pickBy } from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import { pickBy } from 'lodash';
-import Button from '../../ui/button';
-import * as actions from '../../../store/actions';
-import { openAlert as displayInvalidCustomNetworkAlert } from '../../../ducks/alerts/invalid-custom-network';
-import { getProviderConfig } from '../../../ducks/metamask/metamask';
+
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+  MetaMetricsNetworkEventSource,
+} from '../../../../shared/constants/metametrics';
 import {
   BUILT_IN_NETWORKS,
   CHAIN_ID_TO_RPC_URL_MAP,
@@ -18,24 +22,19 @@ import {
   SHOULD_SHOW_LINEA_TESTNET_NETWORK,
 } from '../../../../shared/constants/network';
 import { isPrefixedFormattedHexString } from '../../../../shared/modules/network.utils';
-
-import ColorIndicator from '../../ui/color-indicator';
+import { openAlert as displayInvalidCustomNetworkAlert } from '../../../ducks/alerts/invalid-custom-network';
+import { getProviderConfig } from '../../../ducks/metamask/metamask';
 import { IconColor, Size } from '../../../helpers/constants/design-system';
-import { getShowTestNetworks } from '../../../selectors';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
-import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-  MetaMetricsNetworkEventSource,
-} from '../../../../shared/constants/metametrics';
 import {
   ADD_POPULAR_CUSTOM_NETWORK,
   ADVANCED_ROUTE,
 } from '../../../helpers/constants/routes';
-import { ButtonIcon } from '../../component-library/button-icon/deprecated';
+import { getShowTestNetworks } from '../../../selectors';
+import * as actions from '../../../store/actions';
 import { Icon, IconName, IconSize } from '../../component-library';
-
+import { ButtonIcon } from '../../component-library/button-icon/deprecated';
+import Button from '../../ui/button';
+import ColorIndicator from '../../ui/color-indicator';
 import { Dropdown, DropdownMenuItem } from './dropdown';
 
 // classes from nodes of the toggle element.

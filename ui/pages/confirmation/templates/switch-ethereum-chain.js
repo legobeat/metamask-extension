@@ -1,4 +1,5 @@
 import { ethErrors } from 'eth-rpc-errors';
+
 import {
   JustifyContent,
   SEVERITIES,

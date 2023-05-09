@@ -1,9 +1,19 @@
+import { getBlockExplorerLink } from '@metamask/etherscan-link';
+import { isEqual } from 'lodash';
 import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { getBlockExplorerLink } from '@metamask/etherscan-link';
-import { isEqual } from 'lodash';
+
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
+import { SmartTransactionStatus } from '../../../../shared/constants/transaction';
+import { calcTokenAmount } from '../../../../shared/lib/transactions-controller-utils';
+import { Text } from '../../../components/component-library';
+import Box from '../../../components/ui/box';
+import UrlIcon from '../../../components/ui/url-icon';
 import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { getNativeCurrency } from '../../../ducks/metamask/metamask';
 import {
   getFetchParams,
   prepareToLeaveSwaps,
@@ -17,24 +27,6 @@ import {
   cancelSwapsSmartTransaction,
 } from '../../../ducks/swaps/swaps';
 import {
-  isHardwareWallet,
-  getHardwareWalletType,
-  getCurrentChainId,
-  getUSDConversionRate,
-  conversionRateSelector,
-  getCurrentCurrency,
-  getRpcPrefsForCurrentProvider,
-} from '../../../selectors';
-import { SWAPS_CHAINID_DEFAULT_BLOCK_EXPLORER_URL_MAP } from '../../../../shared/constants/swaps';
-import { getNativeCurrency } from '../../../ducks/metamask/metamask';
-import {
-  DEFAULT_ROUTE,
-  BUILD_QUOTE_ROUTE,
-} from '../../../helpers/constants/routes';
-import { Text } from '../../../components/component-library';
-import Box from '../../../components/ui/box';
-import UrlIcon from '../../../components/ui/url-icon';
-import {
   BLOCK_SIZES,
   TextVariant,
   JustifyContent,
@@ -44,27 +36,35 @@ import {
   TextColor,
 } from '../../../helpers/constants/design-system';
 import {
+  DEFAULT_ROUTE,
+  BUILD_QUOTE_ROUTE,
+} from '../../../helpers/constants/routes';
+import {
+  isHardwareWallet,
+  getHardwareWalletType,
+  getCurrentChainId,
+  getUSDConversionRate,
+  conversionRateSelector,
+  getCurrentCurrency,
+  getRpcPrefsForCurrentProvider,
+} from '../../../selectors';
+import {
   stopPollingForQuotes,
   setBackgroundSwapRouteState,
 } from '../../../store/actions';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-import { SmartTransactionStatus } from '../../../../shared/constants/transaction';
-
+import CreateNewSwap from '../create-new-swap';
 import SwapsFooter from '../swaps-footer';
 import {
   showRemainingTimeInMinAndSec,
   getFeeForSmartTransaction,
 } from '../swaps.util';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import CreateNewSwap from '../create-new-swap';
 import ViewOnBlockExplorer from '../view-on-block-explorer';
-import { calcTokenAmount } from '../../../../shared/lib/transactions-controller-utils';
-import SuccessIcon from './success-icon';
-import RevertedIcon from './reverted-icon';
-import CanceledIcon from './canceled-icon';
-import UnknownIcon from './unknown-icon';
 import ArrowIcon from './arrow-icon';
+import CanceledIcon from './canceled-icon';
+import RevertedIcon from './reverted-icon';
+import SuccessIcon from './success-icon';
 import TimerIcon from './timer-icon';
+import UnknownIcon from './unknown-icon';
 
 export default function SmartTransactionStatusPage() {
   const [cancelSwapLinkClicked, setCancelSwapLinkClicked] = useState(false);

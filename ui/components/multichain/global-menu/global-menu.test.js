@@ -1,9 +1,10 @@
 import React from 'react';
+
+import { GlobalMenu } from '.';
+import { SUPPORT_LINK } from '../../../../shared/lib/ui-utils';
+import mockState from '../../../../test/data/mock-state.json';
 import { renderWithProvider, fireEvent, waitFor } from '../../../../test/jest';
 import configureStore from '../../../store/store';
-import mockState from '../../../../test/data/mock-state.json';
-import { SUPPORT_LINK } from '../../../../shared/lib/ui-utils';
-import { GlobalMenu } from '.';
 
 const render = () => {
   const store = configureStore({

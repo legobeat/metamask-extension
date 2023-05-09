@@ -1,8 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import Box from '../../../components/ui/box';
-import Typography from '../../../components/ui/typography';
 import ToggleButton from '../../../components/ui/toggle-button';
+import Typography from '../../../components/ui/typography';
 import {
   JustifyContent,
   TypographyVariant,

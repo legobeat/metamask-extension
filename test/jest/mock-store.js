@@ -1,5 +1,5 @@
-import { CHAIN_IDS } from '../../shared/constants/network';
 import { KeyringType } from '../../shared/constants/keyring';
+import { CHAIN_IDS } from '../../shared/constants/network';
 
 const createGetSmartTransactionFeesApiResponse = () => {
   return {

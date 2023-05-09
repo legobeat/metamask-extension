@@ -1,15 +1,18 @@
-import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import browser from 'webextension-polyfill';
 import { PairingKeyStatus } from '@metamask/desktop/dist/types';
+import React, { useContext } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import browser from 'webextension-polyfill';
+
+import { EXTENSION_ERROR_PAGE_TYPES } from '../../../../shared/constants/desktop';
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import { SECOND } from '../../../../shared/constants/time';
 import { I18nContext } from '../../../contexts/i18n';
-import Button from '../../ui/button';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   DESKTOP_ERROR_ROUTE,
   DESKTOP_PAIRING_ROUTE,
 } from '../../../helpers/constants/routes';
-import { EXTENSION_ERROR_PAGE_TYPES } from '../../../../shared/constants/desktop';
 import { getIsDesktopEnabled } from '../../../selectors';
 import {
   hideLoadingIndication,
@@ -18,9 +21,7 @@ import {
   testDesktopConnection,
   disableDesktop,
 } from '../../../store/actions';
-import { SECOND } from '../../../../shared/constants/time';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import Button from '../../ui/button';
 
 const DESKTOP_ERROR_DESKTOP_OUTDATED_ROUTE = `${DESKTOP_ERROR_ROUTE}/${EXTENSION_ERROR_PAGE_TYPES.DESKTOP_OUTDATED}`;
 const DESKTOP_ERROR_EXTENSION_OUTDATED_ROUTE = `${DESKTOP_ERROR_ROUTE}/${EXTENSION_ERROR_PAGE_TYPES.EXTENSION_OUTDATED}`;

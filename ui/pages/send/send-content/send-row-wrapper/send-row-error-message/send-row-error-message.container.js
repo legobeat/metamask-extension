@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import { getSendErrors } from '../../../../../ducks/send';
 import SendRowErrorMessage from './send-row-error-message.component';
 

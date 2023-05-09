@@ -1,9 +1,10 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+import { AssetType } from '../../../../shared/constants/transaction';
 import PageContainerHeader from '../../../components/ui/page-container/page-container-header';
 import { getMostRecentOverviewPage } from '../../../ducks/history/history';
-import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   getDraftTransactionExists,
   getSendAsset,
@@ -11,7 +12,7 @@ import {
   resetSendState,
   SEND_STAGES,
 } from '../../../ducks/send';
-import { AssetType } from '../../../../shared/constants/transaction';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 
 export default function SendHeader() {
   const history = useHistory();

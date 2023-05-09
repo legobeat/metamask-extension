@@ -1,9 +1,10 @@
+import { fireEvent } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/jest/rendering';
-import { TokenStandard } from '../../../../shared/constants/transaction';
+
 import ConfirmApproveContent from '.';
+import { TokenStandard } from '../../../../shared/constants/transaction';
+import { renderWithProvider } from '../../../../test/jest/rendering';
 
 const renderComponent = (props) => {
   const store = configureMockStore([])({

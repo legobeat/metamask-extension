@@ -1,21 +1,32 @@
-import EventEmitter from '@metamask/safe-event-emitter';
-import { ObservableStore } from '@metamask/obs-store';
-import { bufferToHex, keccak, toBuffer, isHexString } from 'ethereumjs-util';
-import EthQuery from 'ethjs-query';
-import { ethErrors } from 'eth-rpc-errors';
 import { Common, Hardfork } from '@ethereumjs/common';
 import { TransactionFactory } from '@ethereumjs/tx';
-import NonceTracker from 'nonce-tracker';
-import log from 'loglevel';
+import { ObservableStore } from '@metamask/obs-store';
+import EventEmitter from '@metamask/safe-event-emitter';
 import BigNumber from 'bignumber.js';
+import { ethErrors } from 'eth-rpc-errors';
+import { bufferToHex, keccak, toBuffer, isHexString } from 'ethereumjs-util';
+import EthQuery from 'ethjs-query';
 import { merge, pickBy } from 'lodash';
-import cleanErrorStack from '../../lib/cleanErrorStack';
+import log from 'loglevel';
+import NonceTracker from 'nonce-tracker';
+
 import {
-  hexToBn,
-  BnMultiplyByFraction,
-  addHexPrefix,
-  getChainType,
-} from '../../lib/util';
+  ORIGIN_METAMASK,
+  MESSAGE_TYPE,
+} from '../../../../shared/constants/app';
+import {
+  GAS_LIMITS,
+  GasEstimateTypes,
+  GasRecommendations,
+  CUSTOM_GAS_ESTIMATE,
+  PriorityLevels,
+} from '../../../../shared/constants/gas';
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+import {
+  CHAIN_ID_TO_GAS_LIMIT_BUFFER_MAP,
+  NETWORK_TYPES,
+  NetworkStatus,
+} from '../../../../shared/constants/network';
 import {
   TransactionStatus,
   TransactionType,
@@ -24,47 +35,37 @@ import {
   TransactionMetaMetricsEvent,
   TransactionApprovalAmountType,
 } from '../../../../shared/constants/transaction';
-import { METAMASK_CONTROLLER_EVENTS } from '../../metamask-controller';
 import {
-  GAS_LIMITS,
-  GasEstimateTypes,
-  GasRecommendations,
-  CUSTOM_GAS_ESTIMATE,
-  PriorityLevels,
-} from '../../../../shared/constants/gas';
+  calcGasTotal,
+  getSwapsTokensReceivedFromTxMeta,
+  TRANSACTION_ENVELOPE_TYPE_NAMES,
+} from '../../../../shared/lib/transactions-controller-utils';
 import {
   bnToHex,
   decGWEIToHexWEI,
   hexWEIToDecETH,
   hexWEIToDecGWEI,
 } from '../../../../shared/modules/conversion.utils';
+import { Numeric } from '../../../../shared/modules/Numeric';
 import { isSwapsDefaultTokenAddress } from '../../../../shared/modules/swaps.utils';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
-import {
-  CHAIN_ID_TO_GAS_LIMIT_BUFFER_MAP,
-  NETWORK_TYPES,
-  NetworkStatus,
-} from '../../../../shared/constants/network';
 import {
   determineTransactionAssetType,
   determineTransactionContractCode,
   determineTransactionType,
   isEIP1559Transaction,
 } from '../../../../shared/modules/transaction.utils';
+import cleanErrorStack from '../../lib/cleanErrorStack';
 import {
-  ORIGIN_METAMASK,
-  MESSAGE_TYPE,
-} from '../../../../shared/constants/app';
-import {
-  calcGasTotal,
-  getSwapsTokensReceivedFromTxMeta,
-  TRANSACTION_ENVELOPE_TYPE_NAMES,
-} from '../../../../shared/lib/transactions-controller-utils';
-import { Numeric } from '../../../../shared/modules/Numeric';
-import TransactionStateManager from './tx-state-manager';
-import TxGasUtil from './tx-gas-utils';
-import PendingTransactionTracker from './pending-tx-tracker';
+  hexToBn,
+  BnMultiplyByFraction,
+  addHexPrefix,
+  getChainType,
+} from '../../lib/util';
+import { METAMASK_CONTROLLER_EVENTS } from '../../metamask-controller';
 import * as txUtils from './lib/util';
+import PendingTransactionTracker from './pending-tx-tracker';
+import TxGasUtil from './tx-gas-utils';
+import TransactionStateManager from './tx-state-manager';
 
 const MAX_MEMSTORE_TX_LIST_SIZE = 100; // Number of transactions (by unique nonces) to keep in memory
 const UPDATE_POST_TX_BALANCE_TIMEOUT = 5000;

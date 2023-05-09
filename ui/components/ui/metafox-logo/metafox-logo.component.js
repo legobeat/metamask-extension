@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import MetaFoxHorizontalLogo from './horizontal-logo';
 
 export default class MetaFoxLogo extends PureComponent {

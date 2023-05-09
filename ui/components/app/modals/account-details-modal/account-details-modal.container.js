@@ -1,11 +1,7 @@
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import {
-  showModal,
-  setAccountLabel,
-  hideModal,
-} from '../../../../store/actions';
+import { compose } from 'redux';
+
 import {
   getSelectedIdentity,
   getRpcPrefsForCurrentProvider,
@@ -18,6 +14,11 @@ import {
 } from '../../../../selectors';
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import { getCustodyAccountDetails } from '../../../../selectors/institutional/selectors';
+import {
+  showModal,
+  setAccountLabel,
+  hideModal,
+} from '../../../../store/actions';
 ///: END:ONLY_INCLUDE_IN
 import AccountDetailsModal from './account-details-modal.component';
 

@@ -1,3 +1,4 @@
+import { shuffle, isEqual } from 'lodash';
 import React, {
   useEffect,
   useRef,
@@ -13,16 +14,19 @@ import {
   useHistory,
   Redirect,
 } from 'react-router-dom';
-import { shuffle, isEqual } from 'lodash';
-import { I18nContext } from '../../contexts/i18n';
+
+import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
 import {
-  getSelectedAccount,
-  getCurrentChainId,
-  getIsSwapsChain,
-  isHardwareWallet,
-  getHardwareWalletType,
-  getTokenList,
-} from '../../selectors/selectors';
+  ERROR_FETCHING_QUOTES,
+  QUOTES_NOT_AVAILABLE_ERROR,
+  SWAP_FAILED_ERROR,
+  CONTRACT_DATA_DISABLED_ERROR,
+  OFFLINE_FOR_MAINTENANCE,
+} from '../../../shared/constants/swaps';
+import { TransactionStatus } from '../../../shared/constants/transaction';
+import { getSwapsTokensReceivedFromTxMeta } from '../../../shared/lib/transactions-controller-utils';
+import { I18nContext } from '../../contexts/i18n';
+import { MetaMetricsContext } from '../../contexts/metametrics';
 import {
   getQuotes,
   clearSwapsState,
@@ -48,10 +52,6 @@ import {
   navigateBackToBuildQuote,
 } from '../../ducks/swaps/swaps';
 import {
-  checkNetworkAndAccountSupports1559,
-  currentNetworkTxListSelector,
-} from '../../selectors';
-import {
   AWAITING_SIGNATURES_ROUTE,
   AWAITING_SWAP_ROUTE,
   SMART_TRANSACTION_STATUS_ROUTE,
@@ -62,14 +62,20 @@ import {
   DEFAULT_ROUTE,
   SWAPS_MAINTENANCE_ROUTE,
 } from '../../helpers/constants/routes';
+import FeatureToggledRoute from '../../helpers/higher-order-components/feature-toggled-route';
+import { useGasFeeEstimates } from '../../hooks/useGasFeeEstimates';
 import {
-  ERROR_FETCHING_QUOTES,
-  QUOTES_NOT_AVAILABLE_ERROR,
-  SWAP_FAILED_ERROR,
-  CONTRACT_DATA_DISABLED_ERROR,
-  OFFLINE_FOR_MAINTENANCE,
-} from '../../../shared/constants/swaps';
-
+  checkNetworkAndAccountSupports1559,
+  currentNetworkTxListSelector,
+} from '../../selectors';
+import {
+  getSelectedAccount,
+  getCurrentChainId,
+  getIsSwapsChain,
+  isHardwareWallet,
+  getHardwareWalletType,
+  getTokenList,
+} from '../../selectors/selectors';
 import {
   resetBackgroundSwapsState,
   setSwapsTokens,
@@ -77,23 +83,16 @@ import {
   setBackgroundSwapRouteState,
   setSwapsErrorKey,
 } from '../../store/actions';
-
-import { useGasFeeEstimates } from '../../hooks/useGasFeeEstimates';
-import FeatureToggledRoute from '../../helpers/higher-order-components/feature-toggled-route';
-import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
-import { TransactionStatus } from '../../../shared/constants/transaction';
-import { MetaMetricsContext } from '../../contexts/metametrics';
-import { getSwapsTokensReceivedFromTxMeta } from '../../../shared/lib/transactions-controller-utils';
+import AwaitingSignatures from './awaiting-signatures';
+import AwaitingSwap from './awaiting-swap';
+import BuildQuote from './build-quote';
+import LoadingQuote from './loading-swaps-quotes';
+import SmartTransactionStatus from './smart-transaction-status';
 import {
   fetchTokens,
   fetchTopAssets,
   fetchAggregatorMetadata,
 } from './swaps.util';
-import AwaitingSignatures from './awaiting-signatures';
-import SmartTransactionStatus from './smart-transaction-status';
-import AwaitingSwap from './awaiting-swap';
-import LoadingQuote from './loading-swaps-quotes';
-import BuildQuote from './build-quote';
 import ViewQuote from './view-quote';
 
 export default function Swap() {

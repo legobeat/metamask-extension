@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ConfirmSendToken from './confirm-send-token.component';
 
 // eslint-disable-next-line import/no-anonymous-default-export

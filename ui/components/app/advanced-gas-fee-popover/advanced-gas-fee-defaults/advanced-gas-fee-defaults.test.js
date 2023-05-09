@@ -1,20 +1,18 @@
-import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
+import React from 'react';
 
 import {
   EditGasModes,
   GasEstimateTypes,
 } from '../../../../../shared/constants/gas';
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 import mockEstimates from '../../../../../test/data/mock-estimates.json';
 import mockState from '../../../../../test/data/mock-state.json';
-import * as Actions from '../../../../store/actions';
-
-import { AdvancedGasFeePopoverContextProvider } from '../context';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 import { GasFeeContextProvider } from '../../../../contexts/gasFee';
+import * as Actions from '../../../../store/actions';
 import configureStore from '../../../../store/store';
-
 import AdvancedGasFeeInputs from '../advanced-gas-fee-inputs';
+import { AdvancedGasFeePopoverContextProvider } from '../context';
 import AdvancedGasFeeDefaults from './advanced-gas-fee-defaults';
 
 jest.mock('../../../../store/actions', () => ({

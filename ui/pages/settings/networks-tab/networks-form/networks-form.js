@@ -1,3 +1,7 @@
+import classnames from 'classnames';
+import { isEqual } from 'lodash';
+import log from 'loglevel';
+import PropTypes from 'prop-types';
 import React, {
   useCallback,
   useContext,
@@ -6,29 +10,8 @@ import React, {
   useState,
 } from 'react';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 import validUrl from 'valid-url';
-import log from 'loglevel';
-import classnames from 'classnames';
-import { isEqual } from 'lodash';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import {
-  isPrefixedFormattedHexString,
-  isSafeChainId,
-} from '../../../../../shared/modules/network.utils';
-import { jsonRpcRequest } from '../../../../../shared/modules/rpc.utils';
-import ActionableMessage from '../../../../components/ui/actionable-message';
-import Button from '../../../../components/ui/button';
-import FormField from '../../../../components/ui/form-field';
-import {
-  setSelectedNetworkConfigurationId,
-  upsertNetworkConfiguration,
-  editAndSetNetworkConfiguration,
-  showModal,
-  setNewNetworkAdded,
-} from '../../../../store/actions';
-import fetchWithCache from '../../../../../shared/lib/fetch-with-cache';
-import { usePrevious } from '../../../../hooks/usePrevious';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
@@ -38,8 +21,26 @@ import {
   infuraProjectId,
   FEATURED_RPCS,
 } from '../../../../../shared/constants/network';
+import fetchWithCache from '../../../../../shared/lib/fetch-with-cache';
 import { decimalToHex } from '../../../../../shared/modules/conversion.utils';
+import {
+  isPrefixedFormattedHexString,
+  isSafeChainId,
+} from '../../../../../shared/modules/network.utils';
+import { jsonRpcRequest } from '../../../../../shared/modules/rpc.utils';
+import ActionableMessage from '../../../../components/ui/actionable-message';
+import Button from '../../../../components/ui/button';
+import FormField from '../../../../components/ui/form-field';
 import { MetaMetricsContext } from '../../../../contexts/metametrics';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { usePrevious } from '../../../../hooks/usePrevious';
+import {
+  setSelectedNetworkConfigurationId,
+  upsertNetworkConfiguration,
+  editAndSetNetworkConfiguration,
+  showModal,
+  setNewNetworkAdded,
+} from '../../../../store/actions';
 
 /**
  * Attempts to convert the given chainId to a decimal string, for display
@@ -200,7 +201,7 @@ const NetworksForm = ({
       if (key === 'chainId' && error?.key === 'chainIdExistsErrorMsg') {
         return false;
       }
-      return error?.key && error?.msg;
+      return error?.key && error?.message;
     });
   };
 
@@ -220,7 +221,7 @@ const NetworksForm = ({
 
         return {
           key: errorKey,
-          msg: errorMessage,
+          message: errorMessage,
         };
       }
       return null;
@@ -241,11 +242,11 @@ const NetworksForm = ({
       if (!hexChainId.startsWith('0x')) {
         try {
           hexChainId = `0x${decimalToHex(hexChainId)}`;
-        } catch (err) {
+        } catch (error) {
           return {
             error: {
               key: 'invalidHexNumber',
-              msg: t('invalidHexNumber'),
+              message: t('invalidHexNumber'),
             },
           };
         }
@@ -286,9 +287,9 @@ const NetworksForm = ({
 
       try {
         endpointChainId = await jsonRpcRequest(rpcUrl, 'eth_chainId');
-      } catch (err) {
-        log.warn('Failed to fetch the chainId from the endpoint.', err);
-        providerError = err;
+      } catch (error) {
+        log.warn('Failed to fetch the chainId from the endpoint.', error);
+        providerError = error;
       }
 
       if (rpcUrl && formChainId) {
@@ -303,7 +304,7 @@ const NetworksForm = ({
           if (!formChainId.startsWith('0x')) {
             try {
               endpointChainId = parseInt(endpointChainId, 16).toString(10);
-            } catch (err) {
+            } catch (error) {
               log.warn(
                 'Failed to convert endpoint chain ID to decimal',
                 endpointChainId,
@@ -323,7 +324,7 @@ const NetworksForm = ({
         return {
           error: {
             key: errorKey,
-            msg: errorMessage,
+            message: errorMessage,
           },
         };
       }
@@ -331,7 +332,7 @@ const NetworksForm = ({
         return {
           warning: {
             key: warningKey,
-            msg: warningMessage,
+            message: warningMessage,
           },
         };
       }
@@ -363,9 +364,9 @@ const NetworksForm = ({
       try {
         safeChainsList =
           (await fetchWithCache('https://chainid.network/chains.json')) || [];
-      } catch (err) {
-        log.warn('Failed to fetch the chainList from chainid.network', err);
-        providerError = err;
+      } catch (error) {
+        log.warn('Failed to fetch the chainList from chainid.network', error);
+        providerError = error;
       }
 
       if (providerError) {
@@ -394,7 +395,7 @@ const NetworksForm = ({
       if (warningKey) {
         return {
           key: warningKey,
-          msg: warningMessage,
+          message: warningMessage,
         };
       }
 
@@ -428,12 +429,12 @@ const NetworksForm = ({
 
         return {
           key: errorKey,
-          msg: errorMessage,
+          message: errorMessage,
         };
       } else if (matchingRPCUrl && matchingRPCUrl !== selectedNetworkRpcUrl) {
         return {
           key: 'urlExistsErrorMsg',
-          msg: t('urlExistsErrorMsg', [
+          message: t('urlExistsErrorMsg', [
             matchingRPCLabel ?? matchingRPCLabelKey,
           ]),
         };
@@ -638,7 +639,7 @@ const NetworksForm = ({
       >
         <FormField
           autoFocus
-          error={errors.networkName?.msg || ''}
+          error={errors.networkName?.message || ''}
           onChange={(value) => {
             setIsEditing(true);
             setNetworkName(value);
@@ -648,7 +649,7 @@ const NetworksForm = ({
           disabled={viewOnly}
         />
         <FormField
-          error={errors.rpcUrl?.msg || ''}
+          error={errors.rpcUrl?.message || ''}
           onChange={(value) => {
             setIsEditing(true);
             setRpcUrl(value);
@@ -662,8 +663,8 @@ const NetworksForm = ({
           disabled={viewOnly}
         />
         <FormField
-          warning={warnings.chainId?.msg || ''}
-          error={errors.chainId?.msg || ''}
+          warning={warnings.chainId?.message || ''}
+          error={errors.chainId?.message || ''}
           onChange={(value) => {
             setIsEditing(true);
             setChainId(value);
@@ -674,7 +675,7 @@ const NetworksForm = ({
           tooltipText={viewOnly ? null : t('networkSettingsChainIdDescription')}
         />
         <FormField
-          warning={warnings.ticker?.msg || ''}
+          warning={warnings.ticker?.message || ''}
           onChange={(value) => {
             setIsEditing(true);
             setTicker(value);
@@ -684,7 +685,7 @@ const NetworksForm = ({
           disabled={viewOnly}
         />
         <FormField
-          error={errors.blockExplorerUrl?.msg || ''}
+          error={errors.blockExplorerUrl?.message || ''}
           onChange={(value) => {
             setIsEditing(true);
             setBlockExplorerUrl(value);

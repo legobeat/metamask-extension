@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { omit } from 'lodash';
-import Typography from '../typography';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   Size,
   TypographyVariant,
@@ -10,6 +10,7 @@ import {
   TextColor,
 } from '../../../helpers/constants/design-system';
 import Tooltip from '../tooltip';
+import Typography from '../typography';
 
 const MARGIN_MAP = {
   [Size.XS]: 0,

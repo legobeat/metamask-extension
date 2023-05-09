@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import Button from '../button';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+
+import { getCompletedOnboarding } from '../../../ducks/metamask/metamask';
 import {
   DISPLAY,
   JustifyContent,
   TextVariant,
   Color,
 } from '../../../helpers/constants/design-system';
-import Box from '../box/box';
-import ActionableMessage from '../actionable-message/actionable-message';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { getCurrentChainId } from '../../../selectors';
-import { getCompletedOnboarding } from '../../../ducks/metamask/metamask';
 import { Text } from '../../component-library';
+import ActionableMessage from '../actionable-message/actionable-message';
+import Box from '../box/box';
+import Button from '../button';
 
 export default function DeprecatedTestNetworks() {
   const currentChainID = useSelector(getCurrentChainId);

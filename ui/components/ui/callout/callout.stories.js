@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+
 import {
   BorderColor,
   SEVERITIES,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import Box from '../box';
 import { Text } from '../../component-library';
+import Box from '../box';
 import Callout from './callout';
 
 export default {

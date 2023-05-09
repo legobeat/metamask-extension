@@ -1,8 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import {
+  ENVIRONMENT_TYPE_FULLSCREEN,
+  ENVIRONMENT_TYPE_POPUP,
+  MESSAGE_TYPE,
+  ORIGIN_METAMASK,
+} from '../../../../shared/constants/app';
+import { MetaMetricsNetworkEventSource } from '../../../../shared/constants/metametrics';
+import { FEATURED_RPCS } from '../../../../shared/constants/network';
 import { I18nContext } from '../../../contexts/i18n';
-import Box from '../../ui/box';
 import {
   AlignItems,
   DISPLAY,
@@ -14,30 +23,21 @@ import {
   TextColor,
   IconColor,
 } from '../../../helpers/constants/design-system';
-import Button from '../../ui/button';
-import Tooltip from '../../ui/tooltip';
-import IconWithFallback from '../../ui/icon-with-fallback';
-import IconBorder from '../../ui/icon-border';
+import { ADD_NETWORK_ROUTE } from '../../../helpers/constants/routes';
+import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
+import ConfirmationPage from '../../../pages/confirmation/confirmation';
 import {
   getNetworkConfigurations,
   getUnapprovedConfirmations,
 } from '../../../selectors';
-
-import {
-  ENVIRONMENT_TYPE_FULLSCREEN,
-  ENVIRONMENT_TYPE_POPUP,
-  MESSAGE_TYPE,
-  ORIGIN_METAMASK,
-} from '../../../../shared/constants/app';
 import { requestUserApproval } from '../../../store/actions';
-import Popover from '../../ui/popover';
-import ConfirmationPage from '../../../pages/confirmation/confirmation';
-import { FEATURED_RPCS } from '../../../../shared/constants/network';
-import { ADD_NETWORK_ROUTE } from '../../../helpers/constants/routes';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
-import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
 import { Text, Icon, IconName, IconSize } from '../../component-library';
-import { MetaMetricsNetworkEventSource } from '../../../../shared/constants/metametrics';
+import Box from '../../ui/box';
+import Button from '../../ui/button';
+import IconBorder from '../../ui/icon-border';
+import IconWithFallback from '../../ui/icon-with-fallback';
+import Popover from '../../ui/popover';
+import Tooltip from '../../ui/tooltip';
 
 const AddNetwork = () => {
   const t = useContext(I18nContext);

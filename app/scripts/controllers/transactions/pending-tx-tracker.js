@@ -1,6 +1,7 @@
 import EventEmitter from '@metamask/safe-event-emitter';
-import log from 'loglevel';
 import EthQuery from 'ethjs-query';
+import log from 'loglevel';
+
 import { TransactionStatus } from '../../../../shared/constants/transaction';
 import { ERROR_SUBMITTING } from './tx-state-manager';
 

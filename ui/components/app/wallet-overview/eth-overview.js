@@ -1,25 +1,30 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import {
-  getMmiPortfolioEnabled,
-  getMmiPortfolioUrl,
-} from '../../../selectors/institutional/selectors';
-///: END:ONLY_INCLUDE_IN
-
-import Identicon from '../../ui/identicon';
+  MetaMetricsContextProp,
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+  MetaMetricsSwapsEventSource,
+} from '../../../../shared/constants/metametrics';
+import { AssetType } from '../../../../shared/constants/transaction';
 import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { startNewDraftTransaction } from '../../../ducks/send';
+import { setSwapsFromToken } from '../../../ducks/swaps/swaps';
+import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
+import { IconColor } from '../../../helpers/constants/design-system';
 import {
   SEND_ROUTE,
   BUILD_QUOTE_ROUTE,
 } from '../../../helpers/constants/routes';
-import Tooltip from '../../ui/tooltip';
-import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
-import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
+import { isHardwareKeyring } from '../../../helpers/utils/hardware';
+import { getPortfolioUrl } from '../../../helpers/utils/portfolio';
+import useRamps from '../../../hooks/experiences/useRamps';
 import {
   isBalanceCached,
   getShouldShowFiat,
@@ -33,28 +38,23 @@ import {
   getCurrentChainId,
   getMetaMetricsId,
 } from '../../../selectors';
-import { setSwapsFromToken } from '../../../ducks/swaps/swaps';
-import IconButton from '../../ui/icon-button';
-import { isHardwareKeyring } from '../../../helpers/utils/hardware';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
-  MetaMetricsContextProp,
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-  MetaMetricsSwapsEventSource,
-} from '../../../../shared/constants/metametrics';
-import Spinner from '../../ui/spinner';
-import { startNewDraftTransaction } from '../../../ducks/send';
-import { AssetType } from '../../../../shared/constants/transaction';
+  getMmiPortfolioEnabled,
+  getMmiPortfolioUrl,
+} from '../../../selectors/institutional/selectors';
+///: END:ONLY_INCLUDE_IN
+
 import {
   ButtonIcon,
   ButtonIconSize,
   Icon,
   IconName,
 } from '../../component-library';
-import { IconColor } from '../../../helpers/constants/design-system';
-import useRamps from '../../../hooks/experiences/useRamps';
-import { getPortfolioUrl } from '../../../helpers/utils/portfolio';
+import IconButton from '../../ui/icon-button';
+import Identicon from '../../ui/identicon';
+import Spinner from '../../ui/spinner';
+import Tooltip from '../../ui/tooltip';
+import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
 import WalletOverview from './wallet-overview';
 
 const EthOverview = ({ className }) => {

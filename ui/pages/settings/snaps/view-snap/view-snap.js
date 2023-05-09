@@ -1,30 +1,30 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   SnapCaveatType,
   WALLET_SNAP_PERMISSION_KEY,
 } from '@metamask/rpc-methods';
 import classnames from 'classnames';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useLocation } from 'react-router-dom';
+
+import ConnectedSitesList from '../../../../components/app/connected-sites-list';
+import SnapAuthorship from '../../../../components/app/snaps/snap-authorship';
+import { SnapDelineator } from '../../../../components/app/snaps/snap-delineator';
+import SnapPermissionsList from '../../../../components/app/snaps/snap-permissions-list';
+import SnapRemoveWarning from '../../../../components/app/snaps/snap-remove-warning';
+import { Text, BUTTON_VARIANT } from '../../../../components/component-library';
+import Box from '../../../../components/ui/box';
 import Button from '../../../../components/ui/button';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
 import {
   Color,
   FLEX_WRAP,
   TextColor,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import SnapAuthorship from '../../../../components/app/snaps/snap-authorship';
-import Box from '../../../../components/ui/box';
-import SnapRemoveWarning from '../../../../components/app/snaps/snap-remove-warning';
-import ConnectedSitesList from '../../../../components/app/connected-sites-list';
-
 import { SNAPS_LIST_ROUTE } from '../../../../helpers/constants/routes';
-import {
-  removeSnap,
-  removePermissionsFor,
-  updateCaveat,
-} from '../../../../store/actions';
+import { DelineatorType } from '../../../../helpers/constants/snaps';
+import { getSnapName } from '../../../../helpers/utils/util';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import {
   getSnaps,
   getSubjectsWithSnapPermission,
@@ -32,11 +32,11 @@ import {
   getPermissionSubjects,
   getTargetSubjectMetadata,
 } from '../../../../selectors';
-import { getSnapName } from '../../../../helpers/utils/util';
-import { Text, BUTTON_VARIANT } from '../../../../components/component-library';
-import SnapPermissionsList from '../../../../components/app/snaps/snap-permissions-list';
-import { SnapDelineator } from '../../../../components/app/snaps/snap-delineator';
-import { DelineatorType } from '../../../../helpers/constants/snaps';
+import {
+  removeSnap,
+  removePermissionsFor,
+  updateCaveat,
+} from '../../../../store/actions';
 
 function ViewSnap() {
   const t = useI18nContext();

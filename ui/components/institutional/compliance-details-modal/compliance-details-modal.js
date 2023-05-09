@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useDispatch } from 'react-redux';
-import Modal from '../../app/modal';
-import { hideModal } from '../../../store/actions';
-import ComplianceDetails from '../compliance-details';
+
 import { I18nContext } from '../../../contexts/i18n';
+import { hideModal } from '../../../store/actions';
+import Modal from '../../app/modal';
+import ComplianceDetails from '../compliance-details';
 
 export default function ComplianceDetailsModal({
   onGenerateComplianceReport,

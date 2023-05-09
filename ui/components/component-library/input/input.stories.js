@@ -1,18 +1,15 @@
-import React, { useRef } from 'react';
 import { useArgs } from '@storybook/client-api';
+import React, { useRef } from 'react';
 
+import { Button } from '..';
 import {
   DISPLAY,
   FLEX_DIRECTION,
   TextVariant,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box/box';
-
-import { Button } from '..';
-
-import { INPUT_TYPES } from './input.constants';
 import { Input } from './input';
-
+import { INPUT_TYPES } from './input.constants';
 import README from './README.mdx';
 
 const marginSizeControlOptions = [

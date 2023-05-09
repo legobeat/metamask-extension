@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import {
   AlignItems,
@@ -11,10 +11,8 @@ import {
   JustifyContent,
   Size,
 } from '../../../../helpers/constants/design-system';
-
 import Box from '../../../ui/box';
 import { Icon, ICON_NAMES } from '../../icon/deprecated';
-
 import { BUTTON_ICON_SIZES } from './button-icon.constants';
 
 export const ButtonIcon = ({

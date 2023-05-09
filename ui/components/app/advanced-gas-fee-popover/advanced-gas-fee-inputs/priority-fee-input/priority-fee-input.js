@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { HIGH_FEE_WARNING_MULTIPLIER } from '../../../../../pages/send/send.constants';
 import {
   EditGasModes,
   PriorityLevels,
 } from '../../../../../../shared/constants/gas';
-import { PRIMARY } from '../../../../../helpers/constants/common';
-import { getAdvancedGasFeeValues } from '../../../../../selectors';
-import { useCurrencyDisplay } from '../../../../../hooks/useCurrencyDisplay';
+import { decGWEIToHexWEI } from '../../../../../../shared/modules/conversion.utils';
 import { useGasFeeContext } from '../../../../../contexts/gasFee';
+import { PRIMARY } from '../../../../../helpers/constants/common';
+import { bnGreaterThan, bnLessThan } from '../../../../../helpers/utils/util';
+import { useCurrencyDisplay } from '../../../../../hooks/useCurrencyDisplay';
 import { useI18nContext } from '../../../../../hooks/useI18nContext';
 import { useUserPreferencedCurrency } from '../../../../../hooks/useUserPreferencedCurrency';
-import FormField from '../../../../ui/form-field';
+import { HIGH_FEE_WARNING_MULTIPLIER } from '../../../../../pages/send/send.constants';
+import { getAdvancedGasFeeValues } from '../../../../../selectors';
 import Box from '../../../../ui/box';
-import { bnGreaterThan, bnLessThan } from '../../../../../helpers/utils/util';
-
-import { useAdvancedGasFeePopoverContext } from '../../context';
+import FormField from '../../../../ui/form-field';
 import AdvancedGasFeeInputSubtext from '../../advanced-gas-fee-input-subtext';
-import { decGWEIToHexWEI } from '../../../../../../shared/modules/conversion.utils';
+import { useAdvancedGasFeePopoverContext } from '../../context';
 
 const validatePriorityFee = (value, gasFeeEstimates) => {
   if (value < 0) {

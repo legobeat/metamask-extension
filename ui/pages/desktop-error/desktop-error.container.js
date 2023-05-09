@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+
 import { FORCE_DISABLE_DESKTOP } from '../../store/actionConstants';
 import DesktopError from './desktop-error.component';
 

@@ -1,33 +1,30 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
-import * as actions from '../../../store/actions';
-import isMobileView from '../../../helpers/utils/is-mobile-view';
+
 import { getEnvironmentType } from '../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
+import isMobileView from '../../../helpers/utils/is-mobile-view';
 
 // Modal Components
 import AddNetworkModal from '../../../pages/onboarding-flow/add-network-modal';
+import * as actions from '../../../store/actions';
 import AccountDetailsModal from './account-details-modal';
-import ExportPrivateKeyModal from './export-private-key-modal';
-import HideTokenConfirmationModal from './hide-token-confirmation-modal';
-import QRScanner from './qr-scanner';
-
-import HoldToRevealModal from './hold-to-reveal-modal';
+import ConfirmDeleteNetwork from './confirm-delete-network';
 import ConfirmRemoveAccount from './confirm-remove-account';
 import ConfirmResetAccount from './confirm-reset-account';
-import TransactionConfirmed from './transaction-confirmed';
-
-import FadeModal from './fade-modal';
-import RejectTransactions from './reject-transactions';
-import ConfirmDeleteNetwork from './confirm-delete-network';
-import EditApprovalPermission from './edit-approval-permission';
-import NewAccountModal from './new-account-modal';
-import CustomizeNonceModal from './customize-nonce';
 import ConvertTokenToNftModal from './convert-token-to-nft-modal/convert-token-to-nft-modal';
-
+import CustomizeNonceModal from './customize-nonce';
+import EditApprovalPermission from './edit-approval-permission';
 import EthSignModal from './eth-sign-modal/eth-sign-modal';
+import ExportPrivateKeyModal from './export-private-key-modal';
+import FadeModal from './fade-modal';
+import HideTokenConfirmationModal from './hide-token-confirmation-modal';
+import HoldToRevealModal from './hold-to-reveal-modal';
+import NewAccountModal from './new-account-modal';
+import QRScanner from './qr-scanner';
+import RejectTransactions from './reject-transactions';
+import TransactionConfirmed from './transaction-confirmed';
 
 const modalContainerBaseStyle = {
   transform: 'translate3d(-50%, 0, 0px)',

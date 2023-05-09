@@ -1,10 +1,11 @@
 import React from 'react';
 import reactRouterDom, { Route } from 'react-router-dom';
-import configureStore from '../../store/store';
-import { renderWithProvider } from '../../../test/jest';
-import mockState from '../../../test/data/mock-state.json';
-import { EXTENSION_ERROR_PAGE_TYPES } from '../../../shared/constants/desktop';
+
 import DesktopErrorPage from '.';
+import { EXTENSION_ERROR_PAGE_TYPES } from '../../../shared/constants/desktop';
+import mockState from '../../../test/data/mock-state.json';
+import { renderWithProvider } from '../../../test/jest';
+import configureStore from '../../store/store';
 
 describe('Desktop Error page', () => {
   const mockHistoryPush = jest.fn();

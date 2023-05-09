@@ -1,15 +1,16 @@
 /* eslint-disable jest/require-top-level-describe */
 import React from 'react';
 import reactRouterDom from 'react-router-dom';
-import { fireEvent, renderWithProvider } from '../../../../test/jest';
-import configureStore from '../../../store/store';
+
+import { AccountListMenu } from '.';
 import mockState from '../../../../test/data/mock-state.json';
+import { fireEvent, renderWithProvider } from '../../../../test/jest';
 import {
   NEW_ACCOUNT_ROUTE,
   IMPORT_ACCOUNT_ROUTE,
   CONNECT_HARDWARE_ROUTE,
 } from '../../../helpers/constants/routes';
-import { AccountListMenu } from '.';
+import configureStore from '../../../store/store';
 
 const render = (props = { onClose: () => jest.fn() }) => {
   const store = configureStore({

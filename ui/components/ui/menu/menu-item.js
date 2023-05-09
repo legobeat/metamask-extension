@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import { Text, Icon, IconSize } from '../../component-library';
 import { TextVariant } from '../../../helpers/constants/design-system';
+import { Text, Icon, IconSize } from '../../component-library';
 
 const MenuItem = ({
   children,

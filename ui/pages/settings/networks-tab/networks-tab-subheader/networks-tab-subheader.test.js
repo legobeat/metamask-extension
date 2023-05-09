@@ -1,8 +1,9 @@
+import { waitFor } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { waitFor } from '@testing-library/react';
-import { renderWithProvider } from '../../../../../test/jest/rendering';
+
 import NetworksTabSubheader from '.';
+import { renderWithProvider } from '../../../../../test/jest/rendering';
 
 const mockState = {
   metamask: {

@@ -1,5 +1,5 @@
-const { convertToHexValue, withFixtures } = require('../helpers');
 const FixtureBuilder = require('../fixture-builder');
+const { convertToHexValue, withFixtures } = require('../helpers');
 
 describe('Confirm transactions', function () {
   const ganacheOptions = {

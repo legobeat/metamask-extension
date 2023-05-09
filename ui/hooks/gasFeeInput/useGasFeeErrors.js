@@ -1,14 +1,15 @@
 import { useMemo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
+
 import { GasEstimateTypes, GAS_LIMITS } from '../../../shared/constants/gas';
+import { Numeric } from '../../../shared/modules/Numeric';
+import { GAS_FORM_ERRORS } from '../../helpers/constants/gas';
+import { isLegacyTransaction } from '../../helpers/utils/transactions.util';
+import { bnGreaterThan, bnLessThan } from '../../helpers/utils/util';
 import {
   checkNetworkAndAccountSupports1559,
   getSelectedAccount,
 } from '../../selectors';
-import { isLegacyTransaction } from '../../helpers/utils/transactions.util';
-import { bnGreaterThan, bnLessThan } from '../../helpers/utils/util';
-import { GAS_FORM_ERRORS } from '../../helpers/constants/gas';
-import { Numeric } from '../../../shared/modules/Numeric';
 
 const HIGH_FEE_WARNING_MULTIPLIER = 1.5;
 

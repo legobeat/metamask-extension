@@ -1,7 +1,8 @@
 ///: BEGIN:ONLY_INCLUDE_IN(desktop)
-import browser from 'webextension-polyfill';
-///: END:ONLY_INCLUDE_IN
 import { memoize } from 'lodash';
+import browser from 'webextension-polyfill';
+
+///: END:ONLY_INCLUDE_IN
 import getFirstPreferredLangCode from '../../app/scripts/lib/get-first-preferred-lang-code';
 import {
   fetchLocale,

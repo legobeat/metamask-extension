@@ -1,19 +1,24 @@
-import { strict as assert } from 'assert';
-import EventEmitter from 'events';
+import { RestrictedControllerMessenger } from '@metamask/base-controller';
+import { SafeEventEmitterProvider } from '@metamask/eth-json-rpc-provider';
 import { ObservableStore } from '@metamask/obs-store';
-import log from 'loglevel';
 import {
   createSwappableProxy,
   createEventEmitterProxy,
   SwappableProxy,
 } from '@metamask/swappable-obj-proxy';
-import EthQuery from 'eth-query';
-import { RestrictedControllerMessenger } from '@metamask/base-controller';
-import { v4 as uuid } from 'uuid';
 import { Hex, isPlainObject } from '@metamask/utils';
-import { errorCodes } from 'eth-rpc-errors';
-import { SafeEventEmitterProvider } from '@metamask/eth-json-rpc-provider';
+import { strict as assert } from 'assert';
 import { PollingBlockTracker } from 'eth-block-tracker';
+import EthQuery from 'eth-query';
+import { errorCodes } from 'eth-rpc-errors';
+import EventEmitter from 'events';
+import log from 'loglevel';
+import { v4 as uuid } from 'uuid';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventPayload,
+} from '../../../../shared/constants/metametrics';
 import {
   INFURA_PROVIDER_TYPES,
   INFURA_BLOCKED_KEY,
@@ -24,15 +29,11 @@ import {
   BuiltInInfuraNetwork,
   NetworkStatus,
 } from '../../../../shared/constants/network';
+import { isErrorWithMessage } from '../../../../shared/modules/error';
 import {
   isPrefixedFormattedHexString,
   isSafeChainId,
 } from '../../../../shared/modules/network.utils';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventPayload,
-} from '../../../../shared/constants/metametrics';
-import { isErrorWithMessage } from '../../../../shared/modules/error';
 import {
   createNetworkClient,
   NetworkClientType,
@@ -777,7 +778,9 @@ export class NetworkController extends EventEmitter {
    * @returns A promise that either resolves to the block header or null if
    * there is no latest block, or rejects with an error.
    */
-  #getLatestBlock(provider: SafeEventEmitterProvider): Promise<Block | null> {
+  async #getLatestBlock(
+    provider: SafeEventEmitterProvider,
+  ): Promise<Block | null> {
     return new Promise((resolve, reject) => {
       const ethQuery = new EthQuery(provider);
       ethQuery.sendAsync<['latest', false], Block | null>(

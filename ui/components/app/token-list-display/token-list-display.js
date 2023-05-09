@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import { isEqual } from 'lodash';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { getShouldHideZeroBalanceTokens } from '../../../selectors';
+import { getTokens } from '../../../ducks/metamask/metamask';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { useTokenTracker } from '../../../hooks/useTokenTracker';
+import { getShouldHideZeroBalanceTokens } from '../../../selectors';
 import Identicon from '../../ui/identicon';
 import TokenBalance from '../../ui/token-balance';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { getTokens } from '../../../ducks/metamask/metamask';
 
 export default function TokenListDisplay({ clickHandler }) {
   const t = useI18nContext();

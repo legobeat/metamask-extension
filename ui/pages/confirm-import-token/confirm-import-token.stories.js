@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 
-import { store, getNewState } from '../../../.storybook/preview';
-import { tokens } from '../../../.storybook/initial-states/approval-screens/add-token';
-import { updateMetamaskState } from '../../store/actions';
 import ConfirmAddToken from '.';
+import { tokens } from '../../../.storybook/initial-states/approval-screens/add-token';
+import { store, getNewState } from '../../../.storybook/preview';
+import { updateMetamaskState } from '../../store/actions';
 
 export default {
   title: 'Pages/ConfirmImportToken',

@@ -1,16 +1,16 @@
 import { ObservableStore } from '@metamask/obs-store';
-import log from 'loglevel';
 import BN from 'bn.js';
-import createId from '../../../shared/modules/random-id';
-import { previousValueComparator } from '../lib/util';
-import getFetchWithTimeout from '../../../shared/modules/fetch-with-timeout';
+import log from 'loglevel';
 
+import { ETHERSCAN_SUPPORTED_NETWORKS } from '../../../shared/constants/network';
 import {
   TransactionType,
   TransactionStatus,
 } from '../../../shared/constants/transaction';
-import { ETHERSCAN_SUPPORTED_NETWORKS } from '../../../shared/constants/network';
 import { bnToHex } from '../../../shared/modules/conversion.utils';
+import getFetchWithTimeout from '../../../shared/modules/fetch-with-timeout';
+import createId from '../../../shared/modules/random-id';
+import { previousValueComparator } from '../lib/util';
 
 const fetchWithTimeout = getFetchWithTimeout();
 

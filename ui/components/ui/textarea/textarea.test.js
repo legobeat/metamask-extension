@@ -1,12 +1,13 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import * as React from 'react';
+
+import TextArea from '.';
 import {
   BorderColor,
   BorderStyle,
   RESIZE,
   Size,
 } from '../../../helpers/constants/design-system';
-import TextArea from '.';
 
 describe('TextArea', () => {
   const text =

@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   AlignItems,
   BackgroundColor,
@@ -8,7 +9,7 @@ import {
   FLEX_DIRECTION,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import Box from '../../../ui/box';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import {
   BUTTON_VARIANT,
   Button,
@@ -17,8 +18,8 @@ import {
   IconSize,
   Text,
 } from '../../../component-library';
+import Box from '../../../ui/box';
 import Preloader from '../../../ui/icon/preloader/preloader-icon.component';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
 
 const SnapVersion = ({ version, url }) => {
   const t = useI18nContext();

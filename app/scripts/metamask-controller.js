@@ -1,33 +1,10 @@
-import EventEmitter from 'events';
-import pump from 'pump';
-import { ObservableStore } from '@metamask/obs-store';
-import { storeAsStream } from '@metamask/obs-store/dist/asStream';
-import { JsonRpcEngine } from 'json-rpc-engine';
-import { createEngineStream } from 'json-rpc-middleware-stream';
-import { providerAsMiddleware } from '@metamask/eth-json-rpc-middleware';
-import { debounce } from 'lodash';
-import {
-  KeyringController,
-  keyringBuilderFactory,
-} from '@metamask/eth-keyring-controller';
-import createFilterMiddleware from 'eth-json-rpc-filters';
-import createSubscriptionManager from 'eth-json-rpc-filters/subscriptionManager';
-import { errorCodes as rpcErrorCodes, EthereumRpcError } from 'eth-rpc-errors';
-import { Mutex } from 'await-semaphore';
-import log from 'loglevel';
-import TrezorKeyring from '@metamask/eth-trezor-keyring';
-import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
-import LatticeKeyring from 'eth-lattice-keyring';
 import { MetaMaskKeyring as QRHardwareKeyring } from '@keystonehq/metamask-airgapped-keyring';
-import EthQuery from 'eth-query';
-import nanoid from 'nanoid';
-import { captureException } from '@sentry/browser';
 import { AddressBookController } from '@metamask/address-book-controller';
+import { AnnouncementController } from '@metamask/announcement-controller';
 import {
   ApprovalController,
   ApprovalRequestNotFoundError,
 } from '@metamask/approval-controller';
-import { ControllerMessenger } from '@metamask/base-controller';
 import {
   CurrencyRateController,
   TokenListController,
@@ -37,51 +14,74 @@ import {
   AssetsContractController,
   NftDetectionController,
 } from '@metamask/assets-controllers';
-import { PhishingController } from '@metamask/phishing-controller';
-import { AnnouncementController } from '@metamask/announcement-controller';
+import { ControllerMessenger } from '@metamask/base-controller';
+import { ApprovalType } from '@metamask/controller-utils';
+import { providerAsMiddleware } from '@metamask/eth-json-rpc-middleware';
+import {
+  KeyringController,
+  keyringBuilderFactory,
+} from '@metamask/eth-keyring-controller';
+import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
+import TrezorKeyring from '@metamask/eth-trezor-keyring';
 import { GasFeeController } from '@metamask/gas-fee-controller';
+import { NotificationController } from '@metamask/notification-controller';
+import { ObservableStore } from '@metamask/obs-store';
+import { storeAsStream } from '@metamask/obs-store/dist/asStream';
 import {
   PermissionController,
   PermissionsRequestNotFoundError,
 } from '@metamask/permission-controller';
-import {
-  SubjectMetadataController,
-  SubjectType,
-} from '@metamask/subject-metadata-controller';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
+import { PhishingController } from '@metamask/phishing-controller';
 import { RateLimitController } from '@metamask/rate-limit-controller';
-import { NotificationController } from '@metamask/notification-controller';
-///: END:ONLY_INCLUDE_IN
+import { SignatureController } from '@metamask/signature-controller';
 import SmartTransactionsController from '@metamask/smart-transactions-controller';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import {
   CronjobController,
   JsonSnapsRegistry,
   SnapController,
   IframeExecutionService,
 } from '@metamask/snaps-controllers';
+import {
+  SubjectMetadataController,
+  SubjectType,
+} from '@metamask/subject-metadata-controller';
+import { captureException } from '@sentry/browser';
+import { Mutex } from 'await-semaphore';
+import createFilterMiddleware from 'eth-json-rpc-filters';
+import createSubscriptionManager from 'eth-json-rpc-filters/subscriptionManager';
+import LatticeKeyring from 'eth-lattice-keyring';
+import EthQuery from 'eth-query';
+import { errorCodes as rpcErrorCodes, EthereumRpcError } from 'eth-rpc-errors';
+import EventEmitter from 'events';
+import { JsonRpcEngine } from 'json-rpc-engine';
+import pump from 'pump';
+import { createEngineStream } from 'json-rpc-middleware-stream';
+import { debounce } from 'lodash';
+import log from 'loglevel';
+import nanoid from 'nanoid';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
+///: END:ONLY_INCLUDE_IN
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 ///: END:ONLY_INCLUDE_IN
 
-import { SignatureController } from '@metamask/signature-controller';
-import { ApprovalType } from '@metamask/controller-utils';
 import {
-  AssetType,
-  TransactionStatus,
-  TransactionType,
-  TokenStandard,
-} from '../../shared/constants/transaction';
+  ORIGIN_METAMASK,
+  ///: BEGIN:ONLY_INCLUDE_IN(snaps)
+  SNAP_DIALOG_TYPES,
+  ///: END:ONLY_INCLUDE_IN
+  POLLING_TOKEN_ENVIRONMENT_TYPES,
+} from '../../shared/constants/app';
+import { HardwareDeviceNames } from '../../shared/constants/hardware-wallets';
+import { KeyringType } from '../../shared/constants/keyring';
 import {
-  GAS_API_BASE_URL,
-  GAS_DEV_API_BASE_URL,
-  SWAPS_CLIENT_ID,
-} from '../../shared/constants/swaps';
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../shared/constants/metametrics';
 import {
   CHAIN_IDS,
   NETWORK_TYPES,
   NetworkStatus,
 } from '../../shared/constants/network';
-import { HardwareDeviceNames } from '../../shared/constants/hardware-wallets';
-import { KeyringType } from '../../shared/constants/keyring';
 import {
   CaveatTypes,
   RestrictedMethods,
@@ -91,78 +91,51 @@ import {
   ExcludedSnapEndowments,
   ///: END:ONLY_INCLUDE_IN
 } from '../../shared/constants/permissions';
-import { UI_NOTIFICATIONS } from '../../shared/notifications';
+import {
+  GAS_API_BASE_URL,
+  GAS_DEV_API_BASE_URL,
+  SWAPS_CLIENT_ID,
+} from '../../shared/constants/swaps';
+import { ACTION_QUEUE_METRICS_E2E_TEST } from '../../shared/constants/test-flags';
 import { MILLISECOND, SECOND } from '../../shared/constants/time';
+import { STATIC_MAINNET_TOKEN_LIST } from '../../shared/constants/tokens';
 import {
-  ORIGIN_METAMASK,
-  ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-  SNAP_DIALOG_TYPES,
-  ///: END:ONLY_INCLUDE_IN
-  POLLING_TOKEN_ENVIRONMENT_TYPES,
-} from '../../shared/constants/app';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../shared/constants/metametrics';
-
+  AssetType,
+  TransactionStatus,
+  TransactionType,
+  TokenStandard,
+} from '../../shared/constants/transaction';
+import { getTokenValueParam } from '../../shared/lib/metamask-controller-utils';
 import {
   getTokenIdParam,
   fetchTokenBalance,
 } from '../../shared/lib/token-util.ts';
+import { hexToDecimal } from '../../shared/modules/conversion.utils';
+import { isManifestV3 } from '../../shared/modules/mv3.utils';
 import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
 import { parseStandardTokenTransactionData } from '../../shared/modules/transaction.utils';
-import { STATIC_MAINNET_TOKEN_LIST } from '../../shared/constants/tokens';
-import { getTokenValueParam } from '../../shared/lib/metamask-controller-utils';
-import { isManifestV3 } from '../../shared/modules/mv3.utils';
-import { hexToDecimal } from '../../shared/modules/conversion.utils';
+import { UI_NOTIFICATIONS } from '../../shared/notifications';
+
 ///: BEGIN:ONLY_INCLUDE_IN(desktop)
 // eslint-disable-next-line import/order
 import { DesktopController } from '@metamask/desktop/dist/controllers/desktop';
 ///: END:ONLY_INCLUDE_IN
-import { ACTION_QUEUE_METRICS_E2E_TEST } from '../../shared/constants/test-flags';
-import {
-  onMessageReceived,
-  checkForMultipleVersionsRunning,
-} from './detect-multiple-instances';
-import ComposableObservableStore from './lib/ComposableObservableStore';
-import AccountTracker from './lib/account-tracker';
-import createDupeReqFilterMiddleware from './lib/createDupeReqFilterMiddleware';
-import createLoggerMiddleware from './lib/createLoggerMiddleware';
-import {
-  createMethodMiddleware,
-  ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-  createSnapMethodMiddleware,
-  ///: END:ONLY_INCLUDE_IN
-} from './lib/rpc-method-middleware';
-import createOriginMiddleware from './lib/createOriginMiddleware';
-import createTabIdMiddleware from './lib/createTabIdMiddleware';
-import createOnboardingMiddleware from './lib/createOnboardingMiddleware';
-import { setupMultiplex } from './lib/stream-utils';
+import accountImporter from './account-import-strategies';
+import AlertController from './controllers/alert';
+import AppStateController from './controllers/app-state';
+import BackupController from './controllers/backup';
+import CachedBalancesController from './controllers/cached-balances';
+import DecryptMessageController from './controllers/decrypt-message';
+import DetectTokensController from './controllers/detect-tokens';
+import EncryptionPublicKeyController from './controllers/encryption-public-key';
 import EnsController from './controllers/ens';
+import IncomingTransactionsController from './controllers/incoming-transactions';
+import MetaMetricsController from './controllers/metametrics';
 import {
   NetworkController,
   NetworkControllerEventType,
 } from './controllers/network';
-import PreferencesController from './controllers/preferences';
-import AppStateController from './controllers/app-state';
-import CachedBalancesController from './controllers/cached-balances';
-import AlertController from './controllers/alert';
 import OnboardingController from './controllers/onboarding';
-import BackupController from './controllers/backup';
-import IncomingTransactionsController from './controllers/incoming-transactions';
-import DecryptMessageController from './controllers/decrypt-message';
-import TransactionController from './controllers/transactions';
-import DetectTokensController from './controllers/detect-tokens';
-import SwapsController from './controllers/swaps';
-import accountImporter from './account-import-strategies';
-import seedPhraseVerifier from './lib/seed-phrase-verifier';
-import MetaMetricsController from './controllers/metametrics';
-import { segment } from './lib/segment';
-import createMetaRPCHandler from './lib/createMetaRPCHandler';
-import { previousValueComparator } from './lib/util';
-import createMetamaskMiddleware from './lib/createMetamaskMiddleware';
-import EncryptionPublicKeyController from './controllers/encryption-public-key';
-
 import {
   CaveatMutatorFactories,
   getCaveatSpecifications,
@@ -178,8 +151,34 @@ import {
   buildSnapRestrictedMethodSpecifications,
   ///: END:ONLY_INCLUDE_IN
 } from './controllers/permissions';
+import PreferencesController from './controllers/preferences';
+import SwapsController from './controllers/swaps';
+import TransactionController from './controllers/transactions';
+import {
+  onMessageReceived,
+  checkForMultipleVersionsRunning,
+} from './detect-multiple-instances';
+import AccountTracker from './lib/account-tracker';
+import ComposableObservableStore from './lib/ComposableObservableStore';
+import createDupeReqFilterMiddleware from './lib/createDupeReqFilterMiddleware';
+import createLoggerMiddleware from './lib/createLoggerMiddleware';
+import createMetamaskMiddleware from './lib/createMetamaskMiddleware';
+import createMetaRPCHandler from './lib/createMetaRPCHandler';
+import createOnboardingMiddleware from './lib/createOnboardingMiddleware';
+import createOriginMiddleware from './lib/createOriginMiddleware';
 import createRPCMethodTrackingMiddleware from './lib/createRPCMethodTrackingMiddleware';
+import createTabIdMiddleware from './lib/createTabIdMiddleware';
+import {
+  createMethodMiddleware,
+  ///: BEGIN:ONLY_INCLUDE_IN(snaps)
+  createSnapMethodMiddleware,
+  ///: END:ONLY_INCLUDE_IN
+} from './lib/rpc-method-middleware';
 import { securityProviderCheck } from './lib/security-provider-helpers';
+import seedPhraseVerifier from './lib/seed-phrase-verifier';
+import { segment } from './lib/segment';
+import { setupMultiplex } from './lib/stream-utils';
+import { previousValueComparator } from './lib/util';
 
 export const METAMASK_CONTROLLER_EVENTS = {
   // Fired after state changes that impact the extension badge (unapproved msg count)

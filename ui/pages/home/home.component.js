@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 import { Redirect, Route } from 'react-router-dom';
+
 ///: BEGIN:ONLY_INCLUDE_IN(build-main)
 // eslint-disable-next-line import/no-duplicates
 import { MetaMetricsContextProp } from '../../../shared/constants/metametrics';
@@ -10,37 +11,35 @@ import {
   MetaMetricsEventName,
   // eslint-disable-next-line import/no-duplicates
 } from '../../../shared/constants/metametrics';
+import { SECOND } from '../../../shared/constants/time';
+import { SUPPORT_LINK } from '../../../shared/lib/ui-utils';
 import AssetList from '../../components/app/asset-list';
-import NftsTab from '../../components/app/nfts-tab';
 import HomeNotification from '../../components/app/home-notification';
-import MultipleNotifications from '../../components/app/multiple-notifications';
-import TransactionList from '../../components/app/transaction-list';
 import MenuBar from '../../components/app/menu-bar';
-import Popover from '../../components/ui/popover';
-import Button from '../../components/ui/button';
-import Box from '../../components/ui/box';
-import ConnectedSites from '../connected-sites';
-import ConnectedAccounts from '../connected-accounts';
-import { Tabs, Tab } from '../../components/ui/tabs';
+import MultipleNotifications from '../../components/app/multiple-notifications';
+import NftsTab from '../../components/app/nfts-tab';
+import RecoveryPhraseReminder from '../../components/app/recovery-phrase-reminder';
+import TermsOfUsePopup from '../../components/app/terms-of-use-popup';
+import TransactionList from '../../components/app/transaction-list';
 import { EthOverview } from '../../components/app/wallet-overview';
 import WhatsNewPopup from '../../components/app/whats-new-popup';
-import TermsOfUsePopup from '../../components/app/terms-of-use-popup';
-import RecoveryPhraseReminder from '../../components/app/recovery-phrase-reminder';
-import ActionableMessage from '../../components/ui/actionable-message/actionable-message';
-import {
-  FONT_WEIGHT,
-  DISPLAY,
-  TextColor,
-  TextVariant,
-} from '../../helpers/constants/design-system';
-import { SECOND } from '../../../shared/constants/time';
 import {
   ButtonIcon,
   ButtonIconSize,
   IconName,
   Text,
 } from '../../components/component-library';
-
+import ActionableMessage from '../../components/ui/actionable-message/actionable-message';
+import Box from '../../components/ui/box';
+import Button from '../../components/ui/button';
+import Popover from '../../components/ui/popover';
+import { Tabs, Tab } from '../../components/ui/tabs';
+import {
+  FONT_WEIGHT,
+  DISPLAY,
+  TextColor,
+  TextVariant,
+} from '../../helpers/constants/design-system';
 import {
   ASSET_ROUTE,
   RESTORE_VAULT_ROUTE,
@@ -62,8 +61,9 @@ import {
   ///: END:ONLY_INCLUDE_IN
 } from '../../helpers/constants/routes';
 import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
+import ConnectedAccounts from '../connected-accounts';
+import ConnectedSites from '../connected-sites';
 ///: BEGIN:ONLY_INCLUDE_IN(build-main,build-mmi)
-import { SUPPORT_LINK } from '../../../shared/lib/ui-utils';
 ///: END:ONLY_INCLUDE_IN
 ///: BEGIN:ONLY_INCLUDE_IN(build-beta)
 import BetaHomeFooter from './beta/beta-home-footer.component';

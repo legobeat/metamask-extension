@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+
 import Button from '../../ui/button';
 import Checkbox from '../../ui/check-box';
 import Tooltip from '../../ui/tooltip';

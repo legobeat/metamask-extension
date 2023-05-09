@@ -1,11 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
+import React from 'react';
 
-import Popover from '../../../ui/popover';
-import Box from '../../../ui/box';
-import Button from '../../../ui/button';
-import Typography from '../../../ui/typography';
 import {
   IconColor,
   DISPLAY,
@@ -15,9 +10,14 @@ import {
   TextColor,
   TypographyVariant,
 } from '../../../../helpers/constants/design-system';
-import Identicon from '../../../ui/identicon';
 import { shortenAddress } from '../../../../helpers/utils/util';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { Icon, IconName } from '../../../component-library';
+import Box from '../../../ui/box';
+import Button from '../../../ui/button';
+import Identicon from '../../../ui/identicon';
+import Popover from '../../../ui/popover';
+import Typography from '../../../ui/typography';
 
 const SignatureRequestOriginalWarning = ({
   senderAddress,

@@ -1,7 +1,8 @@
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { renderWithProvider } from '../../../../test/jest/rendering';
+
 import NetworksTab from '.';
+import { renderWithProvider } from '../../../../test/jest/rendering';
 
 const mockState = {
   metamask: {

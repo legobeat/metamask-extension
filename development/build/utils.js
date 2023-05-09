@@ -1,5 +1,6 @@
 const path = require('path');
 const semver = require('semver');
+
 const { loadBuildTypesConfig } = require('../lib/build-type');
 const { BUILD_TARGETS, ENVIRONMENT } = require('./constants');
 

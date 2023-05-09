@@ -3,6 +3,7 @@ const path = require('path');
 
 const enLocaleMessages = require('../../app/_locales/en/messages.json');
 const createStaticServer = require('../../development/create-static-server');
+const Ganache = require('./ganache');
 const {
   tinyDelayMs,
   regularDelayMs,
@@ -11,7 +12,6 @@ const {
   openDapp,
 } = require('./helpers');
 const { buildWebDriver } = require('./webdriver');
-const Ganache = require('./ganache');
 
 const ganacheServer = new Ganache();
 const dappPort = 8080;

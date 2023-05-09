@@ -1,34 +1,35 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { useLocation, useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import {
-  ADD_POPULAR_CUSTOM_NETWORK,
-  NETWORKS_FORM_ROUTE,
-  DEFAULT_ROUTE,
-  NETWORKS_ROUTE,
-} from '../../../helpers/constants/routes';
-import { setSelectedNetworkConfigurationId } from '../../../store/actions';
-import Button from '../../../components/ui/button';
+import { useLocation, useHistory } from 'react-router-dom';
+
 import { getEnvironmentType } from '../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../shared/constants/app';
-import {
-  getNetworkConfigurations,
-  getNetworksTabSelectedNetworkConfigurationId,
-} from '../../../selectors';
-import { getProviderConfig } from '../../../ducks/metamask/metamask';
 import {
   CHAIN_IDS,
   NETWORK_TYPES,
   SHOULD_SHOW_LINEA_TESTNET_NETWORK,
   TEST_CHAINS,
 } from '../../../../shared/constants/network';
-import { defaultNetworksData } from './networks-tab.constants';
-import NetworksTabContent from './networks-tab-content';
+import Button from '../../../components/ui/button';
+import { getProviderConfig } from '../../../ducks/metamask/metamask';
+import {
+  ADD_POPULAR_CUSTOM_NETWORK,
+  NETWORKS_FORM_ROUTE,
+  DEFAULT_ROUTE,
+  NETWORKS_ROUTE,
+} from '../../../helpers/constants/routes';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import {
+  getNetworkConfigurations,
+  getNetworksTabSelectedNetworkConfigurationId,
+} from '../../../selectors';
+import { setSelectedNetworkConfigurationId } from '../../../store/actions';
 import NetworksForm from './networks-form';
+import NetworksTabContent from './networks-tab-content';
 import NetworksFormSubheader from './networks-tab-subheader';
+import { defaultNetworksData } from './networks-tab.constants';
 
 const defaultNetworks = defaultNetworksData
   .map((network) => ({

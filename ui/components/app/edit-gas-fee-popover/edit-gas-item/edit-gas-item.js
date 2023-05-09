@@ -6,18 +6,17 @@ import {
   EditGasModes,
   PriorityLevels,
 } from '../../../../../shared/constants/gas';
-import { PRIORITY_LEVEL_ICON_MAP } from '../../../../helpers/constants/gas';
-import { PRIMARY } from '../../../../helpers/constants/common';
-import { toHumanReadableTime } from '../../../../helpers/utils/util';
 import { useGasFeeContext } from '../../../../contexts/gasFee';
+import { useTransactionModalContext } from '../../../../contexts/transaction-modal';
+import { PRIMARY } from '../../../../helpers/constants/common';
+import { PRIORITY_LEVEL_ICON_MAP } from '../../../../helpers/constants/gas';
+import { toHumanReadableTime } from '../../../../helpers/utils/util';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { useTransactionEventFragment } from '../../../../hooks/useTransactionEventFragment';
-import { useTransactionModalContext } from '../../../../contexts/transaction-modal';
 import InfoTooltip from '../../../ui/info-tooltip';
 import LoadingHeartBeat from '../../../ui/loading-heartbeat';
 import UserPreferencedCurrencyDisplay from '../../user-preferenced-currency-display';
 import EditGasToolTip from '../edit-gas-tooltip/edit-gas-tooltip';
-
 import { useGasItemFeeDetails } from './useGasItemFeeDetails';
 
 const getTitleAndIcon = (priorityLevel, editGasMode) => {

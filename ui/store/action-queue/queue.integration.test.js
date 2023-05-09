@@ -1,13 +1,13 @@
-import sinon from 'sinon';
 import PortStream from 'extension-port-stream';
-import { setupMultiplex } from '../../../app/scripts/lib/stream-utils';
-import metaRPCClientFactory from '../../../app/scripts/lib/metaRPCClientFactory';
+import sinon from 'sinon';
 
 import {
   dropQueue,
   submitRequestToBackground,
   _setBackgroundConnection,
 } from '.';
+import metaRPCClientFactory from '../../../app/scripts/lib/metaRPCClientFactory';
+import { setupMultiplex } from '../../../app/scripts/lib/stream-utils';
 
 jest.mock('../../../shared/modules/mv3.utils', () => {
   return {
@@ -28,8 +28,8 @@ describe('queue integration test', () => {
         addListener: sinon.stub(),
       },
       onDisconnect: {
-        addListener(cb) {
-          disconnectListener = cb;
+        addListener(callback) {
+          disconnectListener = callback;
         },
       },
       postMessage: sinon.stub().callsFake(() => {

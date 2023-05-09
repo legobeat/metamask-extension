@@ -1,13 +1,11 @@
 /* eslint-disable jest/require-top-level-describe */
-import React from 'react';
-import PropTypes from 'prop-types';
 import { fireEvent, render } from '@testing-library/react';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { renderWithUserEvent } from '../../../../test/lib/render-helpers';
-
 import { Size } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box';
-
 import { TextField } from './text-field';
 
 describe('TextField', () => {

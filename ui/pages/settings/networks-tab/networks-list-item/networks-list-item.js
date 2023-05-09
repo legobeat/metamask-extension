@@ -1,27 +1,27 @@
-import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
+
+import { getEnvironmentType } from '../../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../../shared/constants/app';
 import {
   CHAIN_ID_TO_NETWORK_IMAGE_URL_MAP,
   NETWORK_TYPES,
 } from '../../../../../shared/constants/network';
-import { NETWORKS_ROUTE } from '../../../../helpers/constants/routes';
-import { setSelectedNetworkConfigurationId } from '../../../../store/actions';
-import { getEnvironmentType } from '../../../../../app/scripts/lib/util';
-import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../../shared/constants/app';
-import { getProviderConfig } from '../../../../ducks/metamask/metamask';
-import Identicon from '../../../../components/ui/identicon';
-import UrlIcon from '../../../../components/ui/url-icon';
-
-import { handleSettingsRefs } from '../../../../helpers/utils/settings-search';
 import {
   Icon,
   IconName,
   IconSize,
 } from '../../../../components/component-library';
+import Identicon from '../../../../components/ui/identicon';
+import UrlIcon from '../../../../components/ui/url-icon';
+import { getProviderConfig } from '../../../../ducks/metamask/metamask';
 import { IconColor } from '../../../../helpers/constants/design-system';
+import { NETWORKS_ROUTE } from '../../../../helpers/constants/routes';
+import { handleSettingsRefs } from '../../../../helpers/utils/settings-search';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { setSelectedNetworkConfigurationId } from '../../../../store/actions';
 
 const NetworksListItem = ({
   network,

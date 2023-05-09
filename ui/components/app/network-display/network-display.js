@@ -1,25 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
+
 import {
   NETWORK_TYPES,
   BUILT_IN_NETWORKS,
 } from '../../../../shared/constants/network';
-
-import LoadingIndicator from '../../ui/loading-indicator';
-import ColorIndicator from '../../ui/color-indicator';
+import { getProviderConfig } from '../../../ducks/metamask/metamask';
 import {
   BorderColor,
   IconColor,
   Size,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
-import Chip from '../../ui/chip/chip';
 import { useI18nContext } from '../../../hooks/useI18nContext';
 import { isNetworkLoading } from '../../../selectors';
 import { Icon, IconName, IconSize } from '../../component-library';
-import { getProviderConfig } from '../../../ducks/metamask/metamask';
+import Chip from '../../ui/chip/chip';
+import ColorIndicator from '../../ui/color-indicator';
+import LoadingIndicator from '../../ui/loading-indicator';
 
 export default function NetworkDisplay({
   indicatorSize,

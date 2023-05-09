@@ -1,4 +1,6 @@
 const { strict: assert } = require('assert');
+
+const FixtureBuilder = require('../fixture-builder');
 const {
   convertToHexValue,
   withFixtures,
@@ -6,7 +8,6 @@ const {
   DAPP_URL,
   DAPP_ONE_URL,
 } = require('../helpers');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('Dapp interactions', function () {
   let windowHandles;

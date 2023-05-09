@@ -1,24 +1,9 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { getAccountLink } from '@metamask/etherscan-link';
+import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
-import { showModal } from '../../../store/actions';
-import {
-  CONNECTED_ROUTE,
-  NETWORKS_ROUTE,
-} from '../../../helpers/constants/routes';
-import { getURLHostName } from '../../../helpers/utils/util';
-import { Menu, MenuItem } from '../../ui/menu';
-import {
-  getBlockExplorerLinkText,
-  getCurrentChainId,
-  getCurrentKeyring,
-  getRpcPrefsForCurrentProvider,
-  getSelectedIdentity,
-} from '../../../selectors';
-import { useI18nContext } from '../../../hooks/useI18nContext';
 import { getEnvironmentType } from '../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../shared/constants/app';
 import { KeyringType } from '../../../../shared/constants/keyring';
@@ -28,7 +13,22 @@ import {
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
 import { MetaMetricsContext } from '../../../contexts/metametrics';
+import {
+  CONNECTED_ROUTE,
+  NETWORKS_ROUTE,
+} from '../../../helpers/constants/routes';
+import { getURLHostName } from '../../../helpers/utils/util';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import {
+  getBlockExplorerLinkText,
+  getCurrentChainId,
+  getCurrentKeyring,
+  getRpcPrefsForCurrentProvider,
+  getSelectedIdentity,
+} from '../../../selectors';
+import { showModal } from '../../../store/actions';
 import { IconName } from '../../component-library';
+import { Menu, MenuItem } from '../../ui/menu';
 
 export default function AccountOptionsMenu({ anchorElement, onClose }) {
   const t = useI18nContext();

@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import Tooltip from '../../../../../ui/tooltip/tooltip';
-import { I18nContext } from '../../../../../../contexts/i18n';
+import React, { useContext } from 'react';
 
+import { I18nContext } from '../../../../../../contexts/i18n';
+import { IconColor } from '../../../../../../helpers/constants/design-system';
 import { useCopyToClipboard } from '../../../../../../hooks/useCopyToClipboard';
 import { Icon, IconName } from '../../../../../component-library';
-import { IconColor } from '../../../../../../helpers/constants/design-system';
+import Tooltip from '../../../../../ui/tooltip/tooltip';
 
 const CopyRawData = ({ data }) => {
   const t = useContext(I18nContext);

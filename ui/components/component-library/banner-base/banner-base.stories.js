@@ -1,7 +1,8 @@
-import React from 'react';
 import { useState } from '@storybook/addons';
-import { Size } from '../../../helpers/constants/design-system';
+import React from 'react';
+
 import { ButtonLink, ButtonPrimary, Icon, IconName, IconSize } from '..';
+import { Size } from '../../../helpers/constants/design-system';
 import { BannerBase } from './banner-base';
 import README from './README.mdx';
 

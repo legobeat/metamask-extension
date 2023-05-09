@@ -1,6 +1,7 @@
 import React from 'react';
-import type { BoxProps, BoxWidth, BoxWidthArray } from '../../ui/box/box.d';
+
 import { Size } from '../../../helpers/constants/design-system';
+import type { BoxProps, BoxWidth, BoxWidthArray } from '../../ui/box/box.d';
 
 /*
  * ModalContent sizes

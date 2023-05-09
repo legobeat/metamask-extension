@@ -1,14 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import BigNumber from 'bignumber.js';
-import Tooltip from '../../../components/ui/tooltip';
-import UrlIcon from '../../../components/ui/url-icon';
-import ExchangeRateDisplay from '../exchange-rate-display';
-import { formatSwapsValueForDisplay } from '../swaps.util';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   calcTokenAmount,
   toPrecisionWithoutTrailingZeros,
 } from '../../../../shared/lib/transactions-controller-utils';
+import Tooltip from '../../../components/ui/tooltip';
+import UrlIcon from '../../../components/ui/url-icon';
+import ExchangeRateDisplay from '../exchange-rate-display';
+import { formatSwapsValueForDisplay } from '../swaps.util';
 
 function getFontSizesAndLineHeights(fontSizeScore) {
   if (fontSizeScore <= 9) {

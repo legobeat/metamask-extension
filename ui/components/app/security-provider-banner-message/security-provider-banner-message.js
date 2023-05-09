@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+
+import { I18nContext } from '../../../../.storybook/i18n';
 import {
   Color,
   SEVERITIES,
   Size,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { I18nContext } from '../../../../.storybook/i18n';
 import { BannerAlert, ButtonLink, Text } from '../../component-library';
 import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from './security-provider-banner-message.constants';
 

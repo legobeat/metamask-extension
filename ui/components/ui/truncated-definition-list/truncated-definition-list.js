@@ -1,12 +1,13 @@
 import { pick } from 'lodash';
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+
 import { BorderColor, Size } from '../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import Box from '../box';
 import Button from '../button';
 import DefinitionList from '../definition-list/definition-list';
 import Popover from '../popover';
-import { useI18nContext } from '../../../hooks/useI18nContext';
 
 export default function TruncatedDefinitionList({
   dictionary,

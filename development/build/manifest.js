@@ -1,13 +1,12 @@
-const { promises: fs } = require('fs');
-const path = require('path');
 const childProcess = require('child_process');
+const { promises: fs } = require('fs');
 const { mergeWith, cloneDeep, capitalize } = require('lodash');
+const path = require('path');
 
 const baseManifest = process.env.ENABLE_MV3
   ? require('../../app/manifest/v3/_base.json')
   : require('../../app/manifest/v2/_base.json');
 const { loadBuildTypesConfig } = require('../lib/build-type');
-
 const { TASKS, ENVIRONMENT } = require('./constants');
 const { createTask, composeSeries } = require('./task');
 const { getEnvironment } = require('./utils');

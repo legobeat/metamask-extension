@@ -1,5 +1,6 @@
-import React from 'react';
 import { action } from '@storybook/addon-actions';
+import React from 'react';
+
 import { PermissionPageContainerContent } from '../../components/app/permission-page-container';
 import PermissionsConnectFooter from '../../components/app/permissions-connect-footer';
 import { PageContainerFooter } from '../../components/ui/page-container';

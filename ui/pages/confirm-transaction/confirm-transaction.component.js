@@ -2,16 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, useHistory, useParams } from 'react-router-dom';
 
-import Loading from '../../components/ui/loading-screen';
-import ConfirmContractInteraction from '../confirm-contract-interaction';
-import ConfirmDeployContract from '../confirm-deploy-contract';
-import ConfirmDecryptMessage from '../confirm-decrypt-message';
-import ConfirmEncryptionPublicKey from '../confirm-encryption-public-key';
-import ConfirmSendEther from '../confirm-send-ether';
-import ConfirmTransactionSwitch from '../confirm-transaction-switch';
-
 import { ORIGIN_METAMASK } from '../../../shared/constants/app';
-
+import Loading from '../../components/ui/loading-screen';
 import {
   clearConfirmTransaction,
   setTransactionToConfirm,
@@ -43,7 +35,13 @@ import {
   removePollingTokenFromAppState,
   setDefaultHomeActiveTabName,
 } from '../../store/actions';
+import ConfirmContractInteraction from '../confirm-contract-interaction';
+import ConfirmDecryptMessage from '../confirm-decrypt-message';
+import ConfirmDeployContract from '../confirm-deploy-contract';
+import ConfirmEncryptionPublicKey from '../confirm-encryption-public-key';
+import ConfirmSendEther from '../confirm-send-ether';
 import ConfirmSignatureRequest from '../confirm-signature-request';
+import ConfirmTransactionSwitch from '../confirm-transaction-switch';
 import ConfirmTokenTransactionSwitch from './confirm-token-transaction-switch';
 
 const ConfirmTransaction = () => {

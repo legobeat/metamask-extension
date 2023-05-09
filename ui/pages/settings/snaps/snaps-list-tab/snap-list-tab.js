@@ -1,21 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
 import SnapSettingsCard from '../../../../components/app/snaps/snap-settings-card';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import {
-  JustifyContent,
-  AlignItems,
-  IconColor,
-  Color,
-  TEXT_ALIGN,
-  FLEX_DIRECTION,
-  Size,
-} from '../../../../helpers/constants/design-system';
-import Box from '../../../../components/ui/box';
-import { SNAPS_VIEW_ROUTE } from '../../../../helpers/constants/routes';
-import { getSnapsList } from '../../../../selectors';
-import { handleSettingsRefs } from '../../../../helpers/utils/settings-search';
 import {
   BannerTip,
   BannerTipLogoType,
@@ -25,6 +12,20 @@ import {
   IconSize,
   Text,
 } from '../../../../components/component-library';
+import Box from '../../../../components/ui/box';
+import {
+  JustifyContent,
+  AlignItems,
+  IconColor,
+  Color,
+  TEXT_ALIGN,
+  FLEX_DIRECTION,
+  Size,
+} from '../../../../helpers/constants/design-system';
+import { SNAPS_VIEW_ROUTE } from '../../../../helpers/constants/routes';
+import { handleSettingsRefs } from '../../../../helpers/utils/settings-search';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { getSnapsList } from '../../../../selectors';
 
 const SnapListTab = () => {
   const t = useI18nContext();

@@ -1,9 +1,10 @@
+import { screen } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { screen } from '@testing-library/react';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+
 import { LOCALHOST_RPC_URL } from '../../../../shared/constants/network';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import NetworkDropdown from './network-dropdown';
 
 // Mock linea test network feature toggle

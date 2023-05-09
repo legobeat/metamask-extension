@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import { getAccountLink } from '@metamask/etherscan-link';
 import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { getAccountLink } from '@metamask/etherscan-link';
+
+import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import TransactionList from '../../../components/app/transaction-list';
 import { EthOverview } from '../../../components/app/wallet-overview';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { DEFAULT_ROUTE } from '../../../helpers/constants/routes';
+import { getURLHostName } from '../../../helpers/utils/util';
 import {
   getSelectedIdentity,
   getCurrentChainId,
@@ -13,10 +18,6 @@ import {
   getIsCustomNetwork,
 } from '../../../selectors/selectors';
 import { showModal } from '../../../store/actions';
-import { DEFAULT_ROUTE } from '../../../helpers/constants/routes';
-import { getURLHostName } from '../../../helpers/utils/util';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
 import AssetNavigation from './asset-navigation';
 import AssetOptions from './asset-options';
 

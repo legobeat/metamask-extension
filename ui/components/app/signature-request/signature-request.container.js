@@ -1,4 +1,14 @@
 import { connect } from 'react-redux';
+
+import { MESSAGE_TYPE } from '../../../../shared/constants/app';
+import { clearConfirmTransaction } from '../../../ducks/confirm-transaction/confirm-transaction.duck';
+import { getMostRecentOverviewPage } from '../../../ducks/history/history';
+import {
+  isAddressLedger,
+  getNativeCurrency,
+  getProviderConfig,
+} from '../../../ducks/metamask/metamask';
+import { getAccountByAddress, valuesFor } from '../../../helpers/utils/util';
 import {
   accountsWithSendEtherInfoSelector,
   doesAddressRequireLedgerHidConnection,
@@ -14,16 +24,7 @@ import {
   getSelectedAccount,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../selectors';
-import {
-  isAddressLedger,
-  getNativeCurrency,
-  getProviderConfig,
-} from '../../../ducks/metamask/metamask';
-import { getAccountByAddress, valuesFor } from '../../../helpers/utils/util';
-import { MESSAGE_TYPE } from '../../../../shared/constants/app';
 import { cancelMsgs, showModal } from '../../../store/actions';
-import { getMostRecentOverviewPage } from '../../../ducks/history/history';
-import { clearConfirmTransaction } from '../../../ducks/confirm-transaction/confirm-transaction.duck';
 import SignatureRequest from './signature-request.component';
 
 function mapStateToProps(state, ownProps) {

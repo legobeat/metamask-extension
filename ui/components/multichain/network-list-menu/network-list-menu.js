@@ -1,10 +1,29 @@
-import React, { useContext, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
+import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../shared/constants/app';
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+  MetaMetricsNetworkEventSource,
+} from '../../../../shared/constants/metametrics';
+import { CHAIN_IDS, TEST_CHAINS } from '../../../../shared/constants/network';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import {
+  DISPLAY,
+  JustifyContent,
+} from '../../../helpers/constants/design-system';
+import { ADD_POPULAR_CUSTOM_NETWORK } from '../../../helpers/constants/routes';
 import { useI18nContext } from '../../../hooks/useI18nContext';
-import Popover from '../../ui/popover/popover.component';
-import { NetworkListItem } from '../network-list-item';
+import {
+  getShowTestNetworks,
+  getAllEnabledNetworks,
+  getCurrentChainId,
+  getNetworkConfigurations,
+} from '../../../selectors';
 import {
   setActiveNetwork,
   showModal,
@@ -13,33 +32,15 @@ import {
   toggleNetworkMenu,
   upsertNetworkConfiguration,
 } from '../../../store/actions';
-import { CHAIN_IDS, TEST_CHAINS } from '../../../../shared/constants/network';
-import {
-  getShowTestNetworks,
-  getAllEnabledNetworks,
-  getCurrentChainId,
-  getNetworkConfigurations,
-} from '../../../selectors';
-import Box from '../../ui/box/box';
-import ToggleButton from '../../ui/toggle-button';
-import {
-  DISPLAY,
-  JustifyContent,
-} from '../../../helpers/constants/design-system';
 import {
   BUTTON_SECONDARY_SIZES,
   ButtonSecondary,
   Text,
 } from '../../component-library';
-import { ADD_POPULAR_CUSTOM_NETWORK } from '../../../helpers/constants/routes';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
-import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../shared/constants/app';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-  MetaMetricsNetworkEventSource,
-} from '../../../../shared/constants/metametrics';
+import Box from '../../ui/box/box';
+import Popover from '../../ui/popover/popover.component';
+import ToggleButton from '../../ui/toggle-button';
+import { NetworkListItem } from '../network-list-item';
 
 const UNREMOVABLE_CHAIN_IDS = [CHAIN_IDS.MAINNET, ...TEST_CHAINS];
 

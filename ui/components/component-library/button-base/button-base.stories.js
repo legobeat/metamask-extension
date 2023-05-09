@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { TextDirection, IconName } from '..';
 import {
   AlignItems,
   Color,
@@ -7,10 +9,8 @@ import {
   Size,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box/box';
-import { TextDirection, IconName } from '..';
-
-import { BUTTON_BASE_SIZES } from './button-base.constants';
 import { ButtonBase } from './button-base';
+import { BUTTON_BASE_SIZES } from './button-base.constants';
 import README from './README.mdx';
 
 const marginSizeControlOptions = [

@@ -1,19 +1,7 @@
 import React, { useCallback, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import ActionableMessage from '../../components/ui/actionable-message/actionable-message';
-import Button from '../../components/ui/button';
-import Identicon from '../../components/ui/identicon';
-import TokenBalance from '../../components/ui/token-balance';
-import { PageContainerFooter } from '../../components/ui/page-container';
-import { I18nContext } from '../../contexts/i18n';
-import { MetaMetricsContext } from '../../contexts/metametrics';
-import { getMostRecentOverviewPage } from '../../ducks/history/history';
-import { getTokens } from '../../ducks/metamask/metamask';
-import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
-import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
-import { getSuggestedAssets } from '../../selectors';
-import { rejectWatchAsset, acceptWatchAsset } from '../../store/actions';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
@@ -23,6 +11,19 @@ import {
   AssetType,
   TokenStandard,
 } from '../../../shared/constants/transaction';
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
+import ActionableMessage from '../../components/ui/actionable-message/actionable-message';
+import Button from '../../components/ui/button';
+import Identicon from '../../components/ui/identicon';
+import { PageContainerFooter } from '../../components/ui/page-container';
+import TokenBalance from '../../components/ui/token-balance';
+import { I18nContext } from '../../contexts/i18n';
+import { MetaMetricsContext } from '../../contexts/metametrics';
+import { getMostRecentOverviewPage } from '../../ducks/history/history';
+import { getTokens } from '../../ducks/metamask/metamask';
+import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
+import { getSuggestedAssets } from '../../selectors';
+import { rejectWatchAsset, acceptWatchAsset } from '../../store/actions';
 
 function getTokenName(name, symbol) {
   return name === undefined ? symbol : `${name} (${symbol})`;

@@ -1,11 +1,12 @@
-import React, { forwardRef, Ref } from 'react';
 import classnames from 'classnames';
-import Box from '../../ui/box';
+import React, { forwardRef, Ref } from 'react';
+
 import {
   FontWeight,
   TextVariant,
   TextColor,
 } from '../../../helpers/constants/design-system';
+import Box from '../../ui/box';
 import { TextProps, ValidTag } from './text.types';
 
 const getTextElementDefault = (variant: TextVariant) => {

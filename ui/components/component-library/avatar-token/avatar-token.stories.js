@@ -1,14 +1,4 @@
 import React from 'react';
-import {
-  Size,
-  DISPLAY,
-  AlignItems,
-  TextColor,
-  BackgroundColor,
-  BorderColor,
-} from '../../../helpers/constants/design-system';
-
-import Box from '../../ui/box/box';
 
 import {
   AvatarNetwork,
@@ -17,11 +7,18 @@ import {
   ButtonLink,
   Text,
 } from '..';
-
-import README from './README.mdx';
-
+import {
+  Size,
+  DISPLAY,
+  AlignItems,
+  TextColor,
+  BackgroundColor,
+  BorderColor,
+} from '../../../helpers/constants/design-system';
+import Box from '../../ui/box/box';
 import { AvatarToken } from './avatar-token';
 import { AVATAR_TOKEN_SIZES } from './avatar-token.constants';
+import README from './README.mdx';
 
 export default {
   title: 'Components/ComponentLibrary/AvatarToken',

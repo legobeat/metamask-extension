@@ -1,29 +1,25 @@
+import BigNumber from 'bignumber.js';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import BigNumber from 'bignumber.js';
 
 import { GasEstimateTypes } from '../../../../shared/constants/gas';
-
-import { usePrevious } from '../../../hooks/usePrevious';
-import { I18nContext } from '../../../contexts/i18n';
 import { useGasFeeContext } from '../../../contexts/gasFee';
-
+import { I18nContext } from '../../../contexts/i18n';
 import {
   getGasEstimateType,
   getGasFeeEstimates,
   getIsGasEstimatesLoading,
 } from '../../../ducks/metamask/metamask';
-
-import Typography from '../../ui/typography/typography';
 import {
   TypographyVariant,
   FONT_WEIGHT,
 } from '../../../helpers/constants/design-system';
-
-import { getGasFeeTimeEstimate } from '../../../store/actions';
 import { GAS_FORM_ERRORS } from '../../../helpers/constants/gas';
+import { usePrevious } from '../../../hooks/usePrevious';
+import { getGasFeeTimeEstimate } from '../../../store/actions';
+import Typography from '../../ui/typography/typography';
 
 // Once we reach this second threshold, we switch to minutes as a unit
 const SECOND_CUTOFF = 90;

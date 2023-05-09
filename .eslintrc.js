@@ -1,5 +1,4 @@
 const path = require('path');
-
 const { version: reactVersion } = require('react/package.json');
 
 module.exports = {

@@ -1,8 +1,9 @@
-import { strict as assert } from 'assert';
-import { TransactionFactory } from '@ethereumjs/tx';
 import { Common } from '@ethereumjs/common';
-import { hexToBn } from '../../lib/util';
+import { TransactionFactory } from '@ethereumjs/tx';
+import { strict as assert } from 'assert';
+
 import { bnToHex } from '../../../../shared/modules/conversion.utils';
+import { hexToBn } from '../../lib/util';
 import TxUtils from './tx-gas-utils';
 
 describe('txUtils', function () {

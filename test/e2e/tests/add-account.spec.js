@@ -1,12 +1,13 @@
 const { strict: assert } = require('assert');
+
+const enLocaleMessages = require('../../../app/_locales/en/messages.json');
+const FixtureBuilder = require('../fixture-builder');
 const {
   convertToHexValue,
   withFixtures,
   regularDelayMs,
   completeImportSRPOnboardingFlow,
 } = require('../helpers');
-const enLocaleMessages = require('../../../app/_locales/en/messages.json');
-const FixtureBuilder = require('../fixture-builder');
 
 describe('Add account', function () {
   const testSeedPhrase =

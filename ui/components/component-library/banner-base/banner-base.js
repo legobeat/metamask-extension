@@ -1,12 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ButtonIcon } from '../button-icon/deprecated';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { ButtonLink, Text } from '..';
-import { ICON_NAMES } from '../icon/deprecated';
-
-import Box from '../../ui/box';
-
 import {
   BackgroundColor,
   BorderRadius,
@@ -14,6 +10,9 @@ import {
   Size,
   TextVariant,
 } from '../../../helpers/constants/design-system';
+import Box from '../../ui/box';
+import { ButtonIcon } from '../button-icon/deprecated';
+import { ICON_NAMES } from '../icon/deprecated';
 
 export const BannerBase = ({
   className,

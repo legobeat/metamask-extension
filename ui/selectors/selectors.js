@@ -2,17 +2,30 @@
 import { SubjectType } from '@metamask/subject-metadata-controller';
 ///: END:ONLY_INCLUDE_IN
 import {
-  createSelector,
-  createSelectorCreator,
-  defaultMemoize,
-} from 'reselect';
-import {
   ///: BEGIN:ONLY_INCLUDE_IN(snaps)
   memoize,
   ///: END:ONLY_INCLUDE_IN
   isEqual,
 } from 'lodash';
+import {
+  createSelector,
+  createSelectorCreator,
+  defaultMemoize,
+} from 'reselect';
+
 import { addHexPrefix } from '../../app/scripts/lib/util';
+import { MESSAGE_TYPE } from '../../shared/constants/app';
+import {
+  ALLOWED_BRIDGE_CHAIN_IDS,
+  ALLOWED_BRIDGE_TOKEN_ADDRESSES,
+} from '../../shared/constants/bridge';
+import {
+  WebHIDConnectedStatuses,
+  LedgerTransportTypes,
+  HardwareTransportStates,
+} from '../../shared/constants/hardware-wallets';
+import { KeyringType } from '../../shared/constants/keyring';
+import { TRUNCATED_NAME_CHAR_LIMIT } from '../../shared/constants/labels';
 import {
   TEST_CHAINS,
   NATIVE_CURRENCY_TOKEN_IMAGE_MAP,
@@ -33,40 +46,23 @@ import {
   TEST_NETWORK_TICKER_MAP,
 } from '../../shared/constants/network';
 import {
-  WebHIDConnectedStatuses,
-  LedgerTransportTypes,
-  HardwareTransportStates,
-} from '../../shared/constants/hardware-wallets';
-import { KeyringType } from '../../shared/constants/keyring';
-import { MESSAGE_TYPE } from '../../shared/constants/app';
-
-import { TRUNCATED_NAME_CHAR_LIMIT } from '../../shared/constants/labels';
-
-import {
   SWAPS_CHAINID_DEFAULT_TOKEN_MAP,
   ALLOWED_PROD_SWAPS_CHAIN_IDS,
   ALLOWED_DEV_SWAPS_CHAIN_IDS,
 } from '../../shared/constants/swaps';
-
-import {
-  ALLOWED_BRIDGE_CHAIN_IDS,
-  ALLOWED_BRIDGE_TOKEN_ADDRESSES,
-} from '../../shared/constants/bridge';
-
-import {
-  shortenAddress,
-  getAccountByAddress,
-  getURLHostName,
-  ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-  removeSnapIdPrefix,
-  getSnapName,
-  ///: END:ONLY_INCLUDE_IN
-} from '../helpers/utils/util';
-
-import { TEMPLATED_CONFIRMATION_MESSAGE_TYPES } from '../pages/confirmation/templates';
-import { STATIC_MAINNET_TOKEN_LIST } from '../../shared/constants/tokens';
-import { DAY } from '../../shared/constants/time';
 import { TERMS_OF_USE_LAST_UPDATED } from '../../shared/constants/terms';
+import { DAY } from '../../shared/constants/time';
+import { STATIC_MAINNET_TOKEN_LIST } from '../../shared/constants/tokens';
+import { TransactionStatus } from '../../shared/constants/transaction';
+import {
+  getValueFromWeiHex,
+  hexToDecimal,
+} from '../../shared/modules/conversion.utils';
+import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
+import {
+  getLedgerWebHidConnectedStatus,
+  getLedgerTransportStatus,
+} from '../ducks/app/app';
 import {
   getNativeCurrency,
   getProviderConfig,
@@ -77,18 +73,18 @@ import {
   isAddressLedger,
   findKeyringForAddress,
 } from '../ducks/metamask/metamask';
-import {
-  getLedgerWebHidConnectedStatus,
-  getLedgerTransportStatus,
-} from '../ducks/app/app';
-import { isEqualCaseInsensitive } from '../../shared/modules/string-utils';
-import { TransactionStatus } from '../../shared/constants/transaction';
-import {
-  getValueFromWeiHex,
-  hexToDecimal,
-} from '../../shared/modules/conversion.utils';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { SNAPS_VIEW_ROUTE } from '../helpers/constants/routes';
+import {
+  shortenAddress,
+  getAccountByAddress,
+  getURLHostName,
+  ///: BEGIN:ONLY_INCLUDE_IN(snaps)
+  removeSnapIdPrefix,
+  getSnapName,
+  ///: END:ONLY_INCLUDE_IN
+} from '../helpers/utils/util';
+import { TEMPLATED_CONFIRMATION_MESSAGE_TYPES } from '../pages/confirmation/templates';
 import { getPermissionSubjects } from './permissions';
 ///: END:ONLY_INCLUDE_IN
 

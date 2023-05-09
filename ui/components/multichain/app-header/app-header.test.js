@@ -1,9 +1,10 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
+
+import { AppHeader } from '.';
 import { CHAIN_IDS } from '../../../../shared/constants/network';
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import { SEND_STAGES } from '../../../ducks/send';
-import { AppHeader } from '.';
 
 describe('App Header', () => {
   it('should match snapshot', () => {

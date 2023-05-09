@@ -1,5 +1,5 @@
-const fs = require('fs');
 const spawn = require('cross-spawn');
+const fs = require('fs');
 
 /**
  * Run a command to completion using the system shell.

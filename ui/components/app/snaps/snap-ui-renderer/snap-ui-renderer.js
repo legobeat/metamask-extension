@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { isComponent } from '@metamask/snaps-ui';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import MetaMaskTemplateRenderer from '../../metamask-template-renderer/metamask-template-renderer';
+
 import {
   TypographyVariant,
   FONT_WEIGHT,
@@ -11,14 +11,15 @@ import {
   OVERFLOW_WRAP,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import { SnapDelineator } from '../snap-delineator';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import Box from '../../../ui/box';
+import { DelineatorType } from '../../../../helpers/constants/snaps';
 import { getSnapName } from '../../../../helpers/utils/util';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { getTargetSubjectMetadata } from '../../../../selectors';
 import { Text } from '../../../component-library';
+import Box from '../../../ui/box';
+import MetaMaskTemplateRenderer from '../../metamask-template-renderer/metamask-template-renderer';
 import { Copyable } from '../copyable';
-import { DelineatorType } from '../../../../helpers/constants/snaps';
+import { SnapDelineator } from '../snap-delineator';
 
 export const UI_MAPPING = {
   panel: (props, elementKey) => ({

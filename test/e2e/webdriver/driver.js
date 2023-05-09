@@ -1,5 +1,6 @@
-const { promises: fs } = require('fs');
 const { strict: assert } = require('assert');
+const cssToXPath = require('css-to-xpath');
+const { promises: fs } = require('fs');
 const {
   By,
   Condition,
@@ -7,7 +8,6 @@ const {
   Key,
   until,
 } = require('selenium-webdriver');
-const cssToXPath = require('css-to-xpath');
 
 /**
  * Temporary workaround to patch selenium's element handle API with methods

@@ -1,10 +1,8 @@
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 
 import { DISPLAY } from '../../../helpers/constants/design-system';
-
 import Box from '../../ui/box';
-
 import {
   BadgeWrapperPosition,
   BadgeWrapperAnchorElementShape,

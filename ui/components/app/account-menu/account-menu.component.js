@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { debounce } from 'lodash';
-import Fuse from 'fuse.js';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import classnames from 'classnames';
+import Fuse from 'fuse.js';
+import { debounce } from 'lodash';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+import { getEnvironmentType } from '../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
 import {
   MetaMetricsContextProp,
@@ -11,16 +13,14 @@ import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
-import { getEnvironmentType } from '../../../../app/scripts/lib/util';
-import Identicon from '../../ui/identicon';
-import SiteIcon from '../../ui/site-icon';
-import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
+import { SUPPORT_LINK } from '../../../../shared/lib/ui-utils';
 import {
   PRIMARY,
   ///: BEGIN:ONLY_INCLUDE_IN(build-beta,build-flask)
   SUPPORT_REQUEST_LINK,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../helpers/constants/common';
+import { IconColor } from '../../../helpers/constants/design-system';
 import {
   SETTINGS_ROUTE,
   NEW_ACCOUNT_ROUTE,
@@ -31,13 +31,13 @@ import {
   NOTIFICATIONS_ROUTE,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../helpers/constants/routes';
-import TextField from '../../ui/text-field';
-
+import { Icon, IconName, IconSize } from '../../component-library';
 import Button from '../../ui/button';
 import SearchIcon from '../../ui/icon/search-icon';
-import { SUPPORT_LINK } from '../../../../shared/lib/ui-utils';
-import { IconColor } from '../../../helpers/constants/design-system';
-import { Icon, IconName, IconSize } from '../../component-library';
+import Identicon from '../../ui/identicon';
+import SiteIcon from '../../ui/site-icon';
+import TextField from '../../ui/text-field';
+import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
 import KeyRingLabel from './keyring-label';
 
 export function AccountMenuItem(props) {

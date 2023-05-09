@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ConfirmTransactionBase from '../confirm-transaction-base';
+import React, { Component } from 'react';
+
 import { toBuffer } from '../../../shared/modules/buffer-utils';
-import Box from '../../components/ui/box';
 import { Text } from '../../components/component-library';
+import Box from '../../components/ui/box';
 import {
   Color,
   DISPLAY,
@@ -11,6 +11,7 @@ import {
   TextVariant,
   TEXT_TRANSFORM,
 } from '../../helpers/constants/design-system';
+import ConfirmTransactionBase from '../confirm-transaction-base';
 
 export default class ConfirmDeployContract extends Component {
   static contextTypes = {

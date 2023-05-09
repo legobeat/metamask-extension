@@ -6,6 +6,7 @@ whos nonce is too high
 */
 
 import { cloneDeep } from 'lodash';
+
 import { TransactionStatus } from '../../../shared/constants/transaction';
 
 const version = 19;

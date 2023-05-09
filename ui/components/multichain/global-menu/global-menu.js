@@ -1,28 +1,28 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  CONNECTED_ROUTE,
-  SETTINGS_ROUTE,
-  DEFAULT_ROUTE,
-} from '../../../helpers/constants/routes';
-import { lockMetamask } from '../../../store/actions';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import { IconName } from '../../component-library';
-import { Menu, MenuItem } from '../../ui/menu';
+import { useHistory } from 'react-router-dom';
+
 import { getEnvironmentType } from '../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../shared/constants/app';
-import { SUPPORT_LINK } from '../../../../shared/lib/ui-utils';
-
-import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   MetaMetricsEventName,
   MetaMetricsEventCategory,
   MetaMetricsContextProp,
 } from '../../../../shared/constants/metametrics';
+import { SUPPORT_LINK } from '../../../../shared/lib/ui-utils';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import {
+  CONNECTED_ROUTE,
+  SETTINGS_ROUTE,
+  DEFAULT_ROUTE,
+} from '../../../helpers/constants/routes';
 import { getPortfolioUrl } from '../../../helpers/utils/portfolio';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { getMetaMetricsId } from '../../../selectors';
+import { lockMetamask } from '../../../store/actions';
+import { IconName } from '../../component-library';
+import { Menu, MenuItem } from '../../ui/menu';
 
 export const GlobalMenu = ({ closeMenu, anchorElement }) => {
   const t = useI18nContext();

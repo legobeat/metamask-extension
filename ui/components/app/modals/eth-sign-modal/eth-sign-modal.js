@@ -1,8 +1,27 @@
-import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../../contexts/metametrics';
+import {
+  AlignItems,
+  DISPLAY,
+  FLEX_DIRECTION,
+  IconColor,
+  JustifyContent,
+  SEVERITIES,
+  Size,
+  TextAlign,
+  TextVariant,
+} from '../../../../helpers/constants/design-system';
 import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
-import Box from '../../../ui/box';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { getDisabledRpcMethodPreferences } from '../../../../selectors';
+import { setDisabledRpcMethodPreference } from '../../../../store/actions';
 import {
   BannerAlert,
   ButtonIcon,
@@ -16,26 +35,8 @@ import {
   Label,
   Text,
 } from '../../../component-library';
-import {
-  AlignItems,
-  DISPLAY,
-  FLEX_DIRECTION,
-  IconColor,
-  JustifyContent,
-  SEVERITIES,
-  Size,
-  TextAlign,
-  TextVariant,
-} from '../../../../helpers/constants/design-system';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
+import Box from '../../../ui/box';
 import CheckBox from '../../../ui/check-box';
-import { setDisabledRpcMethodPreference } from '../../../../store/actions';
-import { getDisabledRpcMethodPreferences } from '../../../../selectors';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../../shared/constants/metametrics';
-import { MetaMetricsContext } from '../../../../contexts/metametrics';
 
 const EthSignModal = ({ hideModal }) => {
   const [isEthSignChecked, setIsEthSignChecked] = useState(false);

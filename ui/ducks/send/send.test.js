@@ -1,7 +1,23 @@
-import sinon from 'sinon';
+import { BigNumber } from '@ethersproject/bignumber';
 import createMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { BigNumber } from '@ethersproject/bignumber';
+import sinon from 'sinon';
+
+import { draftTransactionInitialState, editExistingTransaction } from '.';
+import { GasEstimateTypes, GAS_LIMITS } from '../../../shared/constants/gas';
+import { KeyringType } from '../../../shared/constants/keyring';
+import { CHAIN_IDS } from '../../../shared/constants/network';
+import {
+  AssetType,
+  TokenStandard,
+  TransactionEnvelopeType,
+} from '../../../shared/constants/transaction';
+import { BURN_ADDRESS } from '../../../shared/modules/hexstring-utils';
+import { setBackgroundConnection } from '../../../test/jest';
+import {
+  getInitialSendStateWithExistingTxState,
+  INITIAL_SEND_STATE_FOR_EXISTING_DRAFT,
+} from '../../../test/jest/mocks';
 import {
   CONTRACT_ADDRESS_ERROR,
   INSUFFICIENT_FUNDS_ERROR,
@@ -11,25 +27,11 @@ import {
   KNOWN_RECIPIENT_ADDRESS_WARNING,
   NEGATIVE_ETH_ERROR,
 } from '../../pages/send/send.constants';
-import { CHAIN_IDS } from '../../../shared/constants/network';
-import { GasEstimateTypes, GAS_LIMITS } from '../../../shared/constants/gas';
-import { KeyringType } from '../../../shared/constants/keyring';
-import {
-  AssetType,
-  TokenStandard,
-  TransactionEnvelopeType,
-} from '../../../shared/constants/transaction';
-import * as Actions from '../../store/actions';
-import { setBackgroundConnection } from '../../../test/jest';
 import {
   generateERC20TransferData,
   generateERC721TransferData,
 } from '../../pages/send/send.utils';
-import { BURN_ADDRESS } from '../../../shared/modules/hexstring-utils';
-import {
-  getInitialSendStateWithExistingTxState,
-  INITIAL_SEND_STATE_FOR_EXISTING_DRAFT,
-} from '../../../test/jest/mocks';
+import * as Actions from '../../store/actions';
 import sendReducer, {
   initialState,
   initializeSendState,
@@ -73,7 +75,6 @@ import sendReducer, {
   getSendStage,
   updateGasPrice,
 } from './send';
-import { draftTransactionInitialState, editExistingTransaction } from '.';
 
 const mockStore = createMockStore([thunk]);
 

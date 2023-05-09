@@ -1,7 +1,8 @@
-import React from 'react';
-import sinon from 'sinon';
 import { fireEvent, screen } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
+import sinon from 'sinon';
+
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import JwtUrlForm from './jwt-url-form';
 

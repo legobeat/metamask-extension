@@ -1,13 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '../../../ui/box';
-import { Text } from '../../../component-library';
+import React from 'react';
 
 import {
   FLEX_DIRECTION,
   OVERFLOW_WRAP,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
+import { Text } from '../../../component-library';
+import Box from '../../../ui/box';
 
 const SignatureRequestSIWEMessage = ({ data }) => {
   return (

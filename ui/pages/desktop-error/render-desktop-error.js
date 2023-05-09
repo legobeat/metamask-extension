@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import IconTimes from '../../components/ui/icon/icon-times';
 import { EXTENSION_ERROR_PAGE_TYPES } from '../../../shared/constants/desktop';
+import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
+import { openCustomProtocol } from '../../../shared/lib/deep-linking';
+import Box from '../../components/ui/box';
+import Button from '../../components/ui/button';
+import IconTimes from '../../components/ui/icon/icon-times';
+import Typography from '../../components/ui/typography';
 import {
   TypographyVariant,
   DISPLAY,
@@ -12,11 +17,6 @@ import {
   FONT_WEIGHT,
 } from '../../helpers/constants/design-system';
 import { DEFAULT_ROUTE, SETTINGS_ROUTE } from '../../helpers/constants/routes';
-import Typography from '../../components/ui/typography';
-import Button from '../../components/ui/button';
-import Box from '../../components/ui/box';
-import { openCustomProtocol } from '../../../shared/lib/deep-linking';
-import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
 
 export function renderDesktopError({
   type,

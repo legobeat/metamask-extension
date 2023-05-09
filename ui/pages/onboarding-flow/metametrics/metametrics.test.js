@@ -1,13 +1,14 @@
+import { fireEvent, waitFor } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent, waitFor } from '@testing-library/react';
 import thunk from 'redux-thunk';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
-import { ONBOARDING_CREATE_PASSWORD_ROUTE } from '../../../helpers/constants/routes';
+
 import {
   onboardingMetametricsAgree,
   onboardingMetametricsDisagree,
 } from '../../../../app/_locales/en/messages.json';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
+import { ONBOARDING_CREATE_PASSWORD_ROUTE } from '../../../helpers/constants/routes';
 import { setParticipateInMetaMetrics } from '../../../store/actions';
 import OnboardingMetametrics from './metametrics';
 

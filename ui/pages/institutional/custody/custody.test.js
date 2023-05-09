@@ -1,9 +1,10 @@
+import { fireEvent, waitFor, screen } from '@testing-library/react';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import { fireEvent, waitFor, screen } from '@testing-library/react';
 import thunk from 'redux-thunk';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
+
 import CustodyPage from '.';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 const mockedReturnedValue = jest.fn().mockReturnValue({ type: 'TYPE' });
 const mockedGetCustodianJWTList = jest.fn().mockReturnValue({ type: 'TYPE' });

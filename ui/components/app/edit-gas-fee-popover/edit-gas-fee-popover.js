@@ -1,21 +1,20 @@
 import React from 'react';
 
 import { EditGasModes, PriorityLevels } from '../../../../shared/constants/gas';
-import { useI18nContext } from '../../../hooks/useI18nContext';
+import { useGasFeeContext } from '../../../contexts/gasFee';
 import { useTransactionModalContext } from '../../../contexts/transaction-modal';
-import Box from '../../ui/box';
-import ErrorMessage from '../../ui/error-message';
-import Popover from '../../ui/popover';
-
 import {
   TextColor,
   TextVariant,
 } from '../../../helpers/constants/design-system';
 import { INSUFFICIENT_FUNDS_ERROR_KEY } from '../../../helpers/constants/error-keys';
-import { useGasFeeContext } from '../../../contexts/gasFee';
-import AppLoadingSpinner from '../app-loading-spinner';
 import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 import { Text } from '../../component-library';
+import Box from '../../ui/box';
+import ErrorMessage from '../../ui/error-message';
+import Popover from '../../ui/popover';
+import AppLoadingSpinner from '../app-loading-spinner';
 import EditGasItem from './edit-gas-item';
 import NetworkStatistics from './network-statistics';
 

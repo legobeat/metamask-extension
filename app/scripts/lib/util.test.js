@@ -1,4 +1,3 @@
-import { isPrefixedFormattedHexString } from '../../../shared/modules/network.utils';
 import {
   ENVIRONMENT_TYPE_POPUP,
   ENVIRONMENT_TYPE_NOTIFICATION,
@@ -14,6 +13,7 @@ import {
   TransactionType,
   TransactionEnvelopeType,
 } from '../../../shared/constants/transaction';
+import { isPrefixedFormattedHexString } from '../../../shared/modules/network.utils';
 import {
   deferredPromise,
   getEnvironmentType,

@@ -1,7 +1,8 @@
+import { TokenListController } from '@metamask/assets-controllers';
+import { ControllerMessenger } from '@metamask/base-controller';
 import { strict as assert } from 'assert';
 import sinon from 'sinon';
-import { ControllerMessenger } from '@metamask/base-controller';
-import { TokenListController } from '@metamask/assets-controllers';
+
 import PreferencesController from './preferences';
 
 describe('preferences controller', function () {

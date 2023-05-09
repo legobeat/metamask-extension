@@ -1,8 +1,9 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { renderWithProvider } from '../../../../../test/lib/render-helpers';
-import { getEnvironmentType } from '../../../../../app/scripts/lib/util';
+
 import ConfirmPageContainerHeader from '.';
+import { getEnvironmentType } from '../../../../../app/scripts/lib/util';
+import { renderWithProvider } from '../../../../../test/lib/render-helpers';
 
 jest.mock('../../../../../app/scripts/lib/util', () => ({
   ...jest.requireActual('../../../../../app/scripts/lib/util'),

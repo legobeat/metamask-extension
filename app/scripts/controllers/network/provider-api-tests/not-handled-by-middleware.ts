@@ -1,6 +1,7 @@
 /* eslint-disable jest/require-top-level-describe, jest/no-export */
 
 import { fill } from 'lodash';
+
 import {
   ProviderType,
   withMockedCommunications,
@@ -54,7 +55,7 @@ export function testsForRpcMethodNotHandledByMiddleware(
       });
       const actualResult = await withNetworkClient(
         { providerType },
-        ({ makeRpcCall }) => makeRpcCall(request),
+        async ({ makeRpcCall }) => makeRpcCall(request),
       );
 
       expect(actualResult).toStrictEqual(expectedResult);

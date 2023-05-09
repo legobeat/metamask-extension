@@ -1,5 +1,6 @@
 import isEqual from 'lodash/isEqual';
 import { useSelector } from 'react-redux';
+
 import {
   getGasEstimateType,
   getGasFeeEstimates,

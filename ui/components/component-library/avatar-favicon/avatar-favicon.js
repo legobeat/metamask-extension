@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { AvatarBase } from '../avatar-base';
-import Box from '../../ui/box/box';
-import { IconName, Icon } from '../icon';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   BorderColor,
   Size,
@@ -13,6 +11,9 @@ import {
   IconColor,
 } from '../../../helpers/constants/design-system';
 import { useI18nContext } from '../../../hooks/useI18nContext';
+import Box from '../../ui/box/box';
+import { AvatarBase } from '../avatar-base';
+import { IconName, Icon } from '../icon';
 import { AVATAR_FAVICON_SIZES } from './avatar-favicon.constants';
 
 export const AvatarFavicon = React.forwardRef(

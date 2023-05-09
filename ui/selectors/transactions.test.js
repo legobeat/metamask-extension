@@ -11,8 +11,8 @@ import {
 
 describe('Transaction Selectors', () => {
   describe('unapprovedMessagesSelector', () => {
-    it('returns eth sign msg from unapprovedMsgs', () => {
-      const msg = {
+    it('returns eth sign message from unapprovedMsgs', () => {
+      const message = {
         id: 1,
         msgParams: {
           from: '0xAddress',
@@ -27,7 +27,7 @@ describe('Transaction Selectors', () => {
       const state = {
         metamask: {
           unapprovedMsgs: {
-            1: msg,
+            1: message,
           },
           providerConfig: {
             chainId: '0x5',
@@ -38,11 +38,11 @@ describe('Transaction Selectors', () => {
       const msgSelector = unapprovedMessagesSelector(state);
 
       expect(Array.isArray(msgSelector)).toStrictEqual(true);
-      expect(msgSelector).toStrictEqual([msg]);
+      expect(msgSelector).toStrictEqual([message]);
     });
 
     it('returns personal sign from unapprovedPersonalMsgsSelector', () => {
-      const msg = {
+      const message = {
         id: 1,
         msgParams: {
           from: '0xAddress',
@@ -57,7 +57,7 @@ describe('Transaction Selectors', () => {
       const state = {
         metamask: {
           unapprovedPersonalMsgs: {
-            1: msg,
+            1: message,
           },
           providerConfig: {
             chainId: '0x5',
@@ -68,11 +68,11 @@ describe('Transaction Selectors', () => {
       const msgSelector = unapprovedMessagesSelector(state);
 
       expect(Array.isArray(msgSelector)).toStrictEqual(true);
-      expect(msgSelector).toStrictEqual([msg]);
+      expect(msgSelector).toStrictEqual([message]);
     });
 
     it('returns typed message from unapprovedTypedMessagesSelector', () => {
-      const msg = {
+      const message = {
         id: 1,
         msgParams: {
           data: '0xData',
@@ -88,7 +88,7 @@ describe('Transaction Selectors', () => {
       const state = {
         metamask: {
           unapprovedTypedMessages: {
-            1: msg,
+            1: message,
           },
           providerConfig: {
             chainId: '0x5',
@@ -99,7 +99,7 @@ describe('Transaction Selectors', () => {
       const msgSelector = unapprovedMessagesSelector(state);
 
       expect(Array.isArray(msgSelector)).toStrictEqual(true);
-      expect(msgSelector).toStrictEqual([msg]);
+      expect(msgSelector).toStrictEqual([message]);
     });
   });
 

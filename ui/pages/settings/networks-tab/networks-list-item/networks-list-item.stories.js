@@ -1,6 +1,7 @@
 import React from 'react';
-import { defaultNetworksData } from '../networks-tab.constants';
+
 import NetworksListItem from '.';
+import { defaultNetworksData } from '../networks-tab.constants';
 
 const defaultNetworks = defaultNetworksData.map((network) => ({
   ...network,

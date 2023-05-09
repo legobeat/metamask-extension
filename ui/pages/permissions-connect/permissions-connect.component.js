@@ -1,21 +1,22 @@
+import { ethErrors, serializeError } from 'eth-rpc-errors';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import { ethErrors, serializeError } from 'eth-rpc-errors';
 ///: END:ONLY_INCLUDE_IN
 import { getEnvironmentType } from '../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_NOTIFICATION } from '../../../shared/constants/app';
 import { MILLISECOND } from '../../../shared/constants/time';
-import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
 import PermissionPageContainer from '../../components/app/permission-page-container';
 import { Icon, IconName, IconSize } from '../../components/component-library';
+import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
 import ChooseAccount from './choose-account';
 import PermissionsRedirect from './redirect';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import SnapInstall from './snaps/snap-install';
-import SnapUpdate from './snaps/snap-update';
 import SnapResult from './snaps/snap-result';
+import SnapUpdate from './snaps/snap-update';
 ///: END:ONLY_INCLUDE_IN
 
 const APPROVE_TIMEOUT = MILLISECOND * 1200;

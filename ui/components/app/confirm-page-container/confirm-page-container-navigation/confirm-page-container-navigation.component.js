@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+
+import { I18nContext } from '../../../../contexts/i18n';
+import { clearConfirmTransaction } from '../../../../ducks/confirm-transaction/confirm-transaction.duck';
+import {
+  CONFIRM_TRANSACTION_ROUTE,
+  SIGNATURE_REQUEST_PATH,
+} from '../../../../helpers/constants/routes';
 import {
   unconfirmedTransactionsHashSelector,
   unapprovedDecryptMsgsSelector,
   unapprovedEncryptionPublicKeyMsgsSelector,
 } from '../../../../selectors';
-import { I18nContext } from '../../../../contexts/i18n';
-import {
-  CONFIRM_TRANSACTION_ROUTE,
-  SIGNATURE_REQUEST_PATH,
-} from '../../../../helpers/constants/routes';
-import { clearConfirmTransaction } from '../../../../ducks/confirm-transaction/confirm-transaction.duck';
 
 const ConfirmPageContainerNavigation = () => {
   const t = useContext(I18nContext);

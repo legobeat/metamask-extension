@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ContractDetailsModal from './contract-details-modal';
 
 export default {

@@ -2,20 +2,18 @@ import { useSelector } from 'react-redux';
 
 import { EditGasModes, GasEstimateTypes } from '../../../shared/constants/gas';
 import {
-  getMaximumGasTotalInHexWei,
-  getMinimumGasTotalInHexWei,
-} from '../../../shared/modules/gas.utils';
-
-import { PRIMARY } from '../../helpers/constants/common';
-import { checkNetworkAndAccountSupports1559 } from '../../selectors';
-import { isLegacyTransaction } from '../../helpers/utils/transactions.util';
-
-import { useCurrencyDisplay } from '../useCurrencyDisplay';
-import { useUserPreferencedCurrency } from '../useUserPreferencedCurrency';
-import {
   decGWEIToHexWEI,
   decimalToHex,
 } from '../../../shared/modules/conversion.utils';
+import {
+  getMaximumGasTotalInHexWei,
+  getMinimumGasTotalInHexWei,
+} from '../../../shared/modules/gas.utils';
+import { PRIMARY } from '../../helpers/constants/common';
+import { isLegacyTransaction } from '../../helpers/utils/transactions.util';
+import { checkNetworkAndAccountSupports1559 } from '../../selectors';
+import { useCurrencyDisplay } from '../useCurrencyDisplay';
+import { useUserPreferencedCurrency } from '../useUserPreferencedCurrency';
 
 /**
  * @typedef {object} GasEstimatesReturnType

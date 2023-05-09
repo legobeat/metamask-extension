@@ -1,18 +1,19 @@
 import { isValidMnemonic } from '@ethersproject/hdnode';
-import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import TextField from '../../ui/text-field';
-import { clearClipboard } from '../../../helpers/utils/util';
-import ActionableMessage from '../../ui/actionable-message';
-import Dropdown from '../../ui/dropdown';
-import Typography from '../../ui/typography';
-import ShowHideToggle from '../../ui/show-hide-toggle';
+import React, { useCallback, useState } from 'react';
+
 import {
   FONT_WEIGHT,
   TEXT_ALIGN,
   TypographyVariant,
 } from '../../../helpers/constants/design-system';
+import { clearClipboard } from '../../../helpers/utils/util';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import ActionableMessage from '../../ui/actionable-message';
+import Dropdown from '../../ui/dropdown';
+import ShowHideToggle from '../../ui/show-hide-toggle';
+import TextField from '../../ui/text-field';
+import Typography from '../../ui/typography';
 import { parseSecretRecoveryPhrase } from './parse-secret-recovery-phrase';
 
 const defaultNumberOfWords = 12;

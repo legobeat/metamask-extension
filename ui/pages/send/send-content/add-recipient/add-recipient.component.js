@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
-import Identicon from '../../../../components/ui/identicon';
-import Dialog from '../../../../components/ui/dialog';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import ContactList from '../../../../components/app/contact-list';
 import RecipientGroup from '../../../../components/app/contact-list/recipient-group/recipient-group.component';
-import { ellipsify } from '../../send.utils';
+import { Icon, IconName } from '../../../../components/component-library';
 import Button from '../../../../components/ui/button';
 import Confusable from '../../../../components/ui/confusable';
-import { Icon, IconName } from '../../../../components/component-library';
+import Dialog from '../../../../components/ui/dialog';
+import Identicon from '../../../../components/ui/identicon';
+import { ellipsify } from '../../send.utils';
 
 export default class AddRecipient extends Component {
   static propTypes = {

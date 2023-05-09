@@ -1,9 +1,10 @@
-import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import sinon from 'sinon';
-import { hideModal } from '../../../store/actions';
+
 import ComplianceModal from '.';
+import { hideModal } from '../../../store/actions';
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),

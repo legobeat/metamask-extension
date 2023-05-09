@@ -1,9 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import { getWeightedPermissions } from '../../../../helpers/utils/permission';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
-import PermissionCell from '../../permission-cell';
 import Box from '../../../ui/box';
+import PermissionCell from '../../permission-cell';
 
 export default function UpdateSnapPermissionList({
   approvedPermissions,

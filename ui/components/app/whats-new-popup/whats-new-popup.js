@@ -1,30 +1,31 @@
-import React, { useContext, useMemo, useRef, useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { getCurrentLocale } from '../../../ducks/locale/locale';
-import { I18nContext } from '../../../contexts/i18n';
-import { useEqualityCheck } from '../../../hooks/useEqualityCheck';
-import Button from '../../ui/button';
-import Popover from '../../ui/popover';
-import { Text } from '../../component-library';
-import { updateViewedNotifications } from '../../../store/actions';
+import PropTypes from 'prop-types';
+import React, { useContext, useMemo, useRef, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+import {
+  MetaMetricsEventCategory,
+  MetaMetricsEventName,
+} from '../../../../shared/constants/metametrics';
 import { getTranslatedUINotifications } from '../../../../shared/notifications';
-import { getSortedAnnouncementsToShow } from '../../../selectors';
+import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { getCurrentLocale } from '../../../ducks/locale/locale';
+import { TextVariant } from '../../../helpers/constants/design-system';
 import {
   BUILD_QUOTE_ROUTE,
   ADVANCED_ROUTE,
   EXPERIMENTAL_ROUTE,
   SECURITY_ROUTE,
 } from '../../../helpers/constants/routes';
-import { TextVariant } from '../../../helpers/constants/design-system';
 import ZENDESK_URLS from '../../../helpers/constants/zendesk-url';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
-import {
-  MetaMetricsEventCategory,
-  MetaMetricsEventName,
-} from '../../../../shared/constants/metametrics';
+import { useEqualityCheck } from '../../../hooks/useEqualityCheck';
+import { getSortedAnnouncementsToShow } from '../../../selectors';
+import { updateViewedNotifications } from '../../../store/actions';
+import { Text } from '../../component-library';
+import Button from '../../ui/button';
+import Popover from '../../ui/popover';
 
 function getActionFunctionById(id, history) {
   const actionFunctions = {

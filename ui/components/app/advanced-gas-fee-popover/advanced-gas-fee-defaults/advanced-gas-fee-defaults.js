@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { useTransactionEventFragment } from '../../../../hooks/useTransactionEventFragment';
 import { EditGasModes } from '../../../../../shared/constants/gas';
-import Box from '../../../ui/box';
-import CheckBox from '../../../ui/check-box';
+import { useGasFeeContext } from '../../../../contexts/gasFee';
 import {
   DISPLAY,
   FLEX_DIRECTION,
   TextColor,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { useTransactionEventFragment } from '../../../../hooks/useTransactionEventFragment';
 import { getAdvancedGasFeeValues } from '../../../../selectors';
 import { setAdvancedGasFee } from '../../../../store/actions';
-import { useGasFeeContext } from '../../../../contexts/gasFee';
-import { useAdvancedGasFeePopoverContext } from '../context';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { Text } from '../../../component-library';
+import Box from '../../../ui/box';
+import CheckBox from '../../../ui/check-box';
+import { useAdvancedGasFeePopoverContext } from '../context';
 
 const AdvancedGasFeeDefaults = () => {
   const t = useI18nContext();

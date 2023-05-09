@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+
+import { BannerTip, BannerTipLogoType } from '.';
+import { ButtonLink, ButtonPrimary, Icon, IconName } from '..';
 import {
   DISPLAY,
   FLEX_DIRECTION,
   Size,
 } from '../../../helpers/constants/design-system';
 import Box from '../../ui/box/box';
-import { ButtonLink, ButtonPrimary, Icon, IconName } from '..';
 import README from './README.mdx';
-import { BannerTip, BannerTipLogoType } from '.';
 
 const marginSizeControlOptions = [
   undefined,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Box from '../../components/ui/box';
 
+import Box from '../../components/ui/box';
 import {
   CONNECT_HARDWARE_ROUTE,
   IMPORT_ACCOUNT_ROUTE,

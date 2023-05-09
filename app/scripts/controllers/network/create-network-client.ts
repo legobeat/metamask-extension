@@ -1,10 +1,4 @@
-import {
-  createAsyncMiddleware,
-  createScaffoldMiddleware,
-  JsonRpcEngine,
-  mergeMiddleware,
-  JsonRpcMiddleware,
-} from 'json-rpc-engine';
+import { createInfuraMiddleware } from '@metamask/eth-json-rpc-infura';
 import {
   createBlockCacheMiddleware,
   createBlockRefMiddleware,
@@ -19,14 +13,21 @@ import {
   providerFromMiddleware,
   SafeEventEmitterProvider,
 } from '@metamask/eth-json-rpc-provider';
-import { createInfuraMiddleware } from '@metamask/eth-json-rpc-infura';
 import type { Hex } from '@metamask/utils/dist';
 import { PollingBlockTracker } from 'eth-block-tracker/dist';
-import { SECOND } from '../../../../shared/constants/time';
+import {
+  createAsyncMiddleware,
+  createScaffoldMiddleware,
+  JsonRpcEngine,
+  mergeMiddleware,
+  JsonRpcMiddleware,
+} from 'json-rpc-engine';
+
 import {
   BUILT_IN_INFURA_NETWORKS,
   BuiltInInfuraNetwork,
 } from '../../../../shared/constants/network';
+import { SECOND } from '../../../../shared/constants/time';
 
 export enum NetworkClientType {
   Custom = 'custom',

@@ -1,19 +1,19 @@
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
-import { useI18nContext } from '../../../hooks/useI18nContext';
-import {
-  getCurrentChainId,
-  getDetectedTokensInCurrentNetwork,
-} from '../../../selectors';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
   MetaMetricsTokenEventSource,
 } from '../../../../shared/constants/metametrics';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import {
+  getCurrentChainId,
+  getDetectedTokensInCurrentNetwork,
+} from '../../../selectors';
 import { BannerAlert } from '../../component-library';
 
 export const DetectedTokensBanner = ({

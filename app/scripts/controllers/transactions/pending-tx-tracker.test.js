@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
-import sinon from 'sinon';
 import BN from 'bn.js';
+import sinon from 'sinon';
+
 import { TransactionStatus } from '../../../../shared/constants/transaction';
 import PendingTransactionTracker from './pending-tx-tracker';
 

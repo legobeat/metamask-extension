@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+
 import { CaveatTypes } from '../../../../shared/constants/permissions';
 
 /**

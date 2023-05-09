@@ -1,4 +1,5 @@
 import browser from 'webextension-polyfill';
+
 import LocalStore from './local-store';
 
 jest.mock('webextension-polyfill', () => ({

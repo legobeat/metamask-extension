@@ -1,10 +1,5 @@
 import { connect } from 'react-redux';
-import {
-  getIsEthGasPriceFetched,
-  getNoGasPriceFetched,
-  checkNetworkOrAccountNotSupports1559,
-  getIsMultiLayerFeeNetwork,
-} from '../../../selectors';
+
 import {
   getIsBalanceInsufficient,
   getSendAsset,
@@ -13,6 +8,12 @@ import {
   acknowledgeRecipientWarning,
   getRecipientWarningAcknowledgement,
 } from '../../../ducks/send';
+import {
+  getIsEthGasPriceFetched,
+  getNoGasPriceFetched,
+  checkNetworkOrAccountNotSupports1559,
+  getIsMultiLayerFeeNetwork,
+} from '../../../selectors';
 import SendContent from './send-content.component';
 
 function mapStateToProps(state) {

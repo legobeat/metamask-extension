@@ -1,10 +1,11 @@
-import React from 'react';
 import { fireEvent, waitFor } from '@testing-library/react';
+import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { renderWithProvider } from '../../../../test/lib/render-helpers';
-import testData from '../../../../.storybook/test-data';
+
 import ConfirmRemoveJwt from '.';
+import testData from '../../../../.storybook/test-data';
+import { renderWithProvider } from '../../../../test/lib/render-helpers';
 
 const mockedRemoveAccount = jest.fn();
 const mockedHideModal = jest.fn();

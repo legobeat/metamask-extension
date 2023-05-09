@@ -1,13 +1,14 @@
-import EventEmitter from '@metamask/safe-event-emitter';
 import { ObservableStore } from '@metamask/obs-store';
-import log from 'loglevel';
+import EventEmitter from '@metamask/safe-event-emitter';
 import { values, keyBy, mapValues, omitBy, pickBy, sortBy } from 'lodash';
-import createId from '../../../../shared/modules/random-id';
-import { TransactionStatus } from '../../../../shared/constants/transaction';
-import { METAMASK_CONTROLLER_EVENTS } from '../../metamask-controller';
-import { transactionMatchesNetwork } from '../../../../shared/modules/transaction.utils';
+import log from 'loglevel';
+
 import { ORIGIN_METAMASK } from '../../../../shared/constants/app';
 import { NetworkStatus } from '../../../../shared/constants/network';
+import { TransactionStatus } from '../../../../shared/constants/transaction';
+import createId from '../../../../shared/modules/random-id';
+import { transactionMatchesNetwork } from '../../../../shared/modules/transaction.utils';
+import { METAMASK_CONTROLLER_EVENTS } from '../../metamask-controller';
 import {
   generateHistoryEntry,
   replayHistory,

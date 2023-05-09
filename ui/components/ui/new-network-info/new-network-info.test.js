@@ -1,6 +1,7 @@
+import nock from 'nock';
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
-import nock from 'nock';
+
 import { renderWithProvider } from '../../../../test/lib/render-helpers';
 import NewNetworkInfo from './new-network-info';
 

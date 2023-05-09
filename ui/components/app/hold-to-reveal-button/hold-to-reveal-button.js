@@ -1,20 +1,21 @@
-import React, { useCallback, useContext, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { I18nContext } from '../../../contexts/i18n';
-import { Button } from '../../component-library';
-import Box from '../../ui/box';
-import {
-  AlignItems,
-  DISPLAY,
-  JustifyContent,
-} from '../../../helpers/constants/design-system';
-import { MetaMetricsContext } from '../../../contexts/metametrics';
+import PropTypes from 'prop-types';
+import React, { useCallback, useContext, useRef, useState } from 'react';
+
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventKeyType,
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
+import { I18nContext } from '../../../contexts/i18n';
+import { MetaMetricsContext } from '../../../contexts/metametrics';
+import {
+  AlignItems,
+  DISPLAY,
+  JustifyContent,
+} from '../../../helpers/constants/design-system';
+import { Button } from '../../component-library';
+import Box from '../../ui/box';
 
 const radius = 14;
 const strokeWidth = 2;

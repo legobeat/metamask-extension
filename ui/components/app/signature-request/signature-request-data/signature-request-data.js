@@ -1,18 +1,12 @@
-import React, { memo } from 'react';
-import { useSelector } from 'react-redux';
 import { isEqual } from 'lodash';
 import PropTypes from 'prop-types';
-import {
-  getMemoizedMetaMaskIdentities,
-  getAccountName,
-} from '../../../../selectors';
-import Address from '../../transaction-decoding/components/decoding/address';
+import React, { memo } from 'react';
+import { useSelector } from 'react-redux';
+
 import {
   isValidHexAddress,
   toChecksumHexAddress,
 } from '../../../../../shared/modules/hexstring-utils';
-import Box from '../../../ui/box';
-import Typography from '../../../ui/typography';
 import {
   DISPLAY,
   FONT_WEIGHT,
@@ -20,6 +14,13 @@ import {
   TextColor,
 } from '../../../../helpers/constants/design-system';
 import { sanitizeString } from '../../../../helpers/utils/util';
+import {
+  getMemoizedMetaMaskIdentities,
+  getAccountName,
+} from '../../../../selectors';
+import Box from '../../../ui/box';
+import Typography from '../../../ui/typography';
+import Address from '../../transaction-decoding/components/decoding/address';
 
 function SignatureRequestData({ data }) {
   const identities = useSelector(getMemoizedMetaMaskIdentities);

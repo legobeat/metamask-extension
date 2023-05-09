@@ -457,7 +457,7 @@
     "css-loader": "^5.2.7",
     "css-to-xpath": "^0.1.0",
     "csstype": "^3.0.11",
-    "del": "^3.0.0",
+    "del": "^6.1.1",
     "depcheck": "^1.4.3",
     "dependency-tree": "^10.0.5",
     "duplexify": "^4.1.1",

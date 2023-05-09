@@ -2805,13 +2805,8 @@
     },
     "eslint-plugin-node>eslint-plugin-es": {
       "packages": {
-        "@typescript-eslint/eslint-plugin>regexpp": true,
-        "eslint-plugin-node>eslint-plugin-es>eslint-utils": true
-      }
-    },
-    "eslint-plugin-node>eslint-plugin-es>eslint-utils": {
-      "packages": {
-        "eslint-plugin-node>eslint-plugin-es>eslint-utils>eslint-visitor-keys": true
+        "eslint-plugin-node>eslint-plugin-es>regexpp": true,
+        "eslint-plugin-node>eslint-utils": true
       }
     },
     "eslint-plugin-node>eslint-utils": {

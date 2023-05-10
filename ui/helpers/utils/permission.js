@@ -1,12 +1,11 @@
 import { isNonEmptyArray } from '@metamask/controller-utils';
 import { getRpcCaveatOrigins } from '@metamask/snaps-controllers/dist/snaps/endowments/rpc';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { SnapCaveatType } from '@metamask/snaps-utils';
+///: END:ONLY_INCLUDE_IN
 import classnames from 'classnames';
 import deepFreeze from 'deep-freeze-strict';
 import React from 'react';
-
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 
 import {
   RestrictedMethods,

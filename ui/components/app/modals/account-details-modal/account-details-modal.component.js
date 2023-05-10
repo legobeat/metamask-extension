@@ -8,7 +8,9 @@ import {
   MetaMetricsEventKeyType,
   MetaMetricsEventName,
 } from '../../../../../shared/constants/metametrics';
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import { toChecksumHexAddress } from '../../../../../shared/modules/hexstring-utils';
+///: END:ONLY_INCLUDE_IN
 import { NETWORKS_ROUTE } from '../../../../helpers/constants/routes';
 import { isHardwareKeyring } from '../../../../helpers/utils/hardware';
 import { getURLHostName } from '../../../../helpers/utils/util';

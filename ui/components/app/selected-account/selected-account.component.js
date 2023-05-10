@@ -5,13 +5,15 @@ import React, { Component } from 'react';
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import { getEnvironmentType } from '../../../../app/scripts/lib/util';
 import { ENVIRONMENT_TYPE_POPUP } from '../../../../shared/constants/app';
+///: END:ONLY_INCLUDE_IN
 import { SECOND } from '../../../../shared/constants/time';
 import { toChecksumHexAddress } from '../../../../shared/modules/hexstring-utils';
-///: END:ONLY_INCLUDE_IN
 import { IconColor } from '../../../helpers/constants/design-system';
 import { shortenAddress } from '../../../helpers/utils/util';
 import { Icon, IconName, IconSize } from '../../component-library';
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import CustodyLabels from '../../institutional/custody-labels/custody-labels';
+///: END:ONLY_INCLUDE_IN
 import Tooltip from '../../ui/tooltip';
 
 class SelectedAccount extends Component {

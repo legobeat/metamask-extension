@@ -9,11 +9,11 @@ import {
 import { DEFAULT_ROUTE } from '../../../helpers/constants/routes';
 import Identicon from '../../ui/identicon';
 import MetaFoxLogo from '../../ui/metafox-logo';
+///: BEGIN:ONLY_INCLUDE_IN(build-beta)
 import BetaHeader from '../beta-header';
+///: END:ONLY_INCLUDE_IN
 import NetworkDisplay from '../network-display';
 
-///: BEGIN:ONLY_INCLUDE_IN(build-beta)
-///: END:ONLY_INCLUDE_IN
 
 export default class AppHeader extends PureComponent {
   static propTypes = {

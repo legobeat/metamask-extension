@@ -1,21 +1,21 @@
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import {
   SnapCaveatType,
   WALLET_SNAP_PERMISSION_KEY,
 } from '@metamask/rpc-methods';
 import { isObject } from '@metamask/utils';
 import { isEqual } from 'lodash';
+///: END:ONLY_INCLUDE_IN
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
 
-///: END:ONLY_INCLUDE_IN
 import { PermissionPageContainerContent } from '.';
 import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { RestrictedMethods } from '../../../../shared/constants/permissions';
+///: END:ONLY_INCLUDE_IN
 import { PageContainerFooter } from '../../ui/page-container';
 import PermissionsConnectFooter from '../permissions-connect-footer';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 
 export default class PermissionPageContainer extends Component {
   static propTypes = {

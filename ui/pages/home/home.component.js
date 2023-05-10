@@ -12,7 +12,9 @@ import {
   // eslint-disable-next-line import/no-duplicates
 } from '../../../shared/constants/metametrics';
 import { SECOND } from '../../../shared/constants/time';
+///: BEGIN:ONLY_INCLUDE_IN(build-main,build-mmi)
 import { SUPPORT_LINK } from '../../../shared/lib/ui-utils';
+///: END:ONLY_INCLUDE_IN
 import AssetList from '../../components/app/asset-list';
 import HomeNotification from '../../components/app/home-notification';
 import MenuBar from '../../components/app/menu-bar';
@@ -63,8 +65,6 @@ import {
 import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
 import ConnectedAccounts from '../connected-accounts';
 import ConnectedSites from '../connected-sites';
-///: BEGIN:ONLY_INCLUDE_IN(build-main,build-mmi)
-///: END:ONLY_INCLUDE_IN
 ///: BEGIN:ONLY_INCLUDE_IN(build-beta)
 import BetaHomeFooter from './beta/beta-home-footer.component';
 ///: END:ONLY_INCLUDE_IN

@@ -28,8 +28,10 @@ import {
   shortenAddress,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../helpers/utils/util';
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import { Icon, IconName, Text } from '../../component-library';
 import Box from '../../ui/box/box';
+///: END:ONLY_INCLUDE_IN
 import Button from '../../ui/button';
 import SiteOrigin from '../../ui/site-origin';
 import Typography from '../../ui/typography/typography';
@@ -39,8 +41,6 @@ import ContractDetailsModal from '../modals/contract-details-modal/contract-deta
 import NetworkAccountBalanceHeader from '../network-account-balance-header';
 import SecurityProviderBannerMessage from '../security-provider-banner-message/security-provider-banner-message';
 import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';
-///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
-///: END:ONLY_INCLUDE_IN
 
 import Footer from './signature-request-footer';
 import Message from './signature-request-message';

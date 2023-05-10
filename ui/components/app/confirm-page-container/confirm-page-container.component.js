@@ -27,7 +27,9 @@ import {
 import { INSUFFICIENT_FUNDS_ERROR_KEY } from '../../../helpers/constants/error-keys';
 import useRamps from '../../../hooks/experiences/useRamps';
 import { useI18nContext } from '../../../hooks/useI18nContext';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import useTransactionInsights from '../../../hooks/useTransactionInsights';
+///: END:ONLY_INCLUDE_IN
 import {
   getAccountName,
   getAddressBookEntry,
@@ -40,19 +42,17 @@ import {
 } from '../../../selectors';
 import { Text } from '../../component-library';
 import ActionableMessage from '../../ui/actionable-message/actionable-message';
+///: BEGIN:ONLY_INCLUDE_IN(build-main,build-beta,build-flask)
 import Button from '../../ui/button';
+///: END:ONLY_INCLUDE_IN
 import ErrorMessage from '../../ui/error-message';
 import { PageContainerFooter } from '../../ui/page-container';
-///: BEGIN:ONLY_INCLUDE_IN(build-main,build-beta,build-flask)
-///: END:ONLY_INCLUDE_IN
 import SenderToRecipient from '../../ui/sender-to-recipient';
 import AdvancedGasFeePopover from '../advanced-gas-fee-popover';
 import EditGasFeePopover from '../edit-gas-fee-popover/edit-gas-fee-popover';
 import EditGasPopover from '../edit-gas-popover';
 import NetworkAccountBalanceHeader from '../network-account-balance-header/network-account-balance-header';
 import SetApproveForAllWarning from '../set-approval-for-all-warning';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 
 const ConfirmPageContainer = (props) => {
   const {

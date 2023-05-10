@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import { getProviderConfig } from '../../../ducks/metamask/metamask';
+///: END:ONLY_INCLUDE_IN
 import {
   getSelectedIdentity,
   ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)

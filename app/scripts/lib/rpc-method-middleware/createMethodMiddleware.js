@@ -1,7 +1,7 @@
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
-import { permissionRpcMethods } from '@metamask/permission-controller';
 import { permittedMethods as permittedSnapMethods } from '@metamask/rpc-methods';
 ///: END:ONLY_INCLUDE_IN
+import { permissionRpcMethods } from '@metamask/permission-controller';
 import { selectHooks } from '@metamask/rpc-methods/dist/utils';
 import { ethErrors } from 'eth-rpc-errors';
 import { flatten } from 'lodash';

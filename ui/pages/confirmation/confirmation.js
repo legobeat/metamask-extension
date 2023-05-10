@@ -15,7 +15,9 @@ import { MESSAGE_TYPE } from '../../../shared/constants/app';
 import ConfirmationWarningModal from '../../components/app/confirmation-warning-modal';
 import MetaMaskTemplateRenderer from '../../components/app/metamask-template-renderer';
 import NetworkDisplay from '../../components/app/network-display/network-display';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import SnapAuthorship from '../../components/app/snaps/snap-authorship';
+///: END:ONLY_INCLUDE_IN
 import { Icon, IconName } from '../../components/component-library';
 import Box from '../../components/ui/box';
 import Callout from '../../components/ui/callout';
@@ -27,7 +29,9 @@ import {
   TextColor,
 } from '../../helpers/constants/design-system';
 import { DEFAULT_ROUTE } from '../../helpers/constants/routes';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { getSnapName } from '../../helpers/utils/util';
+///: END:ONLY_INCLUDE_IN
 import { useI18nContext } from '../../hooks/useI18nContext';
 import { useOriginMetadata } from '../../hooks/useOriginMetadata';
 import {
@@ -37,8 +41,6 @@ import {
   getUnapprovedTemplatedConfirmations,
   getUnapprovedTxCount,
 } from '../../selectors';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 import ConfirmationFooter from './components/confirmation-footer';
 import {
   getTemplateValues,

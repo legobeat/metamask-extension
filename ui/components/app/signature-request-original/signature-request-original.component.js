@@ -30,8 +30,10 @@ import {
   shortenAddress,
   ///: END:ONLY_INCLUDE_IN
 } from '../../../helpers/utils/util';
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import { Icon, IconName, Text } from '../../component-library';
 import Box from '../../ui/box/box';
+///: END:ONLY_INCLUDE_IN
 import Button from '../../ui/button';
 import { PageContainerFooter } from '../../ui/page-container';
 import SiteOrigin from '../../ui/site-origin';
@@ -42,8 +44,6 @@ import NetworkAccountBalanceHeader from '../network-account-balance-header';
 import SecurityProviderBannerMessage from '../security-provider-banner-message/security-provider-banner-message';
 import { SECURITY_PROVIDER_MESSAGE_SEVERITIES } from '../security-provider-banner-message/security-provider-banner-message.constants';
 
-///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
-///: END:ONLY_INCLUDE_IN
 import SignatureRequestOriginalWarning from './signature-request-original-warning';
 
 export default class SignatureRequestOriginal extends Component {

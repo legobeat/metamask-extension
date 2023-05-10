@@ -8,6 +8,7 @@ import {
 } from '../../../shared/constants/metametrics';
 ///: BEGIN:ONLY_INCLUDE_IN(build-flask)
 import ExperimentalArea from '../../components/app/flask/experimental-area';
+///: END:ONLY_INCLUDE_IN
 import Button from '../../components/ui/button';
 import { MetaMetricsContext } from '../../contexts/metametrics';
 import { getCompletedOnboarding } from '../../ducks/metamask/metamask';
@@ -37,7 +38,6 @@ import {
   verifySeedPhrase,
 } from '../../store/actions';
 import Unlock from '../unlock-page';
-///: END:ONLY_INCLUDE_IN
 import CreatePassword from './create-password/create-password';
 import CreationSuccessful from './creation-successful/creation-successful';
 import ImportSRP from './import-srp/import-srp';

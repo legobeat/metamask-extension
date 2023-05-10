@@ -35,13 +35,13 @@ import ExperimentalTab from './experimental-tab';
 import InfoTab from './info-tab';
 import NetworksTab from './networks-tab';
 import SecurityTab from './security-tab';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 import SettingsSearch from './settings-search';
 import SettingsSearchList from './settings-search-list';
 import SettingsTab from './settings-tab';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import SnapListTab from './snaps/snaps-list-tab';
 import ViewSnap from './snaps/view-snap';
+///: END:ONLY_INCLUDE_IN
 
 class SettingsPage extends PureComponent {
   static propTypes = {

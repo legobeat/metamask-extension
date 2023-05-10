@@ -13,7 +13,9 @@ import {
   ENVIRONMENT_TYPE_NOTIFICATION,
   ENVIRONMENT_TYPE_POPUP,
 } from '../../../shared/constants/app';
+///: BEGIN:ONLY_INCLUDE_IN(desktop)
 import { EXTENSION_ERROR_PAGE_TYPES } from '../../../shared/constants/desktop';
+///: END:ONLY_INCLUDE_IN
 import { NETWORK_TYPES } from '../../../shared/constants/network';
 import { ThemeType } from '../../../shared/constants/preferences';
 import AccountMenu from '../../components/app/account-menu';
@@ -75,7 +77,9 @@ import {
 } from '../../helpers/constants/routes';
 import Authenticated from '../../helpers/higher-order-components/authenticated';
 import Initialized from '../../helpers/higher-order-components/initialized';
+///: BEGIN:ONLY_INCLUDE_IN(desktop)
 import { registerOnDesktopDisconnect } from '../../hooks/desktopHooks';
+///: END:ONLY_INCLUDE_IN
 import AddNftPage from '../add-nft';
 import Asset from '../asset';
 import ConfirmAddSuggestedTokenPage from '../confirm-add-suggested-token';
@@ -83,28 +87,27 @@ import ConfirmImportTokenPage from '../confirm-import-token';
 import ConfirmTransaction from '../confirm-transaction';
 import ConfirmationPage from '../confirmation';
 import CreateAccountPage from '../create-account';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 ///: BEGIN:ONLY_INCLUDE_IN(desktop)
 import DesktopErrorPage from '../desktop-error';
 import DesktopPairingPage from '../desktop-pairing';
+///: END:ONLY_INCLUDE_IN
 import Home from '../home';
 import ImportTokenPage from '../import-token';
-///: END:ONLY_INCLUDE_IN
 ///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
 import ComplianceFeaturePage from '../institutional/compliance-feature-page';
 import ConfirmAddCustodianToken from '../institutional/confirm-add-custodian-token';
 import ConfirmAddInstitutionalFeature from '../institutional/confirm-add-institutional-feature';
 import InstitutionalEntityDonePage from '../institutional/institutional-entity-done-page';
 import InteractiveReplacementTokenPage from '../institutional/interactive-replacement-token-page';
+///: END:ONLY_INCLUDE_IN
 import RestoreVaultPage from '../keychains/restore-vault';
 import RevealSeedConfirmation from '../keychains/reveal-seed';
 import Lock from '../lock';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import Notifications from '../notifications';
-import OnboardingAppHeader from '../onboarding-flow/onboarding-app-header/onboarding-app-header';
 ///: END:ONLY_INCLUDE_IN
-
-///: BEGIN:ONLY_INCLUDE_IN(desktop)
+///: BEGIN:ONLY_INCLUDE_IN(build-mmi)
+import OnboardingAppHeader from '../onboarding-flow/onboarding-app-header/onboarding-app-header';
 ///: END:ONLY_INCLUDE_IN
 
 import OnboardingFlow from '../onboarding-flow/onboarding-flow';

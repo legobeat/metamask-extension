@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 
 import { MetaMetricsEventCategory } from '../../../../shared/constants/metametrics';
+///: BEGIN:ONLY_INCLUDE_IN(desktop)
 import DesktopEnableButton from '../../../components/app/desktop-enable-button';
+///: END:ONLY_INCLUDE_IN
 import { Text } from '../../../components/component-library';
 import ToggleButton from '../../../components/ui/toggle-button';
 import Typography from '../../../components/ui/typography/typography';
@@ -15,8 +17,6 @@ import {
   getNumberOfSettingsInSection,
   handleSettingsRefs,
 } from '../../../helpers/utils/settings-search';
-///: BEGIN:ONLY_INCLUDE_IN(desktop)
-///: END:ONLY_INCLUDE_IN
 
 export default class ExperimentalTab extends PureComponent {
   static contextTypes = {

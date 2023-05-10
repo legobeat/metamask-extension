@@ -75,6 +75,7 @@ import {
 } from '../ducks/metamask/metamask';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { SNAPS_VIEW_ROUTE } from '../helpers/constants/routes';
+///: END:ONLY_INCLUDE_IN
 import {
   shortenAddress,
   getAccountByAddress,
@@ -86,7 +87,6 @@ import {
 } from '../helpers/utils/util';
 import { TEMPLATED_CONFIRMATION_MESSAGE_TYPES } from '../pages/confirmation/templates';
 import { getPermissionSubjects } from './permissions';
-///: END:ONLY_INCLUDE_IN
 
 /**
  * Returns true if the currently selected network is inaccessible or whether no

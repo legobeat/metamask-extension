@@ -4,7 +4,9 @@ import Button from '../../ui/button';
 import Chip from '../../ui/chip';
 import DefinitionList from '../../ui/definition-list';
 import Popover from '../../ui/popover';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import Spinner from '../../ui/spinner';
+///: END:ONLY_INCLUDE_IN
 import TextField from '../../ui/text-field';
 import TextArea from '../../ui/textarea/textarea';
 import Tooltip from '../../ui/tooltip/tooltip';

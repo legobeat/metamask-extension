@@ -7787,7 +7787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-redux@npm:^7.1.25":
+"@types/react-redux@npm:^7.1.20, @types/react-redux@npm:^7.1.25":
   version: 7.1.25
   resolution: "@types/react-redux@npm:7.1.25"
   dependencies:
@@ -24655,7 +24655,7 @@ __metadata:
     react-inspector: ^2.3.0
     react-markdown: ^6.0.3
     react-popper: ^2.2.3
-    react-redux: ^7.2.0
+    react-redux: ^7.2.9
     react-responsive-carousel: ^3.2.21
     react-router-dom: ^5.1.2
     react-simple-file-input: ^2.0.0
@@ -28914,14 +28914,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:17.0.2, react-is@npm:^16.8.0 || ^17.0.0, react-is@npm:^17.0.0":
+"react-is@npm:17.0.2, react-is@npm:^16.8.0 || ^17.0.0, react-is@npm:^17.0.0, react-is@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.12.0, react-is@npm:^16.13.1, react-is@npm:^16.6.0, react-is@npm:^16.7.0, react-is@npm:^16.9.0":
+"react-is@npm:^16.12.0, react-is@npm:^16.13.1, react-is@npm:^16.6.0, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
@@ -28992,24 +28992,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-redux@npm:^7.2.0":
-  version: 7.2.0
-  resolution: "react-redux@npm:7.2.0"
+"react-redux@npm:^7.2.9":
+  version: 7.2.9
+  resolution: "react-redux@npm:7.2.9"
   dependencies:
-    "@babel/runtime": ^7.5.5
-    hoist-non-react-statics: ^3.3.0
+    "@babel/runtime": ^7.15.4
+    "@types/react-redux": ^7.1.20
+    hoist-non-react-statics: ^3.3.2
     loose-envify: ^1.4.0
     prop-types: ^15.7.2
-    react-is: ^16.9.0
+    react-is: ^17.0.2
   peerDependencies:
-    react: ^16.8.3
-    redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
+    react: ^16.8.3 || ^17 || ^18
   peerDependenciesMeta:
     react-dom:
       optional: true
     react-native:
       optional: true
-  checksum: fb6e4597619a01aabc916bd0ebcf449fbbdcf63137ff5238469c1f8bc241828dd19efff3ab306556c38be39a3a84d34e48f5b68773de891b283ee64018ebf3bc
+  checksum: 369a2bdcf87915659af9e5c55abfd9f52a84e43e0d12dcc108ed17dbe6933558b7b7fc12caa9c10c1a10a8be7df89454b6c96989d8573fedec1a772c94a1f145
   languageName: node
   linkType: hard
 

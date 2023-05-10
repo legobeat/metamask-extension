@@ -520,9 +520,9 @@
       "packages": {
         "browserify>assert": true,
         "browserify>crypto-browserify": true,
-        "ethereumjs-util>ethereum-cryptography>secp256k1": true,
         "ethereumjs-wallet>bs58check": true,
-        "ethereumjs-wallet>safe-buffer": true
+        "ethereumjs-wallet>safe-buffer": true,
+        "ganache>secp256k1": true
       }
     },
     "@keystonehq/metamask-airgapped-keyring": {
@@ -639,12 +639,12 @@
         "@material-ui/core>@material-ui/utils": true,
         "@material-ui/core>clsx": true,
         "@material-ui/core>popper.js": true,
+        "@material-ui/core>react-is": true,
         "@material-ui/core>react-transition-group": true,
         "prop-types": true,
         "react": true,
         "react-dom": true,
-        "react-redux>hoist-non-react-statics": true,
-        "react-redux>react-is": true
+        "react-redux>hoist-non-react-statics": true
       }
     },
     "@material-ui/core>@material-ui/styles": {
@@ -750,8 +750,13 @@
     "@material-ui/core>@material-ui/utils": {
       "packages": {
         "@babel/runtime": true,
-        "prop-types": true,
-        "react-redux>react-is": true
+        "@material-ui/core>@material-ui/utils>react-is": true,
+        "prop-types": true
+      }
+    },
+    "@material-ui/core>@material-ui/utils>react-is": {
+      "globals": {
+        "console": true
       }
     },
     "@material-ui/core>popper.js": {
@@ -769,6 +774,11 @@
         "navigator": true,
         "requestAnimationFrame": true,
         "setTimeout": true
+      }
+    },
+    "@material-ui/core>react-is": {
+      "globals": {
+        "console": true
       }
     },
     "@material-ui/core>react-transition-group": {
@@ -1806,14 +1816,6 @@
         "setTimeout": true
       }
     },
-    "@metamask/snaps-controllers": {
-      "packages": {
-        "@metamask/permission-controller": true,
-        "@metamask/snaps-utils": true,
-        "@metamask/utils": true,
-        "eth-rpc-errors": true
-      }
-    },
     "@metamask/snaps-controllers-flask>nanoid": {
       "globals": {
         "crypto.getRandomValues": true
@@ -1822,50 +1824,6 @@
     "@metamask/snaps-controllers>nanoid": {
       "globals": {
         "crypto.getRandomValues": true
-      }
-    },
-    "@metamask/snaps-utils": {
-      "globals": {
-        "TextDecoder": true,
-        "URL": true,
-        "console.error": true,
-        "console.log": true,
-        "console.warn": true,
-        "document.body.appendChild": true,
-        "document.createElement": true
-      },
-      "packages": {
-        "@metamask/key-tree>@noble/hashes": true,
-        "@metamask/key-tree>@scure/base": true,
-        "@metamask/snaps-utils>cron-parser": true,
-        "@metamask/snaps-utils>fast-json-stable-stringify": true,
-        "@metamask/snaps-utils>rfdc": true,
-        "@metamask/snaps-utils>validate-npm-package-name": true,
-        "@metamask/utils": true,
-        "semver": true,
-        "superstruct": true
-      }
-    },
-    "@metamask/snaps-utils>cron-parser": {
-      "packages": {
-        "browserify>browser-resolve": true,
-        "luxon": true
-      }
-    },
-    "@metamask/snaps-utils>rfdc": {
-      "packages": {
-        "browserify>buffer": true
-      }
-    },
-    "@metamask/snaps-utils>validate-npm-package-name": {
-      "packages": {
-        "@metamask/snaps-utils>validate-npm-package-name>builtins": true
-      }
-    },
-    "@metamask/snaps-utils>validate-npm-package-name>builtins": {
-      "packages": {
-        "browserify>process": true,
-        "semver": true
       }
     },
     "@metamask/subject-metadata-controller": {
@@ -2896,13 +2854,13 @@
     },
     "browserify>stream-http>readable-stream": {
       "packages": {
-        "@storybook/api>util-deprecate": true,
         "browserify>browser-resolve": true,
         "browserify>buffer": true,
         "browserify>events": true,
         "browserify>process": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "browserify>string_decoder": {
@@ -3543,9 +3501,9 @@
     "ethereumjs-util>ethereum-cryptography": {
       "packages": {
         "browserify>buffer": true,
-        "ethereumjs-util>ethereum-cryptography>keccak": true,
-        "ethereumjs-util>ethereum-cryptography>secp256k1": true,
-        "ethereumjs-wallet>randombytes": true
+        "ethereumjs-wallet>randombytes": true,
+        "ganache>keccak": true,
+        "ganache>secp256k1": true
       }
     },
     "ethereumjs-util>ethereum-cryptography>browserify-aes": {
@@ -3569,23 +3527,6 @@
         "pumpify>inherits": true
       }
     },
-    "ethereumjs-util>ethereum-cryptography>keccak": {
-      "packages": {
-        "browserify>buffer": true,
-        "ethereumjs-util>ethereum-cryptography>keccak>readable-stream": true
-      }
-    },
-    "ethereumjs-util>ethereum-cryptography>keccak>readable-stream": {
-      "packages": {
-        "browserify>browser-resolve": true,
-        "browserify>buffer": true,
-        "browserify>events": true,
-        "browserify>process": true,
-        "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
-      }
-    },
     "ethereumjs-util>ethereum-cryptography>scrypt-js": {
       "globals": {
         "define": true,
@@ -3593,11 +3534,6 @@
       },
       "packages": {
         "browserify>timers-browserify": true
-      }
-    },
-    "ethereumjs-util>ethereum-cryptography>secp256k1": {
-      "packages": {
-        "ganache>secp256k1>elliptic": true
       }
     },
     "ethereumjs-util>rlp": {
@@ -3848,6 +3784,28 @@
       "globals": {
         "console": true,
         "define": true
+      }
+    },
+    "ganache>keccak": {
+      "packages": {
+        "browserify>buffer": true,
+        "ganache>keccak>readable-stream": true
+      }
+    },
+    "ganache>keccak>readable-stream": {
+      "packages": {
+        "browserify>browser-resolve": true,
+        "browserify>buffer": true,
+        "browserify>events": true,
+        "browserify>process": true,
+        "browserify>string_decoder": true,
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
+      }
+    },
+    "ganache>secp256k1": {
+      "packages": {
+        "ganache>secp256k1>elliptic": true
       }
     },
     "ganache>secp256k1>elliptic": {
@@ -4268,12 +4226,7 @@
     },
     "react-redux>hoist-non-react-statics": {
       "packages": {
-        "react-redux>hoist-non-react-statics>react-is": true
-      }
-    },
-    "react-redux>hoist-non-react-statics>react-is": {
-      "globals": {
-        "console": true
+        "prop-types>react-is": true
       }
     },
     "react-redux>react-is": {
@@ -4341,11 +4294,11 @@
     "react-router-dom>react-router": {
       "packages": {
         "prop-types": true,
+        "prop-types>react-is": true,
         "react": true,
         "react-redux>hoist-non-react-statics": true,
         "react-router-dom>react-router>history": true,
         "react-router-dom>react-router>mini-create-react-context": true,
-        "react-router-dom>react-router>react-is": true,
         "react-router-dom>tiny-invariant": true,
         "react-router-dom>tiny-warning": true,
         "sinon>nise>path-to-regexp": true
@@ -4375,11 +4328,6 @@
         "react": true,
         "react-router-dom>react-router>mini-create-react-context>gud": true,
         "react-router-dom>tiny-warning": true
-      }
-    },
-    "react-router-dom>react-router>react-is": {
-      "globals": {
-        "console": true
       }
     },
     "react-router-dom>tiny-warning": {

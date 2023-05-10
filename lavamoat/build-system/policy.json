@@ -5193,6 +5193,7 @@
     },
     "gulp>glob-watcher": {
       "packages": {
+        "chokidar>normalize-path": true,
         "gulp>glob-watcher>anymatch": true,
         "gulp>glob-watcher>async-done": true,
         "gulp>glob-watcher>chokidar": true,
@@ -5591,6 +5592,7 @@
         "gulp>undertaker>bach": true,
         "gulp>undertaker>collection-map": true,
         "gulp>undertaker>es6-weak-map": true,
+        "gulp>undertaker>fast-levenshtein": true,
         "gulp>undertaker>last-run": true,
         "gulp>undertaker>object.defaults": true,
         "gulp>undertaker>object.reduce": true,
@@ -5657,6 +5659,16 @@
         "resolve-url-loader>es6-iterator>d": true,
         "resolve-url-loader>es6-iterator>es5-ext": true,
         "resolve-url-loader>es6-iterator>es6-symbol": true
+      }
+    },
+    "gulp>undertaker>fast-levenshtein": {
+      "globals": {
+        "Levenshtein": "write",
+        "define": true,
+        "importScripts": true,
+        "postMessage": true,
+        "setImmediate": true,
+        "setTimeout": true
       }
     },
     "gulp>undertaker>last-run": {

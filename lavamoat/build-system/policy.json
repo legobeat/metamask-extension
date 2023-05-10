@@ -6782,11 +6782,23 @@
         "eslint-plugin-react>array-includes>is-string": true,
         "globalthis>define-properties>has-property-descriptors": true,
         "string.prototype.matchall>call-bind": true,
+        "string.prototype.matchall>es-abstract>es-set-tostringtag": true,
         "string.prototype.matchall>es-abstract>es-to-primitive": true,
+        "string.prototype.matchall>es-abstract>gopd": true,
+        "string.prototype.matchall>es-abstract>has-proto": true,
         "string.prototype.matchall>es-abstract>is-callable": true,
+        "string.prototype.matchall>es-abstract>safe-regex-test": true,
+        "string.prototype.matchall>es-abstract>string.prototype.trim": true,
         "string.prototype.matchall>get-intrinsic": true,
         "string.prototype.matchall>has-symbols": true,
         "string.prototype.matchall>internal-slot": true
+      }
+    },
+    "string.prototype.matchall>es-abstract>es-set-tostringtag": {
+      "packages": {
+        "browserify>has": true,
+        "koa>is-generator-function>has-tostringtag": true,
+        "string.prototype.matchall>get-intrinsic": true
       }
     },
     "string.prototype.matchall>es-abstract>es-to-primitive": {
@@ -6796,9 +6808,28 @@
         "string.prototype.matchall>es-abstract>is-callable": true
       }
     },
+    "string.prototype.matchall>es-abstract>gopd": {
+      "packages": {
+        "string.prototype.matchall>get-intrinsic": true
+      }
+    },
     "string.prototype.matchall>es-abstract>is-callable": {
       "globals": {
         "document": true
+      }
+    },
+    "string.prototype.matchall>es-abstract>safe-regex-test": {
+      "packages": {
+        "@storybook/api>telejson>is-regex": true,
+        "string.prototype.matchall>call-bind": true,
+        "string.prototype.matchall>get-intrinsic": true
+      }
+    },
+    "string.prototype.matchall>es-abstract>string.prototype.trim": {
+      "packages": {
+        "globalthis>define-properties": true,
+        "string.prototype.matchall>call-bind": true,
+        "string.prototype.matchall>es-abstract": true
       }
     },
     "string.prototype.matchall>get-intrinsic": {

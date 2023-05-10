@@ -71,7 +71,9 @@ import {
   // compiler
   DraftTransaction,
 } from '../ducks/send';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { NOTIFICATIONS_EXPIRATION_DELAY } from '../helpers/constants/notifications';
+///: END:ONLY_INCLUDE_IN
 import { hasUnconfirmedTransactions } from '../helpers/utils/confirm-tx.util';
 import {
   fetchLocale,
@@ -87,8 +89,6 @@ import {
   getNotifications,
   ///: END:ONLY_INCLUDE_IN
 } from '../selectors';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 import {
   generateActionId,
   callBackgroundMethod,

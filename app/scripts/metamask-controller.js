@@ -24,7 +24,9 @@ import {
 import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
 import TrezorKeyring from '@metamask/eth-trezor-keyring';
 import { GasFeeController } from '@metamask/gas-fee-controller';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { NotificationController } from '@metamask/notification-controller';
+///: END:ONLY_INCLUDE_IN
 import { ObservableStore } from '@metamask/obs-store';
 import { storeAsStream } from '@metamask/obs-store/dist/asStream';
 import {
@@ -32,15 +34,19 @@ import {
   PermissionsRequestNotFoundError,
 } from '@metamask/permission-controller';
 import { PhishingController } from '@metamask/phishing-controller';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { RateLimitController } from '@metamask/rate-limit-controller';
+///: END:ONLY_INCLUDE_IN
 import { SignatureController } from '@metamask/signature-controller';
 import SmartTransactionsController from '@metamask/smart-transactions-controller';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import {
   CronjobController,
   JsonSnapsRegistry,
   SnapController,
   IframeExecutionService,
 } from '@metamask/snaps-controllers';
+///: END:ONLY_INCLUDE_IN
 import {
   SubjectMetadataController,
   SubjectType,
@@ -59,10 +65,6 @@ import { debounce } from 'lodash';
 import log from 'loglevel';
 import nanoid from 'nanoid';
 import pump from 'pump';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 
 import {
   ORIGIN_METAMASK,

@@ -1,6 +1,8 @@
 import { getFormattedIpfsUrl } from '@metamask/assets-controllers';
 import slip44 from '@metamask/slip44';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import { getSnapPrefix } from '@metamask/snaps-utils';
+///: END:ONLY_INCLUDE_IN
 import BigNumber from 'bignumber.js';
 import bowser from 'bowser';
 import * as ethUtil from 'ethereumjs-util';
@@ -8,27 +10,25 @@ import abi from 'human-standard-token-abi';
 import * as lodash from 'lodash';
 import { DateTime } from 'luxon';
 import punycode from 'punycode/punycode';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
 
-///: END:ONLY_INCLUDE_IN
 import {
   TRUNCATED_ADDRESS_START_CHARS,
   TRUNCATED_NAME_CHAR_LIMIT,
   TRUNCATED_ADDRESS_END_CHARS,
 } from '../../../shared/constants/labels';
 import { CHAIN_IDS } from '../../../shared/constants/network';
+///: BEGIN:ONLY_INCLUDE_IN(snaps)
 import {
   SNAPS_DERIVATION_PATHS,
   SNAPS_METADATA,
 } from '../../../shared/constants/snaps';
+///: END:ONLY_INCLUDE_IN
 import {
   toChecksumHexAddress,
   stripHexPrefix,
 } from '../../../shared/modules/hexstring-utils';
 import { Numeric } from '../../../shared/modules/Numeric';
 import { OUTDATED_BROWSER_VERSIONS } from '../constants/common';
-///: BEGIN:ONLY_INCLUDE_IN(snaps)
-///: END:ONLY_INCLUDE_IN
 
 // formatData :: ( date: <Unix Timestamp> ) -> String
 export function formatDate(date, format = "M/d/y 'at' T") {

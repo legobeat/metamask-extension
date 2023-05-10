@@ -7694,7 +7694,7 @@
         "__filename": true,
         "__magic__": true,
         "clearTimeout": true,
-        "console.log": true,
+        "console": true,
         "gc": true,
         "globalThis": true,
         "performance": true,

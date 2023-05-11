@@ -4448,18 +4448,6 @@
         "react-markdown>vfile": true
       }
     },
-    "react-markdown>comma-separated-tokens": {
-      "globals": {
-        "console.error": true
-      },
-      "packages": {
-        "browserify": true,
-        "browserify>events": true,
-        "browserify>path-browserify": true,
-        "browserify>process": true,
-        "browserify>util": true
-      }
-    },
     "react-markdown>property-information": {
       "packages": {
         "watchify>xtend": true

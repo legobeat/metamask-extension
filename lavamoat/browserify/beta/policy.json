@@ -1130,12 +1130,18 @@
     },
     "@metamask/eth-token-tracker>deep-equal": {
       "packages": {
+        "@metamask/eth-token-tracker>deep-equal>is-arguments": true,
         "@metamask/eth-token-tracker>deep-equal>is-date-object": true,
         "@ngraveio/bc-ur>assert>object-is": true,
-        "@storybook/builder-webpack5>util>is-arguments": true,
         "globalthis>define-properties>object-keys": true,
         "string.prototype.matchall>es-abstract>is-regex": true,
         "string.prototype.matchall>regexp.prototype.flags": true
+      }
+    },
+    "@metamask/eth-token-tracker>deep-equal>is-arguments": {
+      "packages": {
+        "koa>is-generator-function>has-tostringtag": true,
+        "string.prototype.matchall>call-bind": true
       }
     },
     "@metamask/eth-token-tracker>deep-equal>is-date-object": {
@@ -1951,10 +1957,11 @@
         "define": true
       }
     },
-    "@storybook/builder-webpack5>util>is-arguments": {
-      "packages": {
-        "koa>is-generator-function>has-tostringtag": true,
-        "string.prototype.matchall>call-bind": true
+    "@storybook/cli>util-deprecate": {
+      "globals": {
+        "console.trace": true,
+        "console.warn": true,
+        "localStorage": true
       }
     },
     "@truffle/codec": {
@@ -2163,13 +2170,8 @@
         "console.error": true
       },
       "packages": {
-        "@truffle/codec>semver>lru-cache": true,
-        "browserify>process": true
-      }
-    },
-    "@truffle/codec>semver>lru-cache": {
-      "packages": {
-        "semver>lru-cache>yallist": true
+        "browserify>process": true,
+        "semver>lru-cache": true
       }
     },
     "@truffle/codec>web3-utils": {
@@ -3268,13 +3270,13 @@
     },
     "ethereumjs-util>create-hash>md5.js>hash-base>readable-stream": {
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>browser-resolve": true,
         "browserify>buffer": true,
         "browserify>events": true,
         "browserify>process": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "ethereumjs-util>create-hash>ripemd160": {
@@ -3321,13 +3323,13 @@
     },
     "ethereumjs-util>ethereum-cryptography>keccak>readable-stream": {
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>browser-resolve": true,
         "browserify>buffer": true,
         "browserify>events": true,
         "browserify>process": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "ethereumjs-util>ethereum-cryptography>scrypt-js": {
@@ -4089,9 +4091,9 @@
         "react-redux>hoist-non-react-statics": true,
         "react-router-dom>react-router>history": true,
         "react-router-dom>react-router>mini-create-react-context": true,
-        "react-router-dom>react-router>path-to-regexp": true,
         "react-router-dom>tiny-invariant": true,
-        "react-router-dom>tiny-warning": true
+        "react-router-dom>tiny-warning": true,
+        "sinon>nise>path-to-regexp": true
       }
     },
     "react-router-dom>react-router>history": {
@@ -4118,11 +4120,6 @@
         "react": true,
         "react-router-dom>react-router>mini-create-react-context>gud": true,
         "react-router-dom>tiny-warning": true
-      }
-    },
-    "react-router-dom>react-router>path-to-regexp": {
-      "packages": {
-        "react-router-dom>react-router>path-to-regexp>isarray": true
       }
     },
     "react-router-dom>tiny-warning": {
@@ -4227,6 +4224,7 @@
     },
     "readable-stream": {
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>browser-resolve": true,
         "browserify>events": true,
         "browserify>process": true,
@@ -4236,8 +4234,7 @@
         "readable-stream>isarray": true,
         "readable-stream>process-nextick-args": true,
         "readable-stream>safe-buffer": true,
-        "readable-stream>string_decoder": true,
-        "readable-stream>util-deprecate": true
+        "readable-stream>string_decoder": true
       }
     },
     "readable-stream>core-util-is": {
@@ -4258,13 +4255,6 @@
     "readable-stream>string_decoder": {
       "packages": {
         "readable-stream>safe-buffer": true
-      }
-    },
-    "readable-stream>util-deprecate": {
-      "globals": {
-        "console.trace": true,
-        "console.warn": true,
-        "localStorage": true
       }
     },
     "redux": {
@@ -4288,6 +4278,11 @@
     "semver>lru-cache": {
       "packages": {
         "semver>lru-cache>yallist": true
+      }
+    },
+    "sinon>nise>path-to-regexp": {
+      "packages": {
+        "sinon>nise>path-to-regexp>isarray": true
       }
     },
     "string.prototype.matchall>call-bind": {

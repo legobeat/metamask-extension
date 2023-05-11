@@ -1111,9 +1111,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "@metamask/eth-token-tracker>deep-equal>is-date-object": {
@@ -1129,6 +1129,11 @@
     "@storybook/addon-knobs>qs": {
       "packages": {
         "string.prototype.matchall>side-channel": true
+      }
+    },
+    "@storybook/cli>util-deprecate": {
+      "builtin": {
+        "util.deprecate": true
       }
     },
     "@storybook/core>@storybook/core-server>x-default-browser>default-browser-id>untildify>os-homedir": {
@@ -1427,9 +1432,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "brfs": {
@@ -2347,9 +2352,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "end-of-stream": {
@@ -3991,9 +3996,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "gulp-sourcemaps>@gulp-sourcemaps/map-sources": {
@@ -4178,9 +4183,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "gulp-watch": {
@@ -5234,9 +5239,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "gulp-zip>yazl": {
@@ -6242,9 +6247,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "lavamoat-browserify>through2": {
@@ -7619,13 +7624,13 @@
         "setImmediate": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "pumpify>inherits": true,
         "readable-stream>core-util-is": true,
         "readable-stream>isarray": true,
         "readable-stream>process-nextick-args": true,
         "readable-stream>safe-buffer": true,
-        "readable-stream>string_decoder": true,
-        "readable-stream>util-deprecate": true
+        "readable-stream>string_decoder": true
       }
     },
     "readable-stream>core-util-is": {
@@ -7646,11 +7651,6 @@
     "readable-stream>string_decoder": {
       "packages": {
         "readable-stream>safe-buffer": true
-      }
-    },
-    "readable-stream>util-deprecate": {
-      "builtin": {
-        "util.deprecate": true
       }
     },
     "resolve-url-loader>es6-iterator": {
@@ -8393,9 +8393,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "stylelint>postcss-less": {
@@ -8534,7 +8534,7 @@
     },
     "stylelint>postcss-selector-parser": {
       "packages": {
-        "readable-stream>util-deprecate": true,
+        "@storybook/cli>util-deprecate": true,
         "stylelint>postcss-selector-parser>cssesc": true
       }
     },
@@ -8781,9 +8781,9 @@
         "process.stdout": true
       },
       "packages": {
+        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true,
-        "readable-stream>util-deprecate": true
+        "pumpify>inherits": true
       }
     },
     "tsutils": {

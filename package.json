@@ -630,7 +630,8 @@
       "@metamask/eth-trezor-keyring>@trezor/connect-web>@trezor/connect>@trezor/utxo-lib>tiny-secp256k1": false,
       "@metamask/eth-trezor-keyring>hdkey>secp256k1": false,
       "@storybook/addon-knobs>core-js": false,
-      "@storybook/manager-webpack5>core-js": false
+      "@storybook/manager-webpack5>core-js": false,
+      "@storybook/cli>@storybook/core-common>esbuild": false
     }
   },
   "packageManager": "yarn@3.2.4"

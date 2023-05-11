@@ -7983,9 +7983,72 @@
         "__dirname": true
       },
       "packages": {
-        "@babel/core": true,
+        "stylelint>@stylelint/postcss-css-in-js>@babel/core": true,
         "stylelint>postcss": true,
         "stylelint>postcss-syntax": true
+      }
+    },
+    "stylelint>@stylelint/postcss-css-in-js>@babel/core": {
+      "builtin": {
+        "assert": true,
+        "fs": true,
+        "module": true,
+        "path": true,
+        "process": true,
+        "url": true,
+        "util": true,
+        "v8": true
+      },
+      "globals": {
+        "console.error": true,
+        "console.log": true,
+        "process.env.BABEL_ENV": true,
+        "process.env.BABEL_SHOW_CONFIG_FOR": true,
+        "process.env.NODE_ENV": true,
+        "process.versions.node": true,
+        "process.versions.pnp": true
+      },
+      "packages": {
+        "@babel/code-frame": true,
+        "@babel/core>@ampproject/remapping": true,
+        "@babel/core>@babel/generator": true,
+        "@babel/core>@babel/helper-module-transforms": true,
+        "@babel/core>@babel/helpers": true,
+        "@babel/core>@babel/parser": true,
+        "@babel/core>@babel/template": true,
+        "@babel/core>@babel/types": true,
+        "@babel/core>gensync": true,
+        "@babel/preset-typescript": true,
+        "depcheck>@babel/traverse": true,
+        "depcheck>json5": true,
+        "nock>debug": true,
+        "nyc>convert-source-map": true,
+        "stylelint>@stylelint/postcss-css-in-js>@babel/core>@babel/helper-compilation-targets": true,
+        "stylelint>@stylelint/postcss-css-in-js>@babel/core>semver": true
+      }
+    },
+    "stylelint>@stylelint/postcss-css-in-js>@babel/core>@babel/helper-compilation-targets": {
+      "globals": {
+        "console.warn": true,
+        "process.versions.node": true
+      },
+      "packages": {
+        "@babel/preset-env>@babel/compat-data": true,
+        "@babel/preset-env>@babel/helper-validator-option": true,
+        "stylelint>@stylelint/postcss-css-in-js>@babel/core>@babel/helper-compilation-targets>lru-cache": true,
+        "stylelint>@stylelint/postcss-css-in-js>@babel/core>semver": true,
+        "webpack>browserslist": true
+      }
+    },
+    "stylelint>@stylelint/postcss-css-in-js>@babel/core>@babel/helper-compilation-targets>lru-cache": {
+      "packages": {
+        "stylelint>@stylelint/postcss-css-in-js>@babel/core>@babel/helper-compilation-targets>lru-cache>yallist": true
+      }
+    },
+    "stylelint>@stylelint/postcss-css-in-js>@babel/core>semver": {
+      "globals": {
+        "console": true,
+        "process": true
       }
     },
     "stylelint>@stylelint/postcss-markdown": {

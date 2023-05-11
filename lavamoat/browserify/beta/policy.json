@@ -1957,13 +1957,6 @@
         "define": true
       }
     },
-    "@storybook/cli>util-deprecate": {
-      "globals": {
-        "console.trace": true,
-        "console.warn": true,
-        "localStorage": true
-      }
-    },
     "@truffle/codec": {
       "packages": {
         "@truffle/codec>@truffle/abi-utils": true,
@@ -3270,13 +3263,13 @@
     },
     "ethereumjs-util>create-hash>md5.js>hash-base>readable-stream": {
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>browser-resolve": true,
         "browserify>buffer": true,
         "browserify>events": true,
         "browserify>process": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "ethereumjs-util>create-hash>ripemd160": {
@@ -3323,13 +3316,13 @@
     },
     "ethereumjs-util>ethereum-cryptography>keccak>readable-stream": {
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>browser-resolve": true,
         "browserify>buffer": true,
         "browserify>events": true,
         "browserify>process": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "ethereumjs-util>ethereum-cryptography>scrypt-js": {
@@ -4224,7 +4217,6 @@
     },
     "readable-stream": {
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>browser-resolve": true,
         "browserify>events": true,
         "browserify>process": true,
@@ -4234,7 +4226,8 @@
         "readable-stream>isarray": true,
         "readable-stream>process-nextick-args": true,
         "readable-stream>safe-buffer": true,
-        "readable-stream>string_decoder": true
+        "readable-stream>string_decoder": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "readable-stream>core-util-is": {
@@ -4255,6 +4248,13 @@
     "readable-stream>string_decoder": {
       "packages": {
         "readable-stream>safe-buffer": true
+      }
+    },
+    "readable-stream>util-deprecate": {
+      "globals": {
+        "console.trace": true,
+        "console.warn": true,
+        "localStorage": true
       }
     },
     "redux": {

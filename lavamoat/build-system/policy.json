@@ -1112,9 +1112,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "@metamask/eth-token-tracker>deep-equal>is-date-object": {
@@ -1130,11 +1130,6 @@
     "@storybook/addon-knobs>qs": {
       "packages": {
         "string.prototype.matchall>side-channel": true
-      }
-    },
-    "@storybook/cli>util-deprecate": {
-      "builtin": {
-        "util.deprecate": true
       }
     },
     "@storybook/core>@storybook/core-server>x-default-browser>default-browser-id>untildify>os-homedir": {
@@ -1433,9 +1428,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "brfs": {
@@ -2353,9 +2348,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "end-of-stream": {
@@ -2415,6 +2410,7 @@
         "eslint>esutils": true,
         "eslint>fast-deep-equal": true,
         "eslint>file-entry-cache": true,
+        "eslint>find-up": true,
         "eslint>glob-parent": true,
         "eslint>globals": true,
         "eslint>grapheme-splitter": true,
@@ -2429,7 +2425,6 @@
         "eslint>natural-compare": true,
         "globby>ignore": true,
         "mocha>escape-string-regexp": true,
-        "mocha>find-up": true,
         "nock>debug": true
       }
     },
@@ -3162,6 +3157,38 @@
       "packages": {
         "eslint>file-entry-cache>flat-cache>flatted": true,
         "nyc>rimraf": true
+      }
+    },
+    "eslint>find-up": {
+      "builtin": {
+        "path.dirname": true,
+        "path.parse": true,
+        "path.resolve": true
+      },
+      "packages": {
+        "eslint>find-up>locate-path": true,
+        "nyc>find-up>path-exists": true
+      }
+    },
+    "eslint>find-up>locate-path": {
+      "builtin": {
+        "fs.lstat": true,
+        "fs.lstatSync": true,
+        "fs.stat": true,
+        "fs.statSync": true,
+        "path.resolve": true,
+        "util.promisify": true
+      },
+      "globals": {
+        "process.cwd": true
+      },
+      "packages": {
+        "eslint>find-up>locate-path>p-locate": true
+      }
+    },
+    "eslint>find-up>locate-path>p-locate": {
+      "packages": {
+        "copy-webpack-plugin>p-limit": true
       }
     },
     "eslint>glob-parent": {
@@ -3997,9 +4024,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "gulp-sourcemaps>@gulp-sourcemaps/map-sources": {
@@ -4184,9 +4211,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "gulp-watch": {
@@ -5240,9 +5267,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "gulp-zip>yazl": {
@@ -6248,9 +6275,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "lavamoat-browserify>through2": {
@@ -6460,38 +6487,6 @@
         "process.env.TERM_PROGRAM": true,
         "process.env.WT_SESSION": true,
         "process.platform": true
-      }
-    },
-    "mocha>find-up": {
-      "builtin": {
-        "path.dirname": true,
-        "path.parse": true,
-        "path.resolve": true
-      },
-      "packages": {
-        "mocha>find-up>locate-path": true,
-        "nyc>find-up>path-exists": true
-      }
-    },
-    "mocha>find-up>locate-path": {
-      "builtin": {
-        "fs.lstat": true,
-        "fs.lstatSync": true,
-        "fs.stat": true,
-        "fs.statSync": true,
-        "path.resolve": true,
-        "util.promisify": true
-      },
-      "globals": {
-        "process.cwd": true
-      },
-      "packages": {
-        "mocha>find-up>locate-path>p-locate": true
-      }
-    },
-    "mocha>find-up>locate-path>p-locate": {
-      "packages": {
-        "copy-webpack-plugin>p-limit": true
       }
     },
     "mocha>log-symbols": {
@@ -7625,13 +7620,13 @@
         "setImmediate": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "pumpify>inherits": true,
         "readable-stream>core-util-is": true,
         "readable-stream>isarray": true,
         "readable-stream>process-nextick-args": true,
         "readable-stream>safe-buffer": true,
-        "readable-stream>string_decoder": true
+        "readable-stream>string_decoder": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "readable-stream>core-util-is": {
@@ -7652,6 +7647,11 @@
     "readable-stream>string_decoder": {
       "packages": {
         "readable-stream>safe-buffer": true
+      }
+    },
+    "readable-stream>util-deprecate": {
+      "builtin": {
+        "util.deprecate": true
       }
     },
     "resolve-url-loader>es6-iterator": {
@@ -8073,7 +8073,7 @@
     },
     "stylelint>@stylelint/postcss-markdown>unist-util-find-all-after": {
       "packages": {
-        "react-markdown>unist-util-visit>unist-util-is": true
+        "stylelint>@stylelint/postcss-markdown>unist-util-find-all-after>unist-util-is": true
       }
     },
     "stylelint>autoprefixer": {
@@ -8394,9 +8394,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "stylelint>postcss-less": {
@@ -8535,7 +8535,7 @@
     },
     "stylelint>postcss-selector-parser": {
       "packages": {
-        "@storybook/cli>util-deprecate": true,
+        "readable-stream>util-deprecate": true,
         "stylelint>postcss-selector-parser>cssesc": true
       }
     },
@@ -8782,9 +8782,9 @@
         "process.stdout": true
       },
       "packages": {
-        "@storybook/cli>util-deprecate": true,
         "browserify>string_decoder": true,
-        "pumpify>inherits": true
+        "pumpify>inherits": true,
+        "readable-stream>util-deprecate": true
       }
     },
     "tsutils": {

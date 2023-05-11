@@ -98,6 +98,7 @@
     "label-prs": "ts-node ./.github/scripts/label-prs.ts"
   },
   "resolutions": {
+    "@types/react": "^16.9.53",
     "analytics-node/axios": "^0.21.2",
     "ganache-core/lodash": "^4.17.21",
     "git-url-parse@^12.0.0": "^13.1.0",

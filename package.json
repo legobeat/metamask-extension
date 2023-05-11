@@ -372,7 +372,7 @@
   },
   "devDependencies": {
     "@babel/code-frame": "^7.12.13",
-    "@babel/core": "^7.12.1",
+    "@babel/core": "7.20.12",
     "@babel/eslint-parser": "^7.13.14",
     "@babel/eslint-plugin": "^7.12.1",
     "@babel/preset-env": "^7.5.5",

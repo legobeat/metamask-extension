@@ -2410,7 +2410,6 @@
         "eslint>esutils": true,
         "eslint>fast-deep-equal": true,
         "eslint>file-entry-cache": true,
-        "eslint>find-up": true,
         "eslint>glob-parent": true,
         "eslint>globals": true,
         "eslint>grapheme-splitter": true,
@@ -2425,6 +2424,7 @@
         "eslint>natural-compare": true,
         "globby>ignore": true,
         "mocha>escape-string-regexp": true,
+        "mocha>find-up": true,
         "nock>debug": true
       }
     },
@@ -3157,38 +3157,6 @@
       "packages": {
         "eslint>file-entry-cache>flat-cache>flatted": true,
         "nyc>rimraf": true
-      }
-    },
-    "eslint>find-up": {
-      "builtin": {
-        "path.dirname": true,
-        "path.parse": true,
-        "path.resolve": true
-      },
-      "packages": {
-        "eslint>find-up>locate-path": true,
-        "nyc>find-up>path-exists": true
-      }
-    },
-    "eslint>find-up>locate-path": {
-      "builtin": {
-        "fs.lstat": true,
-        "fs.lstatSync": true,
-        "fs.stat": true,
-        "fs.statSync": true,
-        "path.resolve": true,
-        "util.promisify": true
-      },
-      "globals": {
-        "process.cwd": true
-      },
-      "packages": {
-        "eslint>find-up>locate-path>p-locate": true
-      }
-    },
-    "eslint>find-up>locate-path>p-locate": {
-      "packages": {
-        "copy-webpack-plugin>p-limit": true
       }
     },
     "eslint>glob-parent": {
@@ -6487,6 +6455,38 @@
         "process.env.TERM_PROGRAM": true,
         "process.env.WT_SESSION": true,
         "process.platform": true
+      }
+    },
+    "mocha>find-up": {
+      "builtin": {
+        "path.dirname": true,
+        "path.parse": true,
+        "path.resolve": true
+      },
+      "packages": {
+        "mocha>find-up>locate-path": true,
+        "nyc>find-up>path-exists": true
+      }
+    },
+    "mocha>find-up>locate-path": {
+      "builtin": {
+        "fs.lstat": true,
+        "fs.lstatSync": true,
+        "fs.stat": true,
+        "fs.statSync": true,
+        "path.resolve": true,
+        "util.promisify": true
+      },
+      "globals": {
+        "process.cwd": true
+      },
+      "packages": {
+        "mocha>find-up>locate-path>p-locate": true
+      }
+    },
+    "mocha>find-up>locate-path>p-locate": {
+      "packages": {
+        "copy-webpack-plugin>p-limit": true
       }
     },
     "mocha>log-symbols": {

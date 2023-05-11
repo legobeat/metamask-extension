@@ -99,6 +99,7 @@
   },
   "resolutions": {
     "@types/react": "^16.9.53",
+    "@babel/core": "7.20.12",
     "analytics-node/axios": "^0.21.2",
     "ganache-core/lodash": "^4.17.21",
     "git-url-parse@^12.0.0": "^13.1.0",
@@ -373,7 +374,7 @@
   },
   "devDependencies": {
     "@babel/code-frame": "^7.12.13",
-    "@babel/core": "7.20.12",
+    "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.13.14",
     "@babel/eslint-plugin": "^7.12.1",
     "@babel/preset-env": "^7.5.5",

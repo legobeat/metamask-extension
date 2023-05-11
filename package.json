@@ -540,6 +540,7 @@
     "source-map": "^0.7.2",
     "source-map-explorer": "^2.4.2",
     "squirrelly": "^8.0.8",
+    "storybook": "^7.0.10",
     "storybook-dark-mode": "^3.0.0",
     "stream-browserify": "^3.0.0",
     "string.prototype.matchall": "^4.0.2",

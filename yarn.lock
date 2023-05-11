@@ -5652,7 +5652,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/cli@npm:^7.0.10":
+"@storybook/cli@npm:7.0.10, @storybook/cli@npm:^7.0.10":
   version: 7.0.10
   resolution: "@storybook/cli@npm:7.0.10"
   dependencies:
@@ -23009,6 +23009,7 @@ __metadata:
     source-map: ^0.7.2
     source-map-explorer: ^2.4.2
     squirrelly: ^8.0.8
+    storybook: ^7.0.10
     storybook-dark-mode: ^3.0.0
     stream-browserify: ^3.0.0
     string.prototype.matchall: ^4.0.2
@@ -29789,6 +29790,18 @@ __metadata:
     react-dom:
       optional: true
   checksum: a66b7d52e303cc71ab603e7fb02bab39c56fdffc6428c7977136b53e8da9b47279bee06957f642ac2812a548076ab6a76657cbb3e31a5cee1c782c56810a2e93
+  languageName: node
+  linkType: hard
+
+"storybook@npm:^7.0.10":
+  version: 7.0.10
+  resolution: "storybook@npm:7.0.10"
+  dependencies:
+    "@storybook/cli": 7.0.10
+  bin:
+    sb: index.js
+    storybook: index.js
+  checksum: 930e9895b8679c21532abafc6b6cef27263302e20a78c241ec104c5adbfc7930ce2bd0e027bd502f408aaaa8258dbf1f4b00d99e6df0578a1fed9736fb32771f
   languageName: node
   linkType: hard
 

@@ -94,7 +94,7 @@ const localStore = inTest ? new ReadOnlyNetworkStore() : new LocalStore();
 let versionedData;
 
 if (inTest || process.env.METAMASK_DEBUG) {
-  global.stateHooks.metamaskGetState = localStore.get.bind(localStore);
+  global.stateHooks?.metamaskGetState = localStore.get.bind(localStore);
 }
 
 const phishingPageUrl = new URL(process.env.PHISHING_WARNING_PAGE_URL);
@@ -368,7 +368,7 @@ async function loadPhishingWarningPage() {
   } catch (error) {
     if (error instanceof PhishingWarningPageTimeoutError) {
       console.warn(
-        'Phishing warning page timeout; page not guaraneteed to work offline.',
+        'Phishing warning page timeout; this functionality needs internet connectivity to receive updates.',
       );
     } else {
       console.error('Failed to initialize phishing warning page', error);
@@ -407,14 +407,14 @@ export async function loadStateFromPersistence() {
   if (versionedData && !versionedData.data) {
     // unable to recover, clear state
     versionedData = migrator.generateInitialState(firstTimeState);
-    sentry.captureMessage('MetaMask - Empty vault found - unable to recover');
+    sentry?.captureMessage('MetaMask - Empty vault found - unable to recover');
   }
 
   // report migration errors to sentry
   migrator.on('error', (err) => {
     // get vault structure without secrets
     const vaultStructure = getObjStructure(versionedData);
-    sentry.captureException(err, {
+    sentry?.captureException(err, {
       // "extra" key is required by Sentry
       extra: { vaultStructure },
     });
@@ -902,7 +902,7 @@ browser.runtime.onInstalled.addListener(({ reason }) => {
 });
 
 function setupSentryGetStateGlobal(store) {
-  global.stateHooks.getSentryState = function () {
+  global.stateHooks?.getSentryState = function () {
     const fullState = store.getState();
     const debugState = maskObject({ metamask: fullState }, SENTRY_STATE);
     return {

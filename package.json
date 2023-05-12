@@ -98,6 +98,7 @@
     "label-prs": "ts-node ./.github/scripts/label-prs.ts"
   },
   "resolutions": {
+    "globalthis@^1.0.1": "1.0.1",
     "@types/react": "^16.9.53",
     "@babel/core": "7.20.12",
     "analytics-node/axios": "^0.21.2",
@@ -322,7 +323,7 @@
     "extension-port-stream": "^2.0.0",
     "fast-json-patch": "^3.1.1",
     "fuse.js": "^3.2.0",
-    "globalthis": "1.0.1",
+    "globalthis": "^1.0.1",
     "human-standard-token-abi": "^2.0.0",
     "husky": "^8.0.3",
     "immer": "^9.0.6",

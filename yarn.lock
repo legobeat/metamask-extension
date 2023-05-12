@@ -17732,7 +17732,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globalthis@npm:^1.0.1, globalthis@npm:^1.0.3":
+"globalthis@npm:^1.0.3":
   version: 1.0.3
   resolution: "globalthis@npm:1.0.3"
   dependencies:
@@ -23699,7 +23699,7 @@ __metadata:
     ganache: ^v7.0.4
     geckodriver: ^3.2.0
     gh-pages: ^3.2.3
-    globalthis: 1.0.1
+    globalthis: ^1.0.1
     globby: ^11.0.4
     gulp: ^4.0.2
     gulp-autoprefixer: ^8.0.0

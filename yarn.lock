@@ -1687,7 +1687,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron/get@npm:^2.0.0":
+"@electron/get@npm:^2.0.2":
   version: 2.0.2
   resolution: "@electron/get@npm:2.0.2"
   dependencies:
@@ -7632,7 +7632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.0.0, @types/node@npm:^16.11.26, @types/node@npm:^16.7.10":
+"@types/node@npm:^16.0.0, @types/node@npm:^16.7.10":
   version: 16.18.31
   resolution: "@types/node@npm:16.18.31"
   checksum: 1e0bbbdcfdb80ebb9c5544a58b9692964dca08175a9d2f787a1ed8c75c253d106d56cf7d94c5ba0b44e1627000d093d599f995aeb657f5edbf577e66565b017a
@@ -10473,9 +10473,9 @@ __metadata:
   linkType: hard
 
 "boolean@npm:^3.0.1":
-  version: 3.0.2
-  resolution: "boolean@npm:3.0.2"
-  checksum: 6ab3755ab786b3531e3bfff73c4a1f3777560e1d69912c175d8f7ed75cfce0b20de339c56880fc6da50707b4982547b023ac6eea33b670b5c799231e52032291
+  version: 3.2.0
+  resolution: "boolean@npm:3.2.0"
+  checksum: fb29535b8bf710ef45279677a86d14f5185d604557204abd2ca5fa3fb2a5c80e04d695c8dbf13ab269991977a79bb6c04b048220a6b2a3849853faa94f4a7d77
   languageName: node
   linkType: hard
 
@@ -13597,9 +13597,9 @@ __metadata:
   linkType: hard
 
 "detect-node@npm:^2.0.4":
-  version: 2.0.4
-  resolution: "detect-node@npm:2.0.4"
-  checksum: c06ae40fefbad8cb8cbb6ca819c93568b2a809e747bfc9c71f3524b027f5e988163b0ac0517fd65288b375360b30bc4822172eb05d211f99003d73cf8ec22911
+  version: 2.1.0
+  resolution: "detect-node@npm:2.1.0"
+  checksum: 832184ec458353e41533ac9c622f16c19f7c02d8b10c303dfd3a756f56be93e903616c0bb2d4226183c9351c15fc0b3dba41a17a2308262afabcfa3776e6ae6e
   languageName: node
   linkType: hard
 
@@ -14168,15 +14168,9 @@ __metadata:
   linkType: hard
 
 "electron@npm:^23.1.2":
-  version: 23.3.0
-  resolution: "electron@npm:23.3.0"
-  dependencies:
-    "@electron/get": ^2.0.0
-    "@types/node": ^16.11.26
-    extract-zip: ^2.0.1
-  bin:
-    electron: cli.js
-  checksum: 3d2959d736f3d448f768d12d5d225b9569837695aa07706a6d5b8d6705f5fabaa643ed4b3319a35cec00234bdf7a15a86cabbe04439baff8c9ad7b9e2425c45d
+  version: 23.3.2
+  resolution: "electron@npm:23.3.2"
+  checksum: faa21d0d151dcb33360ef1475fb94f65544d4cbdc8f5a53db2ba0d5919de1300a06feeffaa297caa738ef9a6bcb8181a6978972a2748a4bdd425b49c87c432f5
   languageName: node
   linkType: hard
 
@@ -23642,6 +23636,7 @@ __metadata:
     "@babel/register": ^7.5.5
     "@babel/runtime": ^7.18.9
     "@download/blockies": ^1.0.3
+    "@electron/get": ^2.0.2
     "@ensdomains/content-hash": ^2.5.6
     "@ethereumjs/common": ^3.1.1
     "@ethereumjs/tx": ^4.1.1
@@ -23913,7 +23908,7 @@ __metadata:
     qrcode.react: ^1.0.1
     randomcolor: ^0.5.4
     react: ^16.12.0
-    react-devtools: ^4.11.0
+    react-devtools: ^4.27.8
     react-dom: ^16.12.0
     react-focus-lock: ^2.9.4
     react-idle-timer: ^4.2.5
@@ -28054,29 +28049,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-devtools-core@npm:4.27.6":
-  version: 4.27.6
-  resolution: "react-devtools-core@npm:4.27.6"
+"react-devtools-core@npm:4.27.8":
+  version: 4.27.8
+  resolution: "react-devtools-core@npm:4.27.8"
   dependencies:
     shell-quote: ^1.6.1
     ws: ^7
-  checksum: c0ec5d798c1bbf8c8861677a5940ad552efbe7aa99f2a4aa04e2841605266bc93b2b5956890b5d6c5136f88c6a0c8d080b929dde89227ac56d4a7fb0e85fe55f
+  checksum: 83213d5f620e95cf9e60d21a186949f1a523253ea5cca3371d61cf74102efd5074e2e9431cebe4cd9be45a77db647af9c2cdb44c69907ed07441a3334ca19c8b
   languageName: node
   linkType: hard
 
-"react-devtools@npm:^4.11.0":
-  version: 4.27.6
-  resolution: "react-devtools@npm:4.27.6"
+"react-devtools@npm:^4.27.8":
+  version: 4.27.8
+  resolution: "react-devtools@npm:4.27.8"
   dependencies:
     cross-spawn: ^5.0.1
     electron: ^23.1.2
     ip: ^1.1.4
     minimist: ^1.2.3
-    react-devtools-core: 4.27.6
+    react-devtools-core: 4.27.8
     update-notifier: ^2.1.0
   bin:
     react-devtools: bin.js
-  checksum: 95db5d2e2907c5b349a3fab70915c95ffc3196c4679b43b77ed78263d56919d5c6ec7ec05e3a2d31f975e5e1f51c7a0903b268207787b095b0cbb318e5070d67
+  checksum: 221b6b225e2c2c3dd5c5b654fa82bc98ed506b814c1c568de894ac1a845811aa264ef969d9ad6c463386caf64b9e790071d31402508eb4eaec42755ab120f9ea
   languageName: node
   linkType: hard
 

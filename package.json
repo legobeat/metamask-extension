@@ -430,7 +430,7 @@
     "@types/sinon": "^10.0.13",
     "@types/w3c-web-hid": "^1.0.3",
     "@types/watchify": "^3.11.1",
-    "@types/yargs": "^17.0.8",
+    "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "@whitespace/storybook-addon-html": "^5.1.4",
@@ -553,7 +553,7 @@
     "watchify": "^4.0.0",
     "webextension-polyfill": "^0.8.0",
     "webpack": "^5.75.0",
-    "yargs": "^17.0.1"
+    "yargs": "^17.7.2"
   },
   "engines": {
     "node": "^16.20.0",

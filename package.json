@@ -538,7 +538,7 @@
     "stream-browserify": "^3.0.0",
     "string.prototype.matchall": "^4.0.2",
     "style-loader": "^0.21.0",
-    "stylelint": "^13.6.1",
+    "stylelint": "^13.13.1",
     "superstruct": "^1.0.3",
     "terser": "^5.7.0",
     "through2": "^4.0.2",

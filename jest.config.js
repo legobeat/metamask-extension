@@ -69,5 +69,5 @@ module.exports = {
   testEnvironmentOptions: {
     customExportConditions: ['node', 'node-addons'],
   },
-  workerIdleMemoryLimit: '500MB',
+  workerIdleMemoryLimit: 524288000, // 500*1024*1024 = 500MB
 };

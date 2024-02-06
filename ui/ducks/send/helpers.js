@@ -81,7 +81,7 @@ export async function estimateGasLimitForSend({
       // is an externally owned account (NOT a contract account). For these
       // types of transactions the gasLimit will always be 21,000 or 0x5208
       const { isContractAddress } = to
-        ? await readAddressAsContract(global.eth, to)
+        ? await readAddressAsContract(global.ethQuery, to)
         : {};
       if (!isContractAddress && !isNonStandardEthChain) {
         return GAS_LIMITS.SIMPLE;

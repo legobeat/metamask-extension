@@ -258,7 +258,7 @@ describe('Confirm Transaction Duck', () => {
 
   describe('Thunk actions', () => {
     beforeEach(() => {
-      global.eth = {
+      global.ethQuery = {
         getCode: sinon
           .stub()
           .callsFake((address) =>
@@ -268,7 +268,7 @@ describe('Confirm Transaction Duck', () => {
     });
 
     afterEach(function () {
-      global.eth.getCode.resetHistory();
+      global.ethQuery.getCode.resetHistory();
     });
 
     it('updates txData and updates gas values in confirmTransaction', () => {

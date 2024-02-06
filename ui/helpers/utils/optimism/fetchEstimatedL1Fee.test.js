@@ -1,4 +1,4 @@
-import { HttpProvider } from '@metamask/ethjs';
+import HttpProvider from '@metamask/ethjs-provider-http';
 import nock from 'nock';
 import { toHex } from '@metamask/controller-utils';
 import fetchEstimatedL1Fee from './fetchEstimatedL1Fee';

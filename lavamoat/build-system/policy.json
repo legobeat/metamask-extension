@@ -1140,8 +1140,8 @@
       "packages": {
         "@lavamoat/lavapack>combine-source-map": true,
         "@lavamoat/lavapack>convert-source-map": true,
-        "@lavamoat/lavapack>json-stable-stringify": true,
         "@lavamoat/lavapack>umd": true,
+        "@lavamoat/webpack>json-stable-stringify": true,
         "browserify>JSONStream": true,
         "eslint>espree": true,
         "lavamoat-viz>lavamoat-core": true,
@@ -1180,10 +1180,10 @@
         "value": true
       }
     },
-    "@lavamoat/lavapack>json-stable-stringify": {
+    "@lavamoat/webpack>json-stable-stringify": {
       "packages": {
-        "@lavamoat/lavapack>json-stable-stringify>isarray": true,
-        "@lavamoat/lavapack>json-stable-stringify>object-keys": true,
+        "@lavamoat/webpack>json-stable-stringify>isarray": true,
+        "@lavamoat/webpack>json-stable-stringify>object-keys": true,
         "lavamoat>json-stable-stringify>jsonify": true,
         "string.prototype.matchall>call-bind": true
       }
@@ -5786,7 +5786,7 @@
     },
     "gulp>vinyl-fs>glob-stream>unique-stream": {
       "packages": {
-        "@lavamoat/lavapack>json-stable-stringify": true,
+        "@lavamoat/webpack>json-stable-stringify": true,
         "gulp>vinyl-fs>glob-stream>unique-stream>through2-filter": true
       }
     },
@@ -5937,7 +5937,7 @@
     },
     "gulp>vinyl-fs>object.assign": {
       "packages": {
-        "@lavamoat/lavapack>json-stable-stringify>object-keys": true,
+        "@lavamoat/webpack>json-stable-stringify>object-keys": true,
         "string.prototype.matchall>call-bind": true,
         "string.prototype.matchall>define-properties": true,
         "string.prototype.matchall>has-symbols": true
@@ -6267,7 +6267,7 @@
       },
       "packages": {
         "@lavamoat/lavapack": true,
-        "@lavamoat/lavapack>json-stable-stringify": true,
+        "@lavamoat/webpack>json-stable-stringify": true,
         "browserify>browser-resolve": true,
         "duplexify": true,
         "lavamoat-browserify>concat-stream": true,
@@ -6304,7 +6304,7 @@
         "define": true
       },
       "packages": {
-        "@lavamoat/lavapack>json-stable-stringify": true,
+        "@lavamoat/webpack>json-stable-stringify": true,
         "lavamoat-viz>lavamoat-core>lavamoat-tofu": true,
         "lavamoat>lavamoat-core>merge-deep": true
       }
@@ -6314,36 +6314,8 @@
         "console.log": true
       },
       "packages": {
-        "lavamoat-viz>lavamoat-core>lavamoat-tofu>@babel/parser": true,
-        "lavamoat-viz>lavamoat-core>lavamoat-tofu>@babel/traverse": true
-      }
-    },
-    "lavamoat-viz>lavamoat-core>lavamoat-tofu>@babel/traverse": {
-      "globals": {
-        "console.log": true
-      },
-      "packages": {
-        "@babel/code-frame": true,
-        "@babel/core>@babel/generator": true,
-        "depcheck>@babel/traverse>@babel/helper-environment-visitor": true,
-        "depcheck>@babel/traverse>@babel/helper-function-name": true,
-        "depcheck>@babel/traverse>@babel/helper-hoist-variables": true,
-        "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true,
-        "lavamoat-viz>lavamoat-core>lavamoat-tofu>@babel/traverse>@babel/parser": true,
-        "lavamoat-viz>lavamoat-core>lavamoat-tofu>@babel/traverse>@babel/types": true,
-        "lavamoat-viz>lavamoat-core>lavamoat-tofu>@babel/traverse>globals": true,
-        "nock>debug": true
-      }
-    },
-    "lavamoat-viz>lavamoat-core>lavamoat-tofu>@babel/traverse>@babel/types": {
-      "globals": {
-        "console.warn": true,
-        "process.env.BABEL_TYPES_8_BREAKING": true
-      },
-      "packages": {
-        "@babel/core>@babel/types>@babel/helper-string-parser": true,
-        "@babel/core>@babel/types>to-fast-properties": true,
-        "lavamoat>@babel/highlight>@babel/helper-validator-identifier": true
+        "depcheck>@babel/traverse": true,
+        "lavamoat-viz>lavamoat-core>lavamoat-tofu>@babel/parser": true
       }
     },
     "lavamoat>@lavamoat/aa": {
@@ -7798,7 +7770,7 @@
     },
     "string.prototype.matchall>define-properties": {
       "packages": {
-        "@lavamoat/lavapack>json-stable-stringify>object-keys": true,
+        "@lavamoat/webpack>json-stable-stringify>object-keys": true,
         "string.prototype.matchall>define-properties>define-data-property": true,
         "string.prototype.matchall>es-abstract>has-property-descriptors": true
       }

@@ -25476,6 +25476,7 @@ __metadata:
     prettier: "npm:^2.7.1"
     prettier-eslint: "npm:^15.0.1"
     prettier-plugin-jsdoc: "npm:^0.4.2"
+    prettier-plugin-pkg: "npm:^0.17.1"
     prettier-plugin-sort-json: "npm:^1.0.0"
     promise-to-callback: "npm:^1.0.0"
     prop-types: "npm:^15.6.1"
@@ -28700,6 +28701,15 @@ __metadata:
   peerDependencies:
     prettier: ">=2.1.2"
   checksum: 10/1b93198282243b35712574522f31acd89941b1b4d1d33cd2801c162ecc61b9d274b4809ed9427bb2680334ee2caa554407c30f69abe57b2d19e0cae1d9af2137
+  languageName: node
+  linkType: hard
+
+"prettier-plugin-pkg@npm:^0.17.1":
+  version: 0.17.1
+  resolution: "prettier-plugin-pkg@npm:0.17.1"
+  peerDependencies:
+    prettier: ^2.0.0
+  checksum: 10/5e998ee5047e76d86ca40a92505c018936b89f71f50d0e0d8cc1f64d626363a625e32dfc8a48a54c70cc919a5019dc0e6f60afa06d657cc2ffe8187aec7dc1d6
   languageName: node
   linkType: hard
 

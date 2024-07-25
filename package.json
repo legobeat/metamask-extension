@@ -601,6 +601,7 @@
     "prettier": "^2.7.1",
     "prettier-eslint": "^15.0.1",
     "prettier-plugin-jsdoc": "^0.4.2",
+    "prettier-plugin-pkg": "^0.17.1",
     "prettier-plugin-sort-json": "^1.0.0",
     "pumpify": "^2.0.1",
     "randomcolor": "^0.5.4",
